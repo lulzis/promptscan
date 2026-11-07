@@ -1,0 +1,3 @@
+# Zeilenenden immer LF, auch beim Auschecken unter Windows: Tests vergleichen Lizenztexte,
+# Wortlisten und SPEC wortgleich.
+* text=auto eol=lf
