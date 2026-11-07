@@ -5,7 +5,7 @@
 //! ```
 //!
 //! `<ROHDATEN>` enthält die unveränderten Downloads unter den Pfaden der Konstanten
-//! unten; `<ZIEL>` ist vorgegeben `lexika/register` dieser Arbeitskopie. Das Programm
+//! unten; `<ZIEL>` ist vorgegeben `lexika/register` im Projektordner. Das Programm
 //! braucht kein Netz, prüft die SHA-256-Summe jeder Rohdatei und schreibt aus gleichen
 //! Rohdaten byte-gleiche Register (sortiert, Zeilenende LF). Weicht eine Summe ab, bricht
 //! es ab: Neue Rohdaten brauchen ein neues Abrufdatum und neue Summen in diesem Programm.

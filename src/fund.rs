@@ -108,10 +108,10 @@ impl Rolle {
         }
     }
 
-    /// Anzeigename in Sätzen der Ausgabe, statt der englischen Kennung von `--role`
-    /// (Rechtstext C2): Paarform, wo die Rolle Personen benennt, keine bei Einrichtungen;
-    /// `doctor` heisst «Gesundheitsberuf», weil die Rolle alle Gesundheitsberufe aus
-    /// Art. 321 Ziff. 1 StGB trägt.
+    /// Anzeigename in Sätzen der Ausgabe, statt der englischen Kennung von `--role`:
+    /// Paarform, wo die Rolle Personen benennt, keine bei Einrichtungen; `doctor` heisst
+    /// «Gesundheitsberuf», weil die Rolle alle Gesundheitsberufe aus Art. 321 Ziff. 1 StGB
+    /// trägt.
     pub fn anzeige(self, englisch: bool) -> &'static str {
         match (self, englisch) {
             (Rolle::None, false) => "keine",
@@ -172,9 +172,9 @@ impl Rolle {
 }
 
 /// Deutsche Eingabewörter, die `--role` und `role` in der Konfiguration zusätzlich zu den
-/// Kennungen annehmen, klein geschrieben (Rechtstexte C2, «Eingabe:»). Nur Berufe, die die
-/// Norm der Rolle nennt; Hilfspersonen wählen die Rolle der Person, für die sie arbeiten.
-/// Öffentlich, damit `main.rs` bei einem Tippfehler die nächste Rolle vorschlagen kann.
+/// Kennungen annehmen, klein geschrieben. Nur Berufe, die die Norm der Rolle nennt;
+/// Hilfspersonen wählen die Rolle der Person, für die sie arbeiten. Öffentlich, damit
+/// `main.rs` bei einem Tippfehler die nächste Rolle vorschlagen kann.
 pub const EINGABEWOERTER: &[(&str, Rolle)] = &[
     ("keine", Rolle::None),
     ("kein", Rolle::None),

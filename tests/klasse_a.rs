@@ -215,8 +215,7 @@ fn ahv_referenz_trifft_die_beispiele_der_wegleitung() {
 /// jeder Schreibweise: ohne Trenner, mit Punkten, mit einem Umbruch nach einem Punkt und mit
 /// Leerzeichen. Einzige Ausnahme, und sie kommt im Lauf vor: In der Schreibweise mit
 /// Leerzeichen verbindet ein Leerzeichen davor oder danach die Nummer mit einer Ziffer; dann
-/// ist sie Teil einer Zahlenkolonne. 4000 Fälle auf vier Schreibweisen: Ohne Trenner und
-/// mit Punkten bleiben je etwa 1000 wie vorher mit zwei Schreibweisen und 2000 Fällen.
+/// ist sie Teil einer Zahlenkolonne. 4000 Fälle auf vier Schreibweisen, je etwa 1000.
 #[test]
 fn ahv_jede_gueltige_nummer_wird_erkannt() {
     let strategie = (
@@ -369,10 +368,10 @@ fn ahv_ausnahme_an_einem_beispiel() {
     assert!(!erkannt("756.2134.5678.97", "ahv"));
 }
 
-/// Zahlenkolonnen (technik-code-3): 756 und zehn zufällige Ziffern in einer zufälligen
-/// Schreibweise, auch mit Leerzeichen und mit einem Umbruch nach einem Punkt. Erkannt genau
-/// dann, wenn die Kontrollziffer stimmt; meist stimmt sie nicht, manchmal zufällig. Beides
-/// kommt im Lauf vor.
+/// Zahlenkolonnen: 756 und zehn zufällige Ziffern in einer zufälligen Schreibweise, auch mit
+/// Leerzeichen und mit einem Umbruch nach einem Punkt. Erkannt genau dann, wenn die
+/// Kontrollziffer stimmt; meist stimmt sie nicht, manchmal zufällig. Beides kommt im Lauf
+/// vor.
 #[test]
 fn ahv_zahlenkolonnen_nur_mit_stimmender_kontrollziffer() {
     let strategie = (prop::collection::vec(0u8..10, 10), schreibweise());
@@ -609,11 +608,10 @@ fn iban_jede_gueltige_wird_erkannt() {
         .unwrap();
 }
 
-/// (1) mit Leerraum (technik-code-3): Jede gültige IBAN in Vierergruppen wird an ihrer
-/// Stelle erkannt, wenn zwischen je zwei Gruppen ein bis drei Leerraumzeichen jeder Art
-/// stehen, darunter höchstens ein Zeilenumbruch: umbrochen wie in einer E-Mail oder einem
-/// PDF, mit Tabulatoren wie aus einer Tabelle. Umbrüche in mehreren Lücken kommen im Lauf
-/// vor.
+/// (1) mit Leerraum: Jede gültige IBAN in Vierergruppen wird an ihrer Stelle erkannt, wenn
+/// zwischen je zwei Gruppen ein bis drei Leerraumzeichen jeder Art stehen, darunter höchstens
+/// ein Zeilenumbruch: umbrochen wie in einer E-Mail oder einem PDF, mit Tabulatoren wie aus
+/// einer Tabelle. Umbrüche in mehreren Lücken kommen im Lauf vor.
 #[test]
 fn iban_jede_gueltige_mit_leerraum_wird_erkannt() {
     let strategie = (
@@ -676,8 +674,8 @@ fn iban_ersetzte_ziffer_auch_mit_leerraum_abgewiesen() {
         .unwrap();
 }
 
-/// Zahlenkolonnen (technik-code-3): «CH» oder «LI» und 19 zufällige Ziffern in
-/// Vierergruppen, mit Leerraum und Umbrüchen dazwischen. Erkannt genau dann, wenn die
+/// Zahlenkolonnen: «CH» oder «LI» und 19 zufällige Ziffern in Vierergruppen, mit Leerraum
+/// und Umbrüchen dazwischen. Erkannt genau dann, wenn die
 /// Referenz die Prüfziffern gelten lässt; meist stimmen sie nicht, manchmal zufällig.
 /// Beides kommt im Lauf vor.
 #[test]

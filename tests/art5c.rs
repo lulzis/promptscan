@@ -1,8 +1,8 @@
 //! Die Regeln art5c-1 bis art5c-6 von aussen: über `pruefe` und über die Stufenlogik.
 //!
 //! Der Identifikator wird von Hand gesetzt oder als erfundene AHV-Nummer geschrieben;
-//! Namen erkennt die Regel «name», auf die sich die Namensproben (Prüferbefund p8)
-//! stützen. Alle Personen und Sachverhalte sind erfunden.
+//! Namen erkennt die Regel «name», auf die sich die Namensproben stützen. Alle Personen
+//! und Sachverhalte sind erfunden.
 
 use promptscan::regeln::art5c;
 use promptscan::stufen::bewerte;
@@ -148,9 +148,9 @@ fn beispiel_der_nennungsgrenze_ist_orange() {
 }
 
 #[test]
-fn belege_der_befunde_sind_mit_ahv_orange() {
-    // Die Wörter und Wendungen der Befunde (recht-wortlisten-*, praxis-*), mit einer
-    // erfundenen AHV-Nummer als Identifikator.
+fn wendungen_der_wortlisten_sind_mit_ahv_orange() {
+    // Wörter und Wendungen aus den Wortlisten, mit einer erfundenen AHV-Nummer als
+    // Identifikator.
     for (roh, regel) in [
         (
             "Versicherte 756.1234.5678.97 ist seit drei Wochen krank.",
@@ -355,7 +355,6 @@ fn parallelsaetze_ergeben_dieselbe_stufe() {
                 "La privazione dell'autorità parentale sul figlio 756.9876.5432.17 è stata pronunciata.",
             ],
         ),
-        // Prüferbefunde p1 bis p6.
         (
             "art5c-1",
             [
@@ -439,31 +438,31 @@ fn gegenbeispiele_mit_ahv_bleiben_unter_orange() {
         "Le retrait du permis de construire de l'assuré 756.1234.5678.97 est contesté.",
         "Der Versicherte 756.1234.5678.97 sucht eine neue Stelle.",
         "Der Versicherte 756.1234.5678.97 ist konfessionslos.",
-        // Prüferbefund p7: Versicherer und Versicherungen.
+        // Versicherer und Versicherungen.
         "L'assuré 756.1234.5678.97 écrit à son assureur-maladie.",
         "Les assureurs-maladie de l'assuré 756.1234.5678.97 ont répondu.",
         "L'assicurato 756.1234.5678.97 chiede se l'assicurazione malattia paga.",
         "L'assicurato 756.1234.5678.97 scrive al suo assicuratore malattia.",
         "Gli assicuratori malattia dell'assicurato 756.1234.5678.97 hanno risposto.",
         "L'assicurato 756.1234.5678.97 ha informato l'assicuratore-malattie.",
-        // p8: «Jude» und «Cancer» als Namen.
+        // «Jude» und «Cancer» als Namen.
         "Herr Jude Muster (AHV 756.1234.5678.97) bewirbt sich.",
         "Schreibe an Jude Bellingham, AHV 756.1234.5678.97.",
         "M. Paul Cancer (AVS 756.1234.5678.97) demande un rendez-vous.",
-        // p9 und p1: «sindacale» des Gemeindepräsidenten, «sindacato» als Überprüfung.
+        // «sindacale» des Gemeindepräsidenten, «sindacato» als Überprüfung.
         "Il cittadino 756.1234.5678.97 impugna l'ordinanza sindacale.",
         "Il ricorrente 756.1234.5678.97 critica il sindacato di legittimità.",
         "L'azionista 756.1234.5678.97 aderisce al sindacato azionario.",
-        // p10: wirtschaftliche Abhängigkeit.
+        // Wirtschaftliche Abhängigkeit.
         "Le sous-traitant 756.1234.5678.97 vit une forme de dépendance économique.",
         "Il fornitore 756.1234.5678.97 vive una forma di dipendenza economica.",
-        // p11: Beschwerde an die Aufsichtsbehörde.
+        // Beschwerde an die Aufsichtsbehörde.
         "Le débiteur 756.1234.5678.97 a porté plainte à l'autorité de surveillance.",
         "Le donateur 756.1234.5678.97 a déposé plainte auprès de l'autorité de surveillance.",
-        // p12: Erlasstitel.
+        // Erlasstitel.
         "L'étudiant 756.1234.5678.97 lit la Procédure pénale applicable aux mineurs.",
         "L'étudiant 756.1234.5678.97 cite la Procédure pénale militaire.",
-        // p4: «ai» als Präposition.
+        // «ai» als Präposition.
         "La rendita ai superstiti dell'assicurato 756.1234.5678.97 è calcolata.",
     ] {
         let bericht = pruefe(roh, &Optionen::default());
@@ -481,9 +480,9 @@ fn gegenbeispiele_mit_ahv_bleiben_unter_orange() {
 }
 
 #[test]
-fn pruefer_befunde_sind_mit_ahv_orange() {
-    // Prüferbefunde p2 (starke Formen), p3 bis p6, p8 (Gegenprobe zum Namen), p9 bis p12
-    // (Gegenproben zu den Ausnahmen): Diese Sätze bleiben ORANGE.
+fn formen_und_gegenproben_sind_mit_ahv_orange() {
+    // Starke Formen, Gegenproben zum Namen und zu den Ausnahmen: Diese Sätze bleiben
+    // ORANGE.
     for (roh, regel) in [
         (
             "Herr Muster (AHV 756.1234.5678.97) lebt mit körperlicher Behinderung.",

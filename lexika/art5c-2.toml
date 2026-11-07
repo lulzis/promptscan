@@ -168,7 +168,7 @@ fassung = "2026-07-01"
 url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de#art_42"
 teilwort = "ende"
 merkmal = "icd"
-notiz = "Löst die Suche nach ICD-10-Kodes aus. Am Wortende, damit «Krebsdiagnose», «Hauptdiagnose», «Nebendiagnosen» oder «Verdachtsdiagnose» mitzählen. Das frühere Zitat in der Notiz («…in codierter Form») entsprach nicht mehr der geltenden Fassung."
+notiz = "Löst die Suche nach ICD-10-Kodes aus. Am Wortende, damit «Krebsdiagnose», «Hauptdiagnose», «Nebendiagnosen» oder «Verdachtsdiagnose» mitzählen."
 
 [[eintrag]]
 begriff = "ICD"
@@ -307,7 +307,7 @@ quelle = "SR 832.112.31 Art. 12d cpv. 1 lett. a: «Test HIV»"
 fassung = "2026-08-01"
 url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_12_d"
 gross = true
-notiz = "Gleich geschrieben wie der deutsche Eintrag (Reste Runde 1, w2-art5c): Ist der Text italienisch, gilt dieser Beleg."
+notiz = "Gleich geschrieben wie der deutsche Eintrag: Ist der Text italienisch, gilt dieser Beleg."
 
 [[eintrag]]
 begriff = "Gesundheitszustand"

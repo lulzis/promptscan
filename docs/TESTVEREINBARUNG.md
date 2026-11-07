@@ -1,7 +1,7 @@
 # Testvereinbarung promptscan
 
-> **Entwurf zur Prüfung durch den Eigentümer.** Kein geprüfter Vertragstext und keine
-> Rechtsauskunft. Eckige Klammern sind vor Gebrauch auszufüllen oder zu streichen.
+> **Entwurf.** Kein geprüfter Vertragstext und keine Rechtsauskunft. Eckige Klammern sind vor
+> Gebrauch auszufüllen oder zu streichen.
 >
 > Belege zu Ziffer 2: Dass promptscan nichts sendet, keine anderen Programme startet und keine
 > Dateien schreibt, prüft `tests/offline.rs` am Quelltext und an der Programmdatei (SPEC 6).

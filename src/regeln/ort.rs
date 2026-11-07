@@ -1113,8 +1113,8 @@ mod tests {
         assert_eq!(a.art, Art::Identifikator);
     }
 
-    /// Reste Runde 1 (w4): Unsichtbare Formatzeichen im Strassennamen und neben dem
-    /// Leerraum werden übergangen; die Stelle steht im ganzen Text.
+    /// Unsichtbare Formatzeichen im Strassennamen und neben dem Leerraum werden übergangen;
+    /// die Stelle steht im ganzen Text.
     #[test]
     fn formatzeichen_in_strassennamen() {
         for roh in [
@@ -1398,10 +1398,9 @@ mod tests {
         assert_eq!(ort("domicilio: Locarno"), ["Locarno"]);
     }
 
-    /// Rechtstexte B6 (Befunde fehlersuche-3 und recht-normen-7, Entscheide C6 und C8): Die
-    /// Beispiele der Grenzen und der Methode verhalten sich wie beschrieben.
+    /// Die Beispiele der Grenzen und der Methode verhalten sich wie beschrieben.
     #[test]
-    fn grenzen_nach_rechtstexten_b6() {
+    fn grenzen_und_methode_wie_beschrieben() {
         use crate::fund::{Rolle, Stufe};
         use crate::stufen::Optionen;
         let infos = info();
@@ -1467,8 +1466,8 @@ mod tests {
         assert!(wohnort.methode.de.contains("«wohnhaft in⏎Winterthur»"));
     }
 
-    /// Reste Runde 1 (w4): Ein weicher Zeilenumbruch zwischen Auslöser, Präposition und Ort
-    /// zählt wie Leerraum; ein harter nicht.
+    /// Ein weicher Zeilenumbruch zwischen Auslöser, Präposition und Ort zählt wie Leerraum;
+    /// ein harter nicht.
     #[test]
     fn wohnort_ueber_weichen_umbruch() {
         for roh in [
@@ -1509,7 +1508,7 @@ mod tests {
         assert!(ort("wohnhaft in bern").is_empty());
     }
 
-    /// C8: der weiche Umbruch auch nach «domiciliée à» und «domiciliato a» mit CRLF.
+    /// Der weiche Umbruch auch nach «domiciliée à» und «domiciliato a» mit CRLF.
     #[test]
     fn wohnort_ueber_weichen_umbruch_fr_it() {
         assert_eq!(

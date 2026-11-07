@@ -42,7 +42,7 @@ fn keine_doppelten_formen_je_datei_und_sprache() {
         for e in &lex.eintraege {
             for form in std::iter::once(&e.begriff).chain(e.formen.iter()) {
                 // Mit «gross»: Dieselbe Form darf einmal nur gross geschrieben und einmal in
-                // jeder Schreibung stehen (Nachbesserung w2-art5c).
+                // jeder Schreibung stehen.
                 let schluessel = (
                     form.to_lowercase(),
                     e.sprache,

@@ -24,7 +24,7 @@ const KEINE_FUNDE: &str = "Ergebnis  Keine Funde in den geprüften Mustern";
 /// Kopfzeile ohne Rolle und mit Ziel Cloud (AUSGABE 1).
 const KOPF_OHNE_ROLLE: &str = "Lokal geprüft · Rolle: nicht angegeben · Ziel: Cloud";
 
-/// Was unter «Keine Funde» steht (AUSGABE 1, Rechtstext A2).
+/// Was unter «Keine Funde» steht (AUSGABE 1).
 const BEACHTEN_OHNE_FUND: &str = "Beachten  Ob der Zusammenhang eine Person erkennbar macht und ob der Text\n          Geschäftsgeheimnisse enthält, prüft promptscan nicht.\n          Was geprüft wird: promptscan rules\n";
 
 const BEISPIEL_1: &str = "Unser Mitarbeiter Hans Muster, geb. 12.03.1985, Seestrasse 12, 8002 Zürich,\n\
@@ -118,15 +118,15 @@ fn einzeilig(s: &str) -> String {
     s.split_whitespace().collect::<Vec<_>>().join(" ")
 }
 
-/// Der Abschnitt `Eingabe` (englisch `Input`) des Ergebnisblocks auf einer Zeile; leer,
-/// wenn es ihn nicht gibt (AUSGABE 1, «Meldungen zur Eingabe»).
+/// Die Meldungen zur Eingabe im Ergebnisblock auf einer Zeile; leer, wenn es keine gibt
+/// (AUSGABE 1, «Meldungen zur Eingabe»). Sie stehen ohne Etikett eingerückt unter
+/// «Ergebnis» und beginnen mit «Eingabe …» (englisch «Input …»).
 fn eingabe_abschnitt(aus: &str) -> String {
     let mut teile = Vec::new();
     let mut drin = false;
     for z in aus.lines() {
-        if let Some(rest) = z
-            .strip_prefix("Eingabe   ")
-            .or_else(|| z.strip_prefix("Input     "))
+        if let Some(rest) = z.strip_prefix("          ")
+            && (rest.starts_with("Eingabe ") || rest.starts_with("Input "))
         {
             drin = true;
             teile.push(rest);
@@ -691,7 +691,7 @@ fn meldung(fehler: &str) {
     }
 }
 
-/// B3: Optionen vor dem Befehl; Kennungen und Werte in jeder Schreibweise.
+/// Optionen vor dem Befehl; Kennungen und Werte in jeder Schreibweise.
 #[test]
 fn optionen_vor_dem_befehl() {
     assert!(ausgabe(promptscan().args(["--lang", "en", "rules"])).starts_with("Rules by level"));
@@ -709,7 +709,7 @@ fn optionen_vor_dem_befehl() {
     assert_eq!(v["dokument"], "stufe");
 }
 
-/// B3: Eine Datei, die wie ein Befehl heisst, erreicht man mit «./rules» oder «-- rules».
+/// Eine Datei, die wie ein Befehl heisst, erreicht man mit «./rules» oder «-- rules».
 #[test]
 fn datei_die_wie_ein_befehl_heisst() {
     let o = Ordner::neu("rules");
@@ -728,7 +728,7 @@ fn datei_die_wie_ein_befehl_heisst() {
     assert!(ausgabe(promptscan().current_dir(&o.0).arg("rules")).starts_with("Regeln nach Stufe"));
 }
 
-/// B3: -t, eine Datei und ein Befehl schliessen sich aus; die Meldung sagt, was geht.
+/// -t, eine Datei und ein Befehl schliessen sich aus; die Meldung sagt, was geht.
 #[test]
 fn eingabe_und_befehl_schliessen_sich_aus() {
     for (args, anfang) in [
@@ -765,7 +765,7 @@ fn eingabe_und_befehl_schliessen_sich_aus() {
     }
 }
 
-/// B4: Ein Text mit «-» am Anfang (Aufzählung, negative Zahl, Option als Wort) ist Text.
+/// Ein Text mit «-» am Anfang (Aufzählung, negative Zahl, Option als Wort) ist Text.
 #[test]
 fn text_mit_bindestrich_am_anfang() {
     for text in [
@@ -787,7 +787,7 @@ fn text_mit_bindestrich_am_anfang() {
     assert!(aus.contains(&format!("\n   │ {text}\n")), "{aus}");
 }
 
-/// B4: Ein \ vor dem schliessenden " zieht in Windows PowerShell 5.1 und cmd die
+/// Ein \ vor dem schliessenden " zieht in Windows PowerShell 5.1 und cmd die
 /// folgenden Optionen in den Text. promptscan prüft dann nicht still ohne Rolle.
 #[test]
 fn verschluckte_optionen_geben_exit_2() {
@@ -814,8 +814,8 @@ fn verschluckte_optionen_geben_exit_2() {
     ausgabe(promptscan().args(["-t", "Er sagte \"ja\" und ging."]));
 }
 
-/// B4, B9: Bei einem Fehler der Befehlszeile mit -t der Hinweis auf gerade
-/// Anführungszeichen; fehlt nur der Text, sagt die Meldung das.
+/// Bei einem Fehler der Befehlszeile mit -t der Hinweis auf gerade Anführungszeichen; fehlt
+/// nur der Text, sagt die Meldung das.
 #[test]
 fn hinweis_auf_gerade_anfuehrungszeichen() {
     // So kann `promptscan -t "Er sagte "ja""` in Windows PowerShell 5.1 ankommen.
@@ -962,8 +962,8 @@ fn fehler_der_befehlszeile_zweisprachig() {
     );
 }
 
-/// B1, B9: Die Rolle als Kennung oder deutsches Wort, in jeder Schreibweise; ein
-/// Tippfehler gibt einen Vorschlag.
+/// Die Rolle als Kennung oder deutsches Wort, in jeder Schreibweise; ein Tippfehler gibt
+/// einen Vorschlag.
 #[test]
 fn rolle_deutsch_und_mit_vorschlag() {
     for wort in [
@@ -1002,8 +1002,9 @@ fn rolle_deutsch_und_mit_vorschlag() {
     schmal(&fehler);
 }
 
-/// B9: Die Hilfe auf Deutsch und Englisch, höchstens 80 Spalten, mit C1 und C3; auch bei
-/// sonst fehlerhafter Befehlszeile und in der Sprache der Konfiguration.
+/// Die Hilfe auf Deutsch und Englisch, höchstens 80 Spalten, mit dem Hinweis zu -t und der
+/// Zeile «Hilfsmittel»; auch bei sonst fehlerhafter Befehlszeile und in der Sprache der
+/// Konfiguration.
 #[test]
 fn hilfe_deutsch_und_englisch() {
     let de = ausgabe(promptscan().arg("--help"));
@@ -1011,7 +1012,7 @@ fn hilfe_deutsch_und_englisch() {
     let flach = einzeilig(&de);
     for muss in [
         "Prompt einfügen, Enter, dann Ctrl+",
-        // C1 und C3 in der Endfassung der Rechtstexte.
+        // Der Hinweis zu -t und die Zeile «Hilfsmittel».
         "promptscan -t \"TEXT\" Text direkt prüfen. Er steht dann in der Befehlszeile und kann in den Shell-Verlauf und in Prozessprotokolle gelangen, ebenso bei «echo … |».",
         "Vertrauliches als Datei oder durch Einfügen prüfen.",
         "Hilfsmittel, keine Rechtsberatung · erkennt Identifikatoren und Wörter aus Listen, nicht den Zusammenhang",
@@ -1059,7 +1060,7 @@ fn hilfe_deutsch_und_englisch() {
     );
 }
 
-/// B1: Windows PowerShell 5.1 schreibt mit «>» UTF-16LE mit BOM und CRLF; promptscan
+/// Windows PowerShell 5.1 schreibt mit «>» UTF-16LE mit BOM und CRLF; promptscan
 /// liest das wie UTF-8.
 #[test]
 fn konfiguration_in_utf16() {
@@ -1081,7 +1082,7 @@ fn konfiguration_in_utf16() {
     assert!(fehler.is_empty(), "{fehler}");
 }
 
-/// B1: Bei rules, explain und config ist ein Fehler der Datei nur eine Warnung.
+/// Bei rules, explain und config ist ein Fehler der Datei nur eine Warnung.
 #[test]
 fn kaputte_konfiguration_warnt_nur_bei_den_befehlen() {
     let o = Ordner::neu("warnt");
@@ -1113,7 +1114,7 @@ fn kaputte_konfiguration_warnt_nur_bei_den_befehlen() {
     assert!(fehler.contains("ist kein gültiges TOML"), "{fehler}");
 }
 
-/// B1: Ein falscher Wert, den die Befehlszeile übersteuert, gibt eine Warnung statt Stille.
+/// Ein falscher Wert, den die Befehlszeile übersteuert, gibt eine Warnung statt Stille.
 #[test]
 fn uebersteuerter_falscher_wert_warnt() {
     let o = Ordner::neu("uebersteuert");
@@ -1139,7 +1140,7 @@ fn uebersteuerter_falscher_wert_warnt() {
     );
 }
 
-/// B1: target in der Datei wird übergangen, mit Warnung: Das Ziel gilt je Aufruf.
+/// target in der Datei wird übergangen, mit Warnung: Das Ziel gilt je Aufruf.
 #[test]
 fn ziel_in_der_konfiguration_wird_uebergangen() {
     let o = Ordner::neu("ziel");
@@ -1165,7 +1166,7 @@ fn ziel_in_der_konfiguration_wird_uebergangen() {
     }
 }
 
-/// B2: promptscan config zeigt die Datei und schreibt Rolle und Sprache: UTF-8 ohne BOM,
+/// promptscan config zeigt die Datei und schreibt Rolle und Sprache: UTF-8 ohne BOM,
 /// Ordner angelegt, übrige Schlüssel behalten.
 #[test]
 fn befehl_config() {
@@ -1508,9 +1509,10 @@ fn ascii_ist_ascii() {
     assert!(!ausgabe(promptscan().arg("--help")).is_ascii());
 }
 
-/// Reste aus Runde 1: financial-institution, «Ohne Berufsrolle», «Datenschutz».
+/// Die Rolle financial-institution, die Frage nach einer Geheimhaltungspflicht ohne Rolle und
+/// das Datenschutzrecht bei --role court.
 #[test]
-fn reste_runde_1() {
+fn financial_institution_frage_ohne_rolle_und_datenschutzrecht() {
     let (code, aus, _) = lauf(promptscan().args([
         "--role",
         "financial-institution",
@@ -1549,7 +1551,7 @@ fn reste_runde_1() {
     );
 
     // Mit --role court steht unter «Beachten», welches Datenschutzrecht gilt, mit beiden
-    // Sätzen von Art. 2 Abs. 3 DSG (Rechtstext A5, E3; Befund w1-recht-p5).
+    // Sätzen von Art. 2 Abs. 3 DSG.
     let (code, gericht, _) = lauf(promptscan().args(["--role", "court", "-t", GELB_OHNE_KONTEXT]));
     assert_eq!(code, Some(1));
     assert!(
@@ -1580,11 +1582,11 @@ fn lauf(c: &mut Command) -> (Option<i32>, String, String) {
     )
 }
 
-/// technik-robust-6: Die Erklärungszeile «Beruf offen nach «…»» (wie «Rolle erschlossen aus
-/// «…»») zeigt den Ausschnitt
-/// aus dem Prompt wie die Stelle in der Liste: Steuer- und Bidi-Zeichen als U+FFFD, den
-/// Tabulator als Leerzeichen. Die Regel kontext überspringt VT und FF als Leerraum
-/// zwischen Possessiv und Beruf; roh kämen sie beim Terminal an und verschöben die Zeilen.
+/// Die Erklärungszeile «Beruf offen nach «…»» (wie «Rolle erschlossen aus «…»») zeigt den
+/// Ausschnitt aus dem Prompt wie die Stelle in der Liste: Steuer- und Bidi-Zeichen als
+/// U+FFFD, den Tabulator als Leerzeichen. Die Regel kontext überspringt VT und FF als
+/// Leerraum zwischen Possessiv und Beruf; roh kämen sie beim Terminal an und verschöben
+/// die Zeilen.
 #[test]
 fn erschlossene_rolle_ohne_steuerzeichen() {
     for (trenner, gezeigt) in [("\u{0B}", "\u{FFFD}"), ("\u{0C}", "\u{FFFD}"), ("\t", " ")] {
@@ -1666,10 +1668,9 @@ const NUR_ASCII: &str =
 const MIT_UMLAUTEN: &str =
     "Ich bin Anwältin. Herr Hans Müller, AHV 756.1234.5678.97, ist arbeitsunfähig.";
 
-/// technik-code-2, technik-robust-4: UTF-16 ohne BOM ist bei reinem ASCII-Text gültiges
-/// UTF-8 mit einem Nullbyte nach jedem Zeichen. Bisher ergab das «Keine Funde» und Exit 0.
-/// Jetzt wird jede Eingabe mit dem Zeichen NUL abgewiesen, mit Exit 2, auch mit
-/// `--fail-on never` und auch als JSON.
+/// UTF-16 ohne BOM ist bei reinem ASCII-Text gültiges UTF-8 mit einem Nullbyte nach jedem
+/// Zeichen und ergäbe «Keine Funde» und Exit 0. Darum wird jede Eingabe mit dem Zeichen NUL
+/// abgewiesen, mit Exit 2, auch mit `--fail-on never` und auch als JSON.
 #[test]
 fn eingabe_mit_nul_wird_abgewiesen() {
     let o = Ordner::neu("nul");
@@ -1720,8 +1721,8 @@ fn eingabe_mit_nul_wird_abgewiesen() {
     );
 }
 
-/// technik-code-2: Das BOM von UTF-32LE (FF FE 00 00) beginnt wie das von UTF-16LE und
-/// wurde als UTF-16 gelesen. Beide UTF-32-BOMs werden jetzt vorher erkannt und abgewiesen.
+/// Das BOM von UTF-32LE (FF FE 00 00) beginnt wie das von UTF-16LE. Beide UTF-32-BOMs werden
+/// vorher erkannt und abgewiesen, damit UTF-32 nicht als UTF-16 gelesen wird.
 #[test]
 fn utf32_wird_abgewiesen() {
     let o = Ordner::neu("utf32");
@@ -1754,13 +1755,13 @@ const PS_RAT_DE: &str = "Windows PowerShell 5.1: vorher $OutputEncoding = [Text.
 const PS_RAT_EN: &str = "Windows PowerShell 5.1: first set $OutputEncoding = [Text.UTF8Encoding]::new($false) or pass the prompt as a file";
 
 /// So kommt [`MIT_UMLAUTEN`] aus Windows PowerShell 5.1 an, wenn `$OutputEncoding` auf der
-/// Vorgabe ASCII steht (technik-robust-4, nachgestellt mit `notizen/ps-pipe.ps1`).
+/// Vorgabe ASCII steht.
 const AUS_DER_ASCII_PIPE: &str =
     "Ich bin Anw?ltin. Herr Hans M?ller, AHV 756.1234.5678.97, ist arbeitsunf?hig.\r\n";
 
-/// technik-robust-4: Verdacht auf eine Pipe, die Umlaute zu «?» gemacht hat. Warnung auf
-/// stderr, Meldung unter der Zusammenfassung und im JSON; der Exit-Code bleibt der der
-/// Funde («Hans» und die AHV-Nummer, beide GELB).
+/// Verdacht auf eine Pipe, die Umlaute zu «?» gemacht hat. Warnung auf stderr, Meldung
+/// unter der Zusammenfassung und im JSON; der Exit-Code bleibt der der Funde («Hans» und
+/// die AHV-Nummer, beide GELB).
 #[test]
 fn verdacht_auf_ascii_pipe_wird_gemeldet() {
     let verdacht_de = "Eingabe nur in ASCII, aber mit «?» im Wort («Anw?ltin»): Vermutlich hat eine Pipe Umlaute und Akzente zu «?» gemacht; Funde können fehlen";
@@ -1869,8 +1870,8 @@ fn ersatzzeichen_werden_gemeldet() {
     );
 }
 
-/// technik-robust-3: Unsichtbare Formatzeichen, etwa das weiche Trennzeichen aus Word oder
-/// ein Leerzeichen ohne Breite aus einem PDF. Wortlisten und Nummern lesen über sie
+/// Unsichtbare Formatzeichen, etwa das weiche Trennzeichen aus Word oder ein Leerzeichen
+/// ohne Breite aus einem PDF. Wortlisten und Nummern lesen über sie
 /// hinweg; die Meldung unter der Zusammenfassung sagt, dass sie da sind. Auf stderr
 /// erscheint nichts, denn sie deuten nicht auf eine beschädigte Kodierung.
 #[test]
@@ -1932,9 +1933,9 @@ fn unsichtbare_formatzeichen_werden_gemeldet() {
     assert!(aus.contains(&format!("\n{KEINE_FUNDE}\n")), "{aus}");
 }
 
-/// technik-code-5, technik-robust-5: Schliesst der Empfänger die Pipe vorzeitig (`| head`,
-/// `Select-Object -First`), endet promptscan still mit dem Exit-Code der Funde. Bisher
-/// brach der JSON-Bericht mit einer Panik und Exit 101 ab.
+/// Schliesst der Empfänger die Pipe vorzeitig (`| head`, `Select-Object -First`), endet
+/// promptscan still mit dem Exit-Code der Funde, auch beim JSON-Bericht: keine Panik, kein
+/// Exit 101.
 #[test]
 fn geschlossene_pipe_behaelt_den_exit_code() {
     use std::io::Read;
@@ -1987,7 +1988,7 @@ fn geschlossene_pipe_behaelt_den_exit_code() {
     }
 }
 
-// --- Weiche Zeilenumbrüche (technik-code-1, technik-robust-2) -----------------------------
+// --- Weiche Zeilenumbrüche ----------------------------------------------------------------
 
 /// Prüft als JSON: Exit-Code, Bericht und die Funde kurz als «stufe regel «stelle»».
 fn funde_json(prompt: &str) -> (Option<i32>, Value, Vec<String>) {
@@ -2050,7 +2051,7 @@ fn weicher_umbruch_verbindet_den_geheimnis_kontext() {
         let (code, v, funde) = funde_json(prompt);
         assert_eq!(code, Some(1), "{prompt:?}: {funde:?}");
         assert_eq!(v["lage"]["herkunft"], "aus-text", "{prompt:?}");
-        // Seit Runde 1 ergeben Klientschaft und Vertretung «offen». Der weiche Umbruch
+        // Klientschaft und Vertretung ergeben «offen». Der weiche Umbruch
         // ändert die Rolle nicht gegenüber derselben Zeile ohne Umbruch.
         let einzeilig = prompt.lines().collect::<Vec<_>>().join(" ");
         let (_, v_einzeilig, _) = funde_json(&einzeilig);
@@ -2185,7 +2186,7 @@ fn weicher_umbruch_gegenbeispiele() {
             &[
                 "hinweis vermerk «VERTRAULICH»",
                 "gelb name «Erika Beispiel»",
-                // Seit Runde 1 (Art. 5 lit. c) ist «krank» eine Gesundheitsangabe.
+                // «krank» ist eine Gesundheitsangabe (Art. 5 lit. c).
                 "orange art5c-2 «krank»",
             ],
         ),

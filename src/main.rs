@@ -24,7 +24,7 @@ use promptscan::{Optionen, Rolle, RolleQuelle, Stufe, Ziel, katalog, pruefe};
 const BREITE: usize = 80;
 
 thread_local! {
-    /// Nur ASCII ausgeben (B10, [`ascii_gewuenscht`]). Gesetzt in [`lauf`]; gilt für Hilfe,
+    /// Nur ASCII ausgeben ([`ascii_gewuenscht`]). Gesetzt in [`lauf`]; gilt für Hilfe,
     /// Meldungen und `config`, und [`abschliessen`] schreibt danach jede Textausgabe. Je
     /// Thread, damit sich die Tests nicht gegenseitig stören.
     static NUR_ASCII: std::cell::Cell<bool> = const { std::cell::Cell::new(false) };
@@ -170,7 +170,7 @@ struct Vorpruefung {
     /// Der Wert von `--output`; gilt auch für die Hilfe.
     ausgabe: Option<PathBuf>,
     /// `--role` bzw. `--lang` steht nach dem Befehl. Nur dann schreibt `config` den Wert;
-    /// davor gilt die Option wie bei `rules` nur für diesen Aufruf (p5).
+    /// davor gilt die Option wie bei `rules` nur für diesen Aufruf.
     rolle_nach_befehl: bool,
     sprache_nach_befehl: bool,
 }
@@ -296,7 +296,7 @@ fn pfad_nb(pfad: &Path) -> String {
     nb(&pfad.display().to_string())
 }
 
-/// «Datei: PFAD» bzw. «File: PATH» am Ende der ersten Zeile einer Meldung (p7). Angabe und
+/// «Datei: PFAD» bzw. «File: PATH» am Ende der ersten Zeile einer Meldung. Angabe und
 /// Pfad halten zusammen; passen sie nicht mehr, stehen sie auf einer eigenen Zeile.
 fn datei_angabe(pfad: &Path, englisch: bool) -> String {
     format!(
@@ -308,7 +308,7 @@ fn datei_angabe(pfad: &Path, englisch: bool) -> String {
 
 /// Eine Meldung für stderr: «promptscan: » und die erste Zeile von `text` (das Problem),
 /// darunter jede weitere Zeile (Vorschlag, nächster Schritt) um 2 eingerückt. Alles ist
-/// auf 80 Spalten umgebrochen, auch die erste Zeile (p7); ein Wort, das allein zu lang ist
+/// auf 80 Spalten umgebrochen, auch die erste Zeile; ein Wort, das allein zu lang ist
 /// (ein Pfad), steht ungebrochen auf einer eigenen Zeile. Eine Meldung aus nur einer
 /// Zeile bleibt ungebrochen: So kommen die Meldungen zur Eingabe (`src/ausgabe.rs`,
 /// Abschnitt 1) und die Lesefehler genau wie dort beschrieben an, und ein Befehl in ihnen
@@ -509,7 +509,7 @@ fn konfigurationsort() -> Option<(PathBuf, OrtQuelle)> {
 struct Werte {
     role: Option<String>,
     lang: Option<String>,
-    /// Wird übergangen: Das Ziel gilt je Aufruf (recht-normen-4 c).
+    /// Wird übergangen: Das Ziel gilt je Aufruf.
     target: Option<String>,
 }
 
@@ -729,7 +729,7 @@ struct Angewandt {
     fehler: Vec<String>,
 }
 
-/// Wendet die Konfiguration an (B1, B11). Die Befehlszeile geht vor. Bei der Prüfung
+/// Wendet die Konfiguration an. Die Befehlszeile geht vor. Bei der Prüfung
 /// (`prueft`) bricht ein Fehler ab, der die Rolle betreffen könnte, wenn `--role` fehlt:
 /// Liefe die Prüfung weiter, fiele eine eingestellte Rolle still weg (ROT würde GELB). Ein
 /// falscher Wert, den die Befehlszeile übersteuert, und jeder Fehler bei `rules`,
@@ -850,8 +850,8 @@ fn konfiguration_anwenden(
     a
 }
 
-/// Warnung zu `target` in der Datei (B1). Sie sagt, wie sie verschwindet: `config` schreibt
-/// die Zeile nicht um (p6), man löscht sie selbst.
+/// Warnung zu `target` in der Datei. Sie sagt, wie sie verschwindet: `config` schreibt die
+/// Zeile nicht um, man löscht sie selbst.
 fn target_uebergangen(pfad: &Path, wert: &str, englisch: bool) -> String {
     let zeile = nb(&format!("target = \"{wert}\""));
     let text = if englisch {
@@ -904,7 +904,7 @@ fn kommentar_am_ende(zeile: &str) -> Option<&str> {
     None
 }
 
-/// Setzt `schluessel = "wert"` in den Text einer Konfigurationsdatei (p6): Die erste Zeile
+/// Setzt `schluessel = "wert"` in den Text einer Konfigurationsdatei: Die erste Zeile
 /// mit diesem Schlüssel vor der ersten Tabelle wird ersetzt, ein Kommentar an ihrem Ende
 /// bleibt; fehlt der Schlüssel, kommt eine Zeile ans Ende. Alle übrigen Zeilen bleiben, wie
 /// sie sind, samt Kommentaren und Zeilenenden (CRLF oder LF).
@@ -939,7 +939,7 @@ fn zeile_setzen(text: &str, schluessel: &str, wert: &str) -> String {
     aus
 }
 
-/// Was beim Schreiben in eine Datei schiefging (p8): eigene Texte für die häufigen Fälle,
+/// Was beim Schreiben in eine Datei schiefging: eigene Texte für die häufigen Fälle,
 /// sonst der Text des Systems in Klammern. Gibt den Grund (mit «: » oder « (» davor) und
 /// den nächsten Schritt zurück. `e` ist `None`, wenn der Pfad ein Ordner ist.
 fn schreibfehler_grund(e: Option<&io::Error>, englisch: bool) -> (String, String) {
@@ -1056,7 +1056,7 @@ fn datei_schreiben(pfad: &Path, bytes: &[u8], was: &str, englisch: bool) -> Resu
     }
 }
 
-/// Schreibt `role` und `lang` in die Datei (B2, p6): UTF-8 ohne BOM, legt den Ordner an.
+/// Schreibt `role` und `lang` in die Datei: UTF-8 ohne BOM, legt den Ordner an.
 /// Nur die Zeilen der beiden Schlüssel ändern sich; Kommentare, Reihenfolge und die übrigen
 /// Schlüssel bleiben ([`zeile_setzen`]). Ergibt das nicht genau die erwartete Tabelle, etwa
 /// bei einer Tabelle oder einem mehrzeiligen Wert, wird die Datei aus der Tabelle neu
@@ -1269,9 +1269,9 @@ fn gespeichert_text(
     )
 }
 
-/// `promptscan config` (B2): zeigt die Datei. Mit `--role` oder `--lang` nach «config»
-/// schreibt es sie (p5); vor «config» gelten die Optionen wie bei `rules` nur für diesen
-/// Aufruf, `--lang` also für die Sprache der Ansicht. Die Ausgabe ist immer Text;
+/// `promptscan config`: zeigt die Datei. Mit `--role` oder `--lang` nach «config» schreibt
+/// es sie; vor «config» gelten die Optionen wie bei `rules` nur für diesen Aufruf, `--lang`
+/// also für die Sprache der Ansicht. Die Ausgabe ist immer Text;
 /// `--format json` gilt hier nicht.
 fn befehl_config(
     k: &Konfig,
@@ -1427,7 +1427,7 @@ fn dekodieren(bytes: &[u8]) -> Result<String, Lesefehler> {
 }
 
 /// Liest die Prompt-Datei; Fehler zweizeilig, ohne Systemcode. Der Pfad steht am Ende der
-/// ersten Zeile, bei Platzmangel ganz auf der nächsten (p7).
+/// ersten Zeile, bei Platzmangel ganz auf der nächsten.
 fn datei_lesen(pfad: &Path, englisch: bool) -> Result<String, String> {
     let p = pfad_nb(pfad);
     if pfad.is_dir() {
@@ -1482,7 +1482,7 @@ fn datei_lesen(pfad: &Path, englisch: bool) -> Result<String, String> {
     dekodieren(&bytes).map_err(|e| format!("{p}: {}", e.meldung(englisch)))
 }
 
-/// Hinweis vor dem Einfügen (B5). Unter Windows endet die Eingabe nur, wenn Ctrl+Z am
+/// Hinweis vor dem Einfügen. Unter Windows endet die Eingabe nur, wenn Ctrl+Z am
 /// Anfang einer Zeile steht; darum zuerst Enter.
 fn einfuege_hinweis(windows: bool, englisch: bool) -> &'static str {
     match (windows, englisch) {
@@ -1526,7 +1526,7 @@ fn eingabe_lesen(cli: &Cli, englisch: bool) -> Result<String, String> {
 }
 
 /// Optionen von promptscan; stehen sie im Text von `-t` hinter einem geraden
-/// Anführungszeichen, hat die Shell sie verschluckt (B4).
+/// Anführungszeichen, hat die Shell sie verschluckt.
 const OPTIONEN: [&str; 13] = [
     "--role",
     "--target",
@@ -1546,7 +1546,7 @@ const OPTIONEN: [&str; 13] = [
 /// Endet der Text von `-t` auf ein gerades Anführungszeichen, gefolgt von einer Option
 /// von promptscan, gibt es den Rest ab dem Anführungszeichen zurück. So sieht es aus, wenn
 /// ein `\` vor dem schliessenden `"` dieses schützt und die Shell (Windows PowerShell 5.1,
-/// cmd) alle folgenden Optionen in den Text zieht (fremde-geraete-1 c).
+/// cmd) alle folgenden Optionen in den Text zieht.
 fn verschluckte_optionen(text: &str) -> Option<&str> {
     for (i, _) in text.match_indices('"') {
         let rest = &text[i + 1..];
@@ -1580,7 +1580,7 @@ fn verschluckte_optionen_text(rest: &str, englisch: bool) -> String {
     }
 }
 
-/// Hinweis bei einem Fehler der Befehlszeile mit `-t` (fremde-geraete-1).
+/// Hinweis bei einem Fehler der Befehlszeile mit `-t`.
 fn anfuehrungszeichen_hinweis(englisch: bool) -> &'static str {
     if englisch {
         "Straight quotes (\") in the text after -t? Windows PowerShell 5.1 and cmd then split the text. Pass the prompt as a file or paste it; in PowerShell also: promptscan\u{A0}--%\u{A0}-t\u{A0}\"...\u{A0}\\\"...\\\"\u{A0}...\""
@@ -1589,9 +1589,9 @@ fn anfuehrungszeichen_hinweis(englisch: bool) -> &'static str {
     }
 }
 
-/// -t, eine Datei und ein Befehl schliessen sich aus (B3). Hat die «Datei» Leerzeichen,
-/// ist sie wohl ein Stück des Textes von -t, das die Shell an geraden Anführungszeichen
-/// abgetrennt hat (p9); dann sagt das die erste Zeile.
+/// -t, eine Datei und ein Befehl schliessen sich aus. Hat die «Datei» Leerzeichen, ist sie
+/// wohl ein Stück des Textes von -t, das die Shell an geraden Anführungszeichen abgetrennt
+/// hat; dann sagt das die erste Zeile.
 fn eingabe_konflikt(cli: &Cli, englisch: bool) -> Option<String> {
     let befehl = cli.befehl.as_ref().map(Befehl::name);
     let datei = cli.datei.as_ref().map(|d| d.display().to_string());
@@ -1642,7 +1642,7 @@ fn eingabe_konflikt(cli: &Cli, englisch: bool) -> Option<String> {
 // Darstellung: Breite, ASCII, Farben, Konsole
 // ---------------------------------------------------------------------------------------
 
-/// Breite für die Ausgabe (B10): bei Umleitung oder `--output` 80; sonst die Breite des
+/// Breite für die Ausgabe: bei Umleitung oder `--output` 80; sonst die Breite des
 /// Konsolenfensters, sonst `COLUMNS`, sonst 80; nie unter 60.
 fn breite_bestimmen(umgeleitet: bool, konsole: Option<usize>, columns: Option<&str>) -> usize {
     if umgeleitet {
@@ -1655,7 +1655,7 @@ fn breite_bestimmen(umgeleitet: bool, konsole: Option<usize>, columns: Option<&s
         .max(60)
 }
 
-/// ASCII-Rückfall ohne `--ascii` (B10): nur ausserhalb von Windows, wenn die massgebende
+/// ASCII-Rückfall ohne `--ascii`: nur ausserhalb von Windows, wenn die massgebende
 /// Locale-Variable (`LC_ALL` vor `LC_CTYPE` vor `LANG`, die erste nicht leere) gesetzt ist
 /// und kein UTF-8 nennt, etwa `C` oder `de_CH.ISO-8859-1`.
 fn ascii_aus_umgebung(
@@ -1680,7 +1680,7 @@ fn ascii_aus_umgebung(
     }
 }
 
-/// Nur ASCII (B10)? Mit `--ascii` immer; sonst nach der Locale ([`ascii_aus_umgebung`]),
+/// Nur ASCII? Mit `--ascii` immer; sonst nach der Locale ([`ascii_aus_umgebung`]),
 /// ausser die Ausgabe geht mit `--output` in eine Datei (UTF-8 mit BOM).
 fn ascii_gewuenscht(option: bool, in_datei: bool) -> bool {
     let umgebung = |n: &str| std::env::var(n).ok();
@@ -1751,7 +1751,7 @@ fn zwei_spalten(c: char) -> bool {
     )
 }
 
-/// Text in ASCII (B10, p1). Zwei Arten:
+/// Text in ASCII. Zwei Arten:
 /// - lesbar (`gleich_breit` falsch), für eigene Texte vor dem Umbruch: ä → ae, « → ",
 ///   … → ...; das geschützte Leerzeichen U+00A0 bleibt für den Umbruch stehen.
 /// - `gleich_breit`, das Sicherheitsnetz für Bericht, `rules` und `explain`: Jedes Zeichen
@@ -1824,7 +1824,7 @@ fn nur_16_farben() -> bool {
         && colorterm != "24bit"
 }
 
-/// Am Ende auf Enter warten (B6)? Nur unter Windows, wenn promptscan allein an seiner
+/// Am Ende auf Enter warten? Nur unter Windows, wenn promptscan allein an seiner
 /// Konsole hängt und Ein- und Ausgabe die Konsole sind: So sieht ein Start per
 /// Doppelklick aus, und die Konsole schlösse sich mit dem letzten Prozess. Nie bei
 /// Umleitung oder Pipe, nie in einer Shell (dann hängt auch die Shell an der Konsole).
@@ -1842,7 +1842,7 @@ fn schliesst(nach: std::time::Duration) -> bool {
     nach >= SCHONFRIST
 }
 
-/// Wartet auf Enter (B6). Ein Enter in der [`SCHONFRIST`] zählt nicht; Ctrl+Z oder ein
+/// Wartet auf Enter. Ein Enter in der [`SCHONFRIST`] zählt nicht; Ctrl+Z oder ein
 /// Lesefehler beenden sofort.
 fn auf_enter_warten(englisch: bool) {
     let _ = write!(
@@ -1958,7 +1958,7 @@ fn darstellung(cli: &Cli, englisch: bool) -> Darstellung {
 // Ausgabe
 // ---------------------------------------------------------------------------------------
 
-/// JSON in reinem ASCII (B7): jedes andere Zeichen als `\uXXXX`, ausserhalb der BMP als
+/// JSON in reinem ASCII: jedes andere Zeichen als `\uXXXX`, ausserhalb der BMP als
 /// Ersatzpaar. Gültig, weil Zeichen ausser ASCII in JSON nur in Zeichenketten stehen; das
 /// geparste JSON bleibt gleich. So übersteht es jede Codepage und jede Shell.
 fn json_ascii(json: &str) -> String {
@@ -2009,7 +2009,7 @@ fn datei_inhalt(aus: &str, json: bool) -> Vec<u8> {
 /// Exit-Code nach dem Schreiben. Hat der Empfänger die Pipe geschlossen (`| head`,
 /// `Select-Object -First`), will er nichts mehr lesen: kein Fehler, der Exit-Code bleibt
 /// `code`, der Code der Funde. Jeder andere Schreibfehler ergibt 2 und eine zweizeilige
-/// Meldung ([`schreibfehler_grund`], p8).
+/// Meldung ([`schreibfehler_grund`]).
 fn nach_dem_schreiben(ergebnis: io::Result<()>, code: u8, englisch: bool) -> (u8, Option<String>) {
     match ergebnis {
         Ok(()) => (code, None),
@@ -2078,22 +2078,17 @@ fn abschliessen(aus: &str, json: bool, code: u8, englisch: bool, datei: Option<&
 // Hilfe
 // ---------------------------------------------------------------------------------------
 
-/// Rechtstext C1 (Hilfe zu -t), Endfassung (Fassung der Rechtsprüfung):
-/// S/runde2/rechtstexte/rechtstexte.md vom 06.11.2026, Abschnitt «C1-hilfe-t». Die
-/// geschützten Leerzeichen halten «echo … |» beim Umbruch zusammen.
-const C1_DE: &str = "Text direkt prüfen. Er steht dann in der Befehlszeile und kann in den Shell-Verlauf und in Prozessprotokolle gelangen, ebenso bei «echo\u{A0}…\u{A0}|». Vertrauliches als Datei oder durch Einfügen prüfen.";
-const C1_EN: &str = "Check text directly. It then appears in the command line and can end up in the shell history and process logs, as with «echo\u{A0}…\u{A0}|». Check confidential text as a file or by pasting.";
+/// Hilfe zu -t. Die geschützten Leerzeichen halten «echo … |» beim Umbruch zusammen.
+const HILFE_T_DE: &str = "Text direkt prüfen. Er steht dann in der Befehlszeile und kann in den Shell-Verlauf und in Prozessprotokolle gelangen, ebenso bei «echo\u{A0}…\u{A0}|». Vertrauliches als Datei oder durch Einfügen prüfen.";
+const HILFE_T_EN: &str = "Check text directly. It then appears in the command line and can end up in the shell history and process logs, as with «echo\u{A0}…\u{A0}|». Check confidential text as a file or by pasting.";
 
-/// Rechtstext C3 (Hilfsmittel-Zeile), Endfassung (Fassung der Leserin), mit dem Umbruch des
-/// Rechtstexts: S/runde2/rechtstexte/rechtstexte.md, Abschnitt «C3-hinweis-hilfsmittel».
-const C3_DE: &str = "Hilfsmittel, keine Rechtsberatung · erkennt Identifikatoren und\nWörter aus Listen, nicht den Zusammenhang · Güte noch nicht gemessen";
-const C3_EN: &str = "An aid, not legal advice · detects identifiers and listed words,\nnot the context · quality not yet measured";
+/// Die Hilfsmittel-Zeile am Ende der Hilfe, mit festem Umbruch.
+const VORBEHALT_DE: &str = "Hilfsmittel, keine Rechtsberatung · erkennt Identifikatoren und\nWörter aus Listen, nicht den Zusammenhang · Güte noch nicht gemessen";
+const VORBEHALT_EN: &str = "An aid, not legal advice · detects identifiers and listed words,\nnot the context · quality not yet measured";
 
-/// Rechtstext zu `--target` in der Hilfe, Endfassung (Fassung der Leserin):
-/// S/runde2/rechtstexte/rechtstexte.md, «B3-target-local», «--help, Option --target».
-/// Ohne den letzten Halbsatz («in der Konfigurationsdatei gesetzt, gilt es für jeden
-/// Prompt»): Er entfällt laut Rechtstext, wenn `target` nicht aus der Datei kommt, und
-/// promptscan übergeht `target` in der Datei (B1). Danach Vorgabe und Geltung (B9, B1).
+/// Text zu `--target` in der Hilfe. Ohne den letzten Halbsatz («in der Konfigurationsdatei
+/// gesetzt, gilt es für jeden Prompt»): Er gilt nur für ein `target` aus der Datei, und
+/// promptscan übergeht `target` in der Datei. Danach Vorgabe und Geltung.
 const TARGET_DE: &str = "Wohin der Prompt geht; local nur, wenn das Modell auf diesem Rechner läuft, ohne Synchronisierung in eine Cloud. Vorgabe cloud; gilt je Aufruf.";
 const TARGET_EN: &str = "Where the prompt goes; local only if the model runs on this computer, without syncing to a cloud. Default cloud; applies per call.";
 
@@ -2124,8 +2119,8 @@ fn absatz(aus: &mut String, text: &str, einzug: usize) {
     }
 }
 
-/// Die Hilfe (B9): Einfügen, Datei, -t mit C1, Befehle, Stufen, Optionen, Konfiguration,
-/// Exit-Codes und C3; höchstens 80 Spalten.
+/// Die Hilfe: Einfügen, Datei, -t mit dem Hinweis zum Shell-Verlauf, Befehle, Stufen,
+/// Optionen, Konfiguration, Exit-Codes und die Hilfsmittel-Zeile; höchstens 80 Spalten.
 fn hilfe_text(englisch: bool) -> String {
     const S: usize = 28;
     let windows = cfg!(windows);
@@ -2154,7 +2149,7 @@ fn hilfe_text(englisch: bool) -> String {
             "check a file, UTF-8 or UTF-16 with BOM",
             S,
         );
-        zweispaltig(&mut aus, "promptscan -t \"TEXT\"", C1_EN, S);
+        zweispaltig(&mut aus, "promptscan -t \"TEXT\"", HILFE_T_EN, S);
         zweispaltig(
             &mut aus,
             "promptscan rules",
@@ -2274,7 +2269,7 @@ fn hilfe_text(englisch: bool) -> String {
             0,
         );
         aus.push('\n');
-        aus.push_str(&ascii_wenn_verlangt(C3_EN));
+        aus.push_str(&ascii_wenn_verlangt(VORBEHALT_EN));
     } else {
         absatz(
             &mut aus,
@@ -2298,7 +2293,7 @@ fn hilfe_text(englisch: bool) -> String {
             "Datei prüfen, UTF-8 oder UTF-16 mit BOM",
             S,
         );
-        zweispaltig(&mut aus, "promptscan -t \"TEXT\"", C1_DE, S);
+        zweispaltig(&mut aus, "promptscan -t \"TEXT\"", HILFE_T_DE, S);
         zweispaltig(
             &mut aus,
             "promptscan rules",
@@ -2418,13 +2413,13 @@ fn hilfe_text(englisch: bool) -> String {
             0,
         );
         aus.push('\n');
-        aus.push_str(&ascii_wenn_verlangt(C3_DE));
+        aus.push_str(&ascii_wenn_verlangt(VORBEHALT_DE));
     }
     aus.push('\n');
     aus.replace('\u{A0}', " ")
 }
 
-/// Die Hilfe auf stdout oder mit `--output` in die Datei (p14), Exit-Code 0, auch wenn der
+/// Die Hilfe auf stdout oder mit `--output` in die Datei, Exit-Code 0, auch wenn der
 /// Empfänger die Pipe schliesst.
 fn hilfe_ausgeben(englisch: bool, datei: Option<&Path>) -> ExitCode {
     abschliessen(&hilfe_text(englisch), false, 0, englisch, datei)
@@ -2451,7 +2446,7 @@ fn kontext(e: &clap::Error, art: ContextKind) -> Option<String> {
     }
 }
 
-/// Der nächste Schritt, wenn ein Befehl ein Argument zu viel bekommt (p9). Die Befehle
+/// Der nächste Schritt, wenn ein Befehl ein Argument zu viel bekommt. Die Befehle
 /// halten beim Umbruch zusammen (U+00A0).
 fn befehl_schritt(befehl: &str, englisch: bool) -> &'static str {
     match (befehl, englisch) {
@@ -2482,8 +2477,8 @@ fn befehl_schritt(befehl: &str, englisch: bool) -> &'static str {
     }
 }
 
-/// Deutsche und andere naheliegende Wörter für die Werte der Optionen (p9): «--fail-on
-/// rot» meint «--fail-on red».
+/// Deutsche und andere naheliegende Wörter für die Werte der Optionen: «--fail-on rot»
+/// meint «--fail-on red».
 const WERTWOERTER: [(&str, &str, &str); 8] = [
     ("--fail-on", "rot", "red"),
     ("--fail-on", "gelb", "yellow"),
@@ -2495,8 +2490,8 @@ const WERTWOERTER: [(&str, &str, &str); 8] = [
     ("--target", "lokal", "local"),
 ];
 
-/// Die Meldung zu einem Fehler von clap, deutsch oder englisch, zweizeilig (B9). Ein
-/// Vorschlag steht auf einer eigenen Zeile (p7).
+/// Die Meldung zu einem Fehler von clap, deutsch oder englisch, zweizeilig. Ein Vorschlag
+/// steht auf einer eigenen Zeile.
 fn clap_fehler_text(e: &clap::Error, englisch: bool, vor: &Vorpruefung) -> String {
     let arg = kontext(e, ContextKind::InvalidArg).unwrap_or_default();
     // «--format <FORMAT>» → «--format»
@@ -2979,8 +2974,8 @@ mod tests {
         }
     }
 
-    /// p8: Ein Schreibfehler auf stdout gibt 2 und eine zweizeilige Meldung mit eigenem
-    /// Grund; nur ein unbekannter Fehler bringt den Text des Systems, in Klammern.
+    /// Ein Schreibfehler auf stdout gibt 2 und eine zweizeilige Meldung mit eigenem Grund;
+    /// nur ein unbekannter Fehler bringt den Text des Systems, in Klammern.
     #[test]
     fn anderer_schreibfehler_gibt_2() {
         for (art, de, en) in [
@@ -3018,8 +3013,8 @@ mod tests {
         assert_eq!(nach_dem_schreiben(Ok(()), 1, false), (1, None));
     }
 
-    /// p8: Fehler beim Schreiben einer Datei: eigene Gründe, ein Ordner als Ziel, der Pfad
-    /// am Ende der ersten Zeile.
+    /// Fehler beim Schreiben einer Datei: eigene Gründe, ein Ordner als Ziel, der Pfad am
+    /// Ende der ersten Zeile.
     #[test]
     fn schreibfehler_in_eine_datei() {
         let (grund, schritt) =
@@ -3132,15 +3127,15 @@ mod tests {
             Some(PathBuf::from("x.txt"))
         );
         assert!(!vorpruefen(&args(&["-t", "--ascii"])).ascii);
-        // p5: --role und --lang nach «config» schreiben, davor nicht.
+        // --role und --lang nach «config» schreiben, davor nicht.
         let v = vorpruefen(&args(&["--lang", "en", "config", "--role", "lawyer"]));
         assert!(v.rolle_nach_befehl && !v.sprache_nach_befehl);
         let v = vorpruefen(&args(&["--role=lawyer", "config", "--lang=en"]));
         assert!(!v.rolle_nach_befehl && v.sprache_nach_befehl);
     }
 
-    /// p7: Auch die erste Zeile wird umgebrochen; ein langer Pfad steht ganz auf einer
-    /// eigenen Zeile.
+    /// Auch die erste Zeile wird umgebrochen; ein langer Pfad steht ganz auf einer eigenen
+    /// Zeile.
     #[test]
     fn erste_zeile_umgebrochen() {
         let pfad = Path::new(
@@ -3194,7 +3189,7 @@ mod tests {
         }
     }
 
-    /// p1: Umschrift in ASCII, lesbar und gleich breit.
+    /// Umschrift in ASCII, lesbar und gleich breit.
     #[test]
     fn umschrift_in_ascii() {
         let text = "Zürich · «Müller» – Straße … Äpfel │ é ç œ 中 a\u{308} €\u{A0}5";
@@ -3215,7 +3210,7 @@ mod tests {
         assert_eq!(nach_ascii("schon ASCII ^^^", true), "schon ASCII ^^^");
     }
 
-    /// p1: Mit --ascii sind Hilfe, Meldungen und config in ASCII und schmal.
+    /// Mit --ascii sind Hilfe, Meldungen und config in ASCII und schmal.
     #[test]
     fn ascii_fuer_eigene_texte() {
         NUR_ASCII.with(|a| a.set(true));
@@ -3248,7 +3243,7 @@ mod tests {
         NUR_ASCII.with(|a| a.set(false));
     }
 
-    /// p6: Nur die Zeile des Schlüssels ändert sich; Kommentare und CRLF bleiben.
+    /// Nur die Zeile des Schlüssels ändert sich; Kommentare und CRLF bleiben.
     #[test]
     fn zeile_setzen_behaelt_kommentare() {
         let alt = "# Rolle für die Kanzlei\nrole = \"doctor\" # Anwältin\ntarget = \"local\"\n";
@@ -3290,8 +3285,8 @@ mod tests {
         );
     }
 
-    /// p6: Wo das zeilenweise Ersetzen nicht genau die erwarteten Werte ergibt (ein Wert
-    /// über mehrere Zeilen) oder die Datei unlesbar ist, wird sie neu geschrieben, mit einer
+    /// Wo das zeilenweise Ersetzen nicht genau die erwarteten Werte ergibt (ein Wert über
+    /// mehrere Zeilen) oder die Datei unlesbar ist, wird sie neu geschrieben, mit einer
     /// Warnung, die das sagt.
     #[test]
     fn konfiguration_neu_geschrieben_mit_warnung() {
@@ -3564,7 +3559,7 @@ mod tests {
         );
     }
 
-    /// B11: Die Herkunft der Rolle. B1: Fehler sperren nur die Prüfung ohne --role.
+    /// Die Herkunft der Rolle; Fehler sperren nur die Prüfung ohne --role.
     #[test]
     fn konfiguration_anwenden_regeln() {
         let mit_rolle = |r: &str| {
@@ -3650,12 +3645,12 @@ mod tests {
             assert!(a.fehler.is_empty());
             let w = a.warnungen[0].replace('\u{A0}', " ");
             assert!(w.contains("target = \"local\" wird übergangen"), "{w}");
-            // p6: Die Warnung sagt, wie sie verschwindet.
+            // Die Warnung sagt, wie sie verschwindet.
             assert!(w.contains("Die Zeile target in der Datei löschen"), "{w}");
         }
     }
 
-    /// B9: Hilfe in beiden Sprachen, höchstens 80 Spalten, mit allem, was B9 verlangt.
+    /// Hilfe in beiden Sprachen, höchstens 80 Spalten, mit allem, was sie enthalten muss.
     #[test]
     fn hilfe_vollstaendig_und_schmal() {
         for englisch in [false, true] {
@@ -3665,9 +3660,10 @@ mod tests {
             }
             assert!(!h.contains('\u{A0}'));
             let einzeilig = h.split_whitespace().collect::<Vec<_>>().join(" ");
-            let c1 = if englisch { C1_EN } else { C1_DE }.replace('\u{A0}', " ");
-            assert!(einzeilig.contains(&c1), "C1 fehlt");
-            assert!(h.contains(if englisch { C3_EN } else { C3_DE }), "C3 fehlt");
+            let hilfe_t = if englisch { HILFE_T_EN } else { HILFE_T_DE }.replace('\u{A0}', " ");
+            assert!(einzeilig.contains(&hilfe_t), "Hilfe zu -t fehlt");
+            let vorbehalt = if englisch { VORBEHALT_EN } else { VORBEHALT_DE };
+            assert!(h.contains(vorbehalt), "Hilfsmittel-Zeile fehlt");
             for r in Rolle::ALLE {
                 assert!(einzeilig.contains(r.name()), "{}", r.name());
             }
@@ -3688,7 +3684,7 @@ mod tests {
             .split_whitespace()
             .collect::<Vec<_>>()
             .join(" ");
-        // Der Rechtstext zu --target (B3) steht wortgleich in der Hilfe, ohne den Halbsatz
+        // Der Text zu --target steht wortgleich in der Hilfe, ohne den Halbsatz
         // zur Konfigurationsdatei: target aus der Datei wird übergangen.
         for muss in [
             "Deutsch, Französisch und Italienisch",
@@ -3749,7 +3745,7 @@ mod tests {
         );
     }
 
-    /// B5: Unter Windows endet die Eingabe nur mit Ctrl+Z am Zeilenanfang.
+    /// Unter Windows endet die Eingabe nur mit Ctrl+Z am Zeilenanfang.
     #[test]
     fn einfuege_hinweis_je_system() {
         assert_eq!(

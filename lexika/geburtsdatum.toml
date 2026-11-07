@@ -15,14 +15,13 @@
 # Formen sind Flexionsformen (Genus, Numerus) bzw. die Elision des Artikels.
 #
 # Ausnahme: die Kurzformen der Feldnamen aus Personalblättern, Arztberichten und Formularen
-# (Befund technik-6, Entscheid C4) im Abschnitt «Feldnamen ohne eigene Fundstelle». Für
-# «Geb.-Datum», «Geb. Datum», «Geb.-Dat.», «date de naiss.», «date naiss.» und «data
-# nascita» fand sich weder auf Fedlex noch im Wörterbuch eine Stelle, die die Kurzform
-# trägt (gesucht: ZStV, VAwG, AHVV, KVV, notizen/nb/fedlex-geb.txt der Arbeitskopie Paket C).
+# im Abschnitt «Feldnamen ohne eigene Fundstelle». Für «Geb.-Datum», «Geb. Datum»,
+# «Geb.-Dat.», «date de naiss.», «date naiss.» und «data nascita» fand sich weder auf Fedlex
+# noch im Wörterbuch eine Stelle, die die Kurzform trägt (gesucht: ZStV, VAwG, AHVV, KVV).
 # Die Einträge zitieren darum das Wörterbuch zum gekürzten Wort und sagen in der Notiz,
-# dass die Kurzform selbst ohne Fundstelle ist (Prüferprobleme c-belege-p1, c-erkennung-p7).
-# Duden führt «geb.» als «Kurz für geboren», «Dat.» nur als Kürzel für «Dativ». Andere
-# Feldnamen («GebDat», «DOB») stehen nicht in der Liste.
+# dass die Kurzform selbst ohne Fundstelle ist. Duden führt «geb.» als «Kurz für geboren»,
+# «Dat.» nur als Kürzel für «Dativ». Andere Feldnamen («GebDat», «DOB») stehen nicht in der
+# Liste.
 
 # --- Auslöser ---------------------------------------------------------------------------
 
@@ -58,7 +57,7 @@ fassung = "2025-06-01"
 url = "https://www.fedlex.admin.ch/eli/cc/2004/362/it#art_15_a"
 merkmal = "nomen"
 
-# --- Feldnamen ohne eigene Fundstelle (Entscheid C4) ------------------------------------
+# --- Feldnamen ohne eigene Fundstelle ---------------------------------------------------
 
 [[eintrag]]
 begriff = "Geb.-Datum"
@@ -69,7 +68,7 @@ quelle = "Duden online, «geb.»: «Kurz für geboren»; Kurzform von «Geburtsd
 fassung = "2026-11-07"
 url = "https://www.duden.de/rechtschreibung/geb__geboren"
 merkmal = "nomen"
-notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Duden führen «Geb.-Datum» oder «Geb.-Dat.»; Duden führt «Dat.» nur als Kürzel für «Dativ». In der Liste, weil Entscheid C4 die Feldnamen verlangt; der Eigentümer entscheidet, ob sie bleiben (Prüferprobleme c-belege-p1, c-erkennung-p7)."
+notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Duden führen «Geb.-Datum» oder «Geb.-Dat.»; Duden führt «Dat.» nur als Kürzel für «Dativ». In der Liste als Feldname aus Personalblättern, Arztberichten und Formularen."
 
 [[eintrag]]
 begriff = "date de naiss."
@@ -80,7 +79,7 @@ quelle = "Larousse, «naissance», 1.: «Commencement de la vie indépendante po
 fassung = "2026-11-07"
 url = "https://www.larousse.fr/dictionnaires/francais/naissance"
 merkmal = "nomen"
-notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Larousse führen «naiss.». In der Liste, weil Entscheid C4 die Feldnamen verlangt; der Eigentümer entscheidet, ob sie bleiben (Prüferprobleme c-belege-p1, c-erkennung-p7)."
+notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Larousse führen «naiss.». In der Liste als Feldname aus Personalblättern, Arztberichten und Formularen."
 
 [[eintrag]]
 begriff = "data nascita"
@@ -90,7 +89,7 @@ quelle = "Treccani, «nascita», 1.: «Il nascere, il venire al mondo di un esse
 fassung = "2026-11-07"
 url = "https://www.treccani.it/vocabolario/nascita/"
 merkmal = "nomen"
-notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Treccani führen «data nascita» ohne «di». In der Liste, weil Entscheid C4 die Feldnamen verlangt; der Eigentümer entscheidet, ob sie bleiben (Prüferprobleme c-belege-p1, c-erkennung-p7)."
+notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Treccani führen «data nascita» ohne «di». In der Liste als Feldname aus Personalblättern, Arztberichten und Formularen."
 
 [[eintrag]]
 begriff = "geboren"
@@ -230,7 +229,7 @@ quelle = "SR 101 Art. 8 Abs. 2"
 fassung = "2024-03-03"
 url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
 merkmal = "feldzusatz"
-notiz = "«… wegen der Herkunft, der Rasse, des Geschlechts, des Alters, der Sprache …»: das Lebensalter, dieselbe Stelle wie «âge» und «età» (Prüferproblem c-belege-p4; vorher Art. 41 Abs. 2, wo «Alter» die Lebensphase meint). Nur nach «/» direkt hinter einem Nomen: «Geburtsdatum/Alter: 12.03.1985 (40)» (Befund technik-6)."
+notiz = "«… wegen der Herkunft, der Rasse, des Geschlechts, des Alters, der Sprache …»: das Lebensalter, dieselbe Stelle wie «âge» und «età» (nicht Art. 41 Abs. 2, wo «Alter» die Lebensphase meint). Nur nach «/» direkt hinter einem Nomen: «Geburtsdatum/Alter: 12.03.1985 (40)»."
 
 [[eintrag]]
 begriff = "âge"

@@ -321,27 +321,27 @@ const SP_TEXT: usize = 10;
 /// Werte einer Gruppe stehen ab Spalte 25, davor die Art (Name, Adresse …).
 const SP_WERT: usize = 24;
 
-/// Untergrenze der Breite (Entscheid A2): Schmalere Terminals bekommen 60 Spalten.
+/// Untergrenze der Breite: Schmalere Terminals bekommen 60 Spalten.
 pub const MIN_BREITE: usize = 60;
 
 /// Breite, wenn [`Darstellung::breite`] nicht gesetzt ist (0).
 const VORGABE_BREITE: usize = 80;
 
 /// Bis zu so vielen Zeilen zeigt die Zeilenansicht keine Zeilennummern, und die Gruppen
-/// nennen keine Zeilen (Entscheid A5).
+/// nennen keine Zeilen.
 pub const ZEILEN_OHNE_NUMMER: usize = 10;
 
-/// Die Kopfzeile beginnt eine zweite Zeile, wenn sie länger würde (Rechtstext A1).
+/// Die Kopfzeile beginnt eine zweite Zeile, wenn sie länger würde.
 const KOPF_BREITE: usize = 70;
 
-/// Länger zeigt die Kopfzeile ein auslösendes Wort nicht; danach «…» (Rechtstext A1).
+/// Länger zeigt die Kopfzeile ein auslösendes Wort nicht; danach «…».
 const KOPF_WORT: usize = 20;
 
 /// So viele Regeln nennt die Zeile «Mehr» höchstens, nach dem Befehl für die Stufe.
 const MEHR_REGELN: usize = 3;
 
-// Wortlaute des Berichts (Rechtstexte A1 bis A7, B3, B4). Sie stehen beisammen, damit die
-// Endfassung der Rechtstexte sie Zeile für Zeile ersetzen kann.
+// Wortlaute des Berichts. Sie stehen beisammen, damit sie sich Zeile für Zeile ersetzen
+// lassen.
 
 const LOKAL_GEPRUEFT: Txt = Txt::neu("Lokal geprüft", "Checked locally");
 const ROLLE: Txt = Txt::neu("Rolle", "Role");
@@ -377,6 +377,14 @@ const OHNE_IDENTIFIKATOR: Txt = Txt::neu(
     "Personenbezug, aber kein direkter Identifikator im Prompt:",
     "Reference to a person, but no direct identifier in the prompt:",
 );
+/// Zwischenzeile vor den Kategorien ohne Identifikator; darunter «Ziff. N» wie bei ORANGE,
+/// damit die Ziffer nie ohne ihr Zitat steht.
+const KATEGORIE_NACH: Txt = Txt::neu("Kategorie nach", "Category under");
+/// Der Hinweis der Regel fundstellen in der Gruppe; die Handlung steht unter «Klären».
+const FUNDSTELLEN_GRUND: Txt = Txt::neu(
+    "Sprachmodelle erfinden Urteile.",
+    "Language models invent judgments.",
+);
 
 const TITEL_ROT: Txt = Txt::neu(
     "Strafbewehrte Geheimhaltungspflicht",
@@ -390,7 +398,7 @@ const TITEL_LOKAL: Txt = Txt::neu(
     "Läuft das Modell lokal: keine Bekanntgabe",
     "If the model runs locally: no disclosure",
 );
-/// Rechtstext B3, Ergebnis, wenn in der Cloud ein Fund ROT wäre.
+/// Ergebnis, wenn in der Cloud ein Fund ROT wäre.
 const TITEL_LOKAL_ROT: Txt = Txt::neu(
     "Läuft das Modell lokal: keine Bekanntgabe, kein Offenbaren",
     "If the model runs locally: no disclosure of data or secrets",
@@ -400,7 +408,7 @@ const KEINE_FUNDE: Txt = Txt::neu(
     "Keine Funde in den geprüften Mustern",
     "No findings in the patterns checked",
 );
-/// Rechtstext A7, zwei Absätze unter «Beachten».
+/// Zwei Absätze unter «Beachten».
 const BLINDER_FLECK: Txt = Txt::neu(
     "Ob der Zusammenhang eine Person erkennbar macht und ob der Text Geschäftsgeheimnisse enthält, prüft promptscan nicht.",
     "promptscan does not check whether the context makes a person identifiable or whether the text contains trade secrets.",
@@ -411,7 +419,9 @@ const WAS_GEPRUEFT: Txt = Txt::neu(
 );
 
 const ERGEBNIS: Txt = Txt::neu("Ergebnis", "Result");
-const EINGABE: Txt = Txt::neu("Eingabe", "Input");
+/// Die Meldungen zur Eingabe stehen ohne Etikett direkt unter «Ergebnis»: Sie beginnen
+/// selbst mit «Eingabe …».
+const OHNE_ETIKETT: Txt = Txt::neu("", "");
 const KLAEREN: Txt = Txt::neu("Klären", "Clarify");
 const BEACHTEN: Txt = Txt::neu("Beachten", "Caveat");
 const MEHR: Txt = Txt::neu("Mehr", "More");
@@ -424,12 +434,12 @@ const KLAEREN_ORANGE: Txt = Txt::neu(
     "Braucht die KI diese Angaben? Nutzt der Anbieter sie nur in Ihrem Auftrag oder auch für eigene Zwecke, etwa zum Training (Art. 9 DSG)?",
     "Does the AI need these details? Does the provider use them only on your behalf or also for its own purposes, e.g. training (Art. 9 DSG)?",
 );
-/// Rechtstext A5, Art. 321 StGB, Rollen nach Ziff. 1 Abs. 1.
+/// Art. 321 StGB, Rollen nach Ziff. 1 Abs. 1.
 const KLAEREN_321: Txt = Txt::neu(
     "Braucht die KI diese Angaben? Wenn ja: Liegt eine Einwilligung oder schriftliche Bewilligung vor (Art. 321 Ziff. 2 StGB)? Ist der Anbieter Ihre Hilfsperson (Art. 321 Ziff. 1 StGB)?",
     "Does the AI need these details? If so: is there consent or written authorisation (Art. 321 Ziff. 2 StGB)? Is the provider your assistant (Art. 321 Ziff. 1 StGB)?",
 );
-/// Rechtstext A5, Studierende: ohne die Frage nach der Hilfsperson, die Art. 321 Ziff. 1
+/// Studierende: ohne die Frage nach der Hilfsperson, die Art. 321 Ziff. 1
 /// Abs. 2 StGB nicht kennt.
 const KLAEREN_321_STUDIERENDE: Txt = Txt::neu(
     "Braucht die KI diese Angaben? Wenn ja: Liegt eine Einwilligung oder schriftliche Bewilligung vor (Art. 321 Ziff. 2 StGB)?",
@@ -491,13 +501,12 @@ const KLAEREN_AHV_SAMMLUNG: Txt = Txt::neu(
     "Dient die Liste der AHV, etwa der Abrechnung mit der Ausgleichskasse? Sonst: Dürfen Sie die AHV-Nummer systematisch verwenden (Art. 153c Abs. 1 AHVG)?",
     "Does the list serve the AHV itself, e.g. settling with the compensation fund? If not: may you use the AHV number systematically (Art. 153c Abs. 1 AHVG)?",
 );
-/// Rechtstext A5 «ohne Rolle» (E10): nur ohne angegebene und ohne erschlossene Rolle und
-/// mit Funden GELB oder ORANGE.
+/// Nur ohne angegebene und ohne erschlossene Rolle und mit Funden GELB oder ORANGE.
 const KLAEREN_OHNE_ROLLE: Txt = Txt::neu(
     "Gilt für Sie eine Geheimhaltungspflicht (Beruf, Amt, Bank)? Dann --role angeben (Rollen: promptscan explain rot).",
     "Are you bound by a duty of confidentiality (profession, office, bank)? Then set --role (roles: promptscan explain red).",
 );
-/// Rechtstext A5 «anwendbares Datenschutzrecht» (E3), unter «Beachten».
+/// Anwendbares Datenschutzrecht, unter «Beachten».
 const DATENSCHUTZ_BEHOERDE: Txt = Txt::neu(
     "Für kantonale und kommunale Organe gilt kantonales Datenschutzrecht, für Bundesorgane das DSG. In Gerichtsverfahren und Verfahren nach bundesrechtlichen Verfahrensordnungen gilt das Verfahrensrecht, in erstinstanzlichen Verwaltungsverfahren das DSG (Art. 2 DSG).",
     "Cantonal data protection law applies to cantonal and communal bodies, the DSG to federal bodies. In court proceedings and proceedings governed by federal procedural regulations, procedural law applies; in first instance administrative proceedings, the DSG (Art. 2 DSG).",
@@ -533,7 +542,7 @@ fn breite_von(d: &Darstellung) -> usize {
     }
 }
 
-/// Text für die Ausgabe; mit `--ascii` umschrieben (Entscheid A4).
+/// Text für die Ausgabe; mit `--ascii` umschrieben.
 fn ausgeben(s: &str, d: &Darstellung) -> String {
     if !d.ascii {
         return s.to_string();
@@ -675,7 +684,7 @@ struct Stueck {
 }
 
 /// Ein Satz im Schlussblock beginnt nicht in den letzten zwölf Spalten einer Zeile, sondern
-/// auf der nächsten (so umbrochen in der Endfassung der Rechtstexte, A5).
+/// auf der nächsten.
 const SATZ_REST: usize = 12;
 
 /// Abkürzungen, nach denen kein neuer Satz beginnt.
@@ -702,8 +711,7 @@ fn satzanfaenge(mut v: Vec<Stueck>) -> Vec<Stueck> {
     v
 }
 
-/// Was beim Umbruch zusammenbleibt (Entscheid A2): Normzitate, Ausschnitte in «…» und
-/// Befehle.
+/// Was beim Umbruch zusammenbleibt: Normzitate, Ausschnitte in «…» und Befehle.
 static ZUSAMMEN: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(concat!(
         r"Art\. \d+[a-z]*(?: und \d+[a-z]*)?(?: (?:und )?(?:Abs\.|Ziff\.|lit\.|Satz) [0-9a-z]+(?: und [0-9a-z]+)?| f\.| ff\.)* [A-Z][A-Za-z]*",
@@ -712,40 +720,137 @@ static ZUSAMMEN: LazyLock<Regex> = LazyLock::new(|| {
         r"|«[^»]*»",
         r"|promptscan (?:explain|rules)(?: [^\s·]+)?",
         r"|--role [^\s]+",
+        // Der Befehl für Windows PowerShell 5.1 in den Meldungen zur Eingabe.
+        r"|\$[A-Za-z]+ = [^\s]+",
     ))
     .expect("Muster für den Umbruch")
 });
 
+/// Teile eines Normzitats, nach denen nie umbrochen wird, wenn eine Nummer folgt:
+/// «Art. 5», «Abs. 1», «lit. a», «Ziff. 2», «SR 235.1», «Nr. 98».
+const ZITAT_VOR_NUMMER: &[&str] = &[
+    "Art.", "Abs.", "lit.", "Bst.", "Ziff.", "let.", "para.", "Satz", "Nr.", "SR", "Anhang",
+];
+
+/// Teile eines Normzitats, vor denen nach einer Nummer nie umbrochen wird: «Art. 4 Abs. 1
+/// lit. a», «Art. 5 f.».
+const ZITAT_NACH_NUMMER: &[&str] = &[
+    "Abs.", "lit.", "Bst.", "Ziff.", "let.", "para.", "Satz", "f.", "ff.",
+];
+
+/// Monate eines Datums, das zusammenbleibt («1. Januar 2026»).
+const MONATE: &[&str] = &[
+    "Januar",
+    "Februar",
+    "März",
+    "Maerz",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
+];
+
+/// Ein Wort ohne öffnende und schliessende Satzzeichen: «(DSG).» wird «DSG».
+fn wortkern(w: &str) -> &str {
+    w.trim_start_matches(['(', '[', '«', '"'])
+        .trim_end_matches([',', ')', ']', '.', ';', ':', '»', '"'])
+}
+
+/// Eine Nummer in einem Normzitat: «1», «2.2.4», «1bis», «4(1)(g)», «1–6» oder ein
+/// einzelner Kleinbuchstabe («a» nach «lit.»).
+fn ist_zitatnummer(w: &str) -> bool {
+    let k = wortkern(w);
+    k.starts_with(|c: char| c.is_ascii_digit())
+        || (k.chars().count() == 1 && k.chars().all(|c| c.is_ascii_lowercase()))
+}
+
+/// Ein Erlasskürzel: zwei bis acht Buchstaben, davon mindestens zwei gross («DSG», «OR»,
+/// «StGB», «BankG», «BGÖ»). Ein falscher Treffer bindet nur zwei Wörter mehr aneinander.
+fn ist_erlasskuerzel(w: &str) -> bool {
+    let k = wortkern(w);
+    let n = k.chars().count();
+    (2..=8).contains(&n)
+        && k.chars().all(char::is_alphabetic)
+        && k.starts_with(char::is_uppercase)
+        && k.chars().filter(|c| c.is_uppercase()).count() >= 2
+}
+
+/// Ob zwischen `vorher` und `nachher` (zwei Stücke ohne Leerzeichen am Rand) nicht
+/// umbrochen werden darf, weil sie zu einem Normzitat oder einem Datum gehören.
+fn bleibt_zusammen(vorher: &str, nachher: &str) -> bool {
+    let (Some(ende), Some(anfang)) = (vorher.rsplit(' ').next(), nachher.split(' ').next()) else {
+        return false;
+    };
+    let ende_offen = ende.trim_start_matches(['(', '[', '«', '"']);
+    let schliesst = ende.ends_with([',', ';', ':', ')', '.', '»', '"']);
+    // «Art.» / «5», «Abs.» / «1», «lit.» / «a», «SR» / «235.1»
+    (ZITAT_VOR_NUMMER.contains(&ende_offen) && ist_zitatnummer(anfang))
+        // «Art. 4» / «Abs. 1», «Art. 5» / «f.»
+        || (ZITAT_NACH_NUMMER.contains(&anfang) && ist_zitatnummer(ende) && !schliesst)
+        // «Ziff. 2» / «DSG)», «Art. 5 f.» / «DSG»
+        || (ist_erlasskuerzel(anfang)
+            && ((ist_zitatnummer(ende) && !schliesst) || ende_offen == "f." || ende_offen == "ff."))
+        // «DSG» / «Art. 5»
+        || (ist_erlasskuerzel(ende) && !schliesst && anfang == "Art.")
+        // «1.» / «Januar», «Januar» / «2026»
+        || (MONATE.contains(&anfang)
+            && ende_offen.len() <= 3
+            && ende_offen.ends_with('.')
+            && ende_offen[..ende_offen.len() - 1].chars().all(|c| c.is_ascii_digit()))
+        || (MONATE.contains(&ende_offen)
+            && wortkern(anfang).len() == 4
+            && wortkern(anfang).chars().all(|c| c.is_ascii_digit()))
+}
+
+/// Fügt Stücke, zwischen denen nicht umbrochen wird ([`bleibt_zusammen`]), mit einem
+/// Leerzeichen aneinander.
+fn binden(teile: Vec<String>) -> Vec<String> {
+    let mut v: Vec<String> = Vec::with_capacity(teile.len());
+    for t in teile {
+        match v.last_mut() {
+            Some(vorher) if bleibt_zusammen(vorher, &t) => {
+                vorher.push(' ');
+                vorher.push_str(&t);
+            }
+            _ => v.push(t),
+        }
+    }
+    v
+}
+
 /// Zerlegt Fliesstext in Stücke. Getrennt wird an Leerzeichen, ausser in einem Normzitat,
-/// einem Ausschnitt in «…» oder einem Befehl.
+/// einem Datum, einem Ausschnitt in «…» oder einem Befehl.
 fn stuecke(text: &str, d: &Darstellung) -> Vec<Stueck> {
     let zusammen: Vec<std::ops::Range<usize>> =
         ZUSAMMEN.find_iter(text).map(|m| m.range()).collect();
-    let mut v = Vec::new();
+    let mut teile = Vec::new();
     let mut wort = String::new();
     for (i, c) in text.char_indices() {
         let geschuetzt = zusammen.iter().any(|r| r.start < i && i < r.end);
         if c == ' ' && !geschuetzt {
             if !wort.is_empty() {
-                v.push(Stueck {
-                    wort: ausgeben(&wort, d),
-                    leer: true,
-                    satz: false,
-                });
-                wort.clear();
+                teile.push(std::mem::take(&mut wort));
             }
         } else {
             wort.push(c);
         }
     }
     if !wort.is_empty() {
-        v.push(Stueck {
-            wort: ausgeben(&wort, d),
+        teile.push(wort);
+    }
+    binden(teile)
+        .into_iter()
+        .map(|w| Stueck {
+            wort: ausgeben(&w, d),
             leer: true,
             satz: false,
-        });
-    }
-    v
+        })
+        .collect()
 }
 
 /// Ein Stück, das nicht getrennt wird, etwa ein Wert aus dem Prompt.
@@ -757,15 +862,32 @@ fn ganz(text: &str, d: &Darstellung) -> Stueck {
     }
 }
 
-/// Teilt ein Stück, das breiter als `breite` ist: an seinen Leerzeichen, dann zeichenweise.
+/// Teilt ein Stück, das breiter als `breite` ist: an seinen Leerzeichen, wobei Normzitate
+/// darin zusammenbleiben ([`binden`]), sofern sie allein passen; dann zeichenweise.
 fn zerteilen(s: Stueck, breite: usize) -> Vec<Stueck> {
     if spalten(&s.wort) <= breite {
         return vec![s];
     }
+    let woerter = |t: &str| -> Vec<String> {
+        t.split(' ')
+            .filter(|w| !w.is_empty())
+            .map(String::from)
+            .collect()
+    };
+    let teile: Vec<String> = binden(woerter(&s.wort))
+        .into_iter()
+        .flat_map(|g| {
+            if spalten(&g) <= breite {
+                vec![g]
+            } else {
+                woerter(&g)
+            }
+        })
+        .collect();
     let mut v = Vec::new();
     let mut leer = s.leer;
     let mut satz = s.satz;
-    for teil in s.wort.split(' ').filter(|t| !t.is_empty()) {
+    for teil in &teile {
         if spalten(teil) <= breite {
             v.push(Stueck {
                 wort: teil.to_string(),
@@ -888,7 +1010,7 @@ fn beschriftet(aus: &mut String, beschriftung: Txt, absaetze: &[String], d: &Dar
 
 // --- Kopfzeile -------------------------------------------------------------------------
 
-/// Kopfzeile (Rechtstext A1): «Lokal geprüft · Rolle: … · Ziel: …». Passt sie nicht in
+/// Kopfzeile: «Lokal geprüft · Rolle: … · Ziel: …». Passt sie nicht in
 /// [`KOPF_BREITE`] Spalten, beginnt der nächste Teil eine neue Zeile. Das auslösende Wort
 /// einer erschlossenen Rolle steht ganz; nur wenn schon «Lokal geprüft · Rolle: …»
 /// überläuft, wird es nach [`KOPF_WORT`] Zeichen mit «…» gekürzt.
@@ -1027,7 +1149,7 @@ impl Rand {
     }
 }
 
-/// Die Zeilenansicht (Entscheide A2, A3, A5). Bis [`ZEILEN_GANZ`] Zeilen alle, darüber nur
+/// Die Zeilenansicht. Bis [`ZEILEN_GANZ`] Zeilen alle, darüber nur
 /// die Zeilen mit Funden und für jede Lücke «… │ N Zeilen ohne Fund». Zeilennummern erst
 /// über [`ZEILEN_OHNE_NUMMER`] Zeilen. Lange Zeilen brechen um und behalten den Rand. Mit
 /// Farbe sind die Fundstellen in der Farbe ihrer Stufe hinterlegt; ohne Farbe steht unter
@@ -1351,7 +1473,7 @@ fn art5c_ziffer(regel: &str) -> Option<u8> {
     regel.strip_prefix("art5c-")?.parse().ok()
 }
 
-/// Die Art eines Fundes in Worten (Entscheid A5); die Kennung steht nur in «Mehr».
+/// Die Art eines Fundes in Worten; die Kennung steht nur in «Mehr».
 fn art_name(f: &Fund, englisch: bool) -> String {
     if let Grund::BesondersSchuetzenswert { ziffer } = f.grund {
         return format!("Ziff. {ziffer}");
@@ -1384,7 +1506,7 @@ fn art_name(f: &Fund, englisch: bool) -> String {
     (if englisch { paar.1 } else { paar.0 }).to_string()
 }
 
-/// Kopf einer ROT-Gruppe: Pflicht und Normen (Rechtstext A2).
+/// Kopf einer ROT-Gruppe: Pflicht und Normen.
 fn pflicht_kopf(rolle: Rolle, normen: &[&'static Norm], englisch: bool) -> String {
     if rolle == Rolle::Offen {
         let liste: Vec<String> = normen
@@ -1401,8 +1523,8 @@ fn pflicht_kopf(rolle: Rolle, normen: &[&'static Norm], englisch: bool) -> Strin
     }
 }
 
-/// Die Gruppen ROT, ORANGE, GELB und HINWEIS (Rechtstexte A2, A3, B3), je mit Kopf und
-/// einer Zeile je Art, innerhalb nach Position; nach jeder Gruppe eine Leerzeile.
+/// Die Gruppen ROT, ORANGE, GELB und HINWEIS, je mit Kopf und einer Zeile je Art, innerhalb
+/// nach Position; nach jeder Gruppe eine Leerzeile.
 fn gruppen(aus: &mut String, b: &Bericht, d: &Darstellung) {
     let e = d.englisch;
     let mit_zeilen = sichtbare_zeilen(&b.text) > ZEILEN_OHNE_NUMMER;
@@ -1483,7 +1605,7 @@ fn gruppen(aus: &mut String, b: &Bericht, d: &Darstellung) {
         }
     }
 
-    // HINWEIS bei --target local: was sonst eine höhere Stufe hätte (Rechtstext B3).
+    // HINWEIS bei --target local: was sonst eine höhere Stufe hätte.
     let mut lokal = Vec::new();
     for sonst in [Stufe::Rot, Stufe::Orange, Stufe::Gelb] {
         for f in von(Stufe::Hinweis) {
@@ -1496,7 +1618,7 @@ fn gruppen(aus: &mut String, b: &Bericht, d: &Darstellung) {
     }
     if !lokal.is_empty() {
         // Zwei Zeilen, wenn in der Cloud ein Fund ROT wäre: die Normen der Rolle wie im
-        // ROT-Kopf (Rechtstext B3).
+        // ROT-Kopf.
         let mut kopf = vec![format!(
             "{} ({})",
             TITEL_LOKAL.in_sprache(e),
@@ -1515,16 +1637,27 @@ fn gruppen(aus: &mut String, b: &Bericht, d: &Darstellung) {
         gruppe_schreiben(aus, Stufe::Hinweis, &kopf, &lokal, mit_zeilen, d);
     }
 
-    // HINWEIS: Hinweise der Regeln und der Kontext, dann was ohne Identifikator blieb.
+    // HINWEIS: Hinweise der Regeln und der Kontext, dann was ohne Identifikator blieb:
+    // Geburtsdatum und Wohnort mit ihrer Art, die Kategorien von Art. 5 lit. c DSG wie bei
+    // ORANGE als «Ziff. N» unter einer Zwischenzeile mit dem Zitat.
     let mut reihen = Vec::new();
     let mut ohne = Vec::new();
+    let mut ohne_c = Vec::new();
     for f in von(Stufe::Hinweis) {
         let (text, zusatz) = wert_von(f, e);
         let erklaerung = match &f.grund {
             Grund::Lokal { .. } => continue,
             Grund::OhneIdentifikator => {
-                reihe(&mut ohne, art_name(f, e)).dazu(text, zusatz, f.zeile);
+                match art5c_ziffer(f.regel) {
+                    Some(z) => reihe(&mut ohne_c, format!("Ziff. {z}")),
+                    None => reihe(&mut ohne, art_name(f, e)),
+                }
+                .dazu(text, zusatz, f.zeile);
                 continue;
+            }
+            Grund::Regelhinweis if f.regel == "fundstellen" => {
+                // Die Handlung «Jede Fundstelle … prüfen» steht unter «Klären».
+                Some(FUNDSTELLEN_GRUND.in_sprache(e).to_string())
             }
             Grund::Geheimniskontext {
                 rolle: Rolle::Offen,
@@ -1544,11 +1677,21 @@ fn gruppen(aus: &mut String, b: &Bericht, d: &Darstellung) {
         r.erklaerung = r.erklaerung.take().or(erklaerung);
         r.dazu(text, zusatz, f.zeile);
     }
-    if !ohne.is_empty() {
+    if !ohne.is_empty() || !ohne_c.is_empty() {
         let mut zwischen = Reihe::neu(OHNE_IDENTIFIKATOR.in_sprache(e).to_string());
         zwischen.eigene_zeile = true;
         reihen.push(zwischen);
         reihen.extend(ohne);
+        if !ohne_c.is_empty() {
+            let mut kategorie = Reihe::neu(format!(
+                "{} {}:",
+                KATEGORIE_NACH.in_sprache(e),
+                normen::DSG_5_C.zitat
+            ));
+            kategorie.eigene_zeile = true;
+            reihen.push(kategorie);
+            reihen.extend(ohne_c);
+        }
     }
     if !reihen.is_empty() {
         gruppe_schreiben(
@@ -1724,9 +1867,9 @@ fn je_stufe(anzahlen: [(Stufe, usize); 4], e: bool) -> Vec<String> {
         .collect()
 }
 
-/// Zählung für den Ergebnisblock (Rechtstext A4): alle Funde mit den Hinweisen,
-/// «2 Funde»; bei mehreren Stufen «3 Funde: 2 rot, 1 Hinweis». Gibt zurück, ob mehrere
-/// Stufen gezählt sind (dann steht die Zählung in Zeile 2).
+/// Zählung für den Ergebnisblock: alle Funde mit den Hinweisen, «2 Funde»; bei mehreren
+/// Stufen «3 Funde: 2 rot, 1 Hinweis». Gibt zurück, ob mehrere Stufen gezählt sind (dann
+/// steht die Zählung in Zeile 2).
 fn zaehlung(rot: usize, orange: usize, gelb: usize, hinweis: usize, e: bool) -> (String, bool) {
     let mut s = funde_wort(rot + orange + gelb + hinweis, e);
     let arten = je_stufe(
@@ -1745,8 +1888,8 @@ fn zaehlung(rot: usize, orange: usize, gelb: usize, hinweis: usize, e: bool) -> 
     (s, mehrere)
 }
 
-/// Titel und Zählung der Zeile «Ergebnis» (Rechtstexte A4, B3); `true`, wenn die Zählung
-/// auf eine eigene Zeile gehört.
+/// Titel und Zählung der Zeile «Ergebnis»; `true`, wenn die Zählung auf eine eigene Zeile
+/// gehört.
 fn ergebnis_texte(b: &Bericht, hoechste: Stufe, e: bool) -> (String, String, bool) {
     let lokal: Vec<Stufe> = b
         .funde
@@ -1758,7 +1901,7 @@ fn ergebnis_texte(b: &Bericht, hoechste: Stufe, e: bool) -> (String, String, boo
         .collect();
     let hinweis = b.anzahl(Stufe::Hinweis);
     if hoechste == Stufe::Hinweis && !lokal.is_empty() {
-        // «4 Funde: 4 Hinweise; in der Cloud 3 rot, 1 Hinweis» (Rechtstext B3).
+        // «4 Funde: 4 Hinweise; in der Cloud 3 rot, 1 Hinweis».
         let titel = if lokal.contains(&Stufe::Rot) {
             TITEL_LOKAL_ROT
         } else {
@@ -1792,7 +1935,7 @@ fn ergebnis_texte(b: &Bericht, hoechste: Stufe, e: bool) -> (String, String, boo
     .in_sprache(e)
     .to_string();
     if hoechste == Stufe::Rot && rot_rolle(b) == Rolle::Offen {
-        // Rechtstext A4 «Beruf offen»: wie Kopfzeile und Gruppenkopf.
+        // «Beruf offen» wie in Kopfzeile und Gruppenkopf.
         let _ = write!(titel, " ({})", Rolle::Offen.anzeige(e));
     }
     let (z, mehrere) = zaehlung(
@@ -1817,7 +1960,7 @@ fn rot_rolle(b: &Bericht) -> Rolle {
         .unwrap_or(Rolle::Offen)
 }
 
-/// Der Ergebnisblock am Schluss (Entscheid A1): Ergebnis, Eingabe, Klären, Beachten, Mehr.
+/// Der Ergebnisblock am Schluss: Ergebnis, Eingabe, Klären, Beachten, Mehr.
 fn ergebnisblock(aus: &mut String, b: &Bericht, d: &Darstellung) {
     let e = d.englisch;
     let breite = breite_von(d);
@@ -1856,7 +1999,7 @@ fn ergebnisblock(aus: &mut String, b: &Bericht, d: &Darstellung) {
             }
         }
     }
-    beschriftet(aus, EINGABE, &Eingabe::von(&b.text).meldungen(e), d);
+    beschriftet(aus, OHNE_ETIKETT, &Eingabe::von(&b.text).meldungen(e), d);
     beschriftet(aus, KLAEREN, &klaeren(b, e), d);
     beschriftet(aus, BEACHTEN, &beachten(b, e), d);
     let befehle = mehr(b, e);
@@ -1878,7 +2021,7 @@ fn ergebnisblock(aus: &mut String, b: &Bericht, d: &Darstellung) {
     }
 }
 
-/// Die Frage zu ROT je Geheimhaltungspflicht (Rechtstext A5).
+/// Die Frage zu ROT je Geheimhaltungspflicht.
 fn klaeren_rot(rolle: Rolle, e: bool) -> String {
     match rolle {
         Rolle::Clergy
@@ -1904,9 +2047,8 @@ fn klaeren_rot(rolle: Rolle, e: bool) -> String {
     }
 }
 
-/// Die Fragen der Zeile «Klären» (Rechtstexte A5, A6): zur höchsten Stufe, ohne Rolle die
-/// Frage nach einer Geheimhaltungspflicht (E10), bei lokalem Modell, zu jeder Art von
-/// Hinweis, zuletzt zum Ausland.
+/// Die Fragen der Zeile «Klären»: zur höchsten Stufe, ohne Rolle die Frage nach einer
+/// Geheimhaltungspflicht, bei lokalem Modell, zu jeder Art von Hinweis, zuletzt zum Ausland.
 fn klaeren(b: &Bericht, e: bool) -> Vec<String> {
     let mut v: Vec<String> = Vec::new();
     let geheimnis_rolle = b.funde.iter().find_map(|f| match f.grund {
@@ -1919,7 +2061,7 @@ fn klaeren(b: &Bericht, e: bool) -> Vec<String> {
         Some(Stufe::Gelb) => v.push(KLAEREN_GELB.in_sprache(e).to_string()),
         _ => {}
     }
-    // E10: weder --role noch Konfiguration, keine Rolle aus dem Text, Funde GELB oder
+    // Weder --role noch Konfiguration, keine Rolle aus dem Text, Funde GELB oder
     // ORANGE; nicht bei --role none.
     let ohne_rolle = b.optionen.rolle.is_none() && b.lage == Lage::Keine;
     if ohne_rolle && b.anzahl(Stufe::Gelb) + b.anzahl(Stufe::Orange) > 0 {
@@ -1980,9 +2122,9 @@ fn klaeren(b: &Bericht, e: bool) -> Vec<String> {
 /// Die Zeilen «Beachten» (docs/AUSGABE.md):
 ///
 /// * Ohne Funde: Zusammenhang und Geschäftsgeheimnisse prüft promptscan nicht; was es
-///   prüft, zeigt `promptscan rules` (Rechtstext A7).
+///   prüft, zeigt `promptscan rules`.
 /// * Bei `authority`, `court` und `criminal-authority` mit Fund über HINWEIS: welches
-///   Datenschutzrecht gilt (Rechtstext E3, Art. 2 DSG).
+///   Datenschutzrecht gilt (Art. 2 DSG).
 fn beachten(b: &Bericht, e: bool) -> Vec<String> {
     if b.funde.is_empty() {
         return vec![
@@ -2900,9 +3042,9 @@ struct Literatur {
     stand: Txt,
 }
 
-/// Ein Punkt «Was promptscan nicht entscheidet» (Rechtstext B2): der volle Text für
-/// `explain <STUFE>`, die Kurzform für `explain <REGEL>` (Entscheid A7), die Normen, deren
-/// Wortlaut `explain <STUFE>` unter «Normen» zeigt, und Literatur.
+/// Ein Punkt «Was promptscan nicht entscheidet»: der volle Text für `explain <STUFE>`, die
+/// Kurzform für `explain <REGEL>`, die Normen, deren Wortlaut `explain <STUFE>` unter
+/// «Normen» zeigt, und Literatur.
 struct Abschnitt {
     text: Txt,
     kurz: Txt,
@@ -2931,19 +3073,19 @@ const SCHWARZENEGGER_U_A: Literatur = Literatur {
     stand: NOCH_NICHT_GELESEN,
 };
 
-/// Überschrift der Literatur im Punkt [`HILFSPERSON`] (Rechtstext B2); beide Beiträge
-/// betreffen die Anwaltschaft und sind noch nicht gelesen.
+/// Überschrift der Literatur im Punkt [`HILFSPERSON`]; beide Beiträge betreffen die
+/// Anwaltschaft und sind noch nicht gelesen.
 const LITERATUR_ANWALTSCHAFT: Txt = Txt::neu(
     "Literatur zur Anwaltschaft, noch nicht gelesen:",
     "Literature on lawyers, not yet read:",
 );
 
-// Rechtstext B2 (Endfassung): die Punkte «Was promptscan nicht entscheidet». Wo ein Punkt
-// erscheint, sagt [`nicht_entschieden`]; die Kurzform für `explain <REGEL>` (Entscheid A7)
-// sagt nur, worum es geht, und verweist auf den vollen Text.
+// Die Punkte «Was promptscan nicht entscheidet». Wo ein Punkt erscheint, sagt
+// [`nicht_entschieden`]; die Kurzform für `explain <REGEL>` sagt nur, worum es geht, und
+// verweist auf den vollen Text.
 
-/// Rechtstext B2 «rechtfertigung» (explain gelb, orange, hinweis, jede Regel). Art. 31 DSG
-/// steht wie Art. 30 DSG im 5. Kapitel und gilt für private Personen.
+/// Rechtfertigung (explain gelb, orange, hinweis, jede Regel). Art. 31 DSG steht wie
+/// Art. 30 DSG im 5. Kapitel und gilt für private Personen.
 const RECHTFERTIGUNG_DSG: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Ob eine Persönlichkeitsverletzung vorliegt (Art. 30 DSG) und ob sie gerechtfertigt ist: durch Einwilligung der betroffenen Person, ein überwiegendes privates oder öffentliches Interesse oder Gesetz (Art. 31 Abs. 1 DSG; gilt für private Personen).",
@@ -2957,7 +3099,7 @@ const RECHTFERTIGUNG_DSG: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Rechtstext B2 «einwilligung» (explain rot, hinweis, jede Regel).
+/// Ausnahmen der Strafnormen (explain rot, hinweis, jede Regel).
 const EINWILLIGUNG_STGB: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Ob eine Ausnahme greift: nach Art. 321 Ziff. 2 StGB die Einwilligung der berechtigten Person oder die schriftliche Bewilligung der vorgesetzten Behörde oder Aufsichtsbehörde, nach Art. 320 Ziff. 2 StGB die schriftliche Einwilligung der vorgesetzten Behörde; bei Art. 47 BankG, Art. 69 FINIG und Art. 62 DSG, ob die Person eingewilligt hat, die das Geheimnis betrifft.",
@@ -2977,16 +3119,16 @@ const EINWILLIGUNG_STGB: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Rechtstext B2 «hilfsperson» (explain rot, hinweis, jede Regel). Nennt keinen
-/// Meinungsstand: Die beiden Beiträge sind noch nicht gelesen (Entscheide der Rechtstexte).
+/// Der Anbieter als Hilfsperson (explain rot, hinweis, jede Regel). Nennt keinen
+/// Meinungsstand: Die beiden Beiträge sind noch nicht gelesen.
 const HILFSPERSON: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Ob die Norm der Rolle auch den KI-Anbieter erfasst: als Hilfsperson (Art. 321 Ziff. 1 StGB, Art. 320 Ziff. 1 StGB), als Beauftragten (Art. 47 Abs. 1 lit. a BankG, Art. 69 Abs. 1 lit. a FINIG) oder als Person, die für Sie tätig ist (Art. 62 Abs. 2 DSG). Wann ein Anbieter dazu zählt und ob die Weitergabe an ihn dann ein Offenbaren ist, sagt der Wortlaut nicht. Anwältinnen und Anwälte sorgen für die Wahrung des Berufsgeheimnisses durch ihre Hilfspersonen (Art. 13 Abs. 2 BGFA). promptscan meldet ROT und entscheidet diese Fragen nicht.",
         "Whether the role’s provision also covers the AI provider: as an assistant or auxiliary (Art. 321 Ziff. 1 StGB, Art. 320 Ziff. 1 StGB), as an agent (Art. 47 Abs. 1 lit. a BankG, Art. 69 Abs. 1 lit. a FINIG) or as a person carrying on an activity for you (Art. 62 Abs. 2 DSG). The wording does not say when a provider counts as such, nor whether passing data to it is then a disclosure. Lawyers ensure that their auxiliary staff preserve professional confidentiality (Art. 13 Abs. 2 BGFA). promptscan reports RED and does not decide these questions.",
     ),
     kurz: Txt::neu(
-        "Ob die Norm der Rolle auch den KI-Anbieter erfasst, etwa als Hilfsperson oder Beauftragten.",
-        "Whether the role’s provision also covers the AI provider, e.g. as an assistant or agent.",
+        "Ob die Norm der Rolle auch den KI-Anbieter erfasst, etwa als Hilfsperson oder Beauftragten (Literatur noch nicht gelesen).",
+        "Whether the role’s provision also covers the AI provider, e.g. as an assistant or agent (literature not yet read).",
     ),
     normen: &[
         &normen::STGB_321_1,
@@ -2999,7 +3141,7 @@ const HILFSPERSON: Abschnitt = Abschnitt {
     literatur: &[CHAPPUIS_ALBERINI, SCHWARZENEGGER_U_A],
 };
 
-/// Rechtstext B2 «auftragsbearbeitung», bei allen Stufen und jeder Regel.
+/// Auftragsbearbeitung, bei allen Stufen und jeder Regel.
 const AUFTRAGSBEARBEITUNG: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Ob der KI-Anbieter Auftragsbearbeiter oder Dritter ist. Das hängt daran, ob er nur im Auftrag bearbeitet (Art. 5 lit. j und k DSG); ein Vertrag allein entscheidet das nicht. Nutzt der Anbieter Eingaben für eigene Zwecke, etwa zum Training, ist er insoweit Dritter. Übertragen werden darf nur, wenn er die Daten so bearbeitet, wie der Verantwortliche selbst es dürfte (Art. 9 Abs. 1 lit. a DSG), keine gesetzliche oder vertragliche Geheimhaltungspflicht es verbietet (Art. 9 Abs. 1 lit. b DSG) und der Verantwortliche sich vergewissert hat, dass der Anbieter die Datensicherheit gewährleisten kann (Art. 9 Abs. 2 DSG). Einem Dritten übertragen darf der Anbieter die Bearbeitung nur mit vorgängiger Genehmigung (Art. 9 Abs. 3 DSG). Private, die vorsätzlich die Datenbearbeitung einem Auftragsbearbeiter übergeben, ohne dass die Voraussetzungen von Art. 9 Abs. 1 und 2 DSG erfüllt sind, werden auf Antrag mit Busse bis zu 250\u{A0}000 Franken bestraft (Art. 61 lit. b DSG).",
@@ -3020,7 +3162,7 @@ const AUFTRAGSBEARBEITUNG: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Rechtstext B2 «ausland», bei allen Stufen und jeder Regel.
+/// Ausland, bei allen Stufen und jeder Regel.
 const AUSLAND_PUNKT: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Ob Daten ins Ausland gehen und wohin. Art. 16 Abs. 1 DSG lässt das zu, wenn der Bundesrat festgestellt hat, dass die Gesetzgebung des Staates einen angemessenen Schutz gewährleistet (Liste: Anhang 1 DSV). Für die USA gilt das nur bei Organisationen, die nach den Grundsätzen des Datenschutzrahmens zwischen der Schweiz und den USA zertifiziert sind (Anhang 1 Ziff. 44 DSV). Sonst muss ein geeigneter Datenschutz gewährleistet sein, etwa durch Standarddatenschutzklauseln, die der EDÖB vorgängig genehmigt, ausgestellt oder anerkannt hat (Art. 16 Abs. 2 lit. d DSG), oder eine Ausnahme greifen, etwa die ausdrückliche Einwilligung (Art. 17 Abs. 1 lit. a DSG). Private, die vorsätzlich Personendaten ins Ausland bekanntgeben, ohne dass eine dieser Voraussetzungen erfüllt ist, werden auf Antrag mit Busse bis zu 250\u{A0}000 Franken bestraft (Art. 61 lit. a DSG).",
@@ -3040,8 +3182,8 @@ const AUSLAND_PUNKT: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Rechtstext B2 «geltungsbereich» (explain gelb, orange, hinweis, jede Regel; E3, mit
-/// Satz 2 von Art. 2 Abs. 3 DSG). Explain rot sagt dasselbe im Grund (B1 «rot»).
+/// Geltungsbereich (explain gelb, orange, hinweis, jede Regel; mit Satz 2 von
+/// Art. 2 Abs. 3 DSG). Explain rot sagt dasselbe im Grund.
 const GELTUNGSBEREICH: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Welches Datenschutzrecht für Sie gilt. Die Begründung oben gilt für private Personen. Auf Daten, die eine natürliche Person ausschliesslich zum persönlichen Gebrauch bearbeitet, ist das DSG nicht anwendbar (Art. 2 Abs. 2 lit. a DSG). Bundesorgane brauchen für Bearbeitung und Bekanntgabe grundsätzlich eine gesetzliche Grundlage (Art. 34 Abs. 1 DSG, Art. 36 Abs. 1 DSG; Ausnahmen: Art. 34 Abs. 4 DSG, Art. 36 Abs. 2 DSG). Für kantonale und kommunale Organe gilt nicht das DSG (Art. 2 Abs. 1 DSG), sondern kantonales Datenschutzrecht. In Gerichtsverfahren und in Verfahren nach bundesrechtlichen Verfahrensordnungen gilt das Verfahrensrecht, in erstinstanzlichen Verwaltungsverfahren das DSG (Art. 2 Abs. 3 DSG).",
@@ -3063,7 +3205,7 @@ const GELTUNGSBEREICH: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Rechtstext B2 «geheim» (explain rot, hinweis, jede Regel).
+/// Ob eine Angabe geheim ist (explain rot, hinweis, jede Regel).
 const GEHEIM: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Ob eine Angabe überhaupt geheim ist.",
@@ -3077,7 +3219,7 @@ const GEHEIM: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Rechtstext B2 «geschaeftsgeheimnisse», bei allen Stufen und jeder Regel.
+/// Geschäftsgeheimnisse, bei allen Stufen und jeder Regel.
 const GESCHAEFTSGEHEIMNISSE: Abschnitt = Abschnitt {
     text: Txt::neu(
         "Geschäfts- und Fabrikationsgeheimnisse und vertragliche Schweigepflichten (Art. 162 StGB; für Arbeitnehmende Art. 321a Abs. 4 OR) prüft promptscan nicht. Wenige oder keine Funde heissen nicht, dass der Prompt nichts Geheimes enthält.",
@@ -3091,8 +3233,8 @@ const GESCHAEFTSGEHEIMNISSE: Abschnitt = Abschnitt {
     literatur: &[],
 };
 
-/// Alle Punkte (Rechtstext B2): `explain hinweis` und `explain <REGEL>` zeigen sie alle,
-/// weil ein Fund dort mit `--role` ROT werden kann (Entscheide der Rechtstexte).
+/// Alle Punkte: `explain hinweis` und `explain <REGEL>` zeigen sie alle, weil ein Fund dort
+/// mit `--role` ROT werden kann.
 const ALLE_PUNKTE: &[&Abschnitt] = &[
     &RECHTFERTIGUNG_DSG,
     &EINWILLIGUNG_STGB,
@@ -3104,10 +3246,10 @@ const ALLE_PUNKTE: &[&Abschnitt] = &[
     &GESCHAEFTSGEHEIMNISSE,
 ];
 
-/// Was promptscan nicht entscheidet, je Stufe (Rechtstext B2, Endfassung): GELB und ORANGE
-/// die Rechtfertigung nach DSG und den Geltungsbereich, ROT die Ausnahmen der Strafnormen,
-/// den Anbieter als Hilfsperson oder Beauftragten und ob etwas geheim ist; alle die
-/// Auftragsbearbeitung, das Ausland und die Geschäftsgeheimnisse; HINWEIS alle Punkte.
+/// Was promptscan nicht entscheidet, je Stufe: GELB und ORANGE die Rechtfertigung nach DSG
+/// und den Geltungsbereich, ROT die Ausnahmen der Strafnormen, den Anbieter als Hilfsperson
+/// oder Beauftragten und ob etwas geheim ist; alle die Auftragsbearbeitung, das Ausland und
+/// die Geschäftsgeheimnisse; HINWEIS alle Punkte.
 fn nicht_entschieden(stufe: Stufe) -> &'static [&'static Abschnitt] {
     match stufe {
         Stufe::Gelb | Stufe::Orange => &[
@@ -3138,7 +3280,7 @@ fn literatur_block(aus: &mut String, l: &Literatur, einzug: usize) {
 }
 
 /// «Was promptscan nicht entscheidet» in `explain <STUFE>`: jeder Punkt voll, darunter die
-/// Literatur (Rechtstext B2); den Wortlaut der Normen zeigt der Abschnitt «Normen».
+/// Literatur; den Wortlaut der Normen zeigt der Abschnitt «Normen».
 fn nicht_entschieden_text(aus: &mut String, stufe: Stufe, d: &Darstellung) {
     let e = d.englisch;
     ueberschrift(
@@ -3171,7 +3313,7 @@ fn ist_art5c(r: &RegelInfo) -> bool {
 // rules
 // ---------------------------------------------------------------------------------------
 
-/// Rechtstext C3: die feste Zeile unter `rules` (und in `--help`).
+/// Die feste Zeile unter `rules` (und in `--help`).
 const HILFSMITTEL: Txt = Txt::neu(
     "Hilfsmittel, keine Rechtsberatung · erkennt Identifikatoren und Wörter aus Listen, nicht den Zusammenhang · Güte noch nicht gemessen",
     "An aid, not legal advice · detects identifiers and listed words, not the context · quality not yet measured",
@@ -3180,9 +3322,8 @@ const HILFSMITTEL: Txt = Txt::neu(
 /// Einzug der Titel und Normen in `rules`: zwei Leerzeichen und die längste Kennung.
 const RULES_EINZUG: usize = 16;
 
-/// `promptscan rules` als Text (Entscheid A7): die Regeln nach Stufe, je Regel Kennung und
-/// Titel, darunter der rechtliche Bezug und die Grundlage der Erkennung (Rechtstext B5);
-/// zuletzt die Zeile «Hilfsmittel» (Rechtstext C3).
+/// `promptscan rules` als Text: die Regeln nach Stufe, je Regel Kennung und Titel, darunter
+/// der rechtliche Bezug und die Grundlage der Erkennung; zuletzt die Zeile «Hilfsmittel».
 pub fn regeln_text(d: &Darstellung) -> String {
     fliesstext(d, || {
         let e = d.englisch;
@@ -3500,20 +3641,20 @@ pub fn erklaerung_text(r: &RegelInfo, d: &Darstellung) -> String {
     fliesstext(d, || erklaerung_text_roh(r, d))
 }
 
-/// Rechtstext B5 «explain fundstellen, Rechtlicher Bezug».
+/// `explain fundstellen`, «Rechtlicher Bezug».
 const FUNDSTELLEN_BEZUG: Txt = Txt::neu(
     "promptscan kennt keine Norm, die an die Bitte um Fundstellen selbst eine Rechtsfolge knüpft. Für Anwältinnen und Anwälte gilt: «Sie üben ihren Beruf sorgfältig und gewissenhaft aus» (Art. 12 lit. a BGFA).",
     "promptscan knows of no norm that attaches a legal consequence to asking for citations as such. For lawyers: «They shall practise their profession diligently and conscientiously» (Art. 12 lit. a BGFA).",
 );
 
-/// Rechtstext B5 «explain fundstellen, Grundlage der Erkennung».
+/// `explain fundstellen`, «Grundlage der Erkennung».
 const FUNDSTELLEN_ERKENNUNG: Txt = Txt::neu(
     "Die Wortliste stammt aus amtlichen Texten und von der Website des Bundesgerichts. Das Bundesgericht informiert die Öffentlichkeit über seine Rechtsprechung (Art. 27 Abs. 1 BGG), unter anderem in der Amtlichen Sammlung (BGE) und im Internet (Art. 57 Abs. 1 BGerR); dort lassen sich Zitate seiner Entscheide nachprüfen. Den Grund des Hinweises belegt die Studie unter «Quellen».",
     "The word list comes from official texts and from the website of the Federal Supreme Court. The Court informs the public about its case law (Art. 27 Abs. 1 BGG), among other means through the official collection (BGE) and the internet (Art. 57 Abs. 1 BGerR); citations of its decisions can be checked there. The study under «Sources» supports the note.",
 );
 
-/// Erläuterungen einer Regel zu «Rechtlicher Bezug» und «Grundlage der Erkennung»
-/// (Rechtstext B5), je vor den Normen.
+/// Erläuterungen einer Regel zu «Rechtlicher Bezug» und «Grundlage der Erkennung», je vor
+/// den Normen.
 fn bezug_erlaeuterung(regel: &str) -> (Option<Txt>, Option<Txt>) {
     match regel {
         "fundstellen" => (Some(FUNDSTELLEN_BEZUG), Some(FUNDSTELLEN_ERKENNUNG)),
@@ -3572,7 +3713,7 @@ fn erklaerung_text_roh(r: &RegelInfo, d: &Darstellung) -> String {
 
     let keine = if e { "  none" } else { "  keine" };
 
-    // Rechtstext B5: rechtlicher Bezug und Grundlage der Erkennung getrennt, je mit der
+    // Rechtlicher Bezug und Grundlage der Erkennung getrennt, je mit der
     // Erläuterung der Regel vor den Normen.
     let (bezug, erkennung): (Vec<&'static Norm>, Vec<&'static Norm>) = r
         .grundlage
@@ -3685,7 +3826,7 @@ fn regel_stufe(r: &RegelInfo) -> Stufe {
 }
 
 /// Der Satz «Stufe» in `explain <REGEL>`: welche Stufe die Regel ergibt und wann eine
-/// andere (Entscheid A7: die Stufe zuoberst).
+/// andere; die Stufe steht zuoberst.
 fn stufe_satz(r: &RegelInfo, e: bool) -> &'static str {
     let ohne_identifikator = matches!(r.id, "geburtsdatum" | "wohnort");
     match (regel_stufe(r), r.id, e) {
@@ -3735,9 +3876,8 @@ fn stufen_mit_allen_punkten(stufe: Stufe) -> &'static [Stufe] {
     }
 }
 
-/// «Was promptscan nicht entscheidet» in `explain <REGEL>`: alle Punkte (Rechtstext B2,
-/// Endfassung: «explain jeder Regel»), kurz und ohne Wortlaut (Entscheid A7); den vollen
-/// Text und die Literatur nennt der Verweis auf `explain <STUFE>`.
+/// «Was promptscan nicht entscheidet» in `explain <REGEL>`: alle Punkte, kurz und ohne
+/// Wortlaut; den vollen Text und die Literatur nennt der Verweis auf `explain <STUFE>`.
 fn nicht_entschieden_kurz(aus: &mut String, stufe: Stufe, d: &Darstellung) {
     let e = d.englisch;
     ueberschrift(
@@ -4019,7 +4159,7 @@ const GELB_VORAUSSETZUNG: &[Txt] = &[
     ),
 ];
 
-/// E6, Rechtstext B1 «gelb» und «orange», zweiter Absatz: Arbeitgeber.
+/// Zweiter Absatz des Grunds bei GELB und ORANGE: Arbeitgeber.
 const ARBEITGEBER: Txt = Txt::neu(
     "Arbeitgeber dürfen Daten über Arbeitnehmende nur bearbeiten, soweit sie deren Eignung für das Arbeitsverhältnis betreffen oder zur Durchführung des Arbeitsvertrags erforderlich sind (Art. 328b OR); im Übrigen gilt das DSG. Vorschriften über das öffentlich-rechtliche Dienstverhältnis bleiben vorbehalten (Art. 342 Abs. 1 lit. a OR).",
     "Employers may handle data concerning employees only to the extent that such data concern their suitability for the job or are necessary for the performance of the employment contract (Art. 328b OR); in all other respects, the DSG applies. Art. 342 Abs. 1 lit. a OR reserves the provisions regarding employment relationships under public law.",
@@ -4038,7 +4178,7 @@ const NORMEN_ARBEITGEBER_GELTUNG: &[&Norm] = &[
     &normen::DSG_2_3,
 ];
 
-/// Rechtstext B1 «gelb» mit E6 (Arbeitgeber). Den Geltungsbereich (E3) nennt der Punkt
+/// Grund bei GELB, mit dem Absatz zu Arbeitgebern. Den Geltungsbereich nennt der Punkt
 /// [`GELTUNGSBEREICH`] unter «Was promptscan nicht entscheidet».
 const GELB_GRUND: &[Txt] = &[
     Txt::neu(
@@ -4067,7 +4207,7 @@ const ORANGE_VORAUSSETZUNG: &[Txt] = &[
     ),
 ];
 
-/// Rechtstext B1 «orange» mit E6 (Arbeitgeber); Geltungsbereich wie bei [`GELB_GRUND`].
+/// Grund bei ORANGE, mit dem Absatz zu Arbeitgebern; Geltungsbereich wie bei [`GELB_GRUND`].
 const ORANGE_GRUND: &[Txt] = &[
     Txt::neu(
         "Die Bekanntgabe besonders schützenswerter Personendaten an Dritte durch Private ist eine Persönlichkeitsverletzung (Art. 30 Abs. 2 lit. c DSG). Ist eine Einwilligung erforderlich, muss sie ausdrücklich erfolgen (Art. 6 Abs. 7 lit. a DSG).",
@@ -4112,9 +4252,8 @@ const ROT_GRUND: &[Txt] = &[
         "Je nach Rolle ist das Offenbaren eines Geheimnisses strafbar (Normen in der Tabelle «Rollen»). Ob hier offenbart wird und ob eine Ausnahme greift, entscheidet promptscan nicht (siehe unten). Zudem darf die Bearbeitung keinem Auftragsbearbeiter übertragen werden, wenn eine gesetzliche oder vertragliche Geheimhaltungspflicht es verbietet (Art. 9 Abs. 1 lit. b DSG).",
         "Depending on the role, disclosing a secret is a criminal offence (norms in the table «Roles»). Whether this prompt discloses one and whether an exception applies is not decided by promptscan (see below). In addition, processing may not be assigned to a processor if a statutory or contractual duty of confidentiality prohibits it (Art. 9 Abs. 1 lit. b DSG).",
     ),
-    // Rechtstext B1 «rot», zweiter Absatz: der Geltungsbereich (E3) mit Satz 2 von
-    // Art. 2 Abs. 3 DSG. Zitate bleiben auch englisch deutsch, auch ihr «und»
-    // («Art. 320 und 321 StGB»; Entscheide der Rechtstexte).
+    // Zweiter Absatz: der Geltungsbereich mit Satz 2 von Art. 2 Abs. 3 DSG. Zitate bleiben
+    // auch englisch deutsch, auch ihr «und» («Art. 320 und 321 StGB»).
     Txt::neu(
         "Art. 320 und 321 StGB, Art. 47 BankG und Art. 69 FINIG gelten unabhängig davon, welches Datenschutzrecht anwendbar ist. Art. 9 DSG gilt für private Personen und Bundesorgane (Art. 2 Abs. 1 DSG); Bundesorgane brauchen zudem grundsätzlich eine gesetzliche Grundlage (Art. 34 Abs. 1 DSG, Art. 36 Abs. 1 DSG; Ausnahmen: Art. 34 Abs. 4 DSG, Art. 36 Abs. 2 DSG). Für kantonale und kommunale Organe gilt kantonales Datenschutzrecht. In Gerichtsverfahren und in Verfahren nach bundesrechtlichen Verfahrensordnungen gilt das Verfahrensrecht, in erstinstanzlichen Verwaltungsverfahren das DSG (Art. 2 Abs. 3 DSG).",
         "Art. 320 und 321 StGB, Art. 47 BankG and Art. 69 FINIG apply regardless of which data protection law is applicable. Art. 9 DSG applies to private persons and federal bodies (Art. 2 Abs. 1 DSG); federal bodies also need, in principle, a statutory basis (Art. 34 Abs. 1 DSG, Art. 36 Abs. 1 DSG; exceptions: Art. 34 Abs. 4 DSG, Art. 36 Abs. 2 DSG). Cantonal and communal bodies are subject to cantonal data protection law. In court proceedings and in proceedings governed by federal procedural regulations, procedural law applies; in first instance administrative proceedings, the DSG applies (Art. 2 Abs. 3 DSG).",
@@ -4134,13 +4273,13 @@ const HINWEIS_VORAUSSETZUNG: &[Txt] = &[
         "Ein Geheimnis-Kontext aus dem Text, der Funde auf ROT gehoben hat; mit --role bestätigen oder mit --role none ausschliessen. Bleibt der Beruf offen («meine Klientin»), nennt der Hinweis die Normen, die in Frage kommen, und die Rollen zur Auswahl.",
         "A secrecy context from the text that raised findings to RED; confirm it with --role or rule it out with --role none. If the profession stays open («meine Klientin»), the note names the provisions that may apply and the roles to choose from.",
     ),
-    // Rechtstext B3 «explain hinweis, Punkt --target local» (Endfassung) ohne den letzten
-    // Satz («Steht target = "local" in der Konfigurationsdatei, … die Kopfzeile nennt dann
-    // «(Konfiguration)».»): Die Kopfzeile kann die Herkunft des Ziels nicht nennen, solange
-    // der Bericht kein Feld dafür hat (lib.rs, main.rs; offene Frage 1 der Rechtstexte).
+    // Punkt --target local. Der letzte Satz sagt nicht, dass die Kopfzeile dann
+    // «(Konfiguration)» nennt: Die Kopfzeile kann die Herkunft des Ziels erst nennen, wenn
+    // der Bericht ein Feld dafür hat und main.rs es setzt. Die Warnung selbst stimmt schon
+    // heute: main.rs liest target aus der Konfigurationsdatei.
     Txt::neu(
-        "--target local gilt für ein Modell, das auf diesem Rechner läuft, ohne Synchronisierung in eine Cloud. Läuft es so, wird nichts übermittelt oder zugänglich gemacht: keine Bekanntgabe (Art. 5 lit. e DSG) und kein Offenbaren nach den Normen der Rolle. Jeder Fund der Stufe GELB, ORANGE oder ROT wird zum HINWEIS und nennt die Stufe, die er sonst hätte. Bearbeitet werden die Daten trotzdem (Art. 5 lit. d DSG): Die Grundsätze von Art. 6 DSG gelten weiter, etwa die Verhältnismässigkeit (Art. 6 Abs. 2 DSG). Ob das Modell wirklich lokal läuft, prüft promptscan nicht.",
-        "--target local is meant for a model that runs on this computer, without syncing to a cloud. If it runs that way, nothing is transmitted or made accessible: no disclosure (Art. 5 lit. e DSG) and no disclosure of secrets under the norms of the role. Every finding of level YELLOW, ORANGE or RED becomes a NOTE and names the level it would otherwise have. The data is still processed (Art. 5 lit. d DSG): the principles of Art. 6 DSG still apply, such as proportionality (Art. 6 Abs. 2 DSG). promptscan does not check whether the model really runs locally.",
+        "--target local gilt für ein Modell, das auf diesem Rechner läuft, ohne Synchronisierung in eine Cloud. Läuft es so, wird nichts übermittelt oder zugänglich gemacht: keine Bekanntgabe (Art. 5 lit. e DSG) und kein Offenbaren nach den Normen der Rolle. Jeder Fund der Stufe GELB, ORANGE oder ROT wird zum HINWEIS und nennt die Stufe, die er sonst hätte. Bearbeitet werden die Daten trotzdem (Art. 5 lit. d DSG): Die Grundsätze von Art. 6 DSG gelten weiter, etwa die Verhältnismässigkeit (Art. 6 Abs. 2 DSG). Ob das Modell wirklich lokal läuft, prüft promptscan nicht. Steht target = \"local\" in der Konfigurationsdatei, gilt das für jeden Prompt, auch für einen, der doch in eine Cloud geht.",
+        "--target local is meant for a model that runs on this computer, without syncing to a cloud. If it runs that way, nothing is transmitted or made accessible: no disclosure (Art. 5 lit. e DSG) and no disclosure of secrets under the norms of the role. Every finding of level YELLOW, ORANGE or RED becomes a NOTE and names the level it would otherwise have. The data is still processed (Art. 5 lit. d DSG): the principles of Art. 6 DSG still apply, such as proportionality (Art. 6 Abs. 2 DSG). promptscan does not check whether the model really runs locally. If target = \"local\" is set in the configuration file, it applies to every prompt, including one that does go to a cloud.",
     ),
     Txt::neu(
         "Hinweisregeln wie vermerk, fundstellen und ahv-sammlung; ihre Grundlage nennt promptscan explain <REGEL>.",
@@ -4198,7 +4337,7 @@ fn stufeninfo(stufe: Stufe) -> Stufeninfo {
                 &normen::DSG_2_3,
                 &normen::STGB_162,
                 &normen::FINFRAG_147_1_A,
-                // Rechtstext C2: Normen der Tabelle «Rollen» und der Hinweise darunter.
+                // Normen der Tabelle «Rollen» und der Hinweise darunter.
                 &normen::STGB_110_3,
                 &normen::STPO_12,
                 &normen::STPO_13,
@@ -4216,7 +4355,7 @@ fn stufeninfo(stufe: Stufe) -> Stufeninfo {
             titel: NICHT_BEURTEILT,
             voraussetzung: HINWEIS_VORAUSSETZUNG,
             grund: HINWEIS_GRUND,
-            // Rechtstext B3 «explain hinweis, Punkt --target local».
+            // Punkt --target local.
             normen: vec![&normen::DSG_5_E, &normen::DSG_5_D, &normen::DSG_6_2],
         },
     }
@@ -4237,15 +4376,14 @@ fn stufen_normen(stufe: Stufe, info: &Stufeninfo) -> Vec<&'static Norm> {
     v
 }
 
-/// Rechtstext C2 «Hinweise unter der Tabelle»: wer welche Rolle wählt, und für wen das
-/// BGFA gilt.
+/// Hinweise unter der Tabelle «Rollen»: wer welche Rolle wählt, und für wen das BGFA gilt.
 const ROLLEN_HINWEIS: Txt = Txt::neu(
     "Hilfspersonen wählen die Rolle der Person, für die sie arbeiten (Art. 321 Ziff. 1 StGB: «sowie ihre Hilfspersonen»; Art. 320 Ziff. 1 StGB: «als Hilfsperson eines Beamten oder einer Behörde»). Angestellte einer öffentlichen Verwaltung oder der Rechtspflege gelten als Beamte (Art. 110 Abs. 3 StGB): authority oder court. Gerichte im Strafverfahren (Art. 13 StPO): criminal-authority. Finanzinstitute sind Vermögensverwalter, Trustees, Verwalter von Kollektivvermögen, Fondsleitungen und Wertpapierhäuser (Art. 2 Abs. 1 FINIG). Das BGFA gilt für Personen mit Anwaltspatent, die in der Schweiz im Rahmen des Anwaltsmonopols Parteien vor Gerichtsbehörden vertreten (Art. 2 Abs. 1 BGFA).",
     "Assistants choose the role of the person they work for (Art. 321 Ziff. 1 StGB: «as an assistant to any of the foregoing persons»; Art. 320 Ziff. 1 StGB: «as an auxiliary to a public official or an authority»). Employees of a public administrative authority or of an authority for the administration of justice are public officials (Art. 110 Abs. 3 StGB): authority or court. Courts in criminal proceedings (Art. 13 StPO): criminal-authority. Financial institutions are portfolio managers, trustees, managers of collective assets, fund management companies and securities firms (Art. 2 Abs. 1 FINIG). The BGFA applies to persons who hold a lawyer’s practising certificate and represent parties before judicial authorities in Switzerland in terms of the lawyers’ monopoly (Art. 2 Abs. 1 BGFA).",
 );
 
-/// Die Tabelle «Rollen» in `explain rot` (Rechtstext C2): je Rolle der Wert für --role, der
-/// Name und die Pflicht, darunter die Normen ab Spalte 25; zuletzt, wer welche Rolle wählt.
+/// Die Tabelle «Rollen» in `explain rot`: je Rolle der Wert für --role, der Name und die
+/// Pflicht, darunter die Normen ab Spalte 25; zuletzt, wer welche Rolle wählt.
 fn rollen_text(aus: &mut String, d: &Darstellung) {
     let e = d.englisch;
     ueberschrift(
@@ -4290,10 +4428,9 @@ fn rollen_text(aus: &mut String, d: &Darstellung) {
     absatz(aus, ROLLEN_HINWEIS.in_sprache(e), "  ", 2);
 }
 
-/// `promptscan explain gelb|orange|rot|hinweis` als Text (Entscheid A7): die Stufe mit
-/// Plakette zuoberst, «Grund» (Rechtstext B1), die Voraussetzungen, bei ROT die Tabelle
-/// «Rollen» (Rechtstext C2), «Was promptscan nicht entscheidet» voll (Rechtstext B2) und
-/// die Normen im Wortlaut.
+/// `promptscan explain gelb|orange|rot|hinweis` als Text: die Stufe mit Plakette zuoberst,
+/// «Grund», die Voraussetzungen, bei ROT die Tabelle «Rollen», «Was promptscan nicht
+/// entscheidet» voll und die Normen im Wortlaut.
 pub fn stufen_erklaerung_text(stufe: Stufe, d: &Darstellung) -> String {
     fliesstext(d, || {
         let e = d.englisch;
@@ -4370,7 +4507,7 @@ struct StufeJson {
 }
 
 /// `promptscan explain gelb|orange|rot|hinweis` als JSON (docs/AUSGABE.md). Das Feld
-/// `bedingung_dritte` führt seit Version 2 den Punkt «Auftragsbearbeitung» (Rechtstext B2).
+/// `bedingung_dritte` führt seit Version 2 den Punkt «Auftragsbearbeitung».
 pub fn stufen_erklaerung_json(stufe: Stufe) -> String {
     let info = stufeninfo(stufe);
     let rollen = if stufe == Stufe::Rot {
@@ -4470,7 +4607,7 @@ mod tests {
 
     #[test]
     fn stelle_ueber_einen_umbruch_auf_einer_zeile() {
-        // Reste Runde 1 (w4): ein weicher Umbruch in der Stelle als Leerzeichen.
+        // Ein weicher Umbruch in der Stelle als Leerzeichen.
         assert_eq!(stelle_einzeilig("Meine\nMandantin"), "Meine Mandantin");
         assert_eq!(
             stelle_einzeilig("756.1234.\r\n5678.97"),

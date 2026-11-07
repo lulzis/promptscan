@@ -76,7 +76,7 @@ impl Lage {
 /// (z. B. Anwältin, Psychologe), Art. 320 StGB (Behörde), Art. 47 BankG (Bank). Das BGFA
 /// nennt nur `lawyer`, wenn die Rolle angegeben oder eindeutig erschlossen ist.
 /// Revisorinnen und Revisoren fallen unter Art. 321 StGB, soweit Art. 730b Abs. 2 OR sie
-/// zur Verschwiegenheit verpflichtet (Rechtstexte A2 und C2).
+/// zur Verschwiegenheit verpflichtet.
 pub fn normen_fuer(rolle: Rolle) -> Vec<&'static Norm> {
     match rolle {
         Rolle::Lawyer => vec![&normen::STGB_321_1, &normen::BGFA_13_1],
@@ -636,7 +636,7 @@ pub fn info() -> Vec<RegelInfo> {
             "Zählt Zeilen, in denen die Regeln ahv und name beide anschlagen.",
             "Counts lines on which both the ahv and the name rule match.",
         ),
-        // Rechtstext B4 «Hinweis im Bericht» und «explain, Grenzen» (Endfassung).
+        // Der Hinweis im Bericht und die Grenze in explain.
         hinweis: Some(Txt::neu(
             "Systematisch verwenden darf die AHV-Nummer ausserhalb der AHV nur, wer nach Art. 153c AHVG berechtigt ist.",
             "Outside the AHV, only persons authorised under Art. 153c AHVG may use the AHV number systematically.",
@@ -942,9 +942,8 @@ mod tests {
         );
     }
 
-    /// E1 (recht-stufen-1): Die Firma wird nur ROT und zählt nur als Identifikator, wenn
-    /// die Pflicht der Rolle «ein Geheimnis» schützt. Art. 62 DSG (professional) schützt
-    /// nur geheime Personendaten.
+    /// Die Firma wird nur ROT und zählt nur als Identifikator, wenn die Pflicht der Rolle
+    /// «ein Geheimnis» schützt. Art. 62 DSG (professional) schützt nur geheime Personendaten.
     #[test]
     fn firma_nur_bei_einer_pflicht_fuer_ein_geheimnis() {
         let text = Text::neu("Die Muster AG ist im Strafverfahren angeklagt.");
@@ -959,7 +958,7 @@ mod tests {
                 ),
             ]
         };
-        // Regressionsfall aus dem Befund: --role professional mit «Muster AG» gibt kein ROT.
+        // Regressionsfall: --role professional mit «Muster AG» gibt kein ROT.
         let (f, lage) = bewerte(&text, tr(), &cloud(Some(Rolle::Professional)));
         assert_eq!(
             lage,
@@ -988,8 +987,8 @@ mod tests {
         }
     }
 
-    /// E1: Art. 62 DSG nennt ein Fund nur bei einer natürlichen Person; bei student nennt
-    /// die Firma nur Art. 321 Ziff. 1 Abs. 2 StGB.
+    /// Art. 62 DSG nennt ein Fund nur bei einer natürlichen Person; bei student nennt die
+    /// Firma nur Art. 321 Ziff. 1 Abs. 2 StGB.
     #[test]
     fn dsg_normen_nur_bei_natuerlichen_personen() {
         let text = Text::neu("Die Muster AG und Erika Beispiel.");
@@ -1036,7 +1035,7 @@ mod tests {
         }
     }
 
-    /// E1: «zugleich besonders schützenswert» nur, wenn der Prompt einen Identifikator einer
+    /// «zugleich besonders schützenswert» nur, wenn der Prompt einen Identifikator einer
     /// natürlichen Person enthält.
     #[test]
     fn zugleich_besonders_schuetzenswert_nur_mit_natuerlicher_person() {
@@ -1082,8 +1081,8 @@ mod tests {
         );
     }
 
-    /// E2 (recht-stufen-6): Finanzinstitute nach Art. 2 Abs. 1 FINIG, Art. 69 FINIG; die
-    /// Bank bleibt bei Art. 47 BankG.
+    /// Finanzinstitute nach Art. 2 Abs. 1 FINIG, Art. 69 FINIG; die Bank bleibt bei
+    /// Art. 47 BankG.
     #[test]
     fn finanzinstitut_nach_art_69_finig() {
         assert_eq!(
@@ -1113,8 +1112,8 @@ mod tests {
         assert_eq!(f[0].stufe, Stufe::Rot);
     }
 
-    /// E4 (recht-stufen-3): Kollektiv- und Kommanditgesellschaft wie eine Personenangabe;
-    /// die Adresse danach bleibt die Adresse einer Person.
+    /// Kollektiv- und Kommanditgesellschaft wie eine Personenangabe; die Adresse danach
+    /// bleibt die Adresse einer Person.
     #[test]
     fn personengesellschaft_wie_eine_personenangabe() {
         let text =
@@ -1157,8 +1156,8 @@ mod tests {
         );
     }
 
-    /// E5 (recht-stufen-4): «meine Klientin» lässt den Beruf offen; ein bestimmter Beruf im
-    /// selben Text geht vor, auch wenn er später steht.
+    /// «meine Klientin» lässt den Beruf offen; ein bestimmter Beruf im selben Text geht vor,
+    /// auch wenn er später steht.
     #[test]
     fn bestimmter_beruf_geht_dem_offenen_vor() {
         let text = Text::neu("Meine Klientin Erika Beispiel klagt. Ich bin Anwältin.");
@@ -1362,8 +1361,7 @@ mod tests {
             .map(|f| f.zusatz.map(|z| z.de).unwrap_or_default())
     }
 
-    /// technik-code-4, E5: Tabellen zählen auch ohne erkannten Namen; der Zusatz behauptet
-    /// dann keine Namen.
+    /// Tabellen zählen auch ohne erkannten Namen; der Zusatz behauptet dann keine Namen.
     #[test]
     fn ahv_tabelle_ohne_namen() {
         let tabellenform = Some("2 Zeilen mit AHV-Nummer in Tabellenform".to_string());
@@ -1392,7 +1390,7 @@ mod tests {
 
     /// Gegenbeispiele: Fliesstext, eine einzelne Tabellenzeile, eine Nummer, die nicht allein
     /// in ihrer Zelle steht, verschiedene Trenner ohne Kopfzeile und Zeilen, in denen eine
-    /// Zelle ein Satz ist (w3-namen-p11: A01, A03).
+    /// Zelle ein Satz ist.
     #[test]
     fn ahv_ohne_tabelle_kein_hinweis() {
         for roh in [
@@ -1422,7 +1420,7 @@ mod tests {
         }
     }
 
-    /// Über die ganze Prüfung: Listen aus den Befunden praxis-de-2 und technik-code-4.
+    /// Über die ganze Prüfung: Listen mit AHV-Nummer und Name.
     #[test]
     fn ahv_sammlung_ueber_pruefe() {
         let zusatz = |roh: &str| {
@@ -1461,8 +1459,8 @@ mod tests {
         }
     }
 
-    /// Rechtstexte A2 und C2: Revisorinnen und Revisoren nur, soweit Art. 730b Abs. 2 OR
-    /// sie zur Verschwiegenheit verpflichtet; die Norm gilt auch bei einer Firma.
+    /// Revisorinnen und Revisoren nur, soweit Art. 730b Abs. 2 OR sie zur Verschwiegenheit
+    /// verpflichtet; die Norm gilt auch bei einer Firma.
     #[test]
     fn revisionsstelle_mit_art_730b_or() {
         let zitate = |v: Vec<&'static Norm>| v.iter().map(|n| n.zitat).collect::<Vec<_>>();

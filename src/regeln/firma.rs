@@ -29,7 +29,7 @@ pub const REGEL: &str = "firma";
 pub const LEX_ZUSAETZE: &str = "firma.toml";
 /// Wortliste der Abgrenzung.
 pub const LEX_GRENZEN: &str = "firma-grenzen.toml";
-/// Wortliste der Gemeinden im Kanton Aargau (Befund fehlersuche-1).
+/// Wortliste der Gemeinden im Kanton Aargau.
 pub const LEX_GEMEINDEN_AG: &str = "firma-gemeinden-ag.toml";
 /// Ortschaftenverzeichnis von swisstopo: Ortschaften wie «Wohlen AG», «Rieden AG».
 const PLZ: &str = "register/plz.tsv";
@@ -402,8 +402,7 @@ fn ist_plz(wort: &str) -> bool {
 /// Eine Postleitzahl davor ändert nichts; «von», «aus» oder «bei» allein genügen nicht
 /// («bei Muster AG» bleibt eine Firma). Der Ort muss das erste Namenswort mit umfassen:
 /// Steht davor ein weiteres gross geschriebenes Namenswort, ist es eine Firma, deren Name
-/// auf einen Ort endet («Garage Wohlen AG», «Elektro Baden AG»; Prüferproblem
-/// c-erkennung-p1).
+/// auf einen Ort endet («Garage Wohlen AG», «Elektro Baden AG»).
 fn aargauer_ort_davor(s: &str, start: usize, name: &[Wort<'_>]) -> bool {
     let vor = leerraum_links(s, start);
     if vor == start {
@@ -701,8 +700,8 @@ mod tests {
         assert_eq!(stellen("Er arbeitet in Muster GmbH."), ["Muster GmbH"]);
     }
 
-    /// Befund fehlersuche-1, Entscheid C5: «AG» nach einer Aargauer Gemeinde oder
-    /// Ortschaft ist das Kantonskürzel, mit oder ohne Postleitzahl, in jeder Sprache.
+    /// «AG» nach einer Aargauer Gemeinde oder Ortschaft ist das Kantonskürzel, mit oder ohne
+    /// Postleitzahl, in jeder Sprache.
     #[test]
     fn kantonskuerzel_nach_aargauer_gemeinde() {
         for text in [
@@ -734,9 +733,9 @@ mod tests {
         assert_eq!(stellen("Die Muri Treuhand AG zahlt."), ["Muri Treuhand AG"]);
     }
 
-    /// Prüferproblem c-erkennung-p1: Endet der Name einer Firma auf eine Aargauer Gemeinde,
-    /// bleibt «AG» die Rechtsform; Kantonskürzel ist es nur, wenn der Ort den ganzen Namen
-    /// vor «AG» bildet (eine Postleitzahl davor ausgenommen).
+    /// Endet der Name einer Firma auf eine Aargauer Gemeinde, bleibt «AG» die Rechtsform;
+    /// Kantonskürzel ist es nur, wenn der Ort den ganzen Namen vor «AG» bildet (eine
+    /// Postleitzahl davor ausgenommen).
     #[test]
     fn firma_endet_auf_aargauer_gemeinde() {
         for (text, firma) in [
@@ -766,7 +765,7 @@ mod tests {
         ] {
             assert_eq!(stellen(text), [firma], "{text}");
         }
-        // Mit Anwaltsrolle ROT firma, wie in der Ausgangslage.
+        // Mit Anwaltsrolle ROT firma.
         for text in [
             "Meine Klientin ist die Elektro Baden AG.",
             "Meine Klientin ist die Garage Wohlen AG.",
@@ -792,8 +791,8 @@ mod tests {
         }
     }
 
-    /// Befund fehlersuche-1: Die Adresse nach dem Heimatort bleibt die Adresse einer
-    /// Person, ohne Rolle GELB, mit Rolle ROT ohne den Zusatz «Adresse der Firma».
+    /// Die Adresse nach dem Heimatort bleibt die Adresse einer Person, ohne Rolle GELB, mit
+    /// Rolle ROT ohne den Zusatz «Adresse der Firma».
     #[test]
     fn adresse_nach_heimatort_bleibt() {
         let funde = |roh: &str, rolle: Option<Rolle>| -> Vec<(String, String, Stufe, bool)> {
@@ -985,7 +984,7 @@ mod tests {
             || (personengesellschaft && e.gross == abgekuerzt)
     }
 
-    /// Befund w1-recht-p6: auch die Personengesellschaften prüfen `gross`.
+    /// Jeder Zusatz hat das passende `gross`, auch bei den Personengesellschaften.
     #[test]
     fn zusaetze_haben_bezeichnung_oder_abkuerzung() {
         let eintraege = &lexikon::lexikon(LEX_ZUSAETZE).eintraege;
@@ -1032,9 +1031,9 @@ mod tests {
             .collect()
     }
 
-    /// E4 (recht-stufen-3): Kollektiv- und Kommanditgesellschaften sind Personengesellschaften
-    /// mit Zusatz, in allen drei Sprachen und ausgeschrieben; die KmGK bleibt bei den
-    /// juristischen Personen (Art. 98 Abs. 2 KAG).
+    /// Kollektiv- und Kommanditgesellschaften sind Personengesellschaften mit Zusatz, in allen
+    /// drei Sprachen und ausgeschrieben; die KmGK bleibt bei den juristischen Personen
+    /// (Art. 98 Abs. 2 KAG).
     #[test]
     fn personengesellschaften_mit_zusatz() {
         const KLG: &str =
@@ -1123,8 +1122,8 @@ mod tests {
         assert!(stufen("Die Muster AG, Seestrasse 12, 8002 Zürich, zahlt.", None).is_empty());
     }
 
-    /// E1 (recht-stufen-1): Nur eine Pflicht, die «ein Geheimnis» schützt, hebt die Firma;
-    /// Art. 62 DSG (`professional`) schützt nur geheime Personendaten.
+    /// Nur eine Pflicht, die «ein Geheimnis» schützt, hebt die Firma; Art. 62 DSG
+    /// (`professional`) schützt nur geheime Personendaten.
     #[test]
     fn professional_hebt_die_firma_nicht() {
         let roh = "Die Muster Treuhand AG schuldet Fr. 10 000.";

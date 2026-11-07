@@ -435,7 +435,7 @@ fn tel(s: &str) -> Vec<Treffer> {
     treffer
 }
 
-/// Wortliste der Nummernwörter vor einem Block aus zehn Ziffern (Befund technik-4).
+/// Wortliste der Nummernwörter vor einem Block aus zehn Ziffern.
 pub const NUMMERNWOERTER: &str = "tel-nummernwoerter.toml";
 
 /// Kürzel für «Nummer» zwischen Nummernwort und Nummer («Rechnung Nr. 0791234567»,
@@ -514,10 +514,10 @@ fn ganzes_wort(lex: &crate::lexikon::Lexikon, wort: &str, merkmale: &[&str]) -> 
 
 /// Steht vor dem blossen Nummernwort bei `start` eine Präposition, wahlweise mit einem
 /// bestimmten Begleiter dazwischen? Dann nennt das Wort das Thema, nicht die Nummer: «Bei
-/// Fragen zur Rechnung 0791234567 anrufen», «sur la facture: …», «sulla fattura: …»
-/// (Prüferproblem c-erkennung-p5). Präpositionen: die Einträge mit merkmal «praeposition»
-/// in [`NUMMERNWOERTER`]; der Begleiter aus `firma-grenzen.toml`. «für Rechnung
-/// 0791234567» bleibt die Nummer der Rechnung.
+/// Fragen zur Rechnung 0791234567 anrufen», «sur la facture: …», «sulla fattura: …».
+/// Präpositionen: die Einträge mit merkmal «praeposition» in [`NUMMERNWOERTER`]; der
+/// Begleiter aus `firma-grenzen.toml`. «für Rechnung 0791234567» bleibt die Nummer der
+/// Rechnung.
 fn thema_davor(s: &str, start: usize) -> bool {
     let grenzen = crate::lexikon::lexikon(crate::regeln::firma::LEX_GRENZEN);
     let tel = crate::lexikon::lexikon(NUMMERNWOERTER);
@@ -721,10 +721,9 @@ const LABEL_MAX: usize = 63;
 const URL_FENSTER: usize = 512;
 
 /// Gängige Dateiendungen. Als oberstes Label beenden sie keine Domain: Dateinamen mit «@»
-/// wie «Scan_Vertrag@2024.pdf» oder «vertrag@final.docx» sind keine Adressen (Befund
-/// technik-4). Gross- und Kleinschreibung zählt nicht. «json», «html», «htm» und «xml» sind
-/// keine Top-Level-Domains (Prüferproblem c-erkennung-p9); «zip» und «mov» sind welche und
-/// stehen darum nicht in der Liste.
+/// wie «Scan_Vertrag@2024.pdf» oder «vertrag@final.docx» sind keine Adressen. Gross- und
+/// Kleinschreibung zählt nicht. «json», «html», «htm» und «xml» sind keine
+/// Top-Level-Domains; «zip» und «mov» sind welche und stehen darum nicht in der Liste.
 const DATEIENDUNGEN: [&str; 29] = [
     "pdf", "png", "jpg", "jpeg", "gif", "svg", "docx", "xlsx", "pptx", "msg", "txt", "doc", "xls",
     "ppt", "csv", "rtf", "odt", "ods", "odp", "tif", "tiff", "bmp", "webp", "heic", "eml", "json",
@@ -734,7 +733,7 @@ const DATEIENDUNGEN: [&str; 29] = [
 /// Erstes Label, das eine Bildgrösse bezeichnet («logo@2x.png», «icon@3x.zip»): Dateinamen
 /// für hochauflösende Bildschirme, keine Domain. Nur bei zwei Labels und einem obersten
 /// Label, das keine Länderendung aus zwei Buchstaben ist: «kontakt@2x.ch» bleibt eine
-/// Adresse (Prüferproblem c-erkennung-p9).
+/// Adresse.
 const BILDGROESSEN: [&str; 2] = ["2x", "3x"];
 
 fn mail(s: &str) -> Vec<Treffer> {
@@ -766,7 +765,7 @@ enum Schreibweise {
     Wort,
 }
 
-/// Adressen, deren «@» gegen Adresssammler ausgeschrieben ist (Befund technik-3):
+/// Adressen, deren «@» gegen Adresssammler ausgeschrieben ist:
 /// «marie(at)example.ch», «marie [at] example [dot] ch», «marie{at}example.ch». Lokaler
 /// Teil und Domain werden geprüft wie bei «@». Ein « at » ohne Klammern zählt nur, wenn die
 /// Domain mindestens einen ausgeschriebenen Punkt hat («marie at example dot ch»): Sonst
@@ -801,8 +800,7 @@ fn mail_verdeckt(s: &str) -> Vec<Treffer> {
 
 /// Sieht die Wortform « at » mit « dot » wie eine Adresse aus und nicht wie ein Satz? Die
 /// Domain ist ganz klein geschrieben, oder der lokale Teil enthält einen Punkt, eine Ziffer
-/// oder einen Unterstrich: «marie at example dot ch» ja, «works at Example dot com» nein
-/// (Prüferproblem c-erkennung-p6).
+/// oder einen Unterstrich: «marie at example dot ch» ja, «works at Example dot com» nein.
 fn wie_eine_adresse(lokal: &str, domain: &str) -> bool {
     let label_gross = domain
         .split(|c: char| c.is_whitespace() || c == '.')
@@ -1544,9 +1542,8 @@ mod tests {
         genau("«7561234567897»", "ahv", &["7561234567897"]);
     }
 
-    /// Befund recht-produkt-8 (Entscheid C7, Rechtstexte B6): Die gemessene Güte gilt für
-    /// Nummern, die wie unter «Methode» abgegrenzt sind; angrenzende Buchstaben verhindern
-    /// die Erkennung, wie die Grenzen sagen.
+    /// Die gemessene Güte gilt für Nummern, die wie unter «Methode» abgegrenzt sind;
+    /// angrenzende Buchstaben verhindern die Erkennung, wie die Grenzen sagen.
     #[test]
     fn guete_an_die_methode_gebunden() {
         nichts("Nr756.1234.5678.97", "ahv");
@@ -1575,7 +1572,7 @@ mod tests {
             let Guete::Nachgewiesen(t) = r.guete else {
                 panic!("{id}: Güte nicht nachgewiesen");
             };
-            // Wörtlich nach rechtstexte B6, auch der Grossbuchstabe am Satzanfang.
+            // Wörtlich, auch der Grossbuchstabe am Satzanfang.
             assert!(t.en.contains(en_satz), "{id}");
             assert!(
                 t.de.contains(
@@ -1600,7 +1597,7 @@ mod tests {
 
     #[test]
     fn ahv_andere_trenner_sind_nicht_belegt() {
-        // «756 1234 5678 97» stand bis zum Entscheid für Leerzeichen hier; siehe
+        // Die Schreibweise mit je einem Leerzeichen («756 1234 5678 97») prüft
         // `ahv_mit_leerzeichen`.
         for text in [
             "756-1234-5678-97",
@@ -1792,8 +1789,8 @@ mod tests {
 
     #[test]
     fn iban_andere_laender_und_schreibweisen() {
-        // «CH93  0076 2011 6238 5295 7» mit zwei Leerzeichen stand bis zum Entscheid für
-        // bis zu drei Leerraumzeichen hier; siehe `iban_leerraum_zwischen_gruppen`.
+        // Ein bis drei Leerraumzeichen zwischen den Gruppen («CH93  0076 2011 6238 5295 7»)
+        // prüft `iban_leerraum_zwischen_gruppen`.
         for text in [
             "DE89 3704 0044 0532 0130 00",
             "ch93 0076 2011 6238 5295 7",
@@ -2201,7 +2198,7 @@ mod tests {
         nichts(&format!("a{lokal}@example.com"), "mail");
     }
 
-    /// Befund technik-3: «@» und Punkt ausgeschrieben gegen Adresssammler.
+    /// «@» und Punkt ausgeschrieben gegen Adresssammler.
     #[test]
     fn mail_ausgeschrieben() {
         for (text, adresse) in [
@@ -2257,8 +2254,8 @@ mod tests {
             "hans  (at)  example.ch",
             "hans(at)2x.png",
             "hans(at)example.pdf",
-            // Prüferproblem c-erkennung-p6: Wortform « at » mit gross geschriebener Domain und
-            // einem lokalen Teil ohne Punkt, Ziffer oder Unterstrich.
+            // Wortform « at » mit gross geschriebener Domain und einem lokalen Teil ohne
+            // Punkt, Ziffer oder Unterstrich.
             "My client works at Example dot com.",
             "Wir treffen uns at Home dot com.",
             "I work at Example dot com since 2020.",
@@ -2287,7 +2284,7 @@ mod tests {
         );
     }
 
-    /// Befund technik-4: Dateinamen mit «@».
+    /// Dateinamen mit «@».
     #[test]
     fn mail_keine_dateinamen() {
         for text in [
@@ -2305,7 +2302,7 @@ mod tests {
             "foto@ferien.jpeg",
             "anim@web.gif",
             "brief@alt.doc",
-            // Prüferproblem c-erkennung-p9: Endungen, die keine Top-Level-Domain sind.
+            // Endungen, die keine Top-Level-Domain sind.
             "Lade daten@2024.json hoch.",
             "Seite index@v2.html prüfen.",
             "alt@v1.htm",
@@ -2327,8 +2324,8 @@ mod tests {
         );
     }
 
-    /// Befund technik-4: Ein Block aus zehn Ziffern nach einem Nummernwort ist keine
-    /// Telefonnummer; sonst geht keine verloren.
+    /// Ein Block aus zehn Ziffern nach einem Nummernwort ist keine Telefonnummer; sonst geht
+    /// keine verloren.
     #[test]
     fn tel_nicht_nach_nummernwort() {
         for text in [
@@ -2377,8 +2374,8 @@ mod tests {
             ("Patientin: 0791234567", "0791234567"),
             ("Rechnung vom Mai, Tel. 0791234567", "0791234567"),
             ("Rechnungen 0791234567", "0791234567"),
-            // Prüferproblem c-erkennung-p5: Nach «zur», «zum», «sur (la)», «sulla» nennt das
-            // blosse Wort das Thema, die Nummer bleibt eine Telefonnummer.
+            // Nach «zur», «zum», «sur (la)», «sulla» nennt das blosse Wort das Thema, die
+            // Nummer bleibt eine Telefonnummer.
             (
                 "Meine Nummer für Rückfragen zur Rechnung: 0791234567",
                 "0791234567",
@@ -2405,7 +2402,7 @@ mod tests {
         }
     }
 
-    /// Prüferprobleme c-belege-p3 und p5: Fundstellen der Nummernwörter.
+    /// Fundstellen der Nummernwörter.
     #[test]
     fn nummernwoerter_fundstellen() {
         let lex = crate::lexikon::lexikon(NUMMERNWOERTER);
@@ -2429,7 +2426,7 @@ mod tests {
                 .quelle
                 .contains("Thesaurus (2018)")
         );
-        // Die Präpositionen vor dem Thema (Prüferproblem c-erkennung-p5).
+        // Die Präpositionen vor dem Thema.
         for (begriff, sprache) in [("zur", De), ("zum", De), ("sur", Fr), ("sulla", It)] {
             assert_eq!(
                 eintrag(begriff, sprache).merkmal.as_deref(),
@@ -2438,7 +2435,7 @@ mod tests {
         }
     }
 
-    /// Befund technik-4: mit --role lawyer kein ROT mehr ohne Kennung (Fälle l29, l30).
+    /// Mit --role lawyer kein ROT ohne Kennung.
     #[test]
     fn nummern_und_dateinamen_ohne_rot() {
         let anwalt = Optionen {
@@ -2461,7 +2458,7 @@ mod tests {
                 .iter()
                 .any(|f| f.regel == "mail" && f.stufe == Stufe::Rot)
         );
-        // Prüferproblem c-erkennung-p5: Telefonnummern nach dem Thema bleiben ROT.
+        // Telefonnummern nach dem Thema bleiben ROT.
         for text in [
             "Meine Nummer für Rückfragen zur Rechnung: 0791234567",
             "Bei Fragen zum Auftrag 0791234567 anrufen.",
@@ -2474,7 +2471,7 @@ mod tests {
                 "{text}"
             );
         }
-        // Prüferproblem c-erkennung-p6: kein ROT aus einem englischen Satz.
+        // Kein ROT aus einem englischen Satz.
         for text in [
             "My client works at Example dot com.",
             "Wir treffen uns at Home dot com.",
@@ -2554,7 +2551,7 @@ mod tests {
                     r.id
                 );
             }
-            // Nur tel liest eine Wortliste: die Nummernwörter (Befund technik-4).
+            // Nur tel liest eine Wortliste: die Nummernwörter.
             let lexika: &[&str] = if r.id == "tel" {
                 &[NUMMERNWOERTER]
             } else {

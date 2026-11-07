@@ -166,7 +166,7 @@ fn muster() -> &'static Muster {
             ")",
         ]
         .concat();
-        // «Geburtsdatum/Alter»: ein zweiter Feldname nach «/» (Befund technik-6).
+        // «Geburtsdatum/Alter»: ein zweiter Feldname nach «/».
         let feldzusatz = alternative(&formen(lex, "feldzusatz"), regex::escape);
         // Nach dem Nomen wahlweise ein Feldzusatz, eine kurze Klammer («(TT.MM.JJJJ)») und
         // ein Trennzeichen.
@@ -433,7 +433,7 @@ pub fn info() -> Vec<RegelInfo> {
                 url: "https://www.larousse.fr/dictionnaires/francais/naissance",
                 lizenz: None,
                 stand: Stand::ZuPruefen(
-                    "Weder Fedlex noch die Wörterbücher führen die Kurzformen; Entscheid C4 verlangt sie, der Eigentümer entscheidet, ob sie bleiben.",
+                    "Weder Fedlex noch die Wörterbücher führen die Kurzformen; sie stehen als Feldnamen aus Personalblättern, Arztberichten und Formularen in der Liste.",
                 ),
             },
             Quelle {
@@ -606,13 +606,13 @@ mod tests {
             stellen("la Nato è nata il 4 aprile 1949"),
             ["4 aprile 1949"]
         );
-        // Andere Feldnamen und Feldzusätze stehen nicht in der Liste (Befund technik-6).
+        // Andere Feldnamen und Feldzusätze stehen nicht in der Liste.
         assert!(stellen("GebDat: 12.03.1985").is_empty());
         assert!(stellen("Geburtsdatum/Ort: 12.03.1985").is_empty());
         assert!(stellen("geb. 12. 03. 1985").is_empty());
     }
 
-    /// Befund technik-6, Entscheid C4: Feldnamen aus Formularen und «/Alter».
+    /// Feldnamen aus Formularen und «/Alter».
     #[test]
     fn feldnamen_aus_formularen() {
         for (text, datum) in [
@@ -641,8 +641,8 @@ mod tests {
             assert_eq!(stellen(text), [datum], "{text}");
         }
         // Der Beleg nennt einen eigenen Eintrag der Kurzform, der sagt, dass sie keine eigene
-        // Fundstelle hat (Prüferprobleme c-belege-p1, c-erkennung-p7), nicht die
-        // Fedlex-Stelle der Langform, in der die Kurzform nicht steht.
+        // Fundstelle hat, nicht die Fedlex-Stelle der Langform, in der die Kurzform nicht
+        // steht.
         for (text, begriff) in [
             ("Geb.-Datum: 12.03.1985", "Geb.-Datum"),
             ("Geb.-Dat.: 12.03.1985", "Geb.-Datum"),
@@ -658,8 +658,7 @@ mod tests {
         let t = Text::neu("Geburtsdatum: 12.03.1985");
         let beleg = erkenne(&t)[0].beleg.clone().expect("Beleg");
         assert_eq!(beleg.begriff, "Geburtsdatum");
-        // «Alter» ist mit BV Art. 8 Abs. 2 belegt (Lebensalter), wie «âge» und «età»
-        // (Prüferproblem c-belege-p4).
+        // «Alter» ist mit BV Art. 8 Abs. 2 belegt (Lebensalter), wie «âge» und «età».
         let alter = lexikon::lexikon(LEX_AUSLOESER)
             .eintraege
             .iter()
@@ -673,8 +672,8 @@ mod tests {
         assert!(stellen("Alter: 12.03.1985").is_empty());
     }
 
-    /// Reste Runde 1 (w4): Ein weicher Zeilenumbruch gilt zwischen Auslöser und Datum als
-    /// Leerraum, unsichtbare Formatzeichen werden übersprungen.
+    /// Ein weicher Zeilenumbruch gilt zwischen Auslöser und Datum als Leerraum, unsichtbare
+    /// Formatzeichen werden übersprungen.
     #[test]
     fn weicher_umbruch_und_formatzeichen() {
         assert_eq!(
@@ -706,9 +705,8 @@ mod tests {
         assert_eq!(&roh[tr[0].start..tr[0].ende], "12.03.1985");
     }
 
-    /// Befund w4-technik-p3: Ein Name oder eine Überschrift ohne Satzzeichen bildet mit der
-    /// nächsten Zeile einen Satz; ein gross geschriebenes Partizip am Anfang der nächsten
-    /// Zeile zählt trotzdem.
+    /// Ein Name oder eine Überschrift ohne Satzzeichen bildet mit der nächsten Zeile einen
+    /// Satz; ein gross geschriebenes Partizip am Anfang der nächsten Zeile zählt trotzdem.
     #[test]
     fn partizip_am_zeilenanfang_nach_weichem_umbruch() {
         for (roh, datum) in [
@@ -923,7 +921,7 @@ mod tests {
         assert!(i.hinweis.is_none());
         assert_eq!(i.lexika, [LEX_AUSLOESER, LEX_MONATE]);
         assert!(!i.quellen.is_empty() && !i.grenzen.is_empty());
-        // Die Lizenz der CLDR-Monatsnamen verweist auf «promptscan licenses» (Reste Runde 1).
+        // Die Lizenz der CLDR-Monatsnamen verweist auf «promptscan licenses».
         let cldr = i
             .quellen
             .iter()

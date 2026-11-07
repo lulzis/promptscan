@@ -153,7 +153,7 @@ fn vermerke(text: &Text) -> Vec<Treffer> {
             Treffer::neu("vermerk", v.start, v.ende, Art::Hinweis)
                 .mit_zusatz(
                     &format!("Art. 13 Abs. {} ISG", v.stufe),
-                    // Englisch bleibt das amtliche deutsche Zitat (technik-7).
+                    // Englisch bleibt das amtliche deutsche Zitat.
                     &format!("Art. 13 Abs. {} ISG", v.stufe),
                 )
                 .mit_beleg(lex.beleg(v.eintrag))
@@ -1133,9 +1133,9 @@ fn info_vermerk() -> RegelInfo {
             "Die Wortliste enthält die drei Stufen aus Art. 13 ISG und die einleitenden Wörter aus Art. 11 ISG und Art. 18–20 ISV, je im amtlichen deutschen, französischen und italienischen Wortlaut. Eine Zeile zählt, wenn sie ausser der Stufe und allenfalls «Klassifizierung:» nur Satz- oder Zierzeichen enthält, oder wenn die erste nichtleere Zeile mit der Stufe beginnt und danach endet oder ein Trennzeichen folgt («Vertraulich – Memo»). Zeilen mit Fragezeichen zählen nicht; nennen solche Zeilen verschiedene Stufen, ist das eine Aufzählung und zählt ebenfalls nicht. Dasselbe Wort mitten im Text («bitte vertraulich behandeln») ist kein Vermerk.",
             "The word list holds the three levels of Art. 13 ISG and the introducing words of Art. 11 ISG and Art. 18–20 ISV, each in the official German, French and Italian wording. A line counts if, apart from the level and possibly «Klassifizierung:», it holds only punctuation or decoration, or if the first non-empty line starts with the level and then ends or continues after a separator («Vertraulich – Memo»). Lines with a question mark do not count; if such lines name different levels, they are an enumeration and do not count either. The same word in running text («bitte vertraulich behandeln») is not a marking.",
         ),
-        // Für wen der Vermerk gilt, sagt die Frage unter «Klären» (Rechtstext A5 «vermerk»,
-        // mit Art. 3 ISG); der frühere Satz «Das ISG gilt für Bundesstellen; für Private …»
-        // liess die Kantone und Private mit Bundesaufgaben aus.
+        // Für wen der Vermerk gilt, sagt die Frage unter «Klären» (mit Art. 3 ISG); der frühere
+        // Satz «Das ISG gilt für Bundesstellen; für Private …» liess die Kantone und Private mit
+        // Bundesaufgaben aus.
         hinweis: Some(Txt::neu(
             "Klassifizierungsvermerk (Art. 13 ISG).",
             "Classification marking (Art. 13 ISG).",
@@ -1202,7 +1202,7 @@ fn info_fundstellen() -> RegelInfo {
             "Sprachmodelle erfinden Urteile. Jede Fundstelle prüfen.",
             "Language models invent judgments. Check every citation.",
         )),
-        // Rechtstext B5: rechtlicher Bezug Art. 12 lit. a BGFA, Grundlage der Erkennung
+        // Rechtlicher Bezug Art. 12 lit. a BGFA, Grundlage der Erkennung
         // Art. 27 Abs. 1 BGG (Abs. 2 regelt die Anonymisierung) und Art. 57 Abs. 1 BGerR.
         grundlage: vec![&normen::BGFA_12_A, &normen::BGG_27_1, &BGERR_57],
         quellen: vec![

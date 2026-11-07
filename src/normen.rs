@@ -9,11 +9,9 @@
 //! Wörtliche Auszüge stehen in «»; «…» markiert Kürzungen. Endet ein Auszug vor dem Ende
 //! der zitierten Einheit, endet er mit «…» (Test `auszug_vollstaendig_oder_mit_auslassung`).
 //!
-//! Die Normen der Endfassung der Rechtstexte (Runde 2, ab [`DSG_5_D`]) stammen mit Zitat,
-//! Fassung, Fundstelle und Wortlaut aus deren Liste `normen_neu`; dazu [`DSG_34_4`] und
-//! [`DSG_36_2`], die ihr Text «Geltungsbereich» zitiert. Jeder Wortlaut ist am 06.11.2026
-//! mit `fedlex.mjs` gegen die genannte Fassung geprüft: jedes Stück zwischen «…» steht so
-//! im Erlass, und ein Auszug ohne «…» am Schluss reicht bis zum Ende der Einheit.
+//! Bei den Normen ab [`DSG_5_D`] sowie bei [`DSG_34_4`] und [`DSG_36_2`] ist jeder Wortlaut
+//! am 06.11.2026 auf Fedlex gegen die genannte Fassung geprüft: jedes Stück zwischen «…»
+//! steht so im Erlass, und ein Auszug ohne «…» am Schluss reicht bis zum Ende der Einheit.
 
 /// Eine zitierte Norm.
 #[derive(Debug, PartialEq, Eq)]
@@ -31,11 +29,10 @@ pub struct Norm {
 }
 
 /// Erlasse, deren Normen eine Rechtsfolge oder Pflicht tragen, an die promptscan anknüpft
-/// (recht-normen-8, Rechtstext B5 «Rechtlicher Bezug»): Datenschutz, Geheimhaltungspflichten,
-/// AHV-Nummer, Informationssicherheit. Normen anderer Erlasse beschreiben, woran ein
-/// Erkenner eine Angabe erkennt («Grundlage der Erkennung»): Nummernformate (AHVV, AEFV,
-/// TAV), Adressen und Orte (GeoNV, VPG, ZGB), Rechtsformen (OR, HRegV, KAG), Fundstellen
-/// (BGG, BGerR).
+/// («Rechtlicher Bezug»): Datenschutz, Geheimhaltungspflichten, AHV-Nummer,
+/// Informationssicherheit. Normen anderer Erlasse beschreiben, woran ein Erkenner eine
+/// Angabe erkennt («Grundlage der Erkennung»): Nummernformate (AHVV, AEFV, TAV), Adressen
+/// und Orte (GeoNV, VPG, ZGB), Rechtsformen (OR, HRegV, KAG), Fundstellen (BGG, BGerR).
 pub const BEZUG_ERLASSE: &[&str] = &[
     "DSG", "StGB", "BGFA", "BankG", "FINIG", "FinfraG", "StPO", "AHVG", "ISG",
 ];
@@ -386,9 +383,9 @@ pub const BV_70_1: Norm = Norm {
     wortlaut: "Die Amtssprachen des Bundes sind Deutsch, Französisch und Italienisch. Im Verkehr mit Personen rätoromanischer Sprache ist auch das Rätoromanische Amtssprache des Bundes.",
 };
 
-// --- Endfassung der Rechtstexte (Runde 2), Liste `normen_neu` ---------------------------
+// --- Weitere Normen ---------------------------------------------------------------------
 
-/// Begriff des Bearbeitens (Rechtstext B3, `--target local`).
+/// Begriff des Bearbeitens (`--target local`).
 pub const DSG_5_D: Norm = Norm {
     zitat: "Art. 5 lit. d DSG",
     erlass: "DSG, SR 235.1",
@@ -397,7 +394,7 @@ pub const DSG_5_D: Norm = Norm {
     wortlaut: "Bearbeiten: jeder Umgang mit Personendaten, unabhängig von den angewandten Mitteln und Verfahren, insbesondere das Beschaffen, Speichern, Aufbewahren, Verwenden, Verändern, Bekanntgeben, Archivieren, Löschen oder Vernichten von Daten",
 };
 
-/// Verantwortlicher und Auftragsbearbeiter (Rechtstexte A5, B2 «auftragsbearbeitung»).
+/// Verantwortlicher und Auftragsbearbeiter (Punkt «Auftragsbearbeitung»).
 pub const DSG_5_J_K: Norm = Norm {
     zitat: "Art. 5 lit. j und k DSG",
     erlass: "DSG, SR 235.1",
@@ -520,7 +517,7 @@ pub const OR_321A_4: Norm = Norm {
     wortlaut: "Der Arbeitnehmer darf geheim zu haltende Tatsachen, wie namentlich Fabrikations- und Geschäftsgeheimnisse, von denen er im Dienst des Arbeitgebers Kenntnis erlangt, während des Arbeitsverhältnisses nicht verwerten oder anderen mitteilen; auch nach dessen Beendigung bleibt er zur Verschwiegenheit verpflichtet, soweit es zur Wahrung der berechtigten Interessen des Arbeitgebers erforderlich ist.",
 };
 
-/// Schweigepflicht der Revisionsstelle (Rolle `auditor`, Rechtstexte A2 und C2).
+/// Schweigepflicht der Revisionsstelle (Rolle `auditor`).
 pub const OR_730B_2: Norm = Norm {
     zitat: "Art. 730b Abs. 2 OR",
     erlass: "OR, SR 220",
@@ -577,7 +574,7 @@ pub const DSG_16_2_D: Norm = Norm {
     wortlaut: "Liegt kein Entscheid des Bundesrates nach Absatz 1 vor, so dürfen Personendaten ins Ausland bekanntgegeben werden, wenn ein geeigneter Datenschutz gewährleistet wird durch: … d. Standarddatenschutzklauseln, die der EDÖB vorgängig genehmigt, ausgestellt oder anerkannt hat; …",
 };
 
-/// Persönlichkeitsverletzung, ganzer Artikel (Rechtstext B2 «rechtfertigung»).
+/// Persönlichkeitsverletzung, ganzer Artikel (Punkt «Rechtfertigung»).
 pub const DSG_30: Norm = Norm {
     zitat: "Art. 30 DSG",
     erlass: "DSG, SR 235.1",
@@ -602,7 +599,7 @@ pub const BGFA_13_2: Norm = Norm {
     wortlaut: "Sie sorgen für die Wahrung des Berufsgeheimnisses durch ihre Hilfspersonen.",
 };
 
-/// Geltung des ISG für die Kantone (Rechtstext A5 «vermerk»).
+/// Geltung des ISG für die Kantone (Regel vermerk).
 pub const ISG_3: Norm = Norm {
     zitat: "Art. 3 ISG",
     erlass: "ISG, SR 128",
@@ -611,7 +608,7 @@ pub const ISG_3: Norm = Norm {
     wortlaut: "Für die Kantone gelten nur die Bestimmungen: a. über klassifizierte Informationen, soweit sie klassifizierte Informationen des Bundes bearbeiten; und b. über die Sicherheit beim Einsatz von Informatikmitteln, soweit sie auf Informatikmittel des Bundes zugreifen. Diese Bestimmungen gelten nicht, wenn die Kantone eine mindestens gleichwertige Informationssicherheit gewährleisten.",
 };
 
-/// Information über die Rechtsprechung (Rechtstext B5; ersetzt `hinweise::BGG_27`).
+/// Information über die Rechtsprechung (Regel fundstellen).
 pub const BGG_27_1: Norm = Norm {
     zitat: "Art. 27 Abs. 1 BGG",
     erlass: "BGG, SR 173.110",
@@ -848,7 +845,7 @@ mod tests {
             "auch juristische Personen und Handelsgesellschaften sein.",
         ),
         ("Art. 153b AHVG", "in strukturierter Form gesammelt werden."),
-        // Endfassung der Rechtstexte, Ende der Einheit mit fedlex.mjs nachgesehen.
+        // Weitere Normen, Ende der Einheit auf Fedlex nachgesehen.
         (
             "Art. 5 lit. d DSG",
             "Bekanntgeben, Archivieren, Löschen oder Vernichten von Daten",
@@ -939,7 +936,7 @@ mod tests {
         ),
     ];
 
-    /// E9: Ein Auszug ist vollständig, oder «…» markiert, dass am Schluss Text fehlt.
+    /// Ein Auszug ist vollständig, oder «…» markiert, dass am Schluss Text fehlt.
     #[test]
     fn auszug_vollstaendig_oder_mit_auslassung() {
         for n in ALLE {
@@ -958,7 +955,7 @@ mod tests {
         }
     }
 
-    /// E9: die drei Zitate, die vor dem Ende der zitierten Einheit aufhörten.
+    /// Drei Zitate reichen bis zum Ende der zitierten Einheit.
     #[test]
     fn drei_zitate_vollstaendig() {
         assert!(STGB_320_1.wortlaut.ends_with(
@@ -975,8 +972,8 @@ mod tests {
         );
     }
 
-    /// Rechtstext B5: Pflichten des OR (Revisionsstelle, Arbeitsverhältnis) sind
-    /// rechtlicher Bezug, die Rechtsformen der Regel firma Grundlage der Erkennung.
+    /// Pflichten des OR (Revisionsstelle, Arbeitsverhältnis) sind rechtlicher Bezug, die
+    /// Rechtsformen der Regel firma Grundlage der Erkennung.
     #[test]
     fn bezug_und_erkennung_im_or() {
         for n in [&OR_730B_2, &OR_321A_4, &OR_328B, &OR_342_1_A] {

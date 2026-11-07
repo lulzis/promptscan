@@ -1548,7 +1548,7 @@ mod tests {
         }
     }
 
-    // --- Ergänzungen 2026-11: Befunde recht-wortlisten-* und praxis-* ---
+    // --- Weitere Wörter und Wendungen ---
 
     #[test]
     fn ziffer_1_jude_juedin_konfession_ebreo() {
@@ -1605,7 +1605,7 @@ mod tests {
 
     #[test]
     fn ziffer_2_diagnose_am_wortende_loest_icd_aus() {
-        // praxis-de-5: Haupt-, Neben-, Verdachts- und Austrittsdiagnose.
+        // Haupt-, Neben-, Verdachts- und Austrittsdiagnose.
         for (roh, kode) in [
             ("Hauptdiagnose: F32.1", "F32.1"),
             ("Nebendiagnosen: E11.9 und I10", "E11.9"),
@@ -1843,8 +1843,8 @@ mod tests {
         }
     }
 
-    /// Prüferbefund p8: «Jude» und FR «cancer» sind auch Namen. In einem erkannten Namen
-    /// zählen sie nicht, sonst schon.
+    /// «Jude» und FR «cancer» sind auch Namen. In einem erkannten Namen zählen sie nicht,
+    /// sonst schon.
     #[test]
     fn name_mit_jude_oder_cancer_zaehlt_nicht() {
         for roh in [
@@ -2255,8 +2255,8 @@ mod tests {
                 "privazione dell'autorità parentale",
                 Some("privazione dell'autorità parentale"),
             ),
-            // Zitate, die der Prüfer ungetestet fand (Regel 7): Einzelwörter aus Erkennt,
-            // Methode und Grenzen, die gemeinsame Grenze NENNUNG je Regel und Regelnamen.
+            // Einzelwörter aus Erkennt, Methode und Grenzen, die gemeinsame Grenze NENNUNG je
+            // Regel und Regelnamen.
             ("art5c-1", "Gewerkschaft", Some("Gewerkschaft")),
             ("art5c-1", "syndical", Some("syndical")),
             ("art5c-1", "sindacali", Some("sindacali")),
@@ -2350,9 +2350,9 @@ mod tests {
         }
     }
 
-    /// Reste Runde 1 (w2-art5c): Gleich geschriebene Einträge mehrerer Sprachen tragen den
-    /// Beleg in der Sprache des Textes; «burnout» hat keinen italienischen Eintrag und trägt
-    /// den französischen (RegelInfo::grenzen von art5c-2).
+    /// Gleich geschriebene Einträge mehrerer Sprachen tragen den Beleg in der Sprache des
+    /// Textes; «burnout» hat keinen italienischen Eintrag und trägt den französischen
+    /// (RegelInfo::grenzen von art5c-2).
     #[test]
     fn hiv_und_burnout_beleg_nach_sprache_des_textes() {
         for (roh, url) in [

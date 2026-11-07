@@ -56,7 +56,7 @@ fn zeichen_aus_mehreren_bytes_an_jeder_stelle_ohne_absturz() {
     }
 }
 
-/// Die Fälle aus der Prüfung von Runde 1, einzeln, damit ein Rückfall sofort benannt ist.
+/// Die bekannten Absturzfälle, einzeln, damit ein Rückfall sofort benannt ist.
 #[test]
 fn geschuetztes_leerzeichen_nach_anrede_und_betrag() {
     let nbsp = char::from_u32(0x00A0).expect("U+00A0");

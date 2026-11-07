@@ -1,7 +1,7 @@
-//! Die Ausgabe an den Prüffällen der Gestaltung (Runde 2, Paket A; docs/AUSGABE.md).
+//! Die Ausgabe an den Prüffällen der Gestaltung (docs/AUSGABE.md).
 //!
-//! Die Berichte entstehen mit `promptscan::pruefe` aus den Prüffällen: f03 bis f09 und die
-//! Aufrufe aus der Ästhetik-Prüfung, dazu ROT mit Gesundheitsdaten (--role doctor) und
+//! Die Berichte entstehen mit `promptscan::pruefe` aus den Prüffällen: f03 bis f09 und
+//! weitere Aufrufe zur Gestaltung, dazu ROT mit Gesundheitsdaten (--role doctor) und
 //! --role authority mit «Sozialhilfe». Geprüft werden Breite (80 und 60 Spalten), ASCII,
 //! Kopfzeile, Zeilenansicht, Gruppen, Ergebnisblock, Farben, Englisch, JSON, `rules`,
 //! `explain`, die Beispiele in SPEC und AUSGABE.md und die Normenliste in SPEC 10.1.
@@ -259,7 +259,7 @@ fn erklaerungen(d: &Darstellung) -> Vec<(String, String)> {
     v
 }
 
-// --- A2: Breite -------------------------------------------------------------------------
+// --- Breite -----------------------------------------------------------------------------
 
 #[test]
 fn jeder_pruefall_passt_in_80_und_60_spalten() {
@@ -294,16 +294,131 @@ fn explain_und_rules_passen_in_80_und_60_spalten() {
     }
 }
 
+/// Die Erlasskürzel, die das Programm zitiert: das letzte Wort jedes Normzitats, dazu
+/// die Kürzel, die nur in den Texten der Regeln vorkommen.
+fn erlasskuerzel() -> BTreeSet<String> {
+    let mut v: BTreeSet<String> = alle_normen()
+        .iter()
+        .filter_map(|n| n.zitat.split_whitespace().last())
+        .filter(|w| w.chars().any(|c| c.is_ascii_uppercase()) && !w.contains('.'))
+        .map(String::from)
+        .collect();
+    for k in ["StPO", "RVOG", "VAM", "ZGB", "BV", "DSV", "TAV", "SR"] {
+        v.insert(k.to_string());
+    }
+    v
+}
+
+/// Teile eines Normzitats, nach denen nie umbrochen wird.
+const ZITATTEILE: &[&str] = &[
+    "Art.", "Abs.", "lit.", "Bst.", "Ziff.", "let.", "para.", "Satz", "Nr.", "SR", "Anhang",
+];
+
+/// Ein Stück eines Zitats hinter «Abs.», «lit.» …: eine Nummer («1», «2.2.4», «1bis»)
+/// oder ein Buchstabe («a», «c,»).
+fn ist_zitatnummer(w: &str) -> bool {
+    let w = w.trim_end_matches([',', ')', '.', ';', ':']);
+    w.starts_with(|c: char| c.is_ascii_digit())
+        || (w.chars().count() == 1 && w.chars().all(|c| c.is_ascii_lowercase()))
+}
+
+/// Zeilenpaare, an denen ein Normzitat getrennt ist: Die Zeile endet mit «Art.», «Abs.»
+/// …, und die nächste beginnt mit der Nummer; die nächste beginnt mit dem Erlasskürzel
+/// eines Zitats («Ziff. 2» / «DSG)»); oder die Zeile endet mit einem Erlasskürzel und die
+/// nächste beginnt mit «Art.» («DSG» / «Art. 5»).
+fn getrennte_zitate(aus: &str, kuerzel: &BTreeSet<String>) -> Vec<String> {
+    let rein = ohne_escapes(aus);
+    let z: Vec<&str> = rein.lines().collect();
+    let mut fehler = Vec::new();
+    for paar in z.windows(2) {
+        let (Some(ende), Some(anfang)) = (
+            paar[0].split_whitespace().last(),
+            paar[1].split_whitespace().next(),
+        ) else {
+            continue;
+        };
+        let ende_rein = ende.trim_start_matches(['(', '«', '"']);
+        let anfang_kern = anfang
+            .trim_start_matches(['(', '«', '"'])
+            .trim_end_matches([',', ')', '.', ';', ':', '»', '"']);
+        let ende_kern = ende_rein.trim_end_matches([',', ')', ';', ':']);
+        let getrennt = (ZITATTEILE.contains(&ende_rein) && ist_zitatnummer(anfang))
+            || (kuerzel.contains(anfang_kern)
+                && !ende.ends_with([',', ';', ':', ')'])
+                && (ist_zitatnummer(ende_kern) || ende_kern == "f." || ende_kern == "ff."))
+            || (kuerzel.contains(ende_kern)
+                && !ende.ends_with([',', ';', ':', ')', '.'])
+                && anfang == "Art.");
+        if getrennt {
+            fehler.push(format!("{}\n{}", paar[0], paar[1]));
+        }
+    }
+    fehler
+}
+
+#[test]
+fn normzitate_werden_nirgends_getrennt() {
+    // Im Bericht, in rules und explain, bei 60 und 80 Spalten, deutsch, englisch und in
+    // ASCII.
+    let kuerzel = erlasskuerzel();
+    let mut fehler = Vec::new();
+    for breite in [60, 61, 67, 72, 80] {
+        for (name, d) in varianten(breite) {
+            for f in FAELLE {
+                for (art, aus) in [
+                    ("", text(f, &d)),
+                    (" kurz", ausgabe::bericht_kurz_text(&bericht(f), &d)),
+                ] {
+                    for g in getrennte_zitate(&aus, &kuerzel) {
+                        fehler.push(format!("{}{art} bei {breite} ({name}):\n{g}", f.name));
+                    }
+                }
+            }
+            if d.farbe {
+                continue;
+            }
+            for (was, aus) in erklaerungen(&d) {
+                for g in getrennte_zitate(&aus, &kuerzel) {
+                    fehler.push(format!("{was} bei {breite} ({name}):\n{g}"));
+                }
+            }
+        }
+    }
+    assert!(
+        fehler.is_empty(),
+        "{} getrennt:\n{}",
+        fehler.len(),
+        fehler.join("\n\n")
+    );
+}
+
+#[test]
+fn die_pruefung_auf_getrennte_zitate_greift() {
+    // Gegenprobe: getrennte Zitate werden erkannt, ganze Zitate nicht.
+    let k = erlasskuerzel();
+    for falsch in [
+        "Art. 17 Abs. 2 und Art. 33 Abs.\n    1, Fassung vom 1. Januar 2026",
+        "aus StPO Art. 12 und 13, DSG Art.\n    5 lit. i, RVOG Art. 47",
+        "Art. 1 Abs. 1 und Art. 4 Abs.\n    1 lit. a, b, e, g",
+        "Rasse oder Ethnie (Art. 5 Bst. c Ziff. 2\n    DSG).",
+        "aus StPO Art. 12 und 13, DSG\n    Art. 5 lit. i",
+    ] {
+        assert_eq!(getrennte_zitate(falsch, &k).len(), 1, "{falsch}");
+    }
+    for richtig in [
+        "Art. 17 Abs. 2 und\n    Art. 33 Abs. 1, Fassung vom",
+        "Rasse oder Ethnie\n    (Art. 5 Bst. c Ziff. 2 DSG).",
+        "der erste Satz\n    sagt, wofür",
+        "nach dem DSG.\n    Art. 6 gilt",
+    ] {
+        assert!(getrennte_zitate(richtig, &k).is_empty(), "{richtig}");
+    }
+}
+
 #[test]
 fn normzitate_und_markierte_stellen_bleiben_zusammen() {
     // Bei 60 Spalten bricht der Gruppenkopf um, aber nie innerhalb eines Zitats.
     let aus = text(&FAELLE[3], &darstellung(60, false, false, false));
-    for z in aus.lines() {
-        let z = z.trim_end();
-        assert!(!z.ends_with("Art."), "Zitat getrennt: {z}");
-        assert!(!z.ends_with(" Abs."), "Zitat getrennt: {z}");
-        assert!(!z.ends_with(" lit."), "Zitat getrennt: {z}");
-    }
     assert!(aus.contains("Art. 30 Abs. 2 lit. c DSG"), "{aus}");
     // Die markierte Stelle «arbeitsunfähig (Diagnose F32.1)» steht auf einer Zeile.
     assert!(aus.contains("│ arbeitsunfähig (Diagnose F32.1)."), "{aus}");
@@ -312,7 +427,7 @@ fn normzitate_und_markierte_stellen_bleiben_zusammen() {
     assert!(lang.contains("(Zeile 34)"), "{lang}");
 }
 
-// --- A4: ASCII --------------------------------------------------------------------------
+// --- ASCII ------------------------------------------------------------------------------
 
 #[test]
 fn ascii_ausgabe_hat_nur_ascii_bytes() {
@@ -326,11 +441,15 @@ fn ascii_ausgabe_hat_nur_ascii_bytes() {
             }
         }
     }
-    for englisch in [false, true] {
-        let d = darstellung(80, false, englisch, true);
-        for (name, aus) in erklaerungen(&d) {
-            let fremd: BTreeSet<char> = aus.chars().filter(|c| !c.is_ascii()).collect();
-            assert!(fremd.is_empty(), "{name}: {fremd:?}");
+    for breite in [80, 60] {
+        for englisch in [false, true] {
+            let d = darstellung(breite, false, englisch, true);
+            for (name, aus) in erklaerungen(&d) {
+                let fremd: BTreeSet<char> = aus.chars().filter(|c| !c.is_ascii()).collect();
+                assert!(fremd.is_empty(), "{name} bei {breite}: {fremd:?}");
+                let zu_lang = zu_breit(&aus, breite, true);
+                assert!(zu_lang.is_empty(), "{name} bei {breite}: {zu_lang:#?}");
+            }
         }
     }
 }
@@ -357,7 +476,7 @@ fn ascii_umschrift_im_prompt_und_im_rahmen() {
     );
 }
 
-// --- A1: Kopfzeile ----------------------------------------------------------------------
+// --- Kopfzeile --------------------------------------------------------------------------
 
 #[test]
 fn kopfzeile_nennt_lage_rolle_und_ziel() {
@@ -398,7 +517,7 @@ fn kopfzeile_nennt_lage_rolle_und_ziel() {
         erste(&b, &OHNE_FARBE),
         "Lokal geprüft · Rolle: nicht angegeben · Ziel: lokales Modell"
     );
-    // Aus dem Text erschlossen (Rechtstext A1): Das Wort steht ganz; passt die Zeile nicht
+    // Aus dem Text erschlossen: Das Wort steht ganz; passt die Zeile nicht
     // in 70 Zeichen, beginnt «Ziel» eine zweite Zeile.
     let aus = ausgabe::bericht_text(&pruefe(ANWAELTIN, None, Ziel::Cloud), &OHNE_FARBE);
     assert!(
@@ -419,7 +538,7 @@ fn kopfzeile_nennt_lage_rolle_und_ziel() {
         aus.starts_with("Lokal geprüft · Rolle: Beruf offen, aus «Meine Mandantin»\nZiel: Cloud\n"),
         "{aus}"
     );
-    // Genau 70 Zeichen passen auf eine Zeile (Rechtstext A1 «Beruf offen»).
+    // Genau 70 Zeichen passen auf eine Zeile («Beruf offen»).
     let klientin = "Meine Klientin Erika Beispiel will das Erbe ausschlagen.";
     let aus = ausgabe::bericht_text(&pruefe(klientin, None, Ziel::Cloud), &OHNE_FARBE);
     let erste = aus.lines().next().unwrap_or("");
@@ -450,7 +569,7 @@ fn kopfzeile_nennt_lage_rolle_und_ziel() {
         "ganz in der Gruppe: {aus}"
     );
     // Ein weicher Umbruch im auslösenden Wort steht als Leerzeichen da, in der Kopfzeile
-    // und in der Gruppe (Reste Runde 1, w4), nicht als «Meine …».
+    // und in der Gruppe, nicht als «Meine …».
     let aus = ausgabe::bericht_text(
         &pruefe(&MANDANTIN.replacen(' ', "\n", 1), None, Ziel::Cloud),
         &OHNE_FARBE,
@@ -479,7 +598,7 @@ fn kopfzeile_nennt_lage_rolle_und_ziel() {
     }
 }
 
-// --- A1, A3, A5: Zeilenansicht ----------------------------------------------------------
+// --- Zeilenansicht ----------------------------------------------------------------------
 
 #[test]
 fn markierung_mit_initiale_und_einer_legende() {
@@ -556,7 +675,7 @@ fn steuerzeichen_im_prompt_steuern_das_terminal_nicht() {
     assert!(aus.contains('\u{FFFD}'), "{aus}");
 }
 
-// --- A1, A5: Gruppen --------------------------------------------------------------------
+// --- Gruppen ----------------------------------------------------------------------------
 
 #[test]
 fn gruppen_nach_stufe_mit_arten_in_worten() {
@@ -574,9 +693,14 @@ fn gruppen_nach_stufe_mit_arten_in_worten() {
         "\n",
         "HINWEIS   Rechtsfolge nicht beurteilt\n",
         "          Fundstellen   «nenne passende BGE»\n",
-        "                        Sprachmodelle erfinden Urteile. Jede Fundstelle prüfen.\n",
+        "                        Sprachmodelle erfinden Urteile.\n",
+        "\n",
     );
     assert!(aus.contains(gruppen), "{aus}");
+    // Die Handlung zu den Fundstellen steht nur unter «Klären».
+    assert!(!aus.contains("Jede Fundstelle prüfen"), "{aus}");
+    assert_eq!(aus.matches("Jede Fundstelle").count(), 1, "{aus}");
+    assert!(aus.contains("\n          Jede Fundstelle in der Antwort an der Quelle prüfen.\n"));
     // Regelkennungen nur in der Zeile «Mehr».
     let vor_mehr = aus.split("\nMehr ").next().unwrap_or("");
     for id in ["art5c-2", "fundstellen", "geburtsdatum", " ahv "] {
@@ -589,7 +713,7 @@ fn gruppen_nach_stufe_mit_arten_in_worten() {
 
 #[test]
 fn englisch_bleibt_das_zitat_amtlich_deutsch() {
-    // technik-7: der Zusatz der Regel vermerk zitiert wie alle Normen deutsch.
+    // Der Zusatz der Regel vermerk zitiert wie alle Normen deutsch.
     let en = text(&FAELLE[9], &ENGLISCH);
     assert!(en.contains("«VERTRAULICH» (Art. 13 Abs. 2 ISG)"), "{en}");
     for f in FAELLE {
@@ -599,8 +723,8 @@ fn englisch_bleibt_das_zitat_amtlich_deutsch() {
 
 #[test]
 fn wert_und_zusatz_bleiben_zusammen() {
-    // Bild C (Prüffall f07): «078 765 43 21» stand am Zeilenende, «(Bereich Mobilnetz)»
-    // am Anfang der nächsten Zeile.
+    // Prüffall f07: Wert und Zusatz, etwa «078 765 43 21 (Bereich Mobilnetz)», stehen auf
+    // derselben Zeile.
     for breite in [80, 60] {
         let aus = text(&FAELLE[6], &darstellung(breite, false, false, false));
         for paar in [
@@ -625,6 +749,59 @@ fn gleiche_werte_einmal_mit_anzahl() {
     );
     let ascii = text(&FAELLE[13], &darstellung(80, false, false, true));
     assert!(ascii.contains("Hans Muster (2x)"), "{ascii}");
+}
+
+#[test]
+fn hinweis_ohne_identifikator_mit_der_ziffer_wie_bei_orange() {
+    // Nicht die ganze Teilkategorie («Gesundheit, Intimsphäre, Rasse oder Ethnie»), sondern
+    // «Ziff. N» unter einer Zwischenzeile mit dem Zitat.
+    let b = pruefe(
+        "Mein Mandant ist seit März arbeitsunfähig (Diagnose F32.1) und Mitglied der Gewerkschaft Unia.",
+        None,
+        Ziel::Cloud,
+    );
+    let aus = ausgabe::bericht_text(&b, &OHNE_FARBE);
+    assert!(
+        aus.contains(concat!(
+            "HINWEIS   Rechtsfolge nicht beurteilt\n",
+            "          Personenbezug, aber kein direkter Identifikator im Prompt:\n",
+            "          Kategorie nach Art. 5 lit. c DSG:\n",
+            "          Ziff. 2       arbeitsunfähig (Diagnose F32.1)\n",
+            "          Ziff. 1       Gewerkschaft\n",
+        )),
+        "{aus}"
+    );
+    assert!(!aus.contains("Ethnie"), "{aus}");
+    let en = ausgabe::bericht_text(&b, &ENGLISCH);
+    assert!(
+        en.contains(
+            "          Category under Art. 5 lit. c DSG:\n          Ziff. 2       arbeitsunfähig"
+        ),
+        "{en}"
+    );
+}
+
+#[test]
+fn meldungen_zur_eingabe_ohne_etikett_unter_dem_ergebnis() {
+    // Kein «Eingabe   Eingabe enthält …».
+    let b = pruefe("Hans Muster bit\u{AD}te.", None, Ziel::Cloud);
+    let aus = ausgabe::bericht_text(&b, &OHNE_FARBE);
+    assert!(
+        aus.contains(concat!(
+            "          1 Fund: 1 gelb\n",
+            "          Eingabe enthält 1 unsichtbares Formatzeichen (U+00AD)\n",
+        )) || aus.contains(
+            "· 1 Fund\n          Eingabe enthält 1 unsichtbares Formatzeichen (U+00AD)\n"
+        ),
+        "{aus}"
+    );
+    assert!(!aus.contains("Eingabe   Eingabe"), "{aus}");
+    let en = ausgabe::bericht_text(&b, &ENGLISCH);
+    assert!(
+        en.contains("\n          Input contains 1 invisible format character (U+00AD)\n"),
+        "{en}"
+    );
+    assert!(!en.contains("Input     Input"), "{en}");
 }
 
 #[test]
@@ -682,7 +859,7 @@ fn lokales_modell_als_hinweis_mit_der_stufe_in_der_cloud() {
         "lokal keine Frage nach dem Ausland, ohne ROT kein Offenbaren:\n{aus}"
     );
     // Wäre ein Fund sonst ROT, nennt eine zweite Kopfzeile die Normen der Rolle wie der
-    // ROT-Kopf, und das Ergebnis sagt «kein Offenbaren» (Rechtstext B3).
+    // ROT-Kopf, und das Ergebnis sagt «kein Offenbaren».
     let rot = text(&FAELLE[14], &OHNE_FARBE);
     for erwartet in [
         concat!(
@@ -718,7 +895,7 @@ fn lokales_modell_als_hinweis_mit_der_stufe_in_der_cloud() {
     );
 }
 
-// --- A1, A5: Ergebnisblock --------------------------------------------------------------
+// --- Ergebnisblock ----------------------------------------------------------------------
 
 #[test]
 fn ergebnis_zaehlt_funde_und_hinweise_getrennt() {
@@ -738,7 +915,7 @@ fn ergebnis_zaehlt_funde_und_hinweise_getrennt() {
         )),
         "{en}"
     );
-    // Rechtstext A4 «HINWEIS»: die Zahl in derselben Zeile, solange sie 70 Zeichen nicht
+    // HINWEIS: die Zahl in derselben Zeile, solange sie 70 Zeichen nicht
     // überschreitet.
     let hinweis = text(&FAELLE[1], &OHNE_FARBE);
     assert!(
@@ -785,7 +962,7 @@ fn klaeren_beachten_und_mehr() {
         "{block}"
     );
     assert!(aus.ends_with("promptscan explain fundstellen\n"), "{aus}");
-    // Englisch nach Rechtstext A5 «ohne Rolle (E10)» und A6.
+    // Englisch: die Frage ohne Rolle und die Frage nach dem Ausland.
     let en = text(&FAELLE[3], &ENGLISCH);
     assert!(
         en.contains(concat!(
@@ -798,8 +975,8 @@ fn klaeren_beachten_und_mehr() {
         en.contains("Does the data go abroad? Then Art. 16 f. DSG and Anhang 1 DSV apply.\n"),
         "{en}"
     );
-    // Behörde: Rechtstext A5 «E3» unter «Beachten», Ausland ohne Art. 61 DSG (A6), keine
-    // Frage nach der Geheimhaltungspflicht.
+    // Behörde: das anwendbare Datenschutzrecht unter «Beachten», Ausland ohne Art. 61 DSG,
+    // keine Frage nach der Geheimhaltungspflicht.
     let behoerde_text = text(&FAELLE[11], &OHNE_FARBE);
     let behoerde = einzeilig(&behoerde_text);
     assert!(behoerde.contains(
@@ -810,11 +987,11 @@ fn klaeren_beachten_und_mehr() {
         "{behoerde}"
     );
     assert!(!behoerde.contains("Gilt für Sie eine Geheimhaltungspflicht"));
-    // Nur Hinweise: keine Frage nach dem Ausland, keine nach der Geheimhaltungspflicht (E10).
+    // Nur Hinweise: keine Frage nach dem Ausland, keine nach der Geheimhaltungspflicht.
     let hinweis = text(&FAELLE[1], &OHNE_FARBE);
     assert!(!hinweis.contains("Ausland"), "{hinweis}");
     assert!(!hinweis.contains("Geheimhaltungspflicht"), "{hinweis}");
-    // Mit Rolle keine Frage nach der Geheimhaltungspflicht und keine alte Zeile von w1.
+    // Mit Rolle keine Frage nach der Geheimhaltungspflicht; nirgends «Ohne Berufsrolle».
     let rot = text(&FAELLE[4], &OHNE_FARBE);
     assert!(
         !rot.contains("Gilt für Sie eine Geheimhaltungspflicht"),
@@ -841,7 +1018,7 @@ fn keine_funde() {
         )),
         "{aus}"
     );
-    // Rechtstext A7 englisch.
+    // Englisch.
     let en = text(&FAELLE[0], &ENGLISCH);
     assert!(
         en.ends_with(concat!(
@@ -879,7 +1056,7 @@ fn kurzbericht_ist_der_ergebnisblock() {
     }
 }
 
-// --- A3: Farben -------------------------------------------------------------------------
+// --- Farben -----------------------------------------------------------------------------
 
 #[test]
 fn plaketten_in_festen_farbpaaren() {
@@ -938,7 +1115,7 @@ fn plaketten_in_festen_farbpaaren() {
     }
 }
 
-// --- A8: JSON ---------------------------------------------------------------------------
+// --- JSON -------------------------------------------------------------------------------
 
 #[test]
 fn json_schema_2_und_herkunft_der_rolle() {
@@ -980,7 +1157,7 @@ fn json_schema_2_und_herkunft_der_rolle() {
     assert!(DOKU.contains("`optionen.rolle_quelle`"), "AUSGABE.md");
 }
 
-// --- A7: explain und rules --------------------------------------------------------------
+// --- explain und rules ------------------------------------------------------------------
 
 #[test]
 fn explain_einer_regel_mit_der_stufe_zuoberst() {
@@ -1008,7 +1185,7 @@ fn explain_einer_regel_mit_der_stufe_zuoberst() {
             "    gerechtfertigt ist (Art. 31 Abs. 1 DSG).\n",
             "  - Ob eine Ausnahme greift, etwa eine Einwilligung oder Bewilligung.\n",
             "  - Ob die Norm der Rolle auch den KI-Anbieter erfasst, etwa als Hilfsperson\n",
-            "    oder Beauftragten.\n",
+            "    oder Beauftragten (Literatur noch nicht gelesen).\n",
             "  - Ob der KI-Anbieter Auftragsbearbeiter oder Dritter ist (Art. 9 DSG).\n",
             "  - Ob Daten ins Ausland gehen und wohin (Art. 16 f. DSG).\n",
             "  - Welches Datenschutzrecht für Sie gilt (Art. 2 DSG).\n",
@@ -1046,7 +1223,7 @@ fn explain_einer_regel_mit_der_stufe_zuoberst() {
             assert!(aus.contains(verweis), "{}", r.id);
         }
     }
-    // Jede Regel zeigt alle Punkte kurz (B2: «jede Regel»), weil ein Fund mit --role ROT
+    // Jede Regel zeigt alle Punkte kurz, weil ein Fund mit --role ROT
     // werden kann; der Verweis nennt die Stufe der Regel und ROT.
     let kontext =
         ausgabe::erklaerung_text(&katalog::finde("kontext").expect("kontext"), &OHNE_FARBE);
@@ -1158,7 +1335,23 @@ fn explain_gelb_orange_hinweis() {
     );
     let flach = einzeilig(&hinweis);
     assert!(flach.contains("ohne Synchronisierung in eine Cloud"));
-    // HINWEIS zeigt alle Punkte (B2), weil ein Fund mit --role ROT werden kann.
+    // Letzter Satz: die Warnung zur Konfigurationsdatei; ohne den
+    // Halbsatz zur Kopfzeile, solange der Bericht die Herkunft des Ziels nicht trägt.
+    assert!(
+        flach.contains(
+            "prüft promptscan nicht. Steht target = \"local\" in der Konfigurationsdatei, gilt das für jeden Prompt, auch für einen, der doch in eine Cloud geht."
+        ),
+        "{hinweis}"
+    );
+    assert!(!flach.contains("die Kopfzeile nennt dann"), "{hinweis}");
+    let note = einzeilig(&ausgabe::stufen_erklaerung_text(Stufe::Hinweis, &ENGLISCH));
+    assert!(
+        note.contains(
+            "If target = \"local\" is set in the configuration file, it applies to every prompt, including one that does go to a cloud."
+        ),
+        "{note}"
+    );
+    // HINWEIS zeigt alle Punkte, weil ein Fund mit --role ROT werden kann.
     assert!(flach.contains("Was promptscan nicht entscheidet - Ob eine Persönlichkeitsverletzung"));
     for punkt in [
         "- Ob eine Ausnahme greift: nach Art. 321 Ziff. 2 StGB",
@@ -1177,7 +1370,7 @@ fn explain_gelb_orange_hinweis() {
     )));
 }
 
-/// Befund w1-recht-p5: Art. 2 Abs. 3 DSG mit beiden Sätzen und die gesetzliche Grundlage
+/// Art. 2 Abs. 3 DSG mit beiden Sätzen und die gesetzliche Grundlage
 /// der Bundesorgane nur «grundsätzlich» (Ausnahmen Art. 34 Abs. 4, Art. 36 Abs. 2 DSG), bei
 /// GELB, ORANGE und ROT; Satz 2 und die Ausnahmen stehen im Wortlaut darunter.
 #[test]
@@ -1246,7 +1439,7 @@ fn rules_nach_stufe_gegliedert() {
         ),
         "{aus}"
     );
-    // Rechtsfolge und Grundlage der Erkennung getrennt (recht-normen-8, B5).
+    // Rechtsfolge und Grundlage der Erkennung getrennt.
     assert!(aus.contains(concat!(
         "  fundstellen   Bitte um Urteile oder Fundstellen\n",
         "                Bezug: Art. 12 lit. a BGFA\n",
@@ -1264,7 +1457,7 @@ fn rules_nach_stufe_gegliedert() {
     assert!(!en.contains("para."));
 }
 
-// --- A9: Beispiele in SPEC 3 und AUSGABE 1 ----------------------------------------------
+// --- Beispiele in SPEC 3 und AUSGABE 1 --------------------------------------------------
 
 /// Der erste Codeblock nach `marke`, ohne die Zäune.
 fn codeblock<'a>(doku: &'a str, marke: &str) -> &'a str {
@@ -1306,7 +1499,7 @@ fn die_beispiele_in_spec_3_stimmen() {
     );
 }
 
-// --- A11: SPEC 10.1 ---------------------------------------------------------------------
+// --- SPEC 10.1 --------------------------------------------------------------------------
 
 /// Jede Norm, die das Programm mit Wortlaut führt: die Konstanten in `normen.rs`, die
 /// Grundlagen aller Regeln und die Normen aller Rollen.
@@ -1446,8 +1639,8 @@ fn wortlisten_tabelle() -> String {
     aus
 }
 
-/// Reste Runde 1 (w1): SPEC 10.1 nennt auch die Erlasse der Wortlisten, erzeugt aus den
-/// Wortlisten selbst. Ändert sich eine Wortliste, zeigt der Fehler die neue Tabelle.
+/// SPEC 10.1 nennt auch die Erlasse der Wortlisten, erzeugt aus den Wortlisten selbst.
+/// Ändert sich eine Wortliste, zeigt der Fehler die neue Tabelle.
 #[test]
 fn spec_10_1_nennt_die_erlasse_der_wortlisten() {
     let ab = SPEC.find("### 10.1").expect("SPEC 10.1");

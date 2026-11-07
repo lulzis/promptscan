@@ -1549,9 +1549,8 @@ mod tests {
         ]);
     }
 
-    /// Befund recht-stufen (E5): Klientschaft zeigt keinen bestimmten Beruf. Die Wörter
-    /// bleiben Auslöser, die Rolle ist offen; Patientinnen und Patienten zeigen den
-    /// Gesundheitsberuf.
+    /// Klientschaft zeigt keinen bestimmten Beruf. Die Wörter bleiben Auslöser, die Rolle
+    /// ist offen; Patientinnen und Patienten zeigen den Gesundheitsberuf.
     #[test]
     fn klientschaft_und_patienten_drei_sprachen() {
         pruefe_kontext(&[
@@ -1614,8 +1613,8 @@ mod tests {
         ]);
     }
 
-    /// Befund recht-stufen (E5): Kein Wort der Klientschaft verliert den Geheimnis-Kontext;
-    /// jedes zeigt den offenen Beruf, in allen Formen.
+    /// Kein Wort der Klientschaft verliert den Geheimnis-Kontext; jedes zeigt den offenen
+    /// Beruf, in allen Formen.
     #[test]
     fn jedes_wort_der_klientschaft_bleibt_ausloeser_mit_offenem_beruf() {
         let mut zahl = 0;
@@ -2076,8 +2075,8 @@ mod tests {
         );
     }
 
-    /// Befund recht-stufen (E8): Der Satz der Beschreibung über Rollen ohne Erkennung aus
-    /// dem Text stimmt mit den Wortlisten überein, Rolle für Rolle.
+    /// Der Satz der Beschreibung über Rollen ohne Erkennung aus dem Text stimmt mit den
+    /// Wortlisten überein, Rolle für Rolle.
     #[test]
     fn rollen_ohne_erkennung_wie_beschrieben() {
         let satz =
@@ -2124,7 +2123,7 @@ mod tests {
         }
     }
 
-    /// Befund praxis-de (E10): neue Berufe und Selbstbezeichnungen, je Sprache.
+    /// Neue Berufe und Selbstbezeichnungen, je Sprache.
     #[test]
     fn neue_berufe_drei_sprachen() {
         pruefe_kontext(&[
@@ -2318,7 +2317,7 @@ mod tests {
         }
     }
 
-    /// Befund praxis-de (E10): Vertretung einer Person, Beruf offen.
+    /// Vertretung einer Person, Beruf offen.
     #[test]
     fn vertretung_drei_sprachen() {
         pruefe_kontext(&[
@@ -2365,12 +2364,12 @@ mod tests {
         ]);
     }
 
-    /// Befund w1-recht-p1: «vertreten», «représenter» und «rappresentare» meinen auch die
+    /// «vertreten», «représenter» und «rappresentare» meinen auch die
     /// Stellvertretung und das Darstellen. Minimalpaare DE, FR, IT.
     #[test]
     fn vertretung_nicht_bei_stellvertretung_oder_bild() {
         for satz in [
-            // Stellvertretung im Beruf (Belege des Befunds und Minimalpaare).
+            // Stellvertretung im Beruf (Belege und Minimalpaare).
             "Ich vertrete meine Kollegin Anna Roth bis Ende Mai. Sie ist krank.",
             "Ich vertrete meine Kollegin Anna Roth.",
             "Wir vertreten unseren Arbeitskollegen Hans Muster.",
@@ -2484,7 +2483,7 @@ mod tests {
         ]);
     }
 
-    /// Befund w1-recht-p4: Wer ausschliesslich Vermögenswerte verbundener Personen verwaltet,
+    /// Wer ausschliesslich Vermögenswerte verbundener Personen verwaltet,
     /// untersteht dem FINIG nicht (Art. 2 Abs. 2 lit. a FINIG). Minimalpaare DE, FR, IT.
     #[test]
     fn finanzinstitut_nicht_fuer_verbundene_personen() {
@@ -2548,7 +2547,7 @@ mod tests {
                 "{satz}: {k:?}"
             );
         }
-        // Ganzer Ablauf: Der Beleg des Befunds wird nicht mehr ROT.
+        // Ganzer Ablauf: Der Satz wird nicht ROT.
         let satz = "Ich bin Vermögensverwalter meiner Mutter Anna Roth. Ihre IBAN ist CH93 0076 2011 6238 5295 7.";
         let bericht = crate::pruefe(satz, &Optionen::default());
         assert_eq!(bericht.lage, Lage::Keine, "{satz}");
@@ -2579,8 +2578,8 @@ mod tests {
         }
     }
 
-    /// Befund w1-recht-p2: «procuratore generale di …» ist eine private Vollmacht (Art. 458
-    /// Abs. 1 und Art. 535 Abs. 3 OR), ausser vor dem Amt.
+    /// «procuratore generale di …» ist eine private Vollmacht (Art. 458 Abs. 1 und
+    /// Art. 535 Abs. 3 OR), ausser vor dem Amt.
     #[test]
     fn procuratore_generale_als_vollmacht() {
         for satz in [
@@ -2639,8 +2638,8 @@ mod tests {
         }
     }
 
-    /// Befund w1-recht-p3: «Revisor», «réviseur» und «revisore» bezeichnen auch, wer Texte
-    /// prüft. Die Fehltreffer stehen in explain kontext; die Rolle bleibt auditor (E10).
+    /// «Revisor», «réviseur» und «revisore» bezeichnen auch, wer Texte prüft. Die Fehltreffer
+    /// stehen in explain kontext; die Rolle bleibt auditor.
     #[test]
     fn revisoren_mehrdeutig_wie_beschrieben() {
         for satz in [
@@ -2655,7 +2654,7 @@ mod tests {
         }
     }
 
-    /// Befund praxis-de (E10): «Als Rechtsanwältin von …, … ich»: der genannte Beruf.
+    /// «Als Rechtsanwältin von …, … ich»: der genannte Beruf.
     #[test]
     fn als_beruf_einer_person() {
         pruefe_kontext(&[
@@ -2887,7 +2886,7 @@ mod tests {
             "Sono gestore patrimoniale di mia madre",
             "Mein Bruder arbeitet⏎als Anwalt, habe ich gehört",
         ];
-        // Seit Runde 1 meldet die Regel name auch «Klägerin» (Verfahrensrolle): Der Rahmen
+        // Die Regel name meldet auch «Klägerin» (Verfahrensrolle): Der Rahmen
         // «Als … der <Person> … ich» zählt dann.
         assert_eq!(
             kontext("Als Anwältin der Klägerin habe ich eine Frage."),
@@ -2906,8 +2905,8 @@ mod tests {
     }
 
     /// Nach einer Anrede, einem Betreff oder einer Überschrift ohne Satzzeichen beginnt die
-    /// nächste Zeile wie ein Satz (`Text::satzanfang_bei`). Belege aus der Prüfung der
-    /// weichen Umbrüche, in DE, FR und IT, mit und ohne Komma und mit CRLF.
+    /// nächste Zeile wie ein Satz (`Text::satzanfang_bei`). Beispiele in DE, FR und IT, mit
+    /// und ohne Komma und mit CRLF.
     #[test]
     fn selbstbezeichnung_nach_weichem_umbruch() {
         for (satz, rolle, stelle) in [
@@ -3070,8 +3069,8 @@ mod tests {
         assert_eq!(woerter, ["muster", "ex-klientin", "qu'", "avocat"]);
     }
 
-    /// Das Beispiel der Grenze in explain personenbezug (Reste Runde 1, w3-namen): genau
-    /// dieser Satz ergibt einen HINWEIS zu Art. 5 lit. c Ziff. 2 DSG.
+    /// Das Beispiel der Grenze in explain personenbezug: genau dieser Satz ergibt einen
+    /// HINWEIS zu Art. 5 lit. c Ziff. 2 DSG.
     #[test]
     fn beispiel_der_grenze_personenbezug() {
         let satz = "Was darf die beschuldigte Person, wenn sie arbeitsunfähig ist?";
@@ -3095,8 +3094,8 @@ mod tests {
         assert_eq!(gezeigt, vec![("art5c-2", Stufe::Hinweis, "arbeitsunfähig")]);
     }
 
-    /// Befund w4-technik-p4: Unsichtbare Formatzeichen zwischen Possessiv oder «bin» und
-    /// dem Wort danach zählen wie Leerraum, im Wort wie nichts.
+    /// Unsichtbare Formatzeichen zwischen Possessiv oder «bin» und dem Wort danach zählen wie
+    /// Leerraum, im Wort wie nichts.
     #[test]
     fn formatzeichen_zwischen_den_woertern() {
         pruefe_kontext(&[
@@ -3141,8 +3140,8 @@ mod tests {
         assert_eq!(klein, ["mandantin", "ich"]);
     }
 
-    /// Entscheid C9 c: Ein Rahmen mit vertretener Firma ergibt dieselbe Rolle wie ohne
-    /// Firma, wenn die Regel firma die Firma erkennt.
+    /// Ein Rahmen mit vertretener Firma ergibt dieselbe Rolle wie ohne Firma, wenn die Regel
+    /// firma die Firma erkennt.
     #[test]
     fn rahmen_mit_vertretener_firma() {
         for (mit, ohne, rolle, partei) in [
@@ -3182,7 +3181,7 @@ mod tests {
                 Rolle::Lawyer,
                 "Jean Exemple",
             ),
-            // Prüferproblem c-erkennung-p1: Firma, deren Name auf eine Aargauer Gemeinde endet.
+            // Firma, deren Name auf eine Aargauer Gemeinde endet.
             (
                 "Als Anwalt der Garage Wohlen AG habe ich eine Frage zu Hans Muster.",
                 "Als Anwalt habe ich eine Frage zu Hans Muster.",
@@ -3220,9 +3219,9 @@ mod tests {
         }
     }
 
-    /// Befunde w4-technik-p1 und p2: Eine Anrede oder ein Betreff ohne Satzzeichen bildet
-    /// mit der nächsten Zeile einen Satz; die Selbstbezeichnung am Anfang der nächsten Zeile
-    /// zählt trotzdem, und eine Frage dort gehört nicht zum Rahmen davor.
+    /// Eine Anrede oder ein Betreff ohne Satzzeichen bildet mit der nächsten Zeile einen Satz;
+    /// die Selbstbezeichnung am Anfang der nächsten Zeile zählt trotzdem, und eine Frage dort
+    /// gehört nicht zum Rahmen davor.
     #[test]
     fn weicher_umbruch_vor_der_selbstbezeichnung() {
         pruefe_kontext(&[

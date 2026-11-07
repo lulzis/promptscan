@@ -1,5 +1,4 @@
-# Nummernwörter vor einem Block aus zehn Ziffern (Regel tel, SPEC 5.1, Befund technik-4,
-# Entscheid C3).
+# Nummernwörter vor einem Block aus zehn Ziffern (Regel tel, SPEC 5.1).
 #
 # Eine Kunden-, Rechnungs-, Policen- oder Patientennummer kann aussehen wie eine
 # Telefonnummer ohne Trenner: 0, eine Kennzahl aus Festnetz oder Mobilnetz und sieben
@@ -16,11 +15,10 @@
 # Ein blosses Wort ohne «Nummer» und ohne Kürzel danach («Rechnung», «Auftrag», «facture»,
 # «fattura») nennt nach einer Präposition nur das Thema: «Bei Fragen zur Rechnung
 # 0791234567 anrufen», «Pour toute question sur la facture: 0791234567». Dann meldet tel
-# den Block (Prüferproblem c-erkennung-p5). Als Präposition zählen nur die Einträge mit
-# merkmal «praeposition» am Ende dieser Datei («zur», «zum», «sur», «sulla»), zwischen
-# Präposition und Wort wahlweise ein bestimmter Begleiter aus firma-grenzen.toml («sur la
-# facture»). «für», «gemäss» und «auf» nicht: «für Rechnung 0791234567» ist die Nummer
-# der Rechnung.
+# den Block. Als Präposition zählen nur die Einträge mit merkmal «praeposition» am Ende
+# dieser Datei («zur», «zum», «sur», «sulla»), zwischen Präposition und Wort wahlweise ein
+# bestimmter Begleiter aus firma-grenzen.toml («sur la facture»). «für», «gemäss» und «auf»
+# nicht: «für Rechnung 0791234567» ist die Nummer der Rechnung.
 #
 # merkmal:
 #   (keines)      Nummernwort.
@@ -44,7 +42,7 @@ regel = "tel"
 quelle = "SR 641.20 Art. 26 Abs. 1: «… hat dem Leistungsempfänger oder der Leistungsempfängerin auf Verlangen eine Rechnung auszustellen …»"
 fassung = "2025-03-31"
 url = "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26"
-notiz = "«Rechnung 0791234567»: die Nummer der Rechnung (Befund technik-4, Fall t19)."
+notiz = "«Rechnung 0791234567»: die Nummer der Rechnung."
 
 [[eintrag]]
 begriff = "Rechnungsnummer"
@@ -63,7 +61,7 @@ regel = "tel"
 quelle = "SR 831.101 Art. 71 Abs. 3: «Direktzahlungen … erfolgen in Form von Auszahlungsscheinen mit Referenznummern der Schweizerischen Post.»"
 fassung = "2026-01-01"
 url = "https://www.fedlex.admin.ch/eli/cc/63/1185_1183_1185/de#art_71"
-notiz = "Wörtlich belegt ist «Referenznummern» (AHVV Art. 71 Abs. 3). «Referenz» allein ist die Kurzform davon und als Nummernwort nicht eigens belegt: Duden führt nur «Empfehlung», «Person oder Stelle, auf die verwiesen wird» und die sprachwissenschaftliche Bedeutung (Prüferproblem c-belege-p3); die Kurzform steht in der Liste, weil Entscheid C3 sie nennt. Duden nennt auch die Person, die Auskunft gibt («darf ich Sie als Referenz angeben?»): Deren Nummer als Block direkt nach «Referenz» bleibt unerkannt (explain tel, Grenzen)."
+notiz = "Wörtlich belegt ist «Referenznummern» (AHVV Art. 71 Abs. 3). «Referenz» allein ist die Kurzform davon und als Nummernwort nicht eigens belegt: Duden führt nur «Empfehlung», «Person oder Stelle, auf die verwiesen wird» und die sprachwissenschaftliche Bedeutung; die Kurzform steht bewusst in der Liste. Duden nennt auch die Person, die Auskunft gibt («darf ich Sie als Referenz angeben?»): Deren Nummer als Block direkt nach «Referenz» bleibt unerkannt (explain tel, Grenzen)."
 
 [[eintrag]]
 begriff = "Police"
@@ -232,7 +230,7 @@ regel = "tel"
 quelle = "SR 831.101 art. 71 cpv. 3: «I versamenti diretti … sono effettuati mediante polizze di pagamento con numeri di riferimento della Posta Svizzera.»"
 fassung = "2026-01-01"
 url = "https://www.fedlex.admin.ch/eli/cc/63/1185_1183_1185/it#art_71"
-notiz = "Wörtlich belegt ist «numeri di riferimento» (OAVS art. 71 cpv. 3); «riferimento» allein ist die Kurzform, «rif.» deren Abkürzung. Das frühere Treccani-Zitat belegte nur die Wendung «in riferimento a» (Prüferproblem c-belege-p3)."
+notiz = "Wörtlich belegt ist «numeri di riferimento» (OAVS art. 71 cpv. 3); «riferimento» allein ist die Kurzform, «rif.» deren Abkürzung. Ein Treccani-Zitat belegt nur die Wendung «in riferimento a»."
 
 [[eintrag]]
 begriff = "polizza"

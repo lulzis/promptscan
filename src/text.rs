@@ -184,7 +184,7 @@ impl Text {
     /// die Diagnose weitergeben?» fragt die zweite Zeile, die erste nicht. Beginnt die
     /// nächste Zeile klein, setzt sie den Satz fort und gehört zum selben Stück: «Seit wann
     /// bin ich Ärztin⏎im Sinne des Gesetzes?» ist eine Frage, «Ab wann bin ich Ärztin,
-    /// wenn⏎ich das Examen bestanden habe?» auch (Befund C, Erkennung).
+    /// wenn⏎ich das Examen bestanden habe?» auch.
     pub fn satzstueck_bei(&self, byte: usize) -> Range<usize> {
         let satz = self.satz_bei(byte);
         let i = self.weich.partition_point(|&p| p < byte);
@@ -944,7 +944,7 @@ mod tests {
         assert_eq!(ende, s.len());
     }
 
-    /// Die Belege aus der Prüfung der weichen Umbrüche: Nach einer Anrede, einem Betreff,
+    /// Beispiele für weiche Umbrüche: Nach einer Anrede, einem Betreff,
     /// einem Namen oder einer Überschrift ohne Satzzeichen steht das erste Wort der
     /// nächsten Zeile nicht mehr am Anfang seines Satzes, aber am Anfang seines Satzstücks.
     #[test]
@@ -1051,7 +1051,7 @@ mod tests {
     /// `satzanfang_bei` gibt für jedes Wort dasselbe wie die Satzanfänge, als noch jedes
     /// `\n` den Satz beendete, mit einer Ausnahme: Beginnt die Zeile nach einem weichen
     /// Umbruch klein oder mit einer Ziffer, setzt sie den Satz fort, und ihr erstes Wort steht
-    /// nicht mehr am Satzanfang («… Sie⏎ist krank.», [`Text::stueckgrenze`], Befund C).
+    /// nicht mehr am Satzanfang («… Sie⏎ist krank.», [`Text::stueckgrenze`]).
     #[test]
     fn satzanfang_wie_vor_den_weichen_umbruechen() {
         for s in [

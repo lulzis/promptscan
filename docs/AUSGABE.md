@@ -12,25 +12,25 @@ Zwei Tests halten das Dokument und das Programm beisammen:
 - `tests/ausgabe.rs` vergleicht das Beispiel in Abschnitt 1 Zeichen für Zeichen mit der
   Ausgabe für denselben Prompt; ebenso die zwei Beispiele in SPEC 3.
 
-Jeder Text mit rechtlichem Gehalt stammt wörtlich aus den Rechtstexten (Runde 2,
-Endfassung; die Kennungen A1 bis C3 unten sind deren Abschnitte). Die Texte stehen in
-`src/ausgabe.rs` beisammen.
+Die Texte mit rechtlichem Gehalt stehen in `src/ausgabe.rs` beisammen.
 
 ## 1. Bericht als Text
 
 Von oben nach unten, damit in fünf Sekunden Ergebnis, Handlung und Grund zu sehen sind:
 
-1. **Kopfzeile:** `Lokal geprüft · Rolle: … · Ziel: …` (Rechtstext A1). Die Rolle mit
+1. **Kopfzeile:** `Lokal geprüft · Rolle: … · Ziel: …`. Die Rolle mit
    Herkunft: `Anwältin/Anwalt (--role)`, `(Konfiguration)`, `Anwältin/Anwalt, aus «…»`
    (aus dem Text erschlossen), `Beruf offen, aus «…»`, `keine (--role none)` oder
    `nicht angegeben`. Passt die Zeile nicht in 70 Spalten, beginnt `Ziel: …` eine
    zweite Zeile; läuft auch die erste über, wird das auslösende Wort nach 20 Zeichen
-   mit `…` gekürzt. Ziel ist `Cloud` oder `lokales Modell`, aus der
-   Konfigurationsdatei mit `(Konfiguration)`.
+   mit `…` gekürzt. Ziel ist `Cloud` oder `lokales Modell`. Ob das Ziel aus `--target`
+   oder aus der Konfigurationsdatei stammt, nennt die Kopfzeile noch nicht: Der
+   Bericht trägt die Herkunft des Ziels nicht; `explain hinweis` warnt, dass
+   `target = "local"` in der Datei für jeden Prompt gilt.
 2. eine Leerzeile, dann die **Zeilenansicht** des Prompts mit den markierten Stellen;
 3. die **Gruppen** nach Stufe: ROT, ORANGE, GELB, HINWEIS, innerhalb nach Position;
-4. der **Ergebnisblock**: `Ergebnis`, falls nötig `Eingabe`, `Klären`, `Beachten`,
-   `Mehr`.
+4. der **Ergebnisblock**: `Ergebnis` (darunter, falls nötig, die Meldungen zur
+   Eingabe), `Klären`, `Beachten`, `Mehr`.
 
 Beispiel ohne Farbe (`--no-color`), Prompt f04 aus SPEC 3, 80 Spalten:
 
@@ -60,7 +60,7 @@ GELB      Personendaten, Art. 5 lit. a DSG
 
 HINWEIS   Rechtsfolge nicht beurteilt
           Fundstellen   «nenne passende BGE»
-                        Sprachmodelle erfinden Urteile. Jede Fundstelle prüfen.
+                        Sprachmodelle erfinden Urteile.
 
 Ergebnis  ORANGE   Besonders schützenswerte Personendaten
           6 Funde: 1 orange, 4 gelb, 1 Hinweis
@@ -78,7 +78,7 @@ Mehr      promptscan explain orange · promptscan explain art5c-2 ·
 
 - Jede Zeile beginnt mit dem Rand `│`. Hat der Prompt mehr als 10 Zeilen
   (`ausgabe::ZEILEN_OHNE_NUMMER`), steht davor die Zeilennummer, rechtsbündig.
-- **Umbruch:** Promptzeilen brechen an Leerzeichen auf die Breite um (Entscheid A2) und
+- **Umbruch:** Promptzeilen brechen an Leerzeichen auf die Breite um und
   behalten den Rand; jede Teilzeile hat ihre eigene Markierungszeile. Eine markierte
   Stelle wird nicht getrennt, ausser sie passt allein nicht in eine Zeile.
 - **Mit Farbe** trägt jede Stelle einen Textmarker in der Farbe ihrer Stufe (unten,
@@ -118,10 +118,14 @@ auf einer eigenen Zeile.
   Ziffer (`Ziff. 2`).
 - **GELB:** `Personendaten, Art. 5 lit. a DSG`.
 - **HINWEIS:** `Rechtsfolge nicht beurteilt`; die Werte in «…», darunter ab Spalte 25
-  der Hinweis der Regel. Angaben ohne Identifikator stehen unter
-  `Personenbezug, aber kein direkter Identifikator im Prompt:`.
+  der Hinweis der Regel. Was unter `Klären` als Handlung steht, wiederholt die Gruppe
+  nicht (bei `fundstellen` nur `Sprachmodelle erfinden Urteile.`). Angaben ohne
+  Identifikator stehen unter
+  `Personenbezug, aber kein direkter Identifikator im Prompt:`; Geburtsdatum und
+  Wohnort mit ihrer Art, die Kategorien von Art. 5 lit. c DSG wie bei ORANGE als
+  `Ziff. N` unter `Kategorie nach Art. 5 lit. c DSG:`.
 - **`--target local`:** eine eigene HINWEIS-Gruppe
-  `Läuft das Modell lokal: keine Bekanntgabe (Art. 5 lit. e DSG)` (Rechtstext B3), bei
+  `Läuft das Modell lokal: keine Bekanntgabe (Art. 5 lit. e DSG)`, bei
   Funden, die sonst ROT wären, dazu `kein Offenbaren (…)` mit den Normen der Rolle;
   die Reihen heissen `sonst ROT`, `sonst ORANGE`, `sonst GELB` (englisch `else …`).
 
@@ -130,28 +134,28 @@ Regelkennungen stehen nur in der Zeile `Mehr`.
 ### Ergebnisblock
 
 - **Ergebnis:** die höchste Stufe und ihr Titel, dann die Zählung aller Funde, die
-  Hinweise eingeschlossen: `6 Funde: 1 orange, 4 gelb, 1 Hinweis` (Rechtstext A4).
+  Hinweise eingeschlossen: `6 Funde: 1 orange, 4 gelb, 1 Hinweis`.
   Haben alle Funde dieselbe Stufe und passt die Zeile in 70 Spalten, steht die Zahl
   in derselben Zeile (`GELB   Personendaten · 3 Funde`). Bei offenem Beruf trägt der
   Titel `(Beruf offen)`. Ohne Fund: `Keine Funde in den geprüften Mustern` (mit Farbe
-  fett). Mit `--target local` (Rechtstext B3):
+  fett). Mit `--target local`:
   `Läuft das Modell lokal: keine Bekanntgabe`, mit `, kein Offenbaren`, wenn in der
   Cloud ein Fund ROT wäre, darunter `N Funde: N Hinweise; in der Cloud …`.
 - **Eingabe:** die Meldungen zur Eingabe (unten), falls etwas auffällt; gleich unter
   dem Ergebnis, weil sie sagen, dass Funde fehlen können.
-- **Klären** (Rechtstexte A5, A6): die Frage zur höchsten Stufe, bei ROT je nach
+- **Klären:** die Frage zur höchsten Stufe, bei ROT je nach
   Geheimhaltungspflicht; ohne Rolle (weder `--role` noch Konfiguration noch aus dem
   Text) und mit einem Fund GELB oder ORANGE
   `Gilt für Sie eine Geheimhaltungspflicht (Beruf, Amt, Bank)? Dann --role angeben`
-  (E10, nicht bei `role = "none"`); bei `--target local` die Frage nach dem lokalen
+  (nicht bei `role = "none"`); bei `--target local` die Frage nach dem lokalen
   Modell, die die Fragen der Stufen ersetzt; die Fragen der Hinweisregeln; zuletzt,
   nur bei Ziel Cloud und einem Fund über HINWEIS, die Frage nach dem Ausland (für
   `authority`, `court`, `criminal-authority` nur `Für Bundesorgane: Art. 16 f. DSG.`).
-- **Beachten:** ohne Fund die blinden Flecken (Rechtstext A7: `Ob der Zusammenhang
+- **Beachten:** ohne Fund die blinden Flecken (`Ob der Zusammenhang
   eine Person erkennbar macht und ob der Text Geschäftsgeheimnisse enthält, prüft
   promptscan nicht.` und `Was geprüft wird: promptscan rules`); mit `authority`,
   `court` oder `criminal-authority` und einem Fund über HINWEIS das anwendbare
-  Datenschutzrecht (Rechtstext A5, E3: `Für kantonale und kommunale Organe gilt
+  Datenschutzrecht (`Für kantonale und kommunale Organe gilt
   kantonales Datenschutzrecht, für Bundesorgane das DSG. …`, Art. 2 DSG).
 - **Mehr:** `promptscan explain <stufe>` und höchstens drei Regeln.
 
@@ -212,8 +216,9 @@ Abschnitt 7, wie die Lizenz es für abgeleitete Daten in der Dokumentation verla
 
 ### Meldungen zur Eingabe
 
-Fällt an der Eingabe selbst etwas auf, steht im Ergebnisblock unter `Eingabe` je eine
-Meldung (`ausgabe::Eingabe`), sonst nichts. Im JSON stehen dieselben Zeilen unter
+Fällt an der Eingabe selbst etwas auf, steht im Ergebnisblock direkt unter `Ergebnis`
+je eine Meldung (`ausgabe::Eingabe`), sonst nichts. Sie haben kein eigenes Etikett,
+weil sie selbst mit «Eingabe …» beginnen. Im JSON stehen dieselben Zeilen unter
 `eingabe.meldungen`.
 
 - **Unsichtbare Formatzeichen** (Unicode-Eigenschaft Default_Ignorable_Code_Point), etwa
@@ -300,7 +305,7 @@ Ohne Farbe steht das Stufenwort in Grossbuchstaben an der Stelle der Plakette.
 
 ### ASCII
 
-Mit `Darstellung::ascii` gibt promptscan nur ASCII aus (Entscheid A4): `│` wird `|`,
+Mit `Darstellung::ascii` gibt promptscan nur ASCII aus: `│` wird `|`,
 `·` und Striche werden `-`, Guillemets und typografische Anführungszeichen werden gerade
 (`"` und `'`), `…` wird `...`, `×` wird `x`, Umlaute und Akzente werden umschrieben (ä
 ae, ö oe, ü ue, é e, à a, ç c usw.), auch im zitierten Prompt; geschützte und schmale
@@ -311,22 +316,21 @@ so oft, wie das Zeichen Spalten belegt. `tests/ausgabe.rs` prüft für jeden Pr�
 
 ## 2. `promptscan rules`
 
-Die Regeln nach Stufe gegliedert, höchstens 80 Spalten (Entscheid A7):
+Die Regeln nach Stufe gegliedert, höchstens 80 Spalten:
 
 1. Überschrift `Regeln nach Stufe`;
 2. je Stufe GELB, ORANGE, ROT, HINWEIS die Plakette und der Titel
    (`Personendaten`, `Besonders schützenswerte Personendaten`,
    `Strafbewehrte Geheimhaltungspflicht`, `Rechtsfolge nicht beurteilt`), darunter je
    Regel die Kennung (ab Spalte 3) und der Titel (ab Spalte 17) und darunter
-   `Bezug: …` (rechtlicher Bezug) und `Erkennung: …` (Grundlage der Erkennung,
-   Rechtstext B5). Ziffern desselben Erlasses stehen zusammen
+   `Bezug: …` (rechtlicher Bezug) und `Erkennung: …` (Grundlage der Erkennung).
+   Ziffern desselben Erlasses stehen zusammen
    (`Ziff. 2.2.4, 2.2.6 TAV E.164`). Die Regel `firma` steht unter ROT, weil eine
    Firma nur mit einer Geheimhaltungspflicht einen Fund ergibt; die Regeln der Klassen
    H und K unter HINWEIS;
 3. `Wortlaut, Quellen und Grenzen: promptscan explain <REGEL>`;
 4. die Zeile `Hilfsmittel, keine Rechtsberatung · erkennt Identifikatoren und
-   Wörter aus Listen, nicht den Zusammenhang · Güte noch nicht gemessen`
-   (Rechtstext C3).
+   Wörter aus Listen, nicht den Zusammenhang · Güte noch nicht gemessen`.
 
 Welche Norm Bezug und welche Grundlage der Erkennung ist, entscheidet
 `normen::ist_bezug`: zum Bezug gehören die Normen der Erlasse in
@@ -339,7 +343,7 @@ des OR, BGG, BGerR, gelten als Grundlage der Erkennung. Mit `--lang en` englisch
 ## 3. `promptscan explain` für eine Regel
 
 Abschnitte in dieser Reihenfolge, Fliesstext auf die Breite umbrochen, höchstens 80
-Spalten (Entscheid A7); eine lange URL steht allein auf ihrer Zeile:
+Spalten; eine lange URL steht allein auf ihrer Zeile:
 
 1. `Kennung · Titel`;
 2. `Stufe` zuoberst: welche Stufe die Regel ergibt und wann eine andere (ROT mit
@@ -349,7 +353,7 @@ Spalten (Entscheid A7); eine lange URL steht allein auf ihrer Zeile:
 3. Erkennt; Methode; Hinweis in der Ausgabe (nur Hinweisregeln);
 4. `Rechtlicher Bezug (amtlicher Wortlaut)` und, falls vorhanden,
    `Grundlage der Erkennung (amtlicher Wortlaut)`: je Norm Zitat, Erlass, Fassung,
-   Wortlaut und URL (Rechtstext B5, Aufteilung wie in `rules`);
+   Wortlaut und URL (Aufteilung wie in `rules`);
 5. Quellen mit Prüfstand («geprüft am …» oder «zu prüfen: …») und Lizenz;
 6. Wortlisten und Register:
    - Wortliste (`.toml`): Zahl der Einträge **dieser Regel**, gesamt und je Sprache,
@@ -362,8 +366,8 @@ Spalten (Entscheid A7); eine lange URL steht allein auf ihrer Zeile:
    - Fehlt die Datei im Programm, steht «fehlt im Programm».
 7. Gemessene Güte («nicht gemessen», solange keine Messung vorliegt);
 8. Grenzen;
-9. `Was promptscan nicht entscheidet`, kurz: alle acht Punkte (Rechtstext B2 «jede
-   Regel»), weil ein Fund mit `--role` ROT werden kann, je in einer Kurzform ohne
+9. `Was promptscan nicht entscheidet`, kurz: alle acht Punkte, weil ein Fund mit
+   `--role` ROT werden kann, je in einer Kurzform ohne
    Wortlaut, darunter `Wortlaut und Literatur:` mit `promptscan explain` der Stufe
    der Regel, bei GELB und ORANGE dazu `promptscan explain rot` (Klassen A und B:
    gelb und rot; C: orange und rot; `firma`: rot und gelb; K und H: hinweis, das alle
@@ -372,7 +376,7 @@ Spalten (Entscheid A7); eine lange URL steht allein auf ihrer Zeile:
 Alle Normtexte stammen aus `src/normen.rs`, den Konstanten der Regeln und
 `stufen::normen_fuer`.
 
-Die zwei Beiträge zur Anwaltschaft (Rechtstext B2 «hilfsperson»: «Literatur zur
+Die zwei Beiträge zur Anwaltschaft (im Punkt zur Hilfsperson: «Literatur zur
 Anwaltschaft, noch nicht gelesen»; promptscan nennt keinen Meinungsstand):
 
 - Chappuis/Alberini, Secret professionnel de l’avocat et solutions cloud,
@@ -397,7 +401,7 @@ Gross- und Kleinschreibung (`ausgabe::stufe_aus_name`). Ausgegeben werden, auf d
 Breite umbrochen, höchstens 80 Spalten:
 
 1. die Plakette der Stufe und ihr Titel (wie der Gruppenkopf im Bericht);
-2. `Grund` (Rechtstext B1), ab Spalte 11; bei GELB und ORANGE dazu die Arbeitgeber
+2. `Grund`, ab Spalte 11; bei GELB und ORANGE dazu die Arbeitgeber
    (Art. 328b OR, Art. 342 Abs. 1 lit. a OR); bei ROT der Geltungsbereich: Art. 320 und
    321 StGB, Art. 47 BankG und Art. 69 FINIG gelten unabhängig vom anwendbaren
    Datenschutzrecht, Art. 9 DSG für private Personen und Bundesorgane, die gesetzliche
@@ -407,14 +411,13 @@ Breite umbrochen, höchstens 80 Spalten:
    dazu die Grenze, dass ein Identifikator irgendwo im Prompt genügt, auch die eigene
    Unterschrift oder Kontaktzeile; bei GELB, wen das DSG schützt; bei ROT der offene
    Beruf, die Firma nur bei einer Pflicht für «ein Geheimnis», Art. 162 StGB als nicht
-   entschieden und Art. 147 FinfraG als nicht abgedeckt; bei HINWEIS `--target local`
-   (Rechtstext B3);
-4. bei ROT die Tabelle `Rollen (--role)` (Rechtstext C2): je Rolle ab Spalte 3 der Wert
+   entschieden und Art. 147 FinfraG als nicht abgedeckt; bei HINWEIS `--target local`;
+4. bei ROT die Tabelle `Rollen (--role)`: je Rolle ab Spalte 3 der Wert
    für `--role`, ab Spalte 25 der Name und die Pflicht (`Anwältin/Anwalt ·
    Berufsgeheimnis`), darunter die Normen; `none` mit `kein ROT, auch nicht aus dem
    Text`; darunter, wer welche Rolle wählt (Hilfspersonen, Angestellte der Verwaltung,
    Gerichte im Strafverfahren, Finanzinstitute);
-5. `Was promptscan nicht entscheidet`, voll (Rechtstext B2): bei GELB und ORANGE die
+5. `Was promptscan nicht entscheidet`, voll: bei GELB und ORANGE die
    Persönlichkeitsverletzung und ihre Rechtfertigung (Art. 30, Art. 31 Abs. 1 DSG),
    Auftragsbearbeitung, Ausland, Geltungsbereich und Geschäftsgeheimnisse; bei ROT die
    Ausnahmen der Strafnormen, ob die Norm der Rolle den KI-Anbieter erfasst (mit den
@@ -444,17 +447,16 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
     Geheimnis-Kontext, aber nicht den Beruf, etwa «meine Klientin»);
   - neues Feld `optionen.rolle_quelle`: woher die Rolle stammt (`keine`, `option`,
     `konfiguration`), für die Kopfzeile;
-  - `bedingung_dritte` und `nicht_entschieden` tragen die Punkte des Rechtstexts B2;
-    `bedingung_dritte` ist der Punkt «Auftragsbearbeitung» (früher «Dritter oder
-    Auftragsbearbeiter»); `nicht_entschieden` einer Regel trägt alle acht Punkte mit
+  - `bedingung_dritte` und `nicht_entschieden` tragen die Punkte «Was promptscan nicht
+    entscheidet»; `bedingung_dritte` ist der Punkt «Auftragsbearbeitung» (früher «Dritter
+    oder Auftragsbearbeiter»); `nicht_entschieden` einer Regel trägt alle acht Punkte mit
     vollem Text (Abschnitt 3), einer Stufe die Punkte der Stufe (Abschnitt 4);
   - `titel` der Stufen ROT und HINWEIS: englisch «Duty of confidentiality backed by
     criminal law», deutsch und englisch «Rechtsfolge nicht beurteilt» / «Legal
     consequence not assessed»; `grund` von GELB und ORANGE ohne den Geltungsbereich
     (er steht in `nicht_entschieden`), dafür mit dem Absatz zu Arbeitgebern
-    (Art. 328b OR, Art. 342 Abs. 1 lit. a OR); `grund` von ROT mit dem Geltungsbereich
-    (Rechtstext B1);
-  - ROT bei `auditor` nennt zusätzlich Art. 730b Abs. 2 OR (Rechtstext C2);
+    (Art. 328b OR, Art. 342 Abs. 1 lit. a OR); `grund` von ROT mit dem Geltungsbereich;
+  - ROT bei `auditor` nennt zusätzlich Art. 730b Abs. 2 OR;
   - der Zusatz der Regel vermerk zitiert englisch `Art. 13 Abs. N ISG` statt
     `para.`.
 - **Werte:** `stufe` ist `rot`, `orange`, `gelb` oder `hinweis`; `rolle` ist ein Wert von
@@ -526,7 +528,7 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
 | `eingabe.unsichtbare_formatzeichen` | Zahl | Zahl der unsichtbaren Formatzeichen, ohne Teile von Emoji-Folgen |
 | `eingabe.ersatzzeichen` | Zahl | Zahl der Ersatzzeichen U+FFFD |
 | `eingabe.ascii_pipe` | Text oder null | bei Verdacht auf eine ASCII-Pipe das erste verdächtige Wort, höchstens 15 Zeichen vor und nach dem `?`, Steuerzeichen als `�`; sonst null |
-| `eingabe.meldungen` | Objekt | die Meldungen im Ergebnisblock unter `Eingabe` |
+| `eingabe.meldungen` | Objekt | die Meldungen im Ergebnisblock unter `Ergebnis` |
 | `eingabe.meldungen.de` | Liste von Text | deutsch; leer, wenn nichts auffällt |
 | `eingabe.meldungen.en` | Liste von Text | englisch |
 
@@ -616,7 +618,7 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
 | `grenzen` | Liste | was die Regel nicht erkennt oder nicht entscheidet |
 | `grenzen[].de` | Text | deutsch |
 | `grenzen[].en` | Text | englisch |
-| `bedingung_dritte` | Objekt oder null | nur bei Regeln nach Art. 5 lit. c DSG: der Punkt «Auftragsbearbeitung» (Rechtstext B2) |
+| `bedingung_dritte` | Objekt oder null | nur bei Regeln nach Art. 5 lit. c DSG: der Punkt «Auftragsbearbeitung» |
 | `bedingung_dritte.text` | Objekt | der Punkt |
 | `bedingung_dritte.text.de` | Text | deutsch |
 | `bedingung_dritte.text.en` | Text | englisch |
@@ -627,7 +629,7 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
 | `bedingung_dritte.normen[].url` | Text | Fedlex-URL |
 | `bedingung_dritte.normen[].wortlaut` | Text | amtlicher Wortlaut |
 | `bedingung_dritte.literatur` | Liste | Literatur, hier leer |
-| `nicht_entschieden` | Liste | alle acht Punkte des Rechtstexts B2 (Abschnitt 3), voller Text |
+| `nicht_entschieden` | Liste | alle acht Punkte «Was promptscan nicht entscheidet» (Abschnitt 3), voller Text |
 | `nicht_entschieden[].text` | Objekt | der Punkt |
 | `nicht_entschieden[].text.de` | Text | deutsch |
 | `nicht_entschieden[].text.en` | Text | englisch |
@@ -646,7 +648,7 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
 
 ## JSON: Stufenerklärung
 
-`promptscan explain rot --format json` (sobald `main.rs` die Stufen weiterreicht).
+`promptscan explain <stufe> --format json`, etwa `promptscan explain rot --format json`.
 
 | Feld | Typ | Bedeutung |
 | --- | --- | --- |
@@ -662,7 +664,7 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
 | `voraussetzung` | Liste | Voraussetzungen |
 | `voraussetzung[].de` | Text | deutsch |
 | `voraussetzung[].en` | Text | englisch |
-| `grund` | Liste | Grund (Rechtstext B1) |
+| `grund` | Liste | Grund |
 | `grund[].de` | Text | deutsch |
 | `grund[].en` | Text | englisch |
 | `normen` | Liste | Normen mit Wortlaut |
@@ -688,7 +690,7 @@ zitiert, ohne Wortlaut, sind die Normen, die SPEC 10.1 in der zweiten Tabelle f�
 | `bedingung_dritte.normen[].url` | Text | Fedlex-URL |
 | `bedingung_dritte.normen[].wortlaut` | Text | amtlicher Wortlaut |
 | `bedingung_dritte.literatur` | Liste | Literatur, hier leer |
-| `nicht_entschieden` | Liste | Rechtstext B2: fünf Punkte bei GELB und ORANGE, sechs bei ROT, alle acht bei HINWEIS (Abschnitt 4) |
+| `nicht_entschieden` | Liste | «Was promptscan nicht entscheidet»: fünf Punkte bei GELB und ORANGE, sechs bei ROT, alle acht bei HINWEIS (Abschnitt 4) |
 | `nicht_entschieden[].text` | Objekt | der Punkt |
 | `nicht_entschieden[].text.de` | Text | deutsch |
 | `nicht_entschieden[].text.en` | Text | englisch |
@@ -789,7 +791,7 @@ Drei Wege führen den Prompt hinein:
 - **Datei:** `promptscan prompt.txt`, UTF-8 oder UTF-16 mit BOM (Abschnitt 1).
 - **`-t "TEXT"`:** Der Text steht dann in der Befehlszeile und kann in den Shell-Verlauf
   und in Prozessprotokolle gelangen, ebenso bei `echo … |`. Vertrauliches als Datei oder
-  durch Einfügen prüfen (Rechtstext C1). Ein Text, der mit `-` beginnt (Aufzählung,
+  durch Einfügen prüfen. Ein Text, der mit `-` beginnt (Aufzählung,
   negative Zahl), ist Text: `promptscan -t "- erster Punkt"`.
 
 Optionen stehen vor `-t` und vor der Datei, bei den Befehlen `rules`, `explain` und

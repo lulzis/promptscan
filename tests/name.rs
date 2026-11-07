@@ -81,9 +81,9 @@ fn rechtsvertretung_nur_mit_vertretungsmerkmal() {
     }
 }
 
-/// Die eigene Anwältin nach einem Possessivpronomen bleibt als Vertretung unmarkiert
-/// (Prüffälle fr-19 und it-19), ausser der Satz enthält eine Angabe nach Art. 5 lit. c DSG
-/// (w3-namen-p4, P01–P03): Dann wird der Name gemeldet, und die Angabe steigt auf ORANGE.
+/// Die eigene Anwältin nach einem Possessivpronomen bleibt als Vertretung unmarkiert,
+/// ausser der Satz enthält eine Angabe nach Art. 5 lit. c DSG: Dann wird der Name gemeldet,
+/// und die Angabe steigt auf ORANGE.
 #[test]
 fn eigene_anwaltschaft_nur_mit_angabe_nach_art5c() {
     let ohne = Optionen::default();
@@ -121,7 +121,7 @@ fn eigene_anwaltschaft_nur_mit_angabe_nach_art5c() {
     }
 }
 
-/// Listen in der Form «Nachname Vorname» (praxis-de-2): Die Namen werden gemeldet, und mit
+/// Listen in der Form «Nachname Vorname»: Die Namen werden gemeldet, und mit
 /// einer Rolle tragen sie die Stufe der Angaben daneben.
 #[test]
 fn listen_nach_nachnamen() {
@@ -168,7 +168,7 @@ fn beispiele_der_grenzen_in_explain() {
 
 /// Vornamen und Nachnamen, die zugleich Wörter der Listen nach Art. 5 Bst. c DSG sind,
 /// bleiben Namen («Jude» als Vorname, «Cancer» als Nachname); der Nachname «Beispiel»
-/// steht wie ein seltener Name nicht im Register (Reste Runde 1, w2-art5c).
+/// steht wie ein seltener Name nicht im Register.
 #[test]
 fn vornamen_und_nachnamen_aus_art5c_wortlisten_bleiben_namen() {
     let ohne = Optionen::default();
@@ -182,9 +182,9 @@ fn vornamen_und_nachnamen_aus_art5c_wortlisten_bleiben_namen() {
     }
 }
 
-/// Befund w3-p1: Mehrbyte-Leerraum (U+00A0, U+202F, U+2009, U+2007 …) und Formatzeichen an
-/// jeder Stelle von Listen und Sätzen führen nicht zum Absturz; vorher brach die Prüfung des
-/// Zellenanfangs mitten in einem solchen Zeichen ab («Anwesend: M\u{A0}uster Hans»).
+/// Mehrbyte-Leerraum (U+00A0, U+202F, U+2009, U+2007 …) und Formatzeichen an jeder Stelle
+/// von Listen und Sätzen führen nicht zum Absturz; vorher brach die Prüfung des Zellenanfangs
+/// mitten in einem solchen Zeichen ab («Anwesend: M\u{A0}uster Hans»).
 #[test]
 fn mehrbyte_leerraum_an_jeder_stelle_ohne_absturz() {
     let zeichen = [
@@ -247,16 +247,15 @@ fn katalogeintrag() {
     assert_eq!(r.lexika.len(), 10);
     assert!(r.lexika.contains(&regeln::name::VERTRETUNG));
     assert!(r.lexika.contains(&regeln::name::ALLTAG));
-    // C1: der Artikel «Le» und die Amtsbezeichnungen danach.
+    // Der Artikel «Le» und die Amtsbezeichnungen danach.
     assert!(r.lexika.contains(&regeln::name::AMTSBEZEICHNUNGEN));
     assert!(r.quellen.iter().any(|q| q.url.contains("opendata.swiss")));
     assert!(r.quellen.iter().any(|q| q.url.contains("bger.ch")));
 }
 
-/// Eine Grussformel vor einem Satz über den Schreibenden ist kein Name (w3-namen-p5,
-/// F01–F04); ein Anwaltsberuf oder «Arch.» ohne Namen auch nicht (w3-namen-p8, H01–H04).
-/// Die Angabe nach Art. 5 lit. c DSG bleibt dann unter ORANGE. Gegenprobe: mit einem Namen
-/// steigt sie auf ORANGE.
+/// Eine Grussformel vor einem Satz über den Schreibenden ist kein Name; ein Anwaltsberuf oder
+/// «Arch.» ohne Namen auch nicht. Die Angabe nach Art. 5 lit. c DSG bleibt dann unter ORANGE.
+/// Gegenprobe: mit einem Namen steigt sie auf ORANGE.
 #[test]
 fn ohne_namen_keine_orange_stufe() {
     let ohne = Optionen::default();
@@ -290,8 +289,8 @@ fn ohne_namen_keine_orange_stufe() {
     }
 }
 
-/// Dateien in UTF-8 mit geschützten und schmalen Leerzeichen über die Befehlszeile
-/// (w3-namen-p1): kein Absturz, und die Namen daneben werden gefunden.
+/// Dateien in UTF-8 mit geschützten und schmalen Leerzeichen über die Befehlszeile: kein
+/// Absturz, und die Namen daneben werden gefunden.
 #[test]
 fn datei_mit_geschuetzten_und_schmalen_leerzeichen() {
     let ordner = Path::new(env!("CARGO_TARGET_TMPDIR")).join(format!(

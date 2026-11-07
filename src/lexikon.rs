@@ -348,7 +348,7 @@ fn ohne_ueberlappung(mut roh: Vec<LexTreffer>) -> Vec<LexTreffer> {
 /// Code, die nur zwischen gleich geschriebenen Einträgen wählt
 /// ([`Lexikon::sprache_waehlen`]). Ausgelassen sind Wörter, die in einer der beiden anderen
 /// Sprachen ebenfalls gängig sind: «des», «du», «per», «non», «qui», dazu «ce» (IT «ce
-/// l'ha», «ce n'è») und «est» (IT «Osten»; Prüferproblem c-belege-p8).
+/// l'ha», «ce n'è») und «est» (IT «Osten»).
 const FUNKTIONSWOERTER: [(Sprache, &[&str]); 3] = [
     (
         Sprache::De,
@@ -705,8 +705,8 @@ mod tests {
         }
     }
 
-    /// Reste Runde 1 (w2-art5c): Gleich geschriebene Einträge desselben Begriffs in mehreren
-    /// Sprachen; der Treffer trägt den Eintrag in der Sprache des Textes.
+    /// Gleich geschriebene Einträge desselben Begriffs in mehreren Sprachen; der Treffer trägt
+    /// den Eintrag in der Sprache des Textes.
     #[test]
     fn gleiche_schreibung_beleg_nach_sprache_des_textes() {
         let mit = |sprache, regel: &str, merkmal: Option<&str>| Eintrag {
@@ -729,7 +729,7 @@ mod tests {
             lex.eintraege[t[0].eintrag].sprache
         };
         assert_eq!(sprache_bei("È positivo all'HIV."), Sprache::It);
-        // Prüferproblem c-belege-p8: «ce» und «est» zählen nicht als Französisch.
+        // «ce» und «est» zählen nicht als Französisch.
         assert_eq!(
             textsprache("La mia paziente Giulia Muster ce l'ha, l'HIV."),
             Some(Sprache::It)
@@ -746,7 +746,7 @@ mod tests {
             sprache_bei("Il est séropositif (HIV) et je suis inquiet."),
             Sprache::De
         );
-        // Verschiedene Regeln oder Merkmale: keine Wahl nach Sprache, wie bisher.
+        // Verschiedene Regeln oder Merkmale: keine Wahl nach Sprache.
         let lex = Lexikon::aus_eintraegen(
             "t",
             vec![mit(Sprache::De, "a", None), mit(Sprache::It, "b", None)],

@@ -515,8 +515,7 @@ struct Analyse<'a> {
     volltext: &'a Text,
     w: Vec<Wort>,
     /// Je Wort: Es beginnt einen Satz nach [`Text::saetze`]. Ein weicher Zeilenumbruch
-    /// beginnt keinen Satz: «J'ai rencontré hier⏎Le Roux Pierre» (Prüferproblem
-    /// c-erkennung-p3).
+    /// beginnt keinen Satz: «J'ai rencontré hier⏎Le Roux Pierre».
     satzanfang: Vec<bool>,
     /// Amts- und Behördenbezeichnungen ([`AMTSBEZEICHNUNGEN`]): Byte-Anfang → Byte-Ende und
     /// Eintrag.
@@ -1224,8 +1223,8 @@ impl<'a> Analyse<'a> {
     /// Ist der Vorname an Wort `i` der französische Artikel «Le» (Wortliste
     /// [`AMTSBEZEICHNUNGEN`], merkmal «artikel»), und steht er am Satzanfang oder vor einer
     /// Amts- oder Behördenbezeichnung derselben Liste? «Le Grand Conseil a voté.», «…, Le
-    /// Greffier et …». Dann ist er der Artikel, kein Vorname (Befund technik-1). Mitten im
-    /// Satz vor einem anderen Wort bleibt er ein Vorname: «Hier, Le Roux a signé.»
+    /// Greffier et …». Dann ist er der Artikel, kein Vorname. Mitten im Satz vor einem anderen
+    /// Wort bleibt er ein Vorname: «Hier, Le Roux a signé.»
     fn artikel_statt_vorname(&self, i: usize) -> bool {
         if !self.daten.artikel.contains(&schluessel(self.text(i))) {
             return false;
@@ -1238,7 +1237,7 @@ impl<'a> Analyse<'a> {
 
     /// Steht an Wort `i` der Artikel «Le» vor einer Amtsbezeichnung derselben Zeile, das Wort
     /// danach und der Beleg der Amtsbezeichnung: «Le Greffier Marie Exemple» ergibt «Marie».
-    /// Die Amtsbezeichnung wirkt dann wie eine Anrede (Prüferproblem c-erkennung-p4).
+    /// Die Amtsbezeichnung wirkt dann wie eine Anrede.
     fn nach_amtsbezeichnung(&self, i: usize) -> Option<(usize, Beleg)> {
         if !self.daten.artikel.contains(&schluessel(self.text(i))) {
             return None;
@@ -1282,8 +1281,7 @@ impl<'a> Analyse<'a> {
     /// («Grüezi Erika⏎Kurze Frage …»). Darum nur nach einem Auslöser (`nach_anrede`; Anrede,
     /// Titel, Anwaltswort oder Verfahrensrolle direkt vor dem Vornamen) oder nach einem
     /// Possessivrahmen («Meine Patientin Erika⏎Beispiel»). Nach einer Grussformel («Liebe
-    /// Erika⏎Danke …») gehört das Wort der nächsten Zeile nicht zum Namen (Prüferproblem
-    /// c-erkennung-p2).
+    /// Erika⏎Danke …») gehört das Wort der nächsten Zeile nicht zum Namen.
     fn ueber_umbruch_erlaubt(&self, i: usize, x: usize, nach_anrede: bool) -> bool {
         let ausloeser_davor = i.checked_sub(1).is_some_and(|p| {
             self.marke_von[p].is_some_and(|q| {
@@ -1329,8 +1327,7 @@ impl<'a> Analyse<'a> {
     /// Nachname aus dem Register («Hans Peter Muster»), sonst ein zweiter, eindeutiger
     /// Nachname («Anna Meier Huber»). Beginnt das Wort einen neuen Namen («Anna Meier Peter
     /// Huber»), gehört es nicht dazu. Über einen weichen Zeilenumbruch reicht es nicht: Die
-    /// nächste Zeile kann einen Satz beginnen («Erika Beispiel⏎Le Grand Conseil …»,
-    /// Prüferproblem c-erkennung-p8).
+    /// nächste Zeile kann einen Satz beginnen («Erika Beispiel⏎Le Grand Conseil …»).
     fn zweites_wort(&self, e: usize, nach_vorname: bool) -> Option<usize> {
         let y = self.folgt_in_zeile(e)?;
         if self.markiert[y] {
@@ -2310,7 +2307,7 @@ mod tests {
         ),
         ("Hans Muster, Rechtsanwalt, vertritt die Klägerin.", &[]),
         // Possessivpronomen vor dem Anwaltswort, ohne Angabe nach Art. 5 lit. c DSG im Satz,
-        // auch für die eigene Anwältin (Prüffälle fr-19 und it-19).
+        // auch für die eigene Anwältin.
         ("Hans Muster, Ihr Anwalt", &[]),
         ("Jean Dupont, son avocat, a écrit.", &[]),
         ("Mario Rossi, il suo avvocato, scrive.", &[]),
@@ -2340,14 +2337,14 @@ mod tests {
         ("Mario Rossi, avvocato della controparte", &[]),
         ("l'avocat de la partie adverse, Me Jean Dupont", &[]),
         ("le mandataire de la partie, Jean Dupont", &[]),
-        // Als Bezeichnung mit Doppelpunkt (Prüffall fr-14).
+        // Als Bezeichnung mit Doppelpunkt.
         (
             "Partie adverse: Sandrine Exemple, Lausanne\nAvocate de la partie adverse: Me Valérie Essai, Genève",
             &["Sandrine Exemple"],
         ),
         ("Verteidiger: Hans Muster", &[]),
         ("Anwalt: RA Hans Muster", &["Hans Muster"]),
-        // Ohne Vertretungsmerkmal wirkt das Anwaltswort wie ein Titel (E2).
+        // Ohne Vertretungsmerkmal wirkt das Anwaltswort wie ein Titel.
         ("Hans Muster, Rechtsanwalt, schreibt.", &["Hans Muster"]),
         ("Hans Muster (Fürsprecher) schreibt.", &["Hans Muster"]),
         ("Frau Rechtsanwältin Erika Beispiel", &["Erika Beispiel"]),
@@ -2357,7 +2354,7 @@ mod tests {
         ("Jean Dupont (avocat) écrit.", &["Jean Dupont"]),
         ("l'avv. Mario Rossi", &["Mario Rossi"]),
         ("Mario Rossi, avvocato", &["Mario Rossi"]),
-        // Praxis (praxis-fr-it-1): Die Person ist selbst betroffen, keine Vertretung.
+        // Die Person ist selbst betroffen, keine Vertretung.
         (
             "Mon patient, Me Laurent Dupont, souffre d'une maladie de Crohn; rédige une lettre à son assurance.",
             &["Laurent Dupont"],
@@ -2379,7 +2376,7 @@ mod tests {
             &["Hans Muster"],
         ),
         // Possessivpronomen mit einer Angabe nach Art. 5 lit. c DSG im Satz: Die Person ist
-        // selbst betroffen (E2, w3-namen-p4: P01–P05, V53–V55 und ihre Minimalpaare oben).
+        // selbst betroffen (die Minimalpaare ohne Angabe stehen oben).
         (
             "Mon avocat, Me Jean Dupont, est en incapacité de travail.",
             &["Jean Dupont"],
@@ -2431,7 +2428,7 @@ mod tests {
             "Le défenseur Jean Dupont est en incapacité de travail.",
             &[],
         ),
-        // Verben im übertragenen Gebrauch: keine Partei danach (w3-namen-p7).
+        // Verben im übertragenen Gebrauch: keine Partei danach.
         (
             "Rechtsanwalt Hans Muster vertritt die Auffassung, dass er wegen seiner Depression arbeitsunfähig ist.",
             &["Hans Muster"],
@@ -2460,8 +2457,7 @@ mod tests {
         ("Me Jean Dupont plaide pour la recourante.", &[]),
         ("Me Jean Dupont représente la recourante.", &[]),
         ("L'avv. Mario Rossi rappresenta la ricorrente.", &[]),
-        // «conseil»: auch Berater oder Rat; Vertretung nur mit Partei oder Partizip
-        // (w3-namen-p2).
+        // «conseil»: auch Berater oder Rat; Vertretung nur mit Partei oder Partizip.
         (
             "Le conseil Jean Dupont est en incapacité de travail.",
             &["Jean Dupont"],
@@ -2474,7 +2470,7 @@ mod tests {
         ("assistée de son conseil, Me Jean Dupont", &[]),
         ("Me Jean Dupont, conseil de la recourante, écrit.", &[]),
         // «mandataire»: auch die Vorsorgebeauftragte nach Art. 360 CC; Vertretung nur mit
-        // «partie» oder einer Verfahrensrolle danach (w3-namen-p3).
+        // «partie» oder einer Verfahrensrolle danach.
         (
             "Son mandataire, M. Paul Rochat, touche l'aide sociale.",
             &["Paul Rochat"],
@@ -2508,8 +2504,7 @@ mod tests {
             &[],
         ),
         ("le mandataire du recourant, Jean Dupont", &[]),
-        // Die beruflich qualifizierte Vertretung nach Art. 68 Abs. 2 Bst. d ZPO (E2:
-        // «mandataire professionnel»).
+        // Die beruflich qualifizierte Vertretung nach Art. 68 Abs. 2 Bst. d ZPO.
         (
             "Jean Dupont, mandataire professionnellement qualifié, dépose une requête.",
             &[],
@@ -2522,7 +2517,7 @@ mod tests {
             "Mario Rossi, rappresentante professionalmente qualificato, presenta un'istanza.",
             &[],
         ),
-        // «avocat» und «avvocato» lösen allein nichts aus (w3-namen-p8).
+        // «avocat» und «avvocato» lösen allein nichts aus.
         (
             "Je cherche un avocat Spécialiste FSA en droit du travail.",
             &[],
@@ -2561,10 +2556,9 @@ mod tests {
     }
 
     /// Ein Possessivpronomen vor dem Anwaltswort zeigt die Vertretung genau dann, wenn die
-    /// Regeln art5c im Satz nichts finden (w3-namen-p4). Geprüft gegen das Ergebnis von
-    /// art5c, nicht gegen eine feste Erwartung: «malade», «malato» und «krank» erkennt
-    /// art5c-2 heute nicht (V37, V40, V42, V46); kommen sie in die Wortliste, wird der Name
-    /// gemeldet, ohne dass dieser Test angepasst werden muss.
+    /// Regeln art5c im Satz nichts finden. Geprüft gegen das Ergebnis von art5c, nicht gegen
+    /// eine feste Erwartung: «malade», «malato» und «krank» erkennt art5c-2 heute nicht; kommen
+    /// sie in die Wortliste, wird der Name gemeldet, ohne dass dieser Test angepasst werden muss.
     #[test]
     fn besitz_und_angabe_nach_art5c_im_satz() {
         let mit_angabe = |s: &str| !crate::regeln::art5c::erkenne(&Text::neu(s)).is_empty();
@@ -2607,7 +2601,7 @@ mod tests {
         }
     }
 
-    /// Verfahrensrollen mit Namen (E1, praxis-de-3, recht-wortlisten-8).
+    /// Verfahrensrollen mit Namen.
     const ROLLEN_MIT_NAMEN: &[(&str, &[&str])] = &[
         (
             "Der Beschwerdeführer A. Meier, geboren am 4. April 1983, leidet an einer psychischen Störung.",
@@ -2730,8 +2724,8 @@ mod tests {
         );
     }
 
-    /// Nach Initialen kein Satzwort der Sprache des Auslösers (w3-namen-p6, J01–J05), mit
-    /// Minimalpaaren in DE, FR und IT.
+    /// Nach Initialen kein Satzwort der Sprache des Auslösers, mit Minimalpaaren in DE, FR
+    /// und IT.
     #[test]
     fn initialen_und_satzwoerter() {
         pruefe_liste(&[
@@ -2782,8 +2776,8 @@ mod tests {
         );
     }
 
-    /// Jedes Leerzeichen aus `ist_leerraum` vor einem Wort am Zellenanfang (w3-namen-p1):
-    /// kein Absturz, und der Name wird gefunden.
+    /// Jedes Leerzeichen aus `ist_leerraum` vor einem Wort am Zellenanfang: kein Absturz, und
+    /// der Name wird gefunden.
     #[test]
     fn geschuetzte_und_schmale_leerzeichen() {
         for zeichen in [' ', '\t', '\u{00A0}', '\u{202F}', '\u{2009}', '\u{2007}'] {
@@ -2815,7 +2809,7 @@ mod tests {
     }
 
     /// Grussformeln, Wochentage und Alltagswörter am Zeilenanfang; eine Zelle, die ein Satz
-    /// ist (w3-namen-p5, E4). Minimalpaare in DE, FR und IT.
+    /// ist. Minimalpaare in DE, FR und IT.
     #[test]
     fn listen_alltagswoerter_und_saetze() {
         for text in [
@@ -2864,8 +2858,7 @@ mod tests {
         ]);
     }
 
-    /// Titel ohne Punkt und weibliche Abkürzungen (E3, praxis-fr-it-2), mit Gegenprobe ohne
-    /// Titel.
+    /// Titel ohne Punkt und weibliche Abkürzungen, mit Gegenprobe ohne Titel.
     #[test]
     fn titel_fr_it() {
         for (titel, satz) in [
@@ -2891,7 +2884,7 @@ mod tests {
         assert!(namen("Ho parlato con la dott.ssa. Pedrazzini è assente.").is_empty());
     }
 
-    /// Listen (E4, praxis-de-2, technik-code-4).
+    /// Listen.
     const LISTEN: &[(&str, &[&str])] = &[
         (
             "Müller Andreas, Lager, 12 Tage, Grippe\nKeller Sabine, Buchhaltung, 31 Tage, Burnout\nGashi Arben, Produktion, 58 Tage, Unfall, SUVA-Fall",
@@ -3281,9 +3274,8 @@ mod tests {
         );
     }
 
-    /// Befund technik-1, Entscheid C1: die Sätze l01 bis l28 und a01 bis a18 der Kritik
-    /// (kritik/technik/f-le.json, f-le2.json, kritik/technik-gegen/f1-le.json), dazu b06,
-    /// b14 und b20 (f1b-le.json).
+    /// Der Artikel «Le» am Satzanfang, vor einer Amts- oder Behördenbezeichnung und in
+    /// Ortsnamen, dazu Gegenbeispiele, in denen «Le» (oder «El», «Di») zu einem Namen gehört.
     const ARTIKEL_LE: &[(&str, &[&str])] = &[
         ("Le Grand Conseil a adopté la loi sur les impôts.", &[]),
         (
@@ -3369,9 +3361,8 @@ mod tests {
         // Anrede «Le» ein Teil des Namens.
         ("Pierre Maire a signé.", &["Pierre Maire"]),
         ("Monsieur Le Grand a signé.", &["Le Grand"]),
-        // Ein weicher Zeilenumbruch beginnt keinen Satz (Prüferproblem c-erkennung-p3): auch
-        // nach einer Überschrift ohne Satzzeichen ist «Le» dann ein Vorname (Grenze in explain
-        // name).
+        // Ein weicher Zeilenumbruch beginnt keinen Satz: auch nach einer Überschrift ohne
+        // Satzzeichen ist «Le» dann ein Vorname (Grenze in explain name).
         ("Considérant\nLe Roux a signé.", &["Le Roux"]),
         (
             "J'ai rencontré hier\nLe Roux Pierre, mon client, au tribunal.",
@@ -3386,7 +3377,7 @@ mod tests {
             "Erika Beispiel\nLe Grand Conseil a voté.",
             &["Erika Beispiel"],
         ),
-        // Die Amtsbezeichnung nach «Le» wirkt wie eine Anrede (Prüferproblem c-erkennung-p4).
+        // Die Amtsbezeichnung nach «Le» wirkt wie eine Anrede.
         (
             "Le Greffier Marie Exemple a signé le procès-verbal.",
             &["Marie Exemple"],
@@ -3404,7 +3395,7 @@ mod tests {
     #[test]
     fn artikel_le_kein_vorname() {
         pruefe_liste(ARTIKEL_LE);
-        // Mit Rolle wird aus der abstrakten Frage kein ROT (l19, l22, a02, a03, a17).
+        // Mit Rolle wird aus der abstrakten Frage kein ROT.
         for (rolle, satz) in [
             (
                 Rolle::Lawyer,
@@ -3436,7 +3427,7 @@ mod tests {
                 bericht.funde
             );
         }
-        // Echte Namen bleiben ROT (Prüferprobleme c-erkennung-p3 und p4).
+        // Echte Namen bleiben ROT.
         for (rolle, satz, name) in [
             (
                 Rolle::Lawyer,
@@ -3499,8 +3490,8 @@ mod tests {
         }
     }
 
-    /// Reste aus Runde 1 (w4, technik-code-1 und technik-robust-2, -3): Namen über einen
-    /// weichen Zeilenumbruch und mit unsichtbaren Formatzeichen, mit Gegenbeispielen.
+    /// Namen über einen weichen Zeilenumbruch und mit unsichtbaren Formatzeichen, mit
+    /// Gegenbeispielen.
     #[test]
     fn namen_ueber_weiche_umbrueche() {
         for (text, erwartet) in [
@@ -3530,8 +3521,8 @@ mod tests {
             ("- Erika\n- Beispiel", &[]),
             ("Erika\n\nBeispiel", &[]),
             ("Das ist Erika.\nBeispiel folgt.", &[]),
-            // Prüferproblem c-erkennung-p2: Nach einer Grussformel beginnt die nächste Zeile
-            // einen Satz; ein gewöhnliches gross geschriebenes Wort dort ist kein Nachname.
+            // Nach einer Grussformel beginnt die nächste Zeile einen Satz; ein gewöhnliches gross
+            // geschriebenes Wort dort ist kein Nachname.
             (
                 "Liebe Erika\nDanke für die Unterlagen zum Mietvertrag.",
                 &[],
@@ -3551,7 +3542,7 @@ mod tests {
                 &["Giulia\nEsempio"],
             ),
             ("Herrn\nHans Muster", &["Hans Muster"]),
-            // Adressblöcke: Der Name endet am Zeilenende (Prüferprobleme c-erkennung-p2, p8).
+            // Adressblöcke: Der Name endet am Zeilenende.
             (
                 "Monsieur\nLe Roux Pierre\nRue du Lac 12\n1003 Lausanne",
                 &["Le Roux Pierre"],
@@ -3720,7 +3711,7 @@ mod tests {
                 );
             }
         }
-        // Artikel und Amtsbezeichnungen (C1): Merkmal, Fedlex-Fundstelle mit Artikel.
+        // Artikel und Amtsbezeichnungen: Merkmal, Fedlex-Fundstelle mit Artikel.
         let aemter = lexikon::lexikon(AMTSBEZEICHNUNGEN);
         for e in &aemter.eintraege {
             assert_eq!(e.regel, "name", "{AMTSBEZEICHNUNGEN}: {}", e.begriff);

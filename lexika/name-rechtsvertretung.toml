@@ -144,7 +144,7 @@ quelle = "ZPO (SR 272) Art. 68 Abs. 2 Bst. d: «vor den Miet- und Arbeitsgericht
 fassung = "2026-07-01"
 url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_68"
 merkmal = "rechtsvertretung"
-notiz = "Gegenstück zu «mandataires professionnellement qualifiés» und «rappresentanti professionalmente qualificati» (E2: «mandataire professionnel»)."
+notiz = "Gegenstück zu «mandataires professionnellement qualifiés» und «rappresentanti professionalmente qualificati»."
 
 # --- Französisch ---
 
@@ -218,7 +218,7 @@ quelle = "CPC (SR 272) art. 68 al. 2 let. d: «devant les juridictions spéciale
 fassung = "2026-07-01"
 url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_68"
 merkmal = "rechtsvertretung"
-notiz = "E2 nennt «mandataire professionnel»; diese Wendung steht in keinem der durchsuchten Erlasse, der Wortlaut des CPC schon."
+notiz = "Die kürzere Wendung «mandataire professionnel» steht in keinem der durchsuchten Erlasse, der Wortlaut des CPC schon."
 
 [[eintrag]]
 begriff = "conseil"

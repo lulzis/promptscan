@@ -80,8 +80,7 @@ Quellen: <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershe
 
 - **Zertifikat.** Microsoft: «Code can be signed with any certificate, but Smart App Control
   only considers certificates issued by trusted providers.» Und: «Artifact Signing is the
-  preferred way to sign your app.» Wahl des Anbieters und Kosten: offen, Entscheid des
-  Eigentümers.
+  preferred way to sign your app.» Wahl des Anbieters und Kosten: offen.
 - **Werkzeug.** «Signtool.exe is an app included with Visual Studio that can sign apps with a
   digital certificate.» Auf dem Entwicklungsrechner steht es nicht im Pfad (geprüft
   06.11.2026).
@@ -116,10 +115,9 @@ Quellen: <https://learn.microsoft.com/en-us/windows/apps/develop/smart-app-contr
   `x86_64-w64-mingw32-windres`) noch `rc.exe`, `llvm-rc` oder `llvm-windres`, weder im Pfad
   noch in der Werkzeugkette. Deren `x86_64-w64-mingw32-gcc.exe` dient nur dem Linken; die
   beiliegende `GCC-WARNING.txt` sagt: «gcc.exe contained in this folder cannot be used for
-  compiling C files - it is only used as a linker.» Wege, je mit Entscheid des Eigentümers:
-  `rc.exe` aus dem Windows SDK installieren,
-  `llvm-rc` installieren oder ein Crate dafür aufnehmen (neue Abhängigkeit). Die übersetzte
-  Ressource würde dann in `build.rs` an den Linker übergeben.
+  compiling C files - it is only used as a linker.» Wege: `rc.exe` aus dem Windows SDK
+  installieren, `llvm-rc` installieren oder ein Crate dafür aufnehmen (neue Abhängigkeit). Die
+  übersetzte Ressource würde dann in `build.rs` an den Linker übergeben.
 
 Quellen: <https://learn.microsoft.com/en-us/windows/win32/menurc/versioninfo-resource> (Stand
 31.05.2018); <https://learn.microsoft.com/en-us/windows/win32/sbscs/application-manifests> (Stand
@@ -138,7 +136,7 @@ Git Bash:    sha256sum -c promptscan.exe.sha256
 
 ## 5. Release-Bau ohne Entwicklerpfade: `tools/freigabe.ps1`
 
-**Befund.** Panic-Meldungen der Crates tragen den Pfad ihrer Quelldatei. Ein gewöhnlicher
+**Ausgangslage.** Panic-Meldungen der Crates tragen den Pfad ihrer Quelldatei. Ein gewöhnlicher
 Release-Bau enthielt 115-mal einen Pfad der Form `C:\Users\<Konto>\.cargo\registry\src\…`, also
 den Kontonamen des Entwicklers (gemessen am 06.11.2026). `strip = true` entfernt Symbole, nicht
 diese Pfade.
@@ -195,7 +193,7 @@ Schritte:
 `-Selbsttest` prüft nur die Zählung an einer künstlichen Probe (Pfad mit Umlaut in UTF-8 und
 UTF-16LE; Kontoname in Pfadform und als Wort in einem Register), ohne Bau.
 
-**Nachweis** (06.11.2026, Testkopie, Rust 1.99.1, eigener Zielordner):
+**Nachweis** (06.11.2026, Rust 1.99.1, eigener Zielordner):
 
 | Zeichenfolge in der Programmdatei | vorher | nachher |
 | --- | --- | --- |
@@ -208,7 +206,7 @@ UTF-16LE; Kontoname in Pfadform und als Wort in einem Register), ohne Bau.
 Projektordner, Zielordner, `RUSTUP_HOME` und Profil: je 0. Die fünf Treffer für `/home` sind
 vorher wie nachher Webadressen in den Daten (bfs.admin.ch, bger.ch), keine Pfade. Die strenge
 Importprüfung bestand, die Prüfsumme stimmt mit `sha256sum -c` überein. «vorher» ist ein
-Release-Bau derselben Arbeitskopie vor den Änderungen für die Weitergabe, ohne Abbildung
+Release-Bau des Quelltexts vor den Änderungen für die Weitergabe, ohne Abbildung
 (4 808 704 Bytes); «nachher» der Bau mit `tools/freigabe.ps1` (4 910 080 Bytes, grösser vor
 allem wegen der eingebetteten Vermerke).
 
