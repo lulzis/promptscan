@@ -5,103 +5,106 @@
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lulzis/promptscan/badge)](https://scorecard.dev/viewer/?uri=github.com/lulzis/promptscan)
 [![Rust 1.88+](https://img.shields.io/badge/rust-1.88%2B-orange?logo=rust)](Cargo.toml)
 [![Windows 10/11 x64](https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0078D4)](docs/WEITERGABE.md#2-mindestanforderungen)
-[![Offline](https://img.shields.io/badge/Netzwerk-keines-2ea44f)](tests/offline.rs)
-[![Lizenz: Testfassung](https://img.shields.io/badge/Lizenz-Testfassung-lightgrey)](LICENSE.md)
+[![Network: none](https://img.shields.io/badge/network-none-2ea44f)](tests/offline.rs)
+[![Licence: test version](https://img.shields.io/badge/licence-test%20version-lightgrey)](LICENSE.md)
 
-promptscan prüft einen Prompt, bevor er an eine KI geht. Es markiert, welche Stellen nach
-Schweizer Recht nicht ohne Weiteres hinausgehen sollten, und nennt zu jeder Markierung die
-Norm, aus der sie folgt. Erkannt werden Deutsch, Französisch und Italienisch.
+[Deutsch](README.de.md) · **English**
 
-promptscan läuft lokal im Terminal. Es enthält keinen Netzwerkcode, startet keine anderen
-Programme und schreibt Dateien nur auf ausdrücklichen Befehl.
+promptscan checks a prompt before it is sent to an AI model. It marks the passages that,
+under Swiss law, should not leave your hands without further thought, and cites for every
+finding the provision it follows from. It recognises German, French and Italian text.
 
-> **Testfassung 0.1.** Die Erkennungsgüte ist noch nicht gemessen. promptscan meldet
-> Datenkategorien, keine Rechtsverletzungen, und ersetzt keine Rechtsauskunft.
+promptscan runs locally in the terminal. It contains no network code, starts no other
+programs and writes files only when explicitly told to.
 
-## Beispiel
+> **Test version 0.1.** Detection quality has not been measured yet. promptscan reports
+> categories of data, not legal violations, and is no substitute for legal advice.
 
-Fiktiver Prompt, ohne Farbe ausgegeben:
+## Example
+
+Fictitious prompt, output without colour (`--lang en`):
 
 ```text
-> promptscan entwurf.txt
-Lokal geprüft · Rolle: Beruf offen, aus «Mein Mandant» · Ziel: Cloud
+> promptscan --lang en draft.txt
+Checked locally · Role: profession open, from «Mein Mandant»
+Target: cloud
 
    │ Mein Mandant Peter Muster, geboren am 3. Mai 1971, wohnhaft an der
-   │ H^^^^^^^^^^^ R^^^^^^^^^^^             R^^^^^^^^^^
+   │ N^^^^^^^^^^^ R^^^^^^^^^^^             R^^^^^^^^^^
    │ Bahnhofstrasse 12 in 8001 Zürich, AHV-Nr. 756.1234.5678.97, leidet an einer
    │ R^^^^^^^^^^^^^^^^                         R^^^^^^^^^^^^^^^
    │ Depression. Darf ihm der Arbeitgeber kündigen?
    │ R^^^^^^^^^
-     R ROT · H HINWEIS
+     R RED · N NOTE
 
-ROT       Beruf offen: Art. 321 Ziff. 1 StGB (z. B. Anwalt, Psychologin),
-          Art. 320 Ziff. 1 StGB (Behörde), Art. 47 Abs. 1 lit. a BankG (Bank)
+RED       Profession open: Art. 321 Ziff. 1 StGB (e.g. lawyer, psychologist),
+          Art. 320 Ziff. 1 StGB (authority), Art. 47 Abs. 1 lit. a BankG (bank)
           Name          Peter Muster
-          Geburtsdatum  3. Mai 1971
-          Adresse       Bahnhofstrasse 12
-          AHV-Nummer    756.1234.5678.97 (Prüfziffer gültig)
-          zugleich besonders schützenswert, Art. 5 lit. c Ziff. 2 DSG:
+          Date of birth 3. Mai 1971
+          Address       Bahnhofstrasse 12
+          AHV number    756.1234.5678.97 (check digit valid)
+          also sensitive personal data, Art. 5 lit. c Ziff. 2 DSG:
                         Depression
 
-HINWEIS   Rechtsfolge nicht beurteilt
-          Kontext       «Mein Mandant» (eigene Klientschaft)
-                        Beruf offen
+NOTE      Legal consequence not assessed
+          Context       «Mein Mandant» (own client)
+                        Profession open
 
-Ergebnis  ROT   Strafbewehrte Geheimhaltungspflicht (Beruf offen)
-          6 Funde: 5 rot, 1 Hinweis
+Result    RED   Duty of confidentiality backed by criminal law (profession open)
+          6 findings: 5 red, 1 note
 ```
 
-## Stufen
+## Levels
 
-| Stufe | Bedeutung | Grundlage |
+| Level | Meaning | Legal basis |
 | --- | --- | --- |
-| ROT | strafbewehrte Geheimhaltungspflicht; nur mit `--role` oder aus dem Text erschlossen | Art. 320, 321 StGB; Art. 47 BankG u. a. |
-| ORANGE | besonders schützenswerte Personendaten | Art. 5 lit. c DSG |
-| GELB | Personendaten | Art. 5 lit. a DSG |
-| HINWEIS | Rechtsfolge nicht beurteilt | – |
+| RED | duty of confidentiality backed by criminal law; only with `--role` or inferred from the text | Art. 320, 321 StGB; Art. 47 BankG and others |
+| ORANGE | sensitive personal data | Art. 5 lit. c DSG (FADP) |
+| YELLOW | personal data | Art. 5 lit. a DSG (FADP) |
+| NOTE | legal consequence not assessed | – |
 
-`promptscan rules` zeigt alle Regeln mit Rechtsgrundlage, `promptscan explain <REGEL>` den
-Normtext, die Methode, die Quellen der Wortliste und die Grenzen einer Regel.
+`promptscan rules` lists all rules with their legal basis; `promptscan explain <RULE>` shows
+the statutory text, the method, the sources of the word list and the limits of a rule.
 
-## Bedienung
+## Usage
 
 ```text
-promptscan                    Prompt einfügen, Enter, dann Ctrl+Z und Enter
-promptscan DATEI              Datei prüfen, UTF-8 oder UTF-16 mit BOM
-promptscan -t "TEXT"          Text direkt prüfen (steht dann im Shell-Verlauf)
-promptscan rules              alle Regeln mit Rechtsgrundlage
-promptscan explain REGEL      Norm, Methode, Quellen und Grenzen, z. B. ahv oder rot
+promptscan                    paste the prompt, Enter, then Ctrl+Z and Enter
+promptscan FILE               check a file, UTF-8 or UTF-16 with BOM
+promptscan -t "TEXT"          check text directly (it then ends up in the shell history)
+promptscan rules              all rules with their legal basis
+promptscan explain RULE       provision, method, sources and limits, e.g. ahv or red
 promptscan config --role lawyer
-                              Berufsrolle dauerhaft setzen
-promptscan licenses           Lizenzstand und Vermerke zu fremden Bestandteilen
+                              set the professional role permanently
+promptscan licenses           licence status and notices for third-party components
 
---role ROLLE                  Berufsrolle mit Geheimhaltungspflicht, z. B. lawyer, doctor, bank
---target cloud|local          Wohin der Prompt geht (Vorgabe cloud)
---lang de|en                  Sprache der Ausgabe (Vorgabe de)
---format text|json            json für Programme, in reinem ASCII
---output DATEI                Ausgabe in DATEI schreiben, UTF-8 mit BOM, ohne Farbe
---quiet                       nur das Ergebnis, ohne Prompt und Funde
---fail-on STUFE               Exit-Code 1 ab red (Vorgabe), orange oder yellow; never: immer 0
---no-color, --ascii           ohne Farbe; nur ASCII-Zeichen
+--role ROLE                   professional role with a duty of secrecy, e.g. lawyer, doctor, bank
+--target cloud|local          where the prompt goes (default cloud)
+--lang de|en                  language of the output (default de)
+--format text|json            json for programs, in plain ASCII
+--output FILE                 write the output to FILE, UTF-8 with BOM, without colour
+--quiet                       only the result, without prompt and findings
+--fail-on LEVEL               exit code 1 from red (default), orange or yellow; never: always 0
+--no-color, --ascii           no colour; ASCII characters only
 ```
 
-Vertrauliches nicht mit `-t` übergeben, sondern einfügen oder als Datei prüfen: Text in der
-Befehlszeile gelangt in den Verlauf der Shell. Exit-Code 0 heisst «nichts ab der Schwelle»,
-1 «Fund ab der Schwelle», 2 «Fehler». Alle Optionen: `promptscan --help` und
-[docs/AUSGABE.md](docs/AUSGABE.md).
+Do not pass confidential text with `-t`; paste it or check it as a file instead, because
+text on the command line ends up in the shell history. Exit code 0 means "nothing at or
+above the threshold", 1 "finding at or above the threshold", 2 "error". All options:
+`promptscan --help` and [docs/AUSGABE.md](docs/AUSGABE.md).
 
-## Installieren
+## Installation
 
-Mit Rust (siehe [Bauen](#bauen)) legt Cargo die Programmdatei in `%USERPROFILE%\.cargo\bin`,
-das schon im Pfad steht:
+With Rust (see [Building](#building)), Cargo places the executable in
+`%USERPROFILE%\.cargo\bin`, which is already on the path:
 
 ```text
 cargo install --path . --locked
 ```
 
-Eine weitergegebene `promptscan.exe` (Prüfsumme vorher vergleichen,
-[docs/WEITERGABE.md](docs/WEITERGABE.md)) einmal in einen eigenen Ordner kopieren und
-diesen in den Benutzerpfad aufnehmen, in PowerShell im Ordner der Datei:
+For a distributed `promptscan.exe` (compare the checksum first,
+[docs/WEITERGABE.md](docs/WEITERGABE.md)), copy it once into a folder of its own and add that
+folder to the user path; in PowerShell, in the folder containing the file:
 
 ```powershell
 $ziel = "$env:LOCALAPPDATA\Programs\promptscan"
@@ -113,74 +116,66 @@ if (";$pfad;" -notlike "*;$ziel;*") {
 }
 ```
 
-In einem neuen Terminalfenster läuft dann `promptscan` ohne Pfad.
+In a new terminal window, `promptscan` then runs without a path.
 
-## Grundsätze
+## Principles
 
-- **Jede Regel hat eine Rechtsgrundlage** im geltenden amtlichen Wortlaut, mit Fassungsdatum.
-- **Jede Erkennung hat eine belegte Methode:** Prüfziffer, amtliches Format oder eine
-  Wortliste, in der jeder Eintrag seine Quelle trägt.
-- **Alles lokal.** [`tests/offline.rs`](tests/offline.rs) prüft am Quelltext, an
-  `Cargo.lock`, an `Cargo.toml` und an der Importtabelle der Programmdatei, dass promptscan
-  nichts sendet und keine Programme startet.
-- **Keine erfundenen Zahlen.** Was nicht gemessen ist, heisst «nicht gemessen».
+- **Every rule has a legal basis** in the official text currently in force, with the date
+  of the version.
+- **Every detection has a documented method:** check digit, official format or a word list
+  in which every entry carries its source.
+- **Everything stays local.** [`tests/offline.rs`](tests/offline.rs) checks the source code,
+  `Cargo.lock`, `Cargo.toml` and the import table of the executable to make sure promptscan
+  sends nothing and starts no programs.
+- **No invented numbers.** What has not been measured is called "not measured".
 
-Die Spezifikation mit Rechtsmodell, Quellen und Prüfstand steht in
-[docs/SPEC.md](docs/SPEC.md).
+The specification with the legal model, sources and review status is in
+[docs/SPEC.md](docs/SPEC.md) (German).
 
-## Bauen
+## Building
 
-Voraussetzungen: Windows 10 oder 11 (x64), Rust 1.88 oder neuer mit dem Ziel
-`x86_64-pc-windows-gnu` und `dlltool` aus den MinGW-w64-Binutils. `windows-sys` und
-`getrandom` erzeugen damit ihre Importbibliotheken. Das `dlltool` der Rust-Werkzeugkette
-braucht einen Assembler, den sie nicht mitbringt; mit MSYS2 zum Beispiel:
+Requirements: Windows 10 or 11 (x64), Rust 1.88 or later with the target
+`x86_64-pc-windows-gnu`, and `dlltool` from the MinGW-w64 binutils, which `windows-sys` and
+`getrandom` use to generate their import libraries. The `dlltool` shipped with the Rust
+toolchain needs an assembler that the toolchain does not include; with MSYS2, for example:
 
 ```text
 pacman -S mingw-w64-ucrt-x86_64-binutils
 ```
 
-und in `%USERPROFILE%\.cargo\config.toml`:
+and in `%USERPROFILE%\.cargo\config.toml`:
 
 ```toml
 [target.x86_64-pc-windows-gnu]
 rustflags = ["-C", "dlltool=C:/msys64/ucrt64/bin/dlltool.exe"]
 ```
 
-Dann:
+Then:
 
 ```text
 cargo test --release --locked
 cargo clippy --release --locked --all-targets -- -D warnings
 ```
 
-Die weitergegebene Programmdatei baut `tools\freigabe.ps1`. Das Skript entfernt
-Entwicklerpfade, prüft die Importtabelle und schreibt die SHA-256-Prüfsumme
+The distributed executable is built by `tools\freigabe.ps1`. The script removes developer
+paths, checks the import table and writes the SHA-256 checksum
 ([docs/WEITERGABE.md](docs/WEITERGABE.md)).
 
-## Dokumentation
+## Documentation
 
-| Datei | Inhalt |
+The documentation is in German.
+
+| File | Contents |
 | --- | --- |
-| [docs/SPEC.md](docs/SPEC.md) | Zweck, Rechtsmodell, Regeln, Prüfstand der Quellen |
-| [docs/AUSGABE.md](docs/AUSGABE.md) | Ausgabe, Farben, JSON, Aufruf und Konfiguration |
-| [docs/WEITERGABE.md](docs/WEITERGABE.md) | Bau, Prüfung und Weitergabe der Programmdatei |
-| [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) | Lizenzen fremder Bestandteile und Daten |
-| [SECURITY.md](SECURITY.md) | Sicherheitslücken melden |
+| [docs/SPEC.md](docs/SPEC.md) | purpose, legal model, rules, review status of the sources |
+| [docs/AUSGABE.md](docs/AUSGABE.md) | output, colours, JSON, invocation and configuration |
+| [docs/WEITERGABE.md](docs/WEITERGABE.md) | building, checking and distributing the executable |
+| [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) | licences of third-party components and data |
+| [SECURITY.md](SECURITY.md) | reporting security vulnerabilities |
 
-## Lizenz
+## Licence
 
-Für promptscan ist noch keine Lizenz gewählt. Bis dahin braucht jede Weitergabe der
-Programmdatei oder des Quelltexts die vorherige Zustimmung des Rechteinhabers
-([LICENSE.md](LICENSE.md)). Fremde Bestandteile stehen unter ihren eigenen Lizenzen
+No licence has been chosen for promptscan yet. Until then, any distribution of the executable
+or the source code requires the prior consent of the rights holder
+([LICENSE.md](LICENSE.md)). Third-party components are subject to their own licences
 ([THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)).
-
-## English
-
-promptscan checks a prompt before it is sent to an AI model and marks data that Swiss law
-treats as sensitive: professional secrecy (Art. 320/321 Swiss Criminal Code), sensitive
-personal data (Art. 5 lit. c FADP) and personal data. Every finding cites its legal basis.
-It recognises German, French and Italian, runs locally in the terminal, contains no network
-code and writes files only on explicit request. Output is available in English with
-`--lang en`. This is test version 0.1; detection quality has not been measured yet, and the
-tool reports data categories, not legal violations. No licence has been chosen yet; see
-[LICENSE.md](LICENSE.md).
