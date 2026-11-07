@@ -18,7 +18,9 @@ env:
   CARGO_TERM_COLOR: always
   # windows-sys und getrandom erzeugen Importbibliotheken mit dlltool; das dlltool der
   # Rust-Werkzeugkette braucht einen Assembler. Beides liefert MinGW-w64 im Runner-Abbild.
-  CARGO_TARGET_X86_64_PC_WINDOWS_GNU_RUSTFLAGS: -C dlltool=C:/mingw64/bin/dlltool.exe
+  # Gelinkt wird wie bei der Weitergabe mit dem Linker und der C-Laufzeit (msvcrt) der
+  # Werkzeugkette, nicht mit dem gcc im Runner-Abbild; tests/offline.rs prüft die Importe.
+  CARGO_TARGET_X86_64_PC_WINDOWS_GNU_RUSTFLAGS: -C dlltool=C:/mingw64/bin/dlltool.exe -C link-self-contained=yes
 
 jobs:
   test:
@@ -51,6 +53,9 @@ jobs:
           rustup set default-host x86_64-pc-windows-gnu
           rustup toolchain install ${{ matrix.rust }}-x86_64-pc-windows-gnu --profile minimal --component clippy,rustfmt
           rustup default ${{ matrix.rust }}-x86_64-pc-windows-gnu
+          $gcc = Join-Path (rustc --print sysroot) 'lib\rustlib\x86_64-pc-windows-gnu\bin\self-contained\x86_64-w64-mingw32-gcc.exe'
+          if (-not (Test-Path $gcc)) { throw "$gcc fehlt" }
+          "CARGO_TARGET_X86_64_PC_WINDOWS_GNU_LINKER=$gcc" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
           rustc --version --verbose
 
       - name: Formatierung
