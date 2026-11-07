@@ -4,6 +4,11 @@ version = "0.1.0"
 edition = "2024"
 rust-version = "1.88"
 description = "Prüft einen Prompt vor dem Senden an eine KI auf Daten, die nach Schweizer Recht heikel sind."
+repository = "https://github.com/lulzis/promptscan"
+readme = "README.md"
+license-file = "LICENSE.md"
+keywords = ["privacy", "dsg", "prompt", "swiss-law", "cli"]
+categories = ["command-line-utilities", "text-processing"]
 publish = false
 build = "build.rs"
 

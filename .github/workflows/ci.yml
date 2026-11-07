@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 4 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  # windows-sys und getrandom erzeugen Importbibliotheken mit dlltool; das dlltool der
+  # Rust-Werkzeugkette braucht einen Assembler. Beides liefert MinGW-w64 im Runner-Abbild.
+  CARGO_TARGET_X86_64_PC_WINDOWS_GNU_RUSTFLAGS: -C dlltool=C:/mingw64/bin/dlltool.exe
+
+jobs:
+  test:
+    name: Test (Rust ${{ matrix.rust }})
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rust: 1.99.1
+            lint: true
+          - rust: 1.88.0
+            lint: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: MinGW-Binutils prüfen
+        shell: pwsh
+        run: |
+          foreach ($t in 'dlltool.exe', 'as.exe') {
+            if (-not (Test-Path "C:\mingw64\bin\$t")) { throw "C:\mingw64\bin\$t fehlt" }
+          }
+          "C:\mingw64\bin" | Out-File -FilePath $env:GITHUB_PATH -Append -Encoding utf8
+
+      - name: Rust installieren
+        shell: pwsh
+        run: |
+          rustup set default-host x86_64-pc-windows-gnu
+          rustup toolchain install ${{ matrix.rust }}-x86_64-pc-windows-gnu --profile minimal --component clippy,rustfmt
+          rustup default ${{ matrix.rust }}-x86_64-pc-windows-gnu
+          rustc --version --verbose
+
+      - name: Formatierung
+        if: matrix.lint
+        run: cargo fmt --all --check
+
+      - name: Clippy
+        if: matrix.lint
+        run: cargo clippy --release --locked --all-targets -- -D warnings
+
+      - name: Tests
+        run: cargo test --release --locked
+
+  audit:
+    name: Abhängigkeiten (RustSec)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: cargo-audit installieren
+        run: cargo install cargo-audit --locked
+
+      - name: Bekannte Lücken prüfen
+        run: cargo audit --deny warnings

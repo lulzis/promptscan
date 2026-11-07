@@ -491,18 +491,20 @@ fn konfigurationsdatei() {
             "{fehler}"
         );
         meldung(&fehler);
-        schmal_ausser_pfad(&fehler);
+        schmal_ausser_pfad(&fehler, &datei);
     }
 }
 
 /// Höchstens 80 Zeichen je Zeile, ausser eine Zeile ist nur «Datei: PFAD» und der Pfad
-/// allein zu lang (er steht ungebrochen, damit man ihn kopieren kann).
-fn schmal_ausser_pfad(text: &str) {
+/// allein zu lang (er steht ungebrochen, damit man ihn kopieren kann). Der Pfad darf
+/// Leerzeichen enthalten (`C:\Users\Vorname Nachname\…`).
+fn schmal_ausser_pfad(text: &str, pfad: &Path) {
+    let pfad = pfad.display().to_string();
     for z in text.lines() {
         let n = z.chars().count();
         let nur_pfad = ["Datei: ", "File: "]
             .iter()
-            .any(|a| z.trim().strip_prefix(a).is_some_and(|p| !p.contains(' ')));
+            .any(|a| z.trim().strip_prefix(a) == Some(pfad.as_str()));
         assert!(n <= 80 || nur_pfad, "{n} Zeichen: {z}");
     }
 }
@@ -1393,7 +1395,7 @@ fn ausgabe_in_eine_datei() {
             "{fehler}"
         );
         meldung(&fehler);
-        schmal_ausser_pfad(&fehler);
+        schmal_ausser_pfad(&fehler, &fehlt);
     }
     // Ein Ordner als Ziel.
     let (code, _, fehler) = lauf(promptscan().arg("--output").arg(&o.0).args(["-t", NEUTRAL]));

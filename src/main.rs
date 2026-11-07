@@ -1138,6 +1138,17 @@ fn konfiguration_schreiben(
     if let Some(ordner) = pfad.parent().filter(|o| !o.as_os_str().is_empty())
         && let Err(e) = std::fs::create_dir_all(ordner)
     {
+        // Ältere Standardbibliotheken melden ein fehlendes Laufwerk nicht als `NotFound`,
+        // sondern als «failed to create whole tree» (Rust 1.88).
+        let laufwerk_fehlt = ordner
+            .ancestors()
+            .last()
+            .is_some_and(|w| w.has_root() && !w.exists());
+        let e = if laufwerk_fehlt {
+            io::Error::from(io::ErrorKind::NotFound)
+        } else {
+            e
+        };
         let (grund, schritt) = ordner_anlegen_grund(&e, englisch);
         return Err(konfig_meldung(
             &if englisch {
