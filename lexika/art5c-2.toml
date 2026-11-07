@@ -426,6 +426,16 @@ fassung = "2017-09-15"
 url = "https://www.fedlex.admin.ch/eli/fga/2017/2057/de"
 notiz = "Botschaft vom 15. September 2017 zur Totalrevision des DSG."
 
+[[eintrag]]
+begriff = "Antidepressiva"
+formen = ["Antidepressivum", "Antidepressivums"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "BAG, Health Technology Assessment: «Antidepressiva und kognitive Verhaltenstherapie bei schweren depressiven Störungen über die akute Behandlungsphase hinaus»"
+fassung = "2026-11-07"
+url = "https://www.bag.admin.ch/de/antidepressiva-und-kognitive-verhaltenstherapie-bei-schweren-depressiven-stoerungen-ueber-die-akute-behandlungsphase-hinaus"
+notiz = "Kein Erlass nennt das Wort; Titel der Seite des BAG. Fassung = Abrufdatum. Wer Antidepressiva nimmt, gibt eine Angabe über seine Gesundheit preis."
+
 # --- Französisch -----------------------------------------------------------
 
 [[eintrag]]
@@ -850,6 +860,16 @@ quelle = "SR 321.0 Art. 109 Abs. 1: «…la détient alors qu’elle a été mis
 fassung = "2026-06-08"
 url = "https://www.fedlex.admin.ch/eli/cc/43/359_375_369/fr#art_109"
 
+[[eintrag]]
+begriff = "antidépresseurs"
+formen = ["antidépresseur"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "BAG/OFSP, Health Technology Assessment: «Troubles dépressifs majeurs : antidépresseurs et thérapie cognitivo-comportementale après la phase aigüe de traitement»"
+fassung = "2026-11-07"
+url = "https://www.bag.admin.ch/fr/troubles-depressifs-majeurs-antidepresseurs-et-therapie-cognitivo-comportementale-apres-la-phase-aiguee-de-traitement"
+notiz = "Kein Erlass nennt das Wort; Titel der Seite des BAG. Fassung = Abrufdatum. Gegenstück zu DE «Antidepressiva»."
+
 # --- Italienisch -----------------------------------------------------------
 
 [[eintrag]]
@@ -1244,3 +1264,13 @@ quelle = "SR 0.104 Art. 4: «…di un gruppo di individui di un certo colore o d
 fassung = "2022-04-21"
 url = "https://www.fedlex.admin.ch/eli/cc/1995/1164_1164_1164/it#art_4"
 notiz = "Convenzione internazionale sull’eliminazione di ogni forma di discriminazione razziale. Gegenstück zu FR «origine ethnique» und DE «ethnische Herkunft»."
+
+[[eintrag]]
+begriff = "antidepressivi"
+formen = ["antidepressivo"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "UFSP, Health Technology Assessment: «Proseguimento della terapia farmacologica con antidepressivi e della terapia cognitivo-comportamentale oltre la fase acuta…»"
+fassung = "2026-11-07"
+url = "https://www.bag.admin.ch/it/proseguimento-della-terapia-farmacologica-con-antidepressivi-e-della-terapia-cognitivo-comportamentale-oltre-la-fase-acuta-di-trattamento-nei-disturbi-depressivi-gravi"
+notiz = "Kein Erlass nennt das Wort; Titel der Seite des UFSP. Fassung = Abrufdatum. Gegenstück zu DE «Antidepressiva»."

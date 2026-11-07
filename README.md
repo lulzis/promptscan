@@ -77,13 +77,43 @@ promptscan licenses           Lizenzstand und Vermerke zu fremden Bestandteilen
 
 --role ROLLE                  Berufsrolle mit Geheimhaltungspflicht, z. B. lawyer, doctor, bank
 --target cloud|local          Wohin der Prompt geht (Vorgabe cloud)
---lang de|en                  Sprache der Ausgabe
---json                        Ergebnis als JSON
+--lang de|en                  Sprache der Ausgabe (Vorgabe de)
+--format text|json            json für Programme, in reinem ASCII
+--output DATEI                Ausgabe in DATEI schreiben, UTF-8 mit BOM, ohne Farbe
+--quiet                       nur das Ergebnis, ohne Prompt und Funde
+--fail-on STUFE               Exit-Code 1 ab red (Vorgabe), orange oder yellow; never: immer 0
+--no-color, --ascii           ohne Farbe; nur ASCII-Zeichen
 ```
 
 Vertrauliches nicht mit `-t` übergeben, sondern einfügen oder als Datei prüfen: Text in der
-Befehlszeile gelangt in den Verlauf der Shell. Exit-Code 0 heisst «nichts gefunden», 1
-«Funde», 2 «Fehler». Alle Optionen: `promptscan --help` und [docs/AUSGABE.md](docs/AUSGABE.md).
+Befehlszeile gelangt in den Verlauf der Shell. Exit-Code 0 heisst «nichts ab der Schwelle»,
+1 «Fund ab der Schwelle», 2 «Fehler». Alle Optionen: `promptscan --help` und
+[docs/AUSGABE.md](docs/AUSGABE.md).
+
+## Installieren
+
+Mit Rust (siehe [Bauen](#bauen)) legt Cargo die Programmdatei in `%USERPROFILE%\.cargo\bin`,
+das schon im Pfad steht:
+
+```text
+cargo install --path . --locked
+```
+
+Eine weitergegebene `promptscan.exe` (Prüfsumme vorher vergleichen,
+[docs/WEITERGABE.md](docs/WEITERGABE.md)) einmal in einen eigenen Ordner kopieren und
+diesen in den Benutzerpfad aufnehmen, in PowerShell im Ordner der Datei:
+
+```powershell
+$ziel = "$env:LOCALAPPDATA\Programs\promptscan"
+New-Item -ItemType Directory -Force $ziel | Out-Null
+Copy-Item .\promptscan.exe $ziel
+$pfad = [Environment]::GetEnvironmentVariable("Path", "User")
+if (";$pfad;" -notlike "*;$ziel;*") {
+    [Environment]::SetEnvironmentVariable("Path", "$pfad;$ziel", "User")
+}
+```
+
+In einem neuen Terminalfenster läuft dann `promptscan` ohne Pfad.
 
 ## Grundsätze
 

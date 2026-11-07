@@ -7,7 +7,7 @@
 #
 # Bewusst weggelassen (siehe RegelInfo::grenzen): «Busse» allein (auch Mehrzahl von
 # «Bus»), FR «amende» allein (auch: «il amende» = ändert ab), «beschuldigt» allein,
-# «verurteilt»/«condamné»/«condannato» (auch Zivilurteile), FR «prévenu» ohne Artikel
+# «verurteilt» (auch Zivilurteile), «condamné»/«condannato» ohne «pour»/«per», FR «prévenu» ohne Artikel
 # (Partizip von «prévenir»), FR «expulsion», FR «dénonciation» und IT «denuncia» allein
 # (auch Kündigung eines Vertrags, IT auch «denuncia dei redditi»), FR «plainte» allein
 # (auch Reklamation), FR «retrait du permis» ohne «de conduire» (auch Bau- oder
@@ -537,6 +537,16 @@ fassung = "2025-07-01"
 url = "https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/fr#art_77_i"
 notiz = "Nur mit «pénale»: «dénonciation» allein heisst auch Kündigung eines Vertrags."
 
+[[eintrag]]
+begriff = "condamné pour"
+formen = ["condamnée pour", "condamnés pour", "condamnées pour"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 66a Abs. 1: «Le juge expulse de Suisse l’étranger qui est condamné pour l’une des infractions suivantes…»"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_66_a"
+notiz = "Nur mit «pour»: «condamné» allein heisst auch zivilrechtlich verurteilt («condamné à payer»). Ebenso Art. 67 Abs. 1 («condamné pour cette infraction») und Art. 94 («la personne condamnée pour la durée du délai d’épreuve»)."
+
 # --- Italienisch -----------------------------------------------------------
 
 [[eintrag]]
@@ -702,3 +712,13 @@ quelle = "SR 172.220.1 Art. 34c Abs. 1 Bst. a: «…la disdetta è stata pronunc
 fassung = "2024-01-01"
 url = "https://www.fedlex.admin.ch/eli/cc/2001/123/it#art_34_c"
 notiz = "Nur als Wendung: «denuncia» allein heisst auch Steuererklärung («denuncia dei redditi»), Meldung oder Kündigung."
+
+[[eintrag]]
+begriff = "condannato per"
+formen = ["condannata per", "condannati per", "condannate per"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 66a Abs. 1: «Il giudice espelle dal territorio svizzero per un tempo da cinque a quindici anni lo straniero condannato per uno dei seguenti reati…»"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_66_a"
+notiz = "Nur mit «per»: «condannato» allein heisst auch zivilrechtlich verurteilt («condannato al pagamento»). Gegenstück zu FR «condamné pour» (dieselbe Stelle)."
