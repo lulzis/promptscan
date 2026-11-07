@@ -1,0 +1,199 @@
+# Funktionen und Ämter nach einer Anrede (Regel name, SPEC 5.2, Gegenprobe).
+#
+# Nach «Frau», «Herr», «Signor» steht oft keine Person, sondern ihre Funktion: «Frau
+# Präsidentin», «Herr Minister», «Signor Presidente». Diese Wörter sind kein Name. Steht
+# danach ein Name («Frau Präsidentin Muster»), wird er erkannt.
+#
+# Quellen: die Anwendungsbeispiele des Duden zur Anrede und der Wortlaut des BGG. Die
+# Mitglieder von Behörden nennt das Bundesgericht in seinen Anonymisierungsregeln (Art. 5
+# Abs. 1). Ihre Namen markiert promptscan trotzdem; ob sie auszunehmen sind, ist offen.
+#
+# merkmal = "funktion" für alle Einträge.
+
+# --- Deutsch ---
+
+[[eintrag]]
+begriff = "Präsident"
+formen = ["Präsidentin", "Präsidenten"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 14 Abs. 1 lit. a: «den Präsidenten oder die Präsidentin des Bundesgerichts»; Abs. 3: «Der Präsident oder die Präsidentin führt den Vorsitz im Gesamtgericht»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_14"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "Vizepräsident"
+formen = ["Vizepräsidentin", "Vizepräsidenten"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 14 Abs. 1 lit. b: «den Vizepräsidenten oder die Vizepräsidentin»; BV (SR 101) Art. 176 Abs. 2: «die Vizepräsidentin oder der Vizepräsident des Bundesrates»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_14"
+merkmal = "funktion"
+notiz = "Die Form «Vizepräsident» belegt BV Art. 176 Abs. 2 (Fassung 03.03.2024, https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_176)."
+
+[[eintrag]]
+begriff = "Richter"
+formen = ["Richterin"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 14 Abs. 4: «durch den Richter oder die Richterin mit dem höchsten Dienstalter»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_14"
+merkmal = "funktion"
+notiz = "«Richter» ist auch ein Nachname (BFS). Nach einer Anrede gilt es als Funktion; nach einem Vornamen («Hans Richter») als Name."
+
+[[eintrag]]
+begriff = "Bundesrichter"
+formen = ["Bundesrichtern", "Bundesrichterinnen"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 17 Abs. 4 lit. a: «die Zuteilung der nebenamtlichen Bundesrichter und Bundesrichterinnen an die Abteilungen»; Art. 1 Abs. 4: «nebenamtlichen Bundesrichtern und Bundesrichterinnen»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_17"
+merkmal = "funktion"
+notiz = "Die Einzahl «Bundesrichterin» steht in keinem der geprüften Erlasse und nicht im Duden online (06.11.2026); sie fehlt darum."
+
+[[eintrag]]
+begriff = "Gerichtsschreiber"
+formen = ["Gerichtsschreiberin", "Gerichtsschreiberinnen"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 24 Abs. 1: «Die Gerichtsschreiber und Gerichtsschreiberinnen wirken bei der Instruktion der Fälle … mit»; StPO (SR 312.0) Art. 348 Abs. 2: «Die Gerichtsschreiberin oder der Gerichtsschreiber nimmt mit beratender Stimme teil»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_24"
+merkmal = "funktion"
+notiz = "Die Einzahl «Gerichtsschreiberin» belegt StPO Art. 348 Abs. 2 (Fassung 01.04.2025, https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_348)."
+
+[[eintrag]]
+begriff = "Staatsanwalt"
+formen = ["Staatsanwälte"]
+sprache = "de"
+regel = "name"
+quelle = "Bundesgericht, Regeln für die Anonymisierung der Urteile, Art. 5 Abs. 1: Behörden umfassen «ihre Mitglieder, weitere Gerichtspersonen, Schiedsrichter, Staatsanwälte etc.»"
+fassung = "2020-02-13"
+url = "https://www.bger.ch/home/juridiction/jurisdiction-recht/anonymisierungsregeln.html"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "Minister"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Herr»: Beispiele der Anrede «Herr Minister, Direktor, Doktor»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Herr"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "Direktor"
+formen = ["Direktorin"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Herr»: «Herr Minister, Direktor, Doktor»; «Frau»: «Frau Bundeskanzlerin, Frau Direktorin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Herr"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "Bundeskanzlerin"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Frau»: Beispiele der Anrede «Frau Bundeskanzlerin, Frau Direktorin, Frau Rechtsanwältin, Frau Studienrätin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Frau"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "Studienrätin"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Frau»: Beispiele der Anrede «Frau Bundeskanzlerin, Frau Direktorin, Frau Rechtsanwältin, Frau Studienrätin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Frau"
+merkmal = "funktion"
+
+# --- Französisch ---
+
+[[eintrag]]
+begriff = "président"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 14 al. 1 let. a: «le président»; al. 3: «Le président préside la Cour plénière»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_14"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "présidente"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «madame», 3: «Titre précédant la fonction d'une femme quand elle lui confère une autorité (avec majuscule) : Madame la Présidente»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/madame/48465"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "vice-président"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 14 al. 1 let. b: «le vice-président»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_14"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "juge"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 35: «Le juge ou le greffier qui se trouve dans un cas de récusation est tenu d'en informer en temps utile le président de la cour»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_35"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "greffier"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 35: «Le juge ou le greffier qui se trouve dans un cas de récusation est tenu d'en informer en temps utile le président de la cour»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_35"
+merkmal = "funktion"
+
+# --- Italienisch ---
+
+[[eintrag]]
+begriff = "presidente"
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 14 cpv. 1 lett. a: «il presidente del Tribunale federale»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_14"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "vicepresidente"
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 14 cpv. 1 lett. b: «il vicepresidente del Tribunale federale»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_14"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "giudice"
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 35: «Il giudice o cancelliere che si trovi in un caso di ricusazione deve comunicarlo tempestivamente al presidente della corte»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_35"
+merkmal = "funktion"
+
+[[eintrag]]
+begriff = "cancelliere"
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 35: «Il giudice o cancelliere che si trovi in un caso di ricusazione deve comunicarlo tempestivamente al presidente della corte»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_35"
+merkmal = "funktion"

@@ -1,0 +1,253 @@
+# Auslöser der Regel «geburtsdatum» (SPEC 5.2) und die Wörter zwischen Auslöser und Datum.
+#
+# Ein Datum zählt nur, wenn ein Auslöser es einleitet. merkmal:
+#   nomen       Bezeichnung des Geburtsdatums; danach das Datum, auch nach «:».
+#   partizip    «geboren», «né», «nato»; danach ein Anschlusswort und das Datum.
+#   abkuerzung  «geb.»; danach das Datum, auch nach «am».
+#   anschluss   Wort direkt vor dem Datum: «am», «le», «il» (vor Vokal «l'»).
+#   ort         Präposition vor einem Geburtsort zwischen Partizip und Datum
+#               («né à Genève le …», «nato a Lugano il …»).
+#   ordinal     Schreibung des ersten Monatstags im Französischen und Italienischen.
+#   feldzusatz  Zweiter Feldname nach «/» zwischen Nomen und Datum
+#               («Geburtsdatum/Alter: 12.03.1985 (40)»).
+#
+# Jeder Begriff steht wörtlich in der zitierten Stelle der Fassung derselben Sprache. Die
+# Formen sind Flexionsformen (Genus, Numerus) bzw. die Elision des Artikels.
+#
+# Ausnahme: die Kurzformen der Feldnamen aus Personalblättern, Arztberichten und Formularen
+# (Befund technik-6, Entscheid C4) im Abschnitt «Feldnamen ohne eigene Fundstelle». Für
+# «Geb.-Datum», «Geb. Datum», «Geb.-Dat.», «date de naiss.», «date naiss.» und «data
+# nascita» fand sich weder auf Fedlex noch im Wörterbuch eine Stelle, die die Kurzform
+# trägt (gesucht: ZStV, VAwG, AHVV, KVV, notizen/nb/fedlex-geb.txt der Arbeitskopie Paket C).
+# Die Einträge zitieren darum das Wörterbuch zum gekürzten Wort und sagen in der Notiz,
+# dass die Kurzform selbst ohne Fundstelle ist (Prüferprobleme c-belege-p1, c-erkennung-p7).
+# Duden führt «geb.» als «Kurz für geboren», «Dat.» nur als Kürzel für «Dativ». Andere
+# Feldnamen («GebDat», «DOB») stehen nicht in der Liste.
+
+# --- Auslöser ---------------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Geburtsdatum"
+formen = ["Geburtsdatums", "Geburtsdaten"]
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "SR 211.112.2 Art. 15a Abs. 4bis"
+fassung = "2025-06-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/362/de#art_15_a"
+merkmal = "nomen"
+notiz = "«… die Angaben Name, Vorname, Geschlecht und Geburtsdatum»."
+
+[[eintrag]]
+begriff = "date de naissance"
+formen = ["dates de naissance"]
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 143.11 Art. 10 Abs. 5"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/468/fr#art_10"
+merkmal = "nomen"
+notiz = "Die ZStV (Art. 15a Abs. 4bis) hat im Französischen nur die Mehrzahl; die Einzahl aus der Ausweisverordnung."
+
+[[eintrag]]
+begriff = "data di nascita"
+formen = ["date di nascita"]
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "SR 211.112.2 Art. 15a Abs. 4bis"
+fassung = "2025-06-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/362/it#art_15_a"
+merkmal = "nomen"
+
+# --- Feldnamen ohne eigene Fundstelle (Entscheid C4) ------------------------------------
+
+[[eintrag]]
+begriff = "Geb.-Datum"
+formen = ["Geb. Datum", "Geb.-Dat."]
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Duden online, «geb.»: «Kurz für geboren»; Kurzform von «Geburtsdatum» (SR 211.112.2 Art. 15a Abs. 4bis) ohne eigene Fundstelle"
+fassung = "2026-11-07"
+url = "https://www.duden.de/rechtschreibung/geb__geboren"
+merkmal = "nomen"
+notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Duden führen «Geb.-Datum» oder «Geb.-Dat.»; Duden führt «Dat.» nur als Kürzel für «Dativ». In der Liste, weil Entscheid C4 die Feldnamen verlangt; der Eigentümer entscheidet, ob sie bleiben (Prüferprobleme c-belege-p1, c-erkennung-p7)."
+
+[[eintrag]]
+begriff = "date de naiss."
+formen = ["date naiss."]
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Larousse, «naissance», 1.: «Commencement de la vie indépendante pour un être vivant, au sortir de l'organisme maternel : Date et lieu de naissance.»; Kürzung von «date de naissance» (SR 143.11 Art. 10 Abs. 5) ohne eigene Fundstelle"
+fassung = "2026-11-07"
+url = "https://www.larousse.fr/dictionnaires/francais/naissance"
+merkmal = "nomen"
+notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Larousse führen «naiss.». In der Liste, weil Entscheid C4 die Feldnamen verlangt; der Eigentümer entscheidet, ob sie bleiben (Prüferprobleme c-belege-p1, c-erkennung-p7)."
+
+[[eintrag]]
+begriff = "data nascita"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Treccani, «nascita», 1.: «Il nascere, il venire al mondo di un essere umano …»; Formularschreibung von «data di nascita» (SR 211.112.2 Art. 15a Abs. 4bis) ohne «di», ohne eigene Fundstelle"
+fassung = "2026-11-07"
+url = "https://www.treccani.it/vocabolario/nascita/"
+merkmal = "nomen"
+notiz = "Kurzform ohne eigene Fundstelle: Weder Fedlex noch Treccani führen «data nascita» ohne «di». In der Liste, weil Entscheid C4 die Feldnamen verlangt; der Eigentümer entscheidet, ob sie bleiben (Prüferprobleme c-belege-p1, c-erkennung-p7)."
+
+[[eintrag]]
+begriff = "geboren"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_255"
+merkmal = "partizip"
+notiz = "«Ist ein Kind während der Ehe geboren …»."
+
+[[eintrag]]
+begriff = "né"
+formen = ["née", "nés", "nées"]
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_255"
+merkmal = "partizip"
+notiz = "«L’enfant né pendant le mariage …»."
+
+[[eintrag]]
+begriff = "nato"
+formen = ["nata", "nati", "nate"]
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_255"
+merkmal = "partizip"
+notiz = "Gleich geschrieben wie «NATO»; darum zählt «nato» nur klein oder am Satzanfang gross."
+
+[[eintrag]]
+begriff = "geb."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Duden online, Stichwort «geb.» (Abkürzung): «Kurz für: geboren (Zeichen: *); geborene, geborener»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/geb__geboren"
+merkmal = "abkuerzung"
+notiz = "Weder Fedlex noch die BK-Schreibweisungen führen «geb.»; Duden ist nach den Schreibweisungen (Rz. 113) das Rechtschreibwörterbuch der Bundesverwaltung. Bedeutet «geb.» «geborene» («geb. Schulze»), folgt kein Datum und die Regel schweigt. fassung = Abrufdatum."
+
+# --- Anschlusswörter vor dem Datum ------------------------------------------------------
+
+[[eintrag]]
+begriff = "am"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 527: «am 1. Januar 1999»"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "anschluss"
+notiz = "fassung = Datum der PDF-Fassung auf bk.admin.ch."
+
+[[eintrag]]
+begriff = "le"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 831.10 Art. 29bis Abs. 2"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_29_bis"
+merkmal = "anschluss"
+notiz = "«… entre le 1er janvier qui suit …»."
+
+[[eintrag]]
+begriff = "il"
+formen = ["l'"]
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "SR 831.10 Art. 3 Abs. 1bis"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/it#art_3"
+merkmal = "anschluss"
+notiz = "«… inizia il 1° gennaio …». «l'» ist die Elision vor Vokal («l'8 marzo»)."
+
+[[eintrag]]
+begriff = "in"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "SR 173.71 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/de#art_8"
+merkmal = "ort"
+notiz = "«hat ihren Sitz in Bern»."
+
+[[eintrag]]
+begriff = "à"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 173.71 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/fr#art_8"
+merkmal = "ort"
+notiz = "«a son siège à Berne»."
+
+[[eintrag]]
+begriff = "a"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "SR 173.71 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/it#art_8"
+merkmal = "ort"
+notiz = "«ha sede a Berna»."
+
+# --- Erster Monatstag -------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "1er"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 831.10 Art. 29bis Abs. 2"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/fr#art_29_bis"
+merkmal = "ordinal"
+notiz = "Amtlich mit hochgestelltem «er»; im Prompt steht es meist auf der Zeile."
+
+[[eintrag]]
+begriff = "1°"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "SR 831.10 Art. 3 Abs. 1bis"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/63/837_843_843/it#art_3"
+merkmal = "ordinal"
+notiz = "Die Regel lässt statt des Gradzeichens (U+00B0) auch das Ordinalzeichen «º» (U+00BA) zu, eine typografische Variante wie ’ für '."
+
+# --- Feldzusatz zwischen Nomen und Datum ------------------------------------------------
+
+[[eintrag]]
+begriff = "Alter"
+formen = ["Alters"]
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
+merkmal = "feldzusatz"
+notiz = "«… wegen der Herkunft, der Rasse, des Geschlechts, des Alters, der Sprache …»: das Lebensalter, dieselbe Stelle wie «âge» und «età» (Prüferproblem c-belege-p4; vorher Art. 41 Abs. 2, wo «Alter» die Lebensphase meint). Nur nach «/» direkt hinter einem Nomen: «Geburtsdatum/Alter: 12.03.1985 (40)» (Befund technik-6)."
+
+[[eintrag]]
+begriff = "âge"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+merkmal = "feldzusatz"
+notiz = "«… de son sexe, de son âge, de sa langue …». Nur nach «/»: «date de naissance/âge : …»."
+
+[[eintrag]]
+begriff = "età"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_8"
+merkmal = "feldzusatz"
+notiz = "«… del sesso, dell’età, della lingua …». Nur nach «/»: «data di nascita/età: …»."

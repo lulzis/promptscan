@@ -1,0 +1,37 @@
+[package]
+name = "promptscan"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Prüft einen Prompt vor dem Senden an eine KI auf Daten, die nach Schweizer Recht heikel sind."
+publish = false
+build = "build.rs"
+
+[dependencies]
+aho-corasick = "1.1.5"
+anstream = "1.0.0"
+anstyle = "1.0.14"
+clap = { version = "4.6.7", features = ["derive"] }
+regex = "1.13.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+toml = "1.2.0"
+unicode-normalization = "0.1.26"
+unicode-segmentation = "1.13.3"
+
+# Konsole unter Windows: Fensterbreite, Doppelklick-Erkennung (docs/AUSGABE.md 8). Keine
+# neue Crate: windows-sys 0.61.2 steckt über anstream schon in Cargo.lock, mit denselben
+# Features.
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_System_Console"] }
+
+[dev-dependencies]
+assert_cmd = "2.2.2"
+insta = "1.49.0"
+predicates = "3.1.4"
+proptest = "1.12.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

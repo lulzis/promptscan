@@ -1,0 +1,864 @@
+# Wörter, die das BFS-Register auch als Nachnamen führt (Regel name, SPEC 5.2). Die Liste
+# markiert selbst nichts; promptscan liest sie nur dort, wo ein solches Wort als Nachname in
+# Frage kommt.
+#
+# merkmal:
+#   satzwort  Wort, das einen Satz beginnen kann (Adverb, Konjunktion, Pronomen, Artikel,
+#             Präposition). Eine Initiale mit Punkt kann den Satz beenden; darum gilt das Wort
+#             nach Initialen in der Sprache des Auslösers nicht als Nachname: «Frau A. Auch
+#             …», «le recourant A. Le Tribunal …», «il ricorrente A. Egli …». Nach einem
+#             Auslöser einer anderen Sprache zählt es («Frau A. Egli»), ebenso als Teil eines
+#             Nachnamens aus mehreren Wörtern («Mme A. Le Coultre», «il ricorrente A. Di
+#             Stefano»).
+#   alltag    Grussformel, Wochentag oder Alltagswort. In einer Liste gilt es als mehrdeutiger
+#             Nachname: In einer Zelle bilden «Liebe Anna», «Montag Peter», «Bonjour Pierre»
+#             oder «Glück Anna» kein Paar aus Nachname und Vorname; in Versalien oder über zwei
+#             Zellen schon («BONJOUR Pierre», «Bonjour;Pierre»).
+#
+# Quelle: eine Stelle in einem Erlass der Sprache des Wortes; nur wo keine gefunden wurde,
+# ein Wörterbuch (Duden, Larousse, Treccani). Wörterbücher haben keine Fassung; «fassung» ist
+# dort der Tag, an dem der Eintrag gelesen wurde.
+
+# --- satzwort: Deutsch ---
+
+[[eintrag]]
+begriff = "auch"
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 394 Abs. 3: «Auch wenn die Handlungsfähigkeit nicht eingeschränkt ist, muss die betroffene …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_394"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "daher"
+sprache = "de"
+regel = "name"
+quelle = "SSV (SR 741.21) Art. 7 Abs. 1: «… dass sich die Fahrbahn beidseitig verengt und das Kreuzen daher erschwert ist.»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1979/1961_1961_1961/de#art_7"
+merkmal = "satzwort"
+notiz = "In StPO, ZPO, BGG, ZGB, OR, StGB, BV, SchKG, VwVG, DSG, ATSG, IVG, KVG, SVG und BGFA nicht gefunden."
+
+[[eintrag]]
+begriff = "ferner"
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 450a Abs. 2: «Ferner kann wegen Rechtsverweigerung und Rechtsverzögerung Beschwerde geführt …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_450_a"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "gleich"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 320 Abs. 4: «… Einstellungsverfügung kommt einem freisprechenden Endentscheid gleich.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_320"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dann"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 91 Abs. 4: «Die Frist gilt auch dann als gewahrt, wenn die Eingabe spätestens am letzten Tag der Frist …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_91"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dort"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 35 Abs. 2: «… In diesem Falle wird das Verfahren dort durchgeführt, wo zuerst Verfolgungshandlungen vorgenommen worden sind.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_35"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "nur"
+sprache = "de"
+regel = "name"
+quelle = "BV (SR 101) Art. 123a Abs. 2: «Nur wenn durch neue, wissenschaftliche Erkenntnisse erwiesen wird, dass …»"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_123_a"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "ganz"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 27 Abs. 2: «Bei Straftaten, die ganz oder teilweise in mehreren Kantonen oder im Ausland begangen worden …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_27"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "immer"
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 416 Abs. 3: «Immer der Zustimmung der Erwachsenenschutzbehörde bedürfen Verträge zwischen …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_416"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "nie"
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 120: «… wenn der Anspruch darauf nicht mehr besteht oder nie bestanden hat.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_120"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "wieder"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 60 Abs. 2: «Beweise, die nicht wieder erhoben werden können, darf die Strafbehörde berücksichtigen.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_60"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "so"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 5 Abs. 2: «Befindet sich eine beschuldigte Person in Haft, so wird ihr Verfahren vordringlich durchgeführt.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_5"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "weder"
+sprache = "de"
+regel = "name"
+quelle = "OR (SR 220) Art. 1083: «Weder gesetzliche noch richterliche Respekttage werden anerkannt.»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_1083"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "weil"
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 35 Abs. 1: «Ist der Tod einer Person höchst wahrscheinlich, weil sie in hoher Todesgefahr verschwunden oder seit langem nachrichtlos …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_35"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dass"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 7 Abs. 2: «Die Kantone können vorsehen, dass:»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_7"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "er"
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 400 Abs. 2: «Er stellt für Gerichtsurkunden und Parteieingaben Formulare zur Verfügung.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_400"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "keiner"
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 52 Abs. 2: «Keiner Eintragung bedürfen die öffentlich-rechtlichen Körperschaften und …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_52"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "zur"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 38 Abs. 2: «Zur Wahrung der Verfahrensrechte einer Partei kann die Beschwerdeinstanz …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_38"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "um"
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 542 Abs. 1: «Um die Erbschaft erwerben zu können, muss der Erbe den Erbgang in erbfähigem …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_542"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "man"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «man»: Pronomen; «jemand (sofern er in einer bestimmten Situation stellvertretend für jedermann genommen werden kann)»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/man_jemand"
+merkmal = "satzwort"
+notiz = "In keinem Artikel der durchsuchten Erlasse (StPO, ZPO, BGG, ZGB, OR, StGB, BV, SchKG, VwVG, DSG, ATSG, IVG, KVG, SVG, BGFA und weitere im Zwischenspeicher) als Pronomen gefunden."
+
+[[eintrag]]
+begriff = "du"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «du»: Pronomen; «Anrede an verwandte oder vertraute Personen und an Kinder, an Gott oder göttliche Wesenheiten, …»; Beispiel: «du hast recht»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/du"
+merkmal = "satzwort"
+notiz = "Prompts reden das Modell oft mit «Du» an: «Schreibe Frau A. Du bist …». In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "nein"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «nein»: Partikel; «drückt eine verneinende Antwort [auf eine Entscheidungsfrage] aus»; Beispiel: «nein danke»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/nein"
+merkmal = "satzwort"
+notiz = "In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "hernach"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «hernach»: Adverb; «unmittelbar nach einem bestimmten Geschehen, das in der Vergangenheit oder Zukunft liegt; danach»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/hernach"
+merkmal = "satzwort"
+notiz = "In den durchsuchten Erlassen nicht gefunden."
+
+# --- satzwort: Französisch ---
+
+[[eintrag]]
+begriff = "bien"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 68 al. 1: «… ou n'est pas en mesure de s'exprimer suffisamment bien dans cette langue.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_68"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "ou"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 7 al. 1: «… lorsqu'elles ont connaissance d'infractions ou d'indices permettant de présumer l'existence d'infractions.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_7"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "car"
+sprache = "fr"
+regel = "name"
+quelle = "OPers (SR 172.220.111.3) art. 75d al. 3: «Si l'indemnité a été obtenue frauduleusement de manière répétée car il a fourni intentionnellement des indications inexactes, …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/319/fr#art_75_d"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "que"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 2 al. 2: «… procédures pénales ne peuvent être exécutées et closes que dans les formes prévues par la loi.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_2"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "on"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 111 al. 1: «On entend par prévenu toute personne qui, à la suite d'une dénonciation, …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_111"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "te"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «te»: pronom personnel; «Forme atone de toi (objet direct) ou à toi (objet indirect) : Je te remercie.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/te"
+merkmal = "satzwort"
+notiz = "In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "tu"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «tu»: pronom personnel; «Forme atone du pronom personnel sujet du verbe à la deuxième personne du singulier, désignant la personne à qui l'on parle, sans distinction de sexe : Tu viens.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/tu"
+merkmal = "satzwort"
+notiz = "Prompts reden das Modell oft mit «tu» an. In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "cela"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 18 al. 1: «… et, si cela est prévu par le présent code, ordonne ou autorise d'autres mesures …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_18"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "ceci"
+sprache = "fr"
+regel = "name"
+quelle = "OPC-FINMA (SR 951.312) art. 19 al. 3: «… dans le cadre d'une prise en pension, ceci n'équivaut pas à une prise de crédit.»"
+fassung = "2021-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2014/707/fr#art_19"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "les"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 1 al. 2: «Les dispositions de procédure prévues par d'autres lois fédérales sont …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_1"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "un"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 91 al. 5: «Un paiement à l'autorité pénale est effectué dans le délai prescrit lorsque …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_91"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "du"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 4 al. 1: «… indépendantes dans l'application du droit et ne sont soumises qu'aux règles du droit.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_4"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "de"
+sprache = "fr"
+regel = "name"
+quelle = "CC (SR 210) art. 173 al. 2: «De même, à la requête d'un des époux, le juge fixe le montant dû à celui …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_173"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "sur"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 136 al. 1: «Sur demande, la direction de la procédure accorde entièrement ou partiellement …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_136"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "sans"
+sprache = "fr"
+regel = "name"
+quelle = "CC (SR 210) art. 391 al. 3: «Sans le consentement de la personne concernée, le curateur ne peut prendre …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_391"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "pour"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 68 al. 1: «Pour les affaires simples ou urgentes, il peut être renoncé à une telle …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_68"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "le"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 1 al. 1: «Le présent code régit la poursuite et le jugement, par les autorités pénales …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_1"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "ni"
+sprache = "fr"
+regel = "name"
+quelle = "CC (SR 210) art. 346 al. 2: «Ni le partage, ni la liquidation ne peuvent être provoqués en temps inopportun.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_346"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "si"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 30: «Si des raisons objectives le justifient, le ministère public et les tribunaux …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_30"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "lui"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 16 al. 2: «Il lui incombe de conduire la procédure préliminaire, de poursuivre les infractions …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_16"
+merkmal = "satzwort"
+
+# --- satzwort: Italienisch ---
+
+[[eintrag]]
+begriff = "ancora"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 27 cpv. 1: «… le autorità penali della Confederazione non sono ancora intervenute, le indagini di polizia e l'istruzione possono essere …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_27"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "solo"
+sprache = "it"
+regel = "name"
+quelle = "CO (SR 220) art. 682 cpv. 1: «… Solo se l'azionista non paga neppure nel termine supplementare, esso …»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_682"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "che"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 8 cpv. 2: «Salvo che vi si oppongano interessi preponderanti dell'accusatore privato, il …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_8"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "egli"
+sprache = "it"
+regel = "name"
+quelle = "CC (SR 210) art. 1 cpv. 3: «Egli si attiene alla dottrina ed alla giurisprudenza più autorevoli.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_1"
+merkmal = "satzwort"
+notiz = "Häufiger Nachname der Deutschschweiz: gesperrt nur nach einem italienischen Auslöser («il ricorrente A. Egli»), nicht nach «Frau A. Egli»."
+
+[[eintrag]]
+begriff = "essa"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 421 cpv. 2: «Essa può determinarle previamente nell'ambito di:»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_421"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "loro"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 7 cpv. 1: «Nell'ambito delle loro competenze, le autorità penali sono tenute ad avviare e attuare un …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_7"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "noi"
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «noi»: pron. pers. pl.; «È il pronome di prima persona plurale, usato cioè dalla persona che parla …»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/noi/"
+merkmal = "satzwort"
+notiz = "In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "tu"
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «tu»: pron. pers. sing. m. e f.; «È il pronome di 2a persona, usato nel rivolgere il discorso ad altra persona …»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/tu/"
+merkmal = "satzwort"
+notiz = "Prompts reden das Modell oft mit «tu» an. In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "cui"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 8 cpv. 1: «… segnatamente se sono adempiute le condizioni di cui agli articoli 52–54 del Codice penale (CP).»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_8"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "lo"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 36 cpv. 2: «… Lo stesso vale se il procedimento è diretto, per il medesimo fatto, anche …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_36"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "un"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 9 cpv. 1: «Un reato può essere sottoposto a giudizio soltanto se, per una fattispecie …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_9"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "tra"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 28: «I conflitti tra il pubblico ministero della Confederazione e le autorità penali cantonali …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_28"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dello"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 14 cpv. 4: «… possono istituire più autorità penali dello stesso tipo; …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_14"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "degli"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 10 cpv. 3: «… sono dubbi insormontabili quanto all'adempimento degli elementi di fatto, il giudice si fonda sulla situazione oggettiva …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_10"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "delle"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 88 cpv. 3: «Delle decisioni finali è pubblicato soltanto il dispositivo.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_88"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "allo"
+sprache = "it"
+regel = "name"
+quelle = "CC (SR 210) art. 231 cpv. 1: «Allo scioglimento del regime dei beni, ciascun coniuge risponde degli atti …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_231"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dal"
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 162: «Dal legittimo rifiuto di cooperare di una parte o di un terzo il giudice …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_162"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dallo"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 235 cpv. 1: «… nella misura richiesta dallo scopo della carcerazione e dalle esigenze di ordine e di sicurezza …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_235"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dagli"
+sprache = "it"
+regel = "name"
+quelle = "Cost. (SR 101) art. 41 cpv. 4: «Dagli obiettivi sociali non si possono desumere pretese volte a ottenere …»"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_41"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dalle"
+sprache = "it"
+regel = "name"
+quelle = "CO (SR 220) art. 515 cpv. 1: «Dalle lotterie od estrazioni a sorte non nasce azione veruna se non quando …»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_515"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "sullo"
+sprache = "it"
+regel = "name"
+quelle = "CC (SR 210) art. 275a cpv. 2: «… informazioni sullo stato e sullo sviluppo di costui.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_275_a"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "sui"
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 107 cpv. 4: «Sui ricorsi interposti contro le decisioni del Tribunale federale dei brevetti …»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_107"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "durante"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 55 cpv. 2: «Durante la procedura dibattimentale le autorità giudicanti possono presentare …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_55"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "mai"
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 120: «… condizioni per la sua concessione non sono più o non sono mai state adempiute.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_120"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "ma"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 60 cpv. 2: «Le prove già esperite ma non più ripetibili possono essere nondimeno prese in considerazione …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_60"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "lui"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 68 cpv. 2: «… l'imputato è informato in una lingua a lui comprensibile, oralmente o per scritto …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_68"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "lei"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 116 cpv. 2: «… nonché le altre persone a lei unite da legami analoghi.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_116"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "si"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 95 cpv. 2: «… Si può rinunciare all'informazione o differirla per proteggere interessi …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_95"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "chi"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 11 cpv. 1: «Chi è stato condannato o assolto in Svizzera con decisione passata in giudicato …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_11"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "le"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 3 cpv. 2: «Le autorità penali si attengono segnatamente:»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_3"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "di"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 227 cpv. 6: «Di regola, la procedura è scritta, ma il giudice dei provvedimenti coercitivi …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_227"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "su"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 45 cpv. 2: «Su richiesta delle autorità penali della Confederazione, i Cantoni prendono …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_45"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "al"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 38 cpv. 2: «Al fine di tutelare i diritti procedurali di una parte, dopo la promozione …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_38"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "alla"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 117 cpv. 1: «Alla vittima spettano particolari diritti, segnatamente:»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_117"
+merkmal = "satzwort"
+
+[[eintrag]]
+begriff = "dai"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 41 cpv. 2: «… la decisione sul foro presa dai pubblici ministeri interessati …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_41"
+merkmal = "satzwort"
+
+# --- alltag: Grussformeln ---
+
+[[eintrag]]
+begriff = "lieber"
+formen = ["liebe"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «lieb», Bedeutung 2: «jemandes Liebe, Zuneigung besitzend; geliebt, geschätzt»; Beispiel: «(in vertraulichen Anreden) lieber Hugo, liebste Mutter»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/lieb"
+merkmal = "alltag"
+notiz = "Briefanrede: «Liebe Anna, Lieber Peter,». In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "bonjour"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «bonjour»: nom masculin; «Terme de salutation dont on se sert pendant la journée quand on aborde quelqu'un …»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/bonjour"
+merkmal = "alltag"
+notiz = "Briefanrede: «Bonjour Anna, Bonjour Pierre,». In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "buongiorno"
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «giorno», 3 a: «buon g., formula di saluto (e anche tipo di bastone chiodato), v. buongiorno»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/giorno/"
+merkmal = "alltag"
+notiz = "Briefanrede: «Buongiorno Marco,». In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "caro"
+formen = ["cara"]
+sprache = "it"
+regel = "name"
+quelle = "OPre (SR 832.112.31) art. 4a cpv. 1 lett. c: «sostituzione di un medicamento prescritto dal medico con un medicamento meno caro con il medesimo principio attivo;»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_4_a"
+merkmal = "alltag"
+notiz = "Im Erlass im Sinn von «teuer»; als Briefanrede: «Cara Anna, Caro Marco,»."
+
+[[eintrag]]
+begriff = "gentile"
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «gentile», 1: «si dice di una persona che, nel trattare con gli altri, ha un modo di fare affabile, garbato, gradevole»; «con questo significato viene spesso usato in formule di cortesia, specialmente nella corrispondenza»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/gentile/"
+merkmal = "alltag"
+notiz = "Briefanrede: «Gentile Anna, Gentile Marco,». In den durchsuchten Erlassen nicht gefunden."
+
+# --- alltag: Wochentage ---
+
+[[eintrag]]
+begriff = "montag"
+sprache = "de"
+regel = "name"
+quelle = "VRV (SR 741.11) Art. 91 Abs. 1: «… wenn Weihnachten nicht auf einen Montag oder Freitag fällt.»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1962/1364_1409_1420/de#art_91"
+merkmal = "alltag"
+notiz = "Dienstplan: «Montag Peter, Dienstag Anna». «Sonntag» ist im Register schon mehrdeutig."
+
+[[eintrag]]
+begriff = "freitag"
+sprache = "de"
+regel = "name"
+quelle = "VRV (SR 741.11) Art. 91 Abs. 1: «… wenn Weihnachten nicht auf einen Montag oder Freitag fällt.»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1962/1364_1409_1420/de#art_91"
+merkmal = "alltag"
+
+[[eintrag]]
+begriff = "sabato"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 90 cpv. 2: «Se l'ultimo giorno del termine è un sabato, una domenica o un giorno riconosciuto festivo dal diritto federale …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_90"
+merkmal = "alltag"
+notiz = "Kein französischer Wochentag steht im Register der Nachnamen."
+
+# --- alltag: Alltagswörter ---
+
+[[eintrag]]
+begriff = "glück"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Glück», Bedeutung 1: «etwas, was Ergebnis des Zusammentreffens besonders günstiger Umstände ist; besonders günstiger Zufall, günstige Fügung des Schicksals»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Glueck"
+merkmal = "alltag"
+notiz = "In keinem Erlass als eigenes Wort gefunden."
+
+[[eintrag]]
+begriff = "pech"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Pech», Bedeutung 2: «unglückliche Fügung; Missgeschick, das jemandes Vorhaben, Pläne durchkreuzt»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Pech"
+merkmal = "alltag"
+notiz = "In den durchsuchten Erlassen nicht gefunden."
+
+[[eintrag]]
+begriff = "messer"
+sprache = "de"
+regel = "name"
+quelle = "WG (SR 514.54) Art. 4 Abs. 1 Bst. c: «Messer, deren Klinge mit einem einhändig bedienbaren automatischen Mechanismus ausgefahren werden kann, …»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1998/2535_2535_2535/de#art_4"
+merkmal = "alltag"
+
+[[eintrag]]
+begriff = "fortuna"
+sprache = "it"
+regel = "name"
+quelle = "LEF (SR 281.1) art. 265 cpv. 2: «… se non quando il debitore sia ritornato a miglior fortuna.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/it#art_265"
+merkmal = "alltag"
+notiz = "Gegenstück zu «Glück»; Französisch («chance», «bonheur») steht nicht im Register der Nachnamen."

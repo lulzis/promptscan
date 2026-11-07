@@ -1,0 +1,95 @@
+# Regel «wohnort»: Wörter, nach denen der Wohnort einer Person steht.
+#
+# Ohne Merkmal folgt die Präposition (de «in», fr «à», it «a» oder «in») und dann eine
+# politische Gemeinde aus dem amtlichen Gemeindeverzeichnis. Mit `merkmal = "doppelpunkt"`
+# ist das Wort eine Feldbezeichnung («Wohnsitz: Bern») und es folgt ein Doppelpunkt.
+# Eine Gemeinde ohne eines dieser Wörter wird nicht gemeldet (Anonymisierungsregeln des
+# Bundesgerichts, Art. 4 Abs. 1 lit. b und e).
+
+[[eintrag]]
+begriff = "wohnhaft"
+sprache = "de"
+regel = "wohnort"
+quelle = "SR 661 Art. 4a Abs. 2"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/2035_2097_2125/de#art_4_a"
+notiz = "«War der Wehrpflichtige schon früher im Ausland wohnhaft, …»"
+
+[[eintrag]]
+begriff = "mit Wohnsitz"
+sprache = "de"
+regel = "wohnort"
+quelle = "SR 291 Art. 37 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1988/1776_1776_1776/de#art_37"
+notiz = "«Der Name einer Person mit Wohnsitz in der Schweiz untersteht schweizerischem Recht»"
+
+[[eintrag]]
+begriff = "Wohnsitz"
+sprache = "de"
+regel = "wohnort"
+merkmal = "doppelpunkt"
+quelle = "SR 210 Art. 23 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_23"
+notiz = "Feldbezeichnung mit Doppelpunkt; ohne «mit» davor ist «Wohnsitz in» oft der Staat oder ein Rechtsbegriff."
+
+[[eintrag]]
+begriff = "Wohnort"
+sprache = "de"
+regel = "wohnort"
+merkmal = "doppelpunkt"
+quelle = "SR 161.1 Art. 33 Abs. 1"
+fassung = "2022-10-23"
+url = "https://www.fedlex.admin.ch/eli/cc/1978/688_688_688/de#art_33"
+notiz = "«(mindestens Familien- und Vornamen sowie Wohnort)»; Feldbezeichnung mit Doppelpunkt."
+
+[[eintrag]]
+begriff = "domicilié"
+formen = ["domiciliée", "domiciliés", "domiciliées"]
+sprache = "fr"
+regel = "wohnort"
+quelle = "SR 281.1 Art. 50 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_50"
+notiz = "«Le débiteur domicilié à l’étranger …»"
+
+[[eintrag]]
+begriff = "domicile"
+sprache = "fr"
+regel = "wohnort"
+merkmal = "doppelpunkt"
+quelle = "SR 210 Art. 23 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_23"
+notiz = "«Le domicile de toute personne est au lieu où elle réside …»; Feldbezeichnung mit Doppelpunkt."
+
+[[eintrag]]
+begriff = "domiciliato"
+formen = ["domiciliata", "domiciliati", "domiciliate"]
+sprache = "it"
+regel = "wohnort"
+quelle = "SR 291 Art. 43 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1988/1776_1776_1776/it#art_43"
+notiz = "«se uno degli sposi è domiciliato in Svizzera»"
+
+[[eintrag]]
+begriff = "residente"
+formen = ["residenti"]
+sprache = "it"
+regel = "wohnort"
+quelle = "SR 142.20 Art. 4 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/758/it#art_4"
+notiz = "«popolazione residente indigena»; mit Ortsangabe in Art. 86 Abs. 1: «persone residenti in Svizzera»."
+
+[[eintrag]]
+begriff = "domicilio"
+sprache = "it"
+regel = "wohnort"
+merkmal = "doppelpunkt"
+quelle = "SR 210 Art. 23 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_23"
+notiz = "«Il domicilio di una persona è nel luogo dove essa dimora …»; Feldbezeichnung mit Doppelpunkt."

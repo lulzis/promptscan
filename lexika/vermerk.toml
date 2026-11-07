@@ -1,0 +1,174 @@
+# Regel «vermerk» (SPEC 5.4): Klassifizierungsvermerk nach Art. 13 ISG.
+#
+# Die drei Klassifizierungsstufen stehen in Art. 13 Abs. 1–3 ISG (SR 128), je in der
+# amtlichen deutschen, französischen und italienischen Fassung. Die Vorsätze leiten einen
+# Vermerk ein («Klassifizierung: vertraulich»); sie stammen aus Art. 11 Abs. 2 ISG und aus
+# den Sachüberschriften von Art. 18–20 ISV (SR 128.1), z. B. «Klassifizierungsstufe
+# «intern» (Art. 13 Abs. 1 ISG)».
+#
+# merkmal: "stufe-1", "stufe-2", "stufe-3" = Absatz von Art. 13 ISG; "vorsatz" = Wort vor
+# der Stufe.
+#
+# Gelesen am 06.11.2026 im amtlichen Wortlaut (Fedlex): ISG, eli/cc/2022/232, Fassung vom
+# 01.10.2025; ISV, eli/cc/2023/735, Fassung vom 01.05.2025; je in allen drei Sprachen.
+
+# --- Stufen, Deutsch ---
+
+[[eintrag]]
+begriff = "intern"
+sprache = "de"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 1"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/de#art_13"
+merkmal = "stufe-1"
+notiz = "«Als «intern» werden Informationen klassifiziert, …»"
+
+[[eintrag]]
+begriff = "vertraulich"
+sprache = "de"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 2"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/de#art_13"
+merkmal = "stufe-2"
+notiz = "«Als «vertraulich» werden Informationen klassifiziert, …»"
+
+[[eintrag]]
+begriff = "geheim"
+sprache = "de"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 3"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/de#art_13"
+merkmal = "stufe-3"
+notiz = "«Als «geheim» werden Informationen klassifiziert, …»"
+
+# --- Stufen, Französisch ---
+
+[[eintrag]]
+begriff = "interne"
+sprache = "fr"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 1"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_13"
+merkmal = "stufe-1"
+notiz = "«… sont classifiées «interne».»"
+
+[[eintrag]]
+begriff = "confidentiel"
+formen = ["confidentielle"]
+sprache = "fr"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 2"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_13"
+merkmal = "stufe-2"
+notiz = "«… sont classifiées «confidentiel».» Weitere Form: weiblich."
+
+[[eintrag]]
+begriff = "secret"
+formen = ["secrète"]
+sprache = "fr"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 3"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_13"
+merkmal = "stufe-3"
+notiz = "«… sont classifiées «secret».» Weitere Form: weiblich."
+
+# --- Stufen, Italienisch ---
+
+[[eintrag]]
+begriff = "ad uso interno"
+sprache = "it"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 1"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/it#art_13"
+merkmal = "stufe-1"
+notiz = "«Sono classificate «ad uso interno» le informazioni …»"
+
+[[eintrag]]
+begriff = "confidenziale"
+sprache = "it"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 2"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/it#art_13"
+merkmal = "stufe-2"
+notiz = "«Sono classificate «confidenziale» le informazioni …»"
+
+[[eintrag]]
+begriff = "segreto"
+formen = ["segreta"]
+sprache = "it"
+regel = "vermerk"
+quelle = "SR 128 Art. 13 Abs. 3"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/it#art_13"
+merkmal = "stufe-3"
+notiz = "«Sono classificate «segreto» le informazioni …» Weitere Form: weiblich."
+
+# --- Vorsätze ---
+
+[[eintrag]]
+begriff = "Klassifizierung"
+sprache = "de"
+regel = "vermerk"
+quelle = "SR 128 Art. 11 Abs. 2"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/de#art_11"
+merkmal = "vorsatz"
+notiz = "«Die Klassifizierung ist auf das erforderliche Mindestmass zu beschränken …»"
+
+[[eintrag]]
+begriff = "Klassifizierungsstufe"
+sprache = "de"
+regel = "vermerk"
+quelle = "SR 128.1 Art. 18 (Sachüberschrift)"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2023/735/de#art_18"
+merkmal = "vorsatz"
+notiz = "«Klassifizierungsstufe «intern» (Art. 13 Abs. 1 ISG)»; ebenso Art. 19 und 20 ISV."
+
+[[eintrag]]
+begriff = "classification"
+sprache = "fr"
+regel = "vermerk"
+quelle = "SR 128 Art. 11 Abs. 2"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_11"
+merkmal = "vorsatz"
+notiz = "«La classification doit se limiter au strict nécessaire …»"
+
+[[eintrag]]
+begriff = "échelon de classification"
+sprache = "fr"
+regel = "vermerk"
+quelle = "SR 128.1 Art. 18 (Sachüberschrift)"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2023/735/fr#art_18"
+merkmal = "vorsatz"
+notiz = "«Échelon de classification «interne» (art. 13, al. 1, LSI)»; ebenso Art. 19 und 20 ISV."
+
+[[eintrag]]
+begriff = "classificazione"
+sprache = "it"
+regel = "vermerk"
+quelle = "SR 128 Art. 11 Abs. 2"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/it#art_11"
+merkmal = "vorsatz"
+notiz = "«La classificazione è ridotta allo stretto necessario …»"
+
+[[eintrag]]
+begriff = "livello di classificazione"
+sprache = "it"
+regel = "vermerk"
+quelle = "SR 128.1 Art. 18 (Sachüberschrift)"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2023/735/it#art_18"
+merkmal = "vorsatz"
+notiz = "«Livello di classificazione «ad uso interno» (art. 13 cpv. 1 LSIn)»; ebenso Art. 19 und 20 ISV."

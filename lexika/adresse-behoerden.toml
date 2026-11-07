@@ -1,0 +1,288 @@
+# Regel «adresse»: Bezeichnungen von Behörden für die Ausnahme der Behördenadresse.
+#
+# Anonymisierungsregeln des Bundesgerichts, Art. 7 Abs. 3: «Die Adressen von Parteien,
+# Verfahrensbeteiligten und Rechtsvertretern werden in jedem Fall weggestrichen, auch wenn
+# die Namen offen gelegt werden. Vorbehalten sind die Adressen von Behörden.» Steht eines
+# dieser Wörter am Anfang oder am Ende des Abschnitts unmittelbar vor der Adresse
+# («Bezirksgericht Zürich, …»), gilt die Adresse als Behördenadresse und wird nicht gemeldet.
+#
+# Deutsch schreibt Behörden zusammen («Bezirksgericht», «Steueramt»): darum `teilwort = "ende"`.
+# Jedes Wort steht wörtlich in der zitierten Stelle der jeweiligen Sprachfassung.
+
+[[eintrag]]
+begriff = "Gericht"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 312.0 Art. 13 lit. b"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_13"
+notiz = "«das erstinstanzliche Gericht»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Behörde"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 235.1 Art. 5 lit. i"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/de#art_5"
+notiz = "«Behörde oder Dienststelle des Bundes»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Staatsanwaltschaft"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 312.0 Art. 12 lit. b"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_12"
+notiz = "Strafverfolgungsbehörde; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Polizei"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 312.0 Art. 12 lit. a"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_12"
+notiz = "Strafverfolgungsbehörde; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Amt"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 172.010 Art. 47 Abs. 1"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/de#art_47"
+notiz = "«ein Departement, eine Gruppe oder ein Amt»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Departement"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 172.010 Art. 47 Abs. 1"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/de#art_47"
+notiz = "Verwaltungseinheit; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Verwaltung"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 152.3 Art. 1"
+fassung = "2023-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/355/de#art_1"
+notiz = "«die Transparenz über den Auftrag, die Organisation und die Tätigkeit der Verwaltung»; Ausnahme Behördenadresse. Trifft auch private Verwaltungen («Hausverwaltung»), siehe Grenzen der Regel."
+
+[[eintrag]]
+begriff = "Gemeinde"
+sprache = "de"
+regel = "adresse"
+merkmal = "behoerde"
+teilwort = "ende"
+quelle = "SR 510.625 Art. 19 Abs. 1 lit. a"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2008/393/de#art_19"
+notiz = "Öffentlich-rechtliche Körperschaft (BGer-Anonymisierungsregeln Art. 4 Abs. 1 lit. a); Ausnahme Behördenadresse."
+
+[[eintrag]]
+begriff = "tribunal"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 312.0 Art. 13 lit. b"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_13"
+notiz = "«le tribunal de première instance»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "autorité"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 235.1 Art. 5 lit. i"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_5"
+notiz = "«l’autorité fédérale»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "ministère public"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 312.0 Art. 12 lit. b"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_12"
+notiz = "Autorité de poursuite pénale; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "police"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 312.0 Art. 12 lit. a"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_12"
+notiz = "Autorité de poursuite pénale; Ausnahme Behördenadresse. «police» heisst auch Versicherungspolice, siehe Grenzen der Regel."
+
+[[eintrag]]
+begriff = "office"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 172.010 Art. 47 Abs. 1"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/fr#art_47"
+notiz = "«directeur de groupement ou d’office»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "département"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 172.010 Art. 47 Abs. 1"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/fr#art_47"
+notiz = "«chef de département»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "administration"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 152.3 Art. 1"
+fassung = "2023-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/355/fr#art_1"
+notiz = "«l’administration»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "commune"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 510.625 Art. 19 Abs. 1 lit. a"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2008/393/fr#art_19"
+notiz = "«à chaque commune»; öffentlich-rechtliche Körperschaft (BGer-Anonymisierungsregeln Art. 4 Abs. 1 lit. a)."
+
+[[eintrag]]
+begriff = "cour"
+sprache = "fr"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 173.71 Art. 33 lit. c"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/fr#art_33"
+notiz = "«une cour d’appel»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "tribunale"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 312.0 Art. 13 lit. b"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_13"
+notiz = "«il tribunale di primo grado»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "autorità"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 235.1 Art. 5 lit. i"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/it#art_5"
+notiz = "«autorità o servizio della Confederazione»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "pubblico ministero"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 312.0 Art. 12 lit. b"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_12"
+notiz = "Autorità penale; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Ministero pubblico"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 173.71 Art. 2 Abs. 1 lit. b"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/it#art_2"
+notiz = "«il Ministero pubblico della Confederazione»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "polizia"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 312.0 Art. 12 lit. a"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_12"
+notiz = "Autorità penale; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "ufficio"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 172.010 Art. 47 Abs. 1"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/it#art_47"
+notiz = "«a un dipartimento, a un gruppo oppure a un ufficio»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "dipartimento"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 172.010 Art. 47 Abs. 1"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/it#art_47"
+notiz = "Unità amministrativa; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "amministrazione"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 152.3 Art. 1"
+fassung = "2023-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/355/it#art_1"
+notiz = "«dell’amministrazione»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."
+
+[[eintrag]]
+begriff = "Comune"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 510.625 Art. 19 Abs. 1 lit. a"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2008/393/it#art_19"
+notiz = "«a ogni Comune»; öffentlich-rechtliche Körperschaft (BGer-Anonymisierungsregeln Art. 4 Abs. 1 lit. a)."
+
+[[eintrag]]
+begriff = "corte"
+sprache = "it"
+regel = "adresse"
+merkmal = "behoerde"
+quelle = "SR 173.71 Art. 33 lit. c"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/it#art_33"
+notiz = "«una corte d’appello»; Ausnahme Behördenadresse (BGer-Anonymisierungsregeln Art. 7 Abs. 3)."

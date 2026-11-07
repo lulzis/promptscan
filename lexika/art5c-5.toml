@@ -1,0 +1,704 @@
+# Art. 5 Bst. c Ziff. 5 DSG: Daten über verwaltungs- und strafrechtliche Verfolgungen
+# oder Sanktionen.
+#
+# Verwaltungsrechtliche Verfolgungen und Sanktionen nur mit Beleg: Disziplinarverfahren
+# und Führerausweisentzüge nennt die Botschaft zum DSG ausdrücklich (BBl 1988 II 413,
+# 446); die Wortlaute stammen aus BGFA und SVG.
+#
+# Bewusst weggelassen (siehe RegelInfo::grenzen): «Busse» allein (auch Mehrzahl von
+# «Bus»), FR «amende» allein (auch: «il amende» = ändert ab), «beschuldigt» allein,
+# «verurteilt»/«condamné»/«condannato» (auch Zivilurteile), FR «prévenu» ohne Artikel
+# (Partizip von «prévenir»), FR «expulsion», FR «dénonciation» und IT «denuncia» allein
+# (auch Kündigung eines Vertrags, IT auch «denuncia dei redditi»), FR «plainte» allein
+# (auch Reklamation), FR «retrait du permis» ohne «de conduire» (auch Bau- oder
+# Aufenthaltsbewilligung), IT «denunciato» und «indagato», IT «arresto» (auch «arresto
+# cardiaco»), IT «espulsione».
+#
+# «dénonciation» und «denuncia» zählen nur in eindeutigen Wendungen («dénonciation
+# pénale», «dénoncé une infraction», «sporto denuncia»), FR «plainte» nur in «plainte
+# pénale», «porter plainte» und «déposer plainte».
+#
+# «vorbestraft» nach Duden: Das Alltagswort steht in keinem der durchsuchten Erlasse
+# (StPO, StGB, StReG und weitere); die StPO schreibt «Vorstrafen» (Art. 195 Abs. 2).
+#
+# FR «procédure pénale» zählt; die Titel «Code de procédure pénale», «Procédure pénale
+# applicable aux mineurs» und «Procédure pénale militaire» sind als Ausnahme eingetragen
+# und melden nichts. Den letzten trifft nur die gross geschriebene Form: die PPM selbst
+# schreibt «l'ouverture d'une procédure pénale militaire» für ein Verfahren.
+#
+# Die Beschwerde nach SchKG und ZGB («plainte à l'autorité de surveillance», «plainte
+# auprès de l'autorité de surveillance») ist als Ausnahme eingetragen; sie gewinnt vor
+# «porté plainte» und «déposé plainte».
+
+# --- Deutsch ---------------------------------------------------------------
+
+[[eintrag]]
+begriff = "beschuldigte Person"
+formen = ["beschuldigten Person", "beschuldigte Personen", "beschuldigten Personen", "beschuldigter Person", "beschuldigter Personen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 111 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_111"
+
+[[eintrag]]
+begriff = "angeklagt"
+formen = ["angeklagte", "angeklagten", "angeklagter"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 111 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_111"
+notiz = "«einer Straftat verdächtigt, beschuldigt oder angeklagt»."
+
+[[eintrag]]
+begriff = "Strafanzeige"
+formen = ["Strafanzeigen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 111 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_111"
+notiz = "Meldet auch, wer Anzeige erstattet: Auch das ist eine Angabe über ein Strafverfahren."
+
+[[eintrag]]
+begriff = "Strafantrag"
+formen = ["Strafantrags", "Strafantrages", "Strafanträge", "Strafanträgen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 111 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_111"
+
+[[eintrag]]
+begriff = "Strafverfahren"
+formen = ["Strafverfahrens"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 2 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_2"
+
+[[eintrag]]
+begriff = "Strafuntersuchung"
+formen = ["Strafuntersuchungen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 112 Abs. 3: «Wird gegen die Person, die das Unternehmen im Strafverfahren vertritt, wegen des gleichen oder eines damit zusammenhängenden Sachverhalts eine Strafuntersuchung eröffnet…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_112"
+notiz = "Gegenstück zu FR «enquête pénale» und IT «inchiesta penale» (dieselbe Stelle)."
+
+[[eintrag]]
+begriff = "Verhaftung"
+formen = ["Verhaftungen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 210 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_210"
+
+[[eintrag]]
+begriff = "festzunehmen"
+formen = ["festnehmen", "festgenommen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 217 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_217"
+notiz = "«eine Person vorläufig festzunehmen»."
+
+[[eintrag]]
+begriff = "Untersuchungshaft"
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_220"
+
+[[eintrag]]
+begriff = "Sicherheitshaft"
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_220"
+
+[[eintrag]]
+begriff = "Anklageschrift"
+formen = ["Anklageschriften"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_220"
+
+[[eintrag]]
+begriff = "Anklage"
+formen = ["Anklagen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 324 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_324"
+notiz = "«erhebt … Anklage». Nur das ganze Wort; «Anklagebehörde» zählt nicht."
+
+[[eintrag]]
+begriff = "Anklageerhebung"
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 324 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_324"
+
+[[eintrag]]
+begriff = "Strafbefehl"
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 352 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_352"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Strafbefehls», «Strafbefehle» und «Strafbefehlsverfahren» mitzählen."
+
+[[eintrag]]
+begriff = "Geldstrafe"
+formen = ["Geldstrafen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 34 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_34"
+
+[[eintrag]]
+begriff = "Freiheitsstrafe"
+formen = ["Freiheitsstrafen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 40 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_40"
+
+[[eintrag]]
+begriff = "Ordnungsbusse"
+formen = ["Ordnungsbussen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 314.1 Art. 1 Abs. 1"
+fassung = "2025-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2017/725/de#art_1"
+
+[[eintrag]]
+begriff = "Strafregister"
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 330 Art. 3"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/600/de#art_3"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Strafregisterauszug» (Art. 10) und «Strafregistereintrag» mitzählen."
+
+[[eintrag]]
+begriff = "Landesverweisung"
+formen = ["Landesverweisungen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 66a Abs. 2"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_66_a"
+
+[[eintrag]]
+begriff = "Disziplinarverfahren"
+formen = ["Disziplinarverfahrens"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 935.61 Art. 16 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/de#art_16"
+
+[[eintrag]]
+begriff = "Disziplinarmassnahme"
+formen = ["Disziplinarmassnahmen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 935.61 Art. 16 Abs. 2"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/de#art_16"
+
+[[eintrag]]
+begriff = "Ausweisentzug"
+formen = ["Ausweisentzugs", "Ausweisentzuges", "Ausweisentzüge", "Ausweisentzügen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 741.01 Art. 16c Abs. 1 Bst. f"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/de#art_16_c"
+teilwort = "ende"
+notiz = "«trotz Ausweisentzug». Am Wortende, damit «Führerausweisentzug» (Art. 16 Abs. 3: «Führerausweisentzugs») mitzählt."
+
+[[eintrag]]
+begriff = "Vorstrafen"
+formen = ["Vorstrafe"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 195 Abs. 2: «…Auskünfte über Vorstrafen und den Leumund…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_195"
+notiz = "Gegenstück zu FR «antécédents judiciaires» und IT «precedenti penali» im selben Absatz."
+
+[[eintrag]]
+begriff = "vorbestraft"
+formen = ["vorbestrafte", "vorbestraften", "vorbestrafter", "vorbestraftes", "vorbestraftem"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "Duden online, «vorbestraft»: «bereits früher gerichtlich verurteilt»; Beispiel «ein mehrfach vorbestrafter Angeklagter»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/vorbestraft"
+notiz = "Alltagswort ohne Fundstelle in den durchsuchten Erlassen (StPO, StGB, StReG und weitere); Duden nach den BK-Schreibweisungen (Rz. 113). Zählt auch verneint («nicht vorbestraft»): Auch das ist eine Angabe aus dem Strafregister. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "strafrechtliche Verfolgungen"
+formen = ["strafrechtliche Verfolgung", "strafrechtlichen Verfolgung", "strafrechtlicher Verfolgung", "strafrechtlichen Verfolgungen"]
+sprache = "de"
+regel = "art5c-5"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 5: «Daten über verwaltungs- und strafrechtliche Verfolgungen oder Sanktionen»"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/de#art_5"
+notiz = "Wortlaut des DSG selbst."
+
+# --- Französisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "le prévenu"
+formen = ["du prévenu", "au prévenu", "les prévenus", "des prévenus"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 32"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_32"
+notiz = "Nur mit Artikel: «prévenu» allein ist auch Partizip von «prévenir». Formen belegt in Art. 6 («du prévenu»), Art. 10 («au prévenu»), Art. 114 («les prévenus»), Art. 127 («des prévenus»)."
+
+[[eintrag]]
+begriff = "ordonnance pénale"
+formen = ["ordonnances pénales"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 352 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_352"
+
+[[eintrag]]
+begriff = "détention provisoire"
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_220"
+
+[[eintrag]]
+begriff = "détention pour des motifs de sûreté"
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_220"
+
+[[eintrag]]
+begriff = "acte d'accusation"
+formen = ["actes d'accusation"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_220"
+
+[[eintrag]]
+begriff = "arrestation"
+formen = ["arrestations"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 217 Abs. 3 Bst. c"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_217"
+
+[[eintrag]]
+begriff = "peine pécuniaire"
+formen = ["peines pécuniaires"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 34 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_34"
+
+[[eintrag]]
+begriff = "peine privative de liberté"
+formen = ["peines privatives de liberté"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 40 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_40"
+
+[[eintrag]]
+begriff = "amende d'ordre"
+formen = ["amendes d'ordre"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 314.1 Art. 1 Abs. 1"
+fassung = "2025-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2017/725/fr#art_1"
+
+[[eintrag]]
+begriff = "casier judiciaire"
+formen = ["casiers judiciaires"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 330 Art. 1 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/600/fr#art_1"
+
+[[eintrag]]
+begriff = "procédure disciplinaire"
+formen = ["procédures disciplinaires"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 935.61 Art. 16 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/fr#art_16"
+
+[[eintrag]]
+begriff = "mesure disciplinaire"
+formen = ["mesures disciplinaires"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 935.61 Art. 16 Abs. 2"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/fr#art_16"
+
+[[eintrag]]
+begriff = "plainte pénale"
+formen = ["plaintes pénales"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 118 Abs. 2: «Une plainte pénale équivaut à une telle déclaration.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_118"
+notiz = "Gegenstück zu «Strafantrag» und IT «querela» im selben Absatz."
+
+[[eintrag]]
+begriff = "porter plainte"
+formen = ["porté plainte", "porte plainte", "portent plainte", "portera plainte"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 30 Abs. 1: «Si une infraction n’est punie que sur plainte, toute personne lésée peut porter plainte contre l’auteur.»"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_30"
+notiz = "Nur als Wendung: «plainte» allein heisst auch Reklamation. Gegenstück zu «Strafantrag» und IT «sporgere querela»."
+
+[[eintrag]]
+begriff = "déposer plainte"
+formen = ["déposé plainte", "dépose plainte", "déposent plainte", "déposera plainte"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 115 Abs. 2: «Sont toujours considérées comme des lésés les personnes qui ont qualité pour déposer plainte pénale.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_115"
+notiz = "Die Wendung steht wörtlich in «déposer plainte pénale»; sie zählt auch ohne «pénale» («a déposé plainte contre son voisin»). Folgt «pénale», gewinnt dieser längere Treffer vor «plainte pénale»."
+
+[[eintrag]]
+begriff = "procédure pénale"
+formen = ["procédures pénales"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 118 Abs. 1: «…participer à la procédure pénale comme demandeur au pénal ou au civil.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_118"
+notiz = "Der Titel «Code de procédure pénale» ist als Ausnahme eingetragen."
+
+[[eintrag]]
+begriff = "Code de procédure pénale"
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Titel: «Code de procédure pénale suisse (Code de procédure pénale, CPP) du 5 octobre 2007»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr"
+merkmal = "ausnahme"
+notiz = "Titel des Erlasses («Code de procédure pénale suisse»). Ausnahme: verhindert, dass «procédure pénale» im Gesetzesnamen gemeldet wird."
+
+[[eintrag]]
+begriff = "procédure pénale applicable aux mineurs"
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.1 Titel: «Loi fédérale sur la procédure pénale applicable aux mineurs (Procédure pénale applicable aux mineurs, PPMin) du 20 mars 2009»"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/226/fr"
+merkmal = "ausnahme"
+notiz = "Titel des Erlasses. Ausnahme: verhindert, dass «procédure pénale» im Gesetzesnamen gemeldet wird. Der Erlass selbst nennt ein Verfahren nie so."
+
+[[eintrag]]
+begriff = "Procédure pénale militaire"
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 322.1 Titel: «Procédure pénale militaire (PPM) du 23 mars 1979»"
+fassung = "2024-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1979/1059_1059_1059/fr"
+gross = true
+merkmal = "ausnahme"
+notiz = "Titel des Erlasses, nur gross geschrieben: Art. 84j Abs. 4 PPM schreibt «dès l’ouverture d’une procédure pénale militaire» für ein Verfahren, das zählt."
+
+[[eintrag]]
+begriff = "plainte à l'autorité de surveillance"
+formen = ["plaintes à l'autorité de surveillance"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 281.1 Art. 17 Abs. 1: «…il peut être porté plainte à l’autorité de surveillance lorsqu’une mesure de l’office est contraire à la loi…»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/fr#art_17"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Beschwerde gegen eine Verfügung des Betreibungs- oder Konkursamts, keine Strafsache; gewinnt vor «porté plainte»."
+
+[[eintrag]]
+begriff = "plainte auprès de l'autorité de surveillance"
+formen = ["plaintes auprès de l'autorité de surveillance"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 210 Art. 84 Abs. 3: «…peuvent déposer une plainte auprès de l’autorité de surveillance contre les actes ou les omissions des organes de la fondation.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_84"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Stiftungsaufsichtsbeschwerde, keine Strafsache; gewinnt vor «déposé plainte»."
+
+[[eintrag]]
+begriff = "enquête pénale"
+formen = ["enquêtes pénales"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 112 Abs. 3: «Si une enquête pénale est ouverte pour les mêmes faits ou pour des faits connexes à l’encontre de la personne qui représente l’entreprise…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_112"
+notiz = "Gegenstück zu DE «Strafuntersuchung» und IT «inchiesta penale» (dieselbe Stelle)."
+
+[[eintrag]]
+begriff = "antécédents judiciaires"
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 195 Abs. 2: «…des renseignements sur les antécédents judiciaires et la réputation du prévenu…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_195"
+notiz = "Gegenstück zu «Vorstrafen» im selben Absatz."
+
+[[eintrag]]
+begriff = "sanctions pénales"
+formen = ["sanction pénale"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 5: «les données sur des poursuites ou sanctions pénales et administratives»"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_5"
+notiz = "Wortlaut des DSG selbst."
+
+[[eintrag]]
+begriff = "retrait de permis"
+formen = ["retraits de permis"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 741.01 Art. 16a Abs. 2: «…au conducteur qui a fait l’objet d’un retrait de permis ou d’une autre mesure administrative…»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_a"
+notiz = "«retrait du permis» allein fehlt (auch Bau- oder Aufenthaltsbewilligung)."
+
+[[eintrag]]
+begriff = "retrait du permis de conduire"
+formen = ["retrait du permis d'élève conducteur", "retrait du permis d'élève conducteur ou du permis de conduire"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 741.01 Art. 16 Abs. 2: «…entraîne le retrait du permis d’élève conducteur ou du permis de conduire, ou un avertissement.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16"
+notiz = "Die Fundstelle reiht die beiden Ausweise («du permis d’élève conducteur ou du permis de conduire»); der Begriff löst die Reihung auf, der volle Wortlaut steht als Form."
+
+[[eintrag]]
+begriff = "dénoncé une infraction"
+formen = ["dénoncer une infraction", "dénonce une infraction", "dénoncé des infractions", "dénoncer des infractions"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 172.220.1 Art. 34c Abs. 1 Bst. a: «…l’employé avait, de bonne foi, dénoncé une infraction…»"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/123/fr#art_34_c"
+notiz = "Nur als Wendung: «dénonciation» allein heisst auch Kündigung eines Vertrags oder Staatsvertrags. «dénoncer des infractions» auch in SR 312.0 Art. 301 Abs. 1."
+
+[[eintrag]]
+begriff = "dénonciation pénale"
+formen = ["dénonciations pénales"]
+sprache = "fr"
+regel = "art5c-5"
+quelle = "SR 231.1 Art. 77i Abs. 1: «…pour déposer une plainte ou une dénonciation pénale…»"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/fr#art_77_i"
+notiz = "Nur mit «pénale»: «dénonciation» allein heisst auch Kündigung eines Vertrags."
+
+# --- Italienisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "l'imputato"
+formen = ["dell'imputato", "all'imputato", "gli imputati"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 5 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_5"
+notiz = "Nur mit Artikel: «imputato» allein heisst auch «verbucht» («costo imputato»). Formen belegt in Art. 38 («dell'imputato»), Art. 6 («all'imputato»), Art. 392 («gli imputati»)."
+
+[[eintrag]]
+begriff = "decreto d'accusa"
+formen = ["decreti d'accusa"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 352 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_352"
+
+[[eintrag]]
+begriff = "carcerazione preventiva"
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_220"
+
+[[eintrag]]
+begriff = "carcerazione di sicurezza"
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_220"
+
+[[eintrag]]
+begriff = "atto d'accusa"
+formen = ["atti d'accusa"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 220 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_220"
+
+[[eintrag]]
+begriff = "procedimento penale"
+formen = ["procedimenti penali"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 363 Art. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/811/it#art_2"
+notiz = "«al di fuori del procedimento penale»."
+
+[[eintrag]]
+begriff = "inchiesta penale"
+formen = ["inchieste penali"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 112 Abs. 3: «L’impresa deve designare un altro rappresentante se per il medesimo fatto o per fatti connessi è avviata un’inchiesta penale nei confronti del rappresentante designato.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_112"
+notiz = "Gegenstück zu DE «Strafuntersuchung» und FR «enquête pénale» (dieselbe Stelle)."
+
+[[eintrag]]
+begriff = "multa"
+formen = ["multe"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 352 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_352"
+notiz = "Zählt auch in «multa disciplinare» (SR 314.1 Art. 1 Abs. 1)."
+
+[[eintrag]]
+begriff = "pena pecuniaria"
+formen = ["pene pecuniarie"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 34 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_34"
+
+[[eintrag]]
+begriff = "pena detentiva"
+formen = ["pene detentive"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 311.0 Art. 40 Abs. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_40"
+
+[[eintrag]]
+begriff = "casellario giudiziale"
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 330 Art. 1 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/600/it#art_1"
+
+[[eintrag]]
+begriff = "procedimento disciplinare"
+formen = ["procedimenti disciplinari"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 935.61 Art. 16 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/it#art_16"
+
+[[eintrag]]
+begriff = "misura disciplinare"
+formen = ["misure disciplinari"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 935.61 Art. 16 Abs. 2"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/it#art_16"
+
+[[eintrag]]
+begriff = "revoca della licenza di condurre"
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 741.01 Art. 16 Abs. 2"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/it#art_16"
+
+[[eintrag]]
+begriff = "querela"
+formen = ["querele"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 118 Abs. 2: «La querela è equiparata a tale dichiarazione.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_118"
+notiz = "Gegenstück zu «Strafantrag» und FR «plainte pénale» im selben Absatz."
+
+[[eintrag]]
+begriff = "precedenti penali"
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 312.0 Art. 195 Abs. 2: «…informazioni relative ai suoi precedenti penali e alla sua reputazione…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_195"
+notiz = "Gegenstück zu «Vorstrafen» im selben Absatz."
+
+[[eintrag]]
+begriff = "perseguimenti e sanzioni"
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 5: «i dati concernenti perseguimenti e sanzioni amministrativi e penali»"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/it#art_5"
+notiz = "Wortlaut des DSG selbst."
+
+[[eintrag]]
+begriff = "sporto denuncia"
+formen = ["sporgere denuncia", "sporge denuncia", "sporta denuncia"]
+sprache = "it"
+regel = "art5c-5"
+quelle = "SR 172.220.1 Art. 34c Abs. 1 Bst. a: «…la disdetta è stata pronunciata poiché l’impiegato, in buona fede, ha sporto denuncia…»"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/123/it#art_34_c"
+notiz = "Nur als Wendung: «denuncia» allein heisst auch Steuererklärung («denuncia dei redditi»), Meldung oder Kündigung."

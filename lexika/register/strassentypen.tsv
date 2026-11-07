@@ -1,0 +1,154 @@
+# titel: Amtliches Verzeichnis der Strassen (Schweiz und Liechtenstein): abgeleitete Strassentypen
+# herausgeber: Bundesamt für Landestopografie swisstopo
+# url: https://data.geo.admin.ch/ch.swisstopo.amtliches-strassenverzeichnis/amtliches-strassenverzeichnis_ch/amtliches-strassenverzeichnis_ch_2056.csv.zip
+# url-li: https://data.geo.admin.ch/ch.swisstopo.amtliches-strassenverzeichnis/amtliches-strassenverzeichnis_li/amtliches-strassenverzeichnis_li_2056.csv.zip
+# lizenz: Nutzungsbedingungen für kostenlose Geodaten und Geodienste (OGD) von swisstopo, https://www.swisstopo.admin.ch/de/nutzungsbedingungen-kostenlose-geodaten-und-geodienste, Abschnitt 2: «Die kostenlosen Geodaten und Geodienste von swisstopo dürfen genutzt, verbreitet und zugänglich gemacht werden. Weiter dürfen sie angereichert, bearbeitet sowie auch kommerziell genutzt werden. Eine Quellenangabe ist Pflicht.»
+# quellenangabe: Bundesamt für Landestopografie swisstopo
+# abgerufen: 2026-11-06
+# archiv-sha256: CH 142e1244ad40a539a3e41a64e9ff6b60e721dfe6b57438b7a333af7fb0ef89bf, LI 4ead44e57ad78653862fc8d9fcd7fa99365f08984721c4486ccf7022158c5659
+# rohdatei-sha256: CH 40fe097c92dd529f4d42a9f8d4331919c457532e1687ff9869e194f579fad52e (amtliches-strassenverzeichnis_ch_2056.csv), LI adc6d60b09f73d4d0609dd590b42344283f199d3f5f8809f645426db6acab7d7 (amtliches-strassenverzeichnis_li_2056.csv)
+# grundlage: GeoNV (SR 510.625) Art. 3 lit. f und Art. 26a Abs. 1; Empfehlung Gebäudeadressierung und Schreibweise von Strassennamen, BFS und swisstopo 2018, Kap. 3, S. 9 (Kurznamen von Strassen)
+# filter: Spalte STN_LABEL aller 225593 Zeilen (CH 224649, LI 944), alle STR_TYPE und STR_STATUS; Vergleich in Kleinbuchstaben nach promptscan::lexikon::falten
+# auswahl: ende: Endung des letzten Worts (deutsch); anfang: erstes Wort oder letzter Bindestrich-Teil (französisch, italienisch, rätoromanisch); geonv: Gattungen nach GeoNV Art. 3 lit. f in der Sprachfassung; empfehlung: Typen und Abkürzungen der Kurznamen-Tabelle; verzeichnis: Gattungswort eines Verkehrswegs oder Platzes in mindestens 0,01 % der Namen (23); vorwort: grossgeschriebenes erstes Wort vor einem deutschen Typ mit Adjektivendung -e, -er, -es oder «St.» (Empfehlung S. 8: Sankt → St.), mindestens 23 Namen; verbindung: kleingeschriebenes Wort nach dem ersten, elidierter Artikel mit Apostroph, in mindestens 23 Namen; anzahl: Namen mit diesem Typ (Anfang vor Endung, längste Endung), Vorwort oder Verbindungswort
+# abdeckung: 63.69 % der Namen (143675 von 225593) tragen einen Typ; nur GeoNV 60.11 % (135604); mit Empfehlung 61.46 % (138650); mit Verzeichnis 63.69 % (143675)
+# abdeckung-je-str_type: Area 1.52 % (797 von 52264); Place 73.79 % (1737 von 2354); Street 82.55 % (141141 von 170975)
+# ausgeschlossen: hof (ende, Flur- oder Gebietsname) 2938; berg (ende, Flur- oder Gebietsname) 2502; matt (ende, Flur- oder Gebietsname) 2408; rain (ende, Flur- oder Gebietsname) 1591; acker (ende, Flur- oder Gebietsname) 1175; halde (ende, Flur- oder Gebietsname) 809; feld (ende, Flur- oder Gebietsname) 638; zelg (ende, Flurname) 110; winkel (ende, Flurname) 221; graben (ende, auch Geländeform) 356; park (ende, auch Anlage oder Parkplatz) 192; anlage (ende, auch Einrichtung) 38; brücke (ende, Bauwerk) 130; steg (ende, Bauwerk) 137; clos (anfang, benanntes Gebiet) 144; passerelle (anfang, Bauwerk) 48; cour (anfang, auch «Gericht») 10; v. (anfang, mehrdeutig) 0
+# haeufigste-letzte-woerter-ohne-typ: weid 200, moos 172, oberdorf 172, egg 171, winkel 165, dorf 163, rüti 162, feld 138, baumgarten 131, berg 126, unterdorf 123, rain 122, sonnhalde 121, boden 117, hof 108, hubel 105, mühle 105, bach 104, grund 104, bergli 99
+# zeilen: 136
+# spalten: typ	stellung	anzahl	anteil	grundlage
+strasse	ende	49489	21.937	geonv
+weg	ende	42338	18.767	geonv
+gasse	ende	3822	1.694	geonv
+platz	ende	1185	0.525	geonv
+str.	ende	50	0.022	empfehlung
+gässli	ende	991	0.439	verzeichnis
+steig	ende	488	0.216	verzeichnis
+gass	ende	399	0.177	verzeichnis
+ring	ende	342	0.152	verzeichnis
+wegli	ende	219	0.097	verzeichnis
+stutz	ende	206	0.091	verzeichnis
+weglein	ende	111	0.049	verzeichnis
+allee	ende	98	0.043	verzeichnis
+treppe	ende	92	0.041	verzeichnis
+gässchen	ende	82	0.036	verzeichnis
+gässlein	ende	54	0.024	verzeichnis
+promenade	ende	47	0.021	verzeichnis
+quai	ende	45	0.020	verzeichnis
+pfad	ende	25	0.011	verzeichnis
+chemin	anfang	15497	6.869	geonv
+via	anfang	7464	3.309	geonv
+route	anfang	6992	3.099	geonv
+rue	anfang	6305	2.795	geonv
+place	anfang	904	0.401	geonv
+ruelle	anfang	707	0.313	geonv
+vicolo	anfang	331	0.147	geonv
+strada	anfang	326	0.145	geonv
+piazza	anfang	241	0.107	geonv
+impasse	anfang	1215	0.539	empfehlung
+avenue	anfang	726	0.322	empfehlung
+sentier	anfang	434	0.192	empfehlung
+passage	anfang	285	0.126	empfehlung
+promenade	anfang	151	0.067	empfehlung
+viale	anfang	51	0.023	empfehlung
+escaliers	anfang	47	0.021	empfehlung
+boulevard	anfang	33	0.015	empfehlung
+esplanade	anfang	27	0.012	empfehlung
+terrasse	anfang	9	0.004	empfehlung
+faubourg	anfang	8	0.004	empfehlung
+espace	anfang	6	0.003	empfehlung
+rte	anfang	5	0.002	empfehlung
+galeries	anfang	1	0.000	empfehlung
+av.	anfang	0	0.000	empfehlung
+bd	anfang	0	0.000	empfehlung
+ch.	anfang	0	0.000	empfehlung
+esc.	anfang	0	0.000	empfehlung
+esp.	anfang	0	0.000	empfehlung
+espl.	anfang	0	0.000	empfehlung
+fbg	anfang	0	0.000	empfehlung
+gal.	anfang	0	0.000	empfehlung
+imp.	anfang	0	0.000	empfehlung
+p.za	anfang	0	0.000	empfehlung
+pass.	anfang	0	0.000	empfehlung
+pl.	anfang	0	0.000	empfehlung
+prom.	anfang	0	0.000	empfehlung
+rlle	anfang	0	0.000	empfehlung
+sent.	anfang	0	0.000	empfehlung
+terr.	anfang	0	0.000	empfehlung
+v.le	anfang	0	0.000	empfehlung
+veia	anfang	276	0.122	verzeichnis
+sentiero	anfang	182	0.081	verzeichnis
+senda	anfang	141	0.063	verzeichnis
+allée	anfang	109	0.048	verzeichnis
+quai	anfang	102	0.045	verzeichnis
+salita	anfang	101	0.045	verzeichnis
+stráda	anfang	95	0.042	verzeichnis
+voia	anfang	87	0.039	verzeichnis
+voa	anfang	86	0.038	verzeichnis
+contrada	anfang	67	0.030	verzeichnis
+piazzetta	anfang	62	0.027	verzeichnis
+gassa	anfang	61	0.027	verzeichnis
+caraa	anfang	56	0.025	verzeichnis
+cará	anfang	53	0.023	verzeichnis
+strecia	anfang	52	0.023	verzeichnis
+sentee	anfang	49	0.022	verzeichnis
+strécia	anfang	43	0.019	verzeichnis
+riva	anfang	38	0.017	verzeichnis
+sentée	anfang	33	0.015	verzeichnis
+vietta	anfang	30	0.013	verzeichnis
+scalinata	anfang	27	0.012	verzeichnis
+square	anfang	27	0.012	verzeichnis
+piazzale	anfang	25	0.011	verzeichnis
+traverse	anfang	25	0.011	verzeichnis
+Alte	vorwort	758	0.336	verzeichnis
+Obere	vorwort	556	0.246	verzeichnis
+Untere	vorwort	491	0.218	verzeichnis
+Oberer	vorwort	416	0.184	verzeichnis
+Unterer	vorwort	366	0.162	verzeichnis
+St.	vorwort	200	0.089	verzeichnis
+Alter	vorwort	184	0.082	verzeichnis
+Hintere	vorwort	154	0.068	verzeichnis
+Mittlere	vorwort	81	0.036	verzeichnis
+Vordere	vorwort	72	0.032	verzeichnis
+Neue	vorwort	60	0.027	verzeichnis
+Hinterer	vorwort	57	0.025	verzeichnis
+Mittlerer	vorwort	45	0.020	verzeichnis
+Vorderer	vorwort	45	0.020	verzeichnis
+Ober	vorwort	38	0.017	verzeichnis
+Hohle	vorwort	36	0.016	verzeichnis
+Äussere	vorwort	28	0.012	verzeichnis
+Unter	vorwort	27	0.012	verzeichnis
+Innere	vorwort	26	0.012	verzeichnis
+de	verbindung	15116	6.701	verzeichnis
+du	verbindung	8745	3.876	verzeichnis
+des	verbindung	8475	3.757	verzeichnis
+la	verbindung	6672	2.958	verzeichnis
+l'	verbindung	1756	0.778	verzeichnis
+d'	verbindung	1097	0.486	verzeichnis
+da	verbindung	752	0.333	verzeichnis
+di	verbindung	739	0.328	verzeichnis
+der	verbindung	485	0.215	verzeichnis
+al	verbindung	293	0.130	verzeichnis
+alla	verbindung	228	0.101	verzeichnis
+le	verbindung	204	0.090	verzeichnis
+del	verbindung	188	0.083	verzeichnis
+les	verbindung	181	0.080	verzeichnis
+ai	verbindung	170	0.075	verzeichnis
+dei	verbindung	163	0.072	verzeichnis
+den	verbindung	160	0.071	verzeichnis
+dal	verbindung	143	0.063	verzeichnis
+della	verbindung	141	0.063	verzeichnis
+à	verbindung	116	0.051	verzeichnis
+alle	verbindung	93	0.041	verzeichnis
+delle	verbindung	85	0.038	verzeichnis
+dem	verbindung	82	0.036	verzeichnis
+aux	verbindung	65	0.029	verzeichnis
+au	verbindung	54	0.024	verzeichnis
+sur	verbindung	53	0.023	verzeichnis
+dala	verbindung	42	0.019	verzeichnis
+d	verbindung	38	0.017	verzeichnis
+en	verbindung	35	0.016	verzeichnis
+degli	verbindung	34	0.015	verzeichnis
+dra	verbindung	34	0.015	verzeichnis
+dil	verbindung	32	0.014	verzeichnis
+i	verbindung	24	0.011	verzeichnis
+nucleo	verbindung	24	0.011	verzeichnis

@@ -1,0 +1,321 @@
+# Regel «fundstellen» (SPEC 5.4): Bitte um Urteile, Fundstellen oder Literatur.
+#
+# Die Substantive stammen aus amtlichen Texten (Fedlex, je im Wortlaut der Sprache) und von
+# der Website des Bundesgerichts. Ein Substantiv allein meldet nichts; die Regel verlangt im
+# selben Satz eine Aufforderung derselben Sprache (siehe src/regeln/hinweise.rs).
+#
+# merkmal:
+#   "stark"           zählt mit jeder Aufforderung.
+#   "schwach"         mehrdeutig; zählt nur in der Mehrzahl oder mit unbestimmtem Artikel.
+#   "schwach-gericht" wie "schwach", dazu muss im Satz ein Gericht genannt sein.
+#   "quelle"          wie "schwach", aber nicht «Quellen des …rechts» und ohne Fragewort.
+#   "gericht"         meldet nie selbst; nennt nur das Gericht für "schwach-gericht".
+#
+# Bei "schwach", "schwach-gericht" und "quelle" sind alle formen Mehrzahlformen; die Regel
+# liest jede Form, die nicht der begriff ist, als Mehrzahl.
+#
+# Gelesen am 06.11.2026.
+
+# --- Deutsch ---
+
+[[eintrag]]
+begriff = "BGE"
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 173.110.131 Art. 57 Abs. 1 Bst. a"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/de#art_57"
+merkmal = "stark"
+notiz = "«Amtliche Sammlung der Entscheidungen des Schweizerischen Bundesgerichts (Amtliche Sammlung, BGE)»"
+
+[[eintrag]]
+begriff = "Rechtsprechung"
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 27 Abs. 1"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_27"
+merkmal = "stark"
+notiz = "«Das Bundesgericht informiert die Öffentlichkeit über seine Rechtsprechung.»"
+
+[[eintrag]]
+begriff = "Leitentscheid"
+formen = ["Leitentscheide", "Leitentscheiden", "Leitentscheids", "Leitentscheides"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "bger.ch, Seite «Leitentscheide (BGE) und EGMR-Entscheide»"
+fassung = "2026-11-06"
+url = "https://www.bger.ch/de/index/juridiction/jurisdiction-inherit-template/jurisdiction-recht/jurisdiction-recht-leitentscheide1954.htm"
+merkmal = "stark"
+notiz = "Seitentitel «Leitentscheide (BGE) und EGMR-Entscheide»; die Seite trägt kein Datum, fassung ist der Abruf. Formen: Kasus und Zahl."
+
+[[eintrag]]
+begriff = "Präjudiz"
+formen = ["Präjudizien"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 23 (Sachüberschrift)"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_23"
+merkmal = "stark"
+notiz = "Sachüberschrift «Praxisänderung und Präjudiz». Form: Mehrzahl."
+
+[[eintrag]]
+begriff = "Fundstelle"
+formen = ["Fundstellen"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 170.512 Art. 12 Abs. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/745/de#art_12"
+merkmal = "stark"
+notiz = "«… Angaben wie Bezeichnungen von Verwaltungseinheiten, Verweise, Fundstellen oder Abkürzungen …» Form: Mehrzahl."
+
+[[eintrag]]
+begriff = "Literatur"
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 812.212.21 Art. 33 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/588/de#art_33"
+merkmal = "stark"
+notiz = "«… in der veröffentlichten wissenschaftlichen Literatur …»; Bitte um Literatur = Bitte um Fundstellen."
+
+[[eintrag]]
+begriff = "Fachliteratur"
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 812.212.21 Art. 17 Abs. 2 Bst. b"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/588/de#art_17"
+merkmal = "stark"
+notiz = "«… neuer Erkenntnisse aus der veröffentlichten Fachliteratur …»"
+
+[[eintrag]]
+begriff = "Urteil"
+formen = ["Urteile", "Urteilen"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 16 Abs. 2 Bst. a"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_16"
+merkmal = "schwach"
+notiz = "«… einheitlichen Regeln für die Gestaltung der Urteile». Schwach, weil «Urteil» auch Meinung heisst («sich ein Urteil bilden»)."
+
+[[eintrag]]
+begriff = "Entscheid"
+formen = ["Entscheide", "Entscheiden"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 27 Abs. 2"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_27"
+merkmal = "schwach-gericht"
+notiz = "«Die Veröffentlichung der Entscheide …». Nur mit Gericht im Satz, weil «Entscheide» auch Geschäftsentscheide und der Imperativ von «entscheiden» sind."
+
+[[eintrag]]
+begriff = "Quelle"
+formen = ["Quellen"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 231.1 Art. 25 Abs. 2"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/de#art_25"
+merkmal = "quelle"
+notiz = "«Das Zitat als solches und die Quelle müssen bezeichnet werden.»"
+
+[[eintrag]]
+begriff = "Gericht"
+formen = ["Gerichte", "Gerichten", "Gerichts", "Gerichtes"]
+sprache = "de"
+regel = "fundstellen"
+quelle = "SR 101 Art. 30 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_30"
+teilwort = "ende"
+merkmal = "gericht"
+notiz = "«… unparteiisches Gericht. Ausnahmegerichte sind untersagt.» Wortende, damit «Bundesgericht» und «Obergericht» zählen."
+
+[[eintrag]]
+begriff = "BGer"
+sprache = "de"
+regel = "fundstellen"
+quelle = "bger.ch, Seite «Leitentscheide (BGE) und EGMR-Entscheide», Navigation"
+fassung = "2026-11-06"
+url = "https://www.bger.ch/de/index/juridiction/jurisdiction-inherit-template/jurisdiction-recht/jurisdiction-recht-leitentscheide1954.htm"
+gross = true
+merkmal = "gericht"
+notiz = "Menüpunkt «Ehemalige Generalsekretäre BGer»: die Abkürzung des Gerichts auf seiner eigenen Website."
+
+# --- Französisch ---
+
+[[eintrag]]
+begriff = "ATF"
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 173.110.131 Art. 57 Abs. 1 Bst. a"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/fr#art_57"
+merkmal = "stark"
+notiz = "«recueil officiel des arrêts du Tribunal fédéral suisse (recueil officiel, ATF)»"
+
+[[eintrag]]
+begriff = "jurisprudence"
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 27 Abs. 1"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_27"
+merkmal = "stark"
+notiz = "«Le Tribunal fédéral informe le public sur sa jurisprudence.»"
+
+[[eintrag]]
+begriff = "arrêt de principe"
+formen = ["arrêts de principe"]
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 173.110.131 Art. 58 Abs. 1"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/fr#art_58"
+merkmal = "stark"
+notiz = "«Les arrêts de principe sont publiés au recueil officiel.» Form: Mehrzahl."
+
+[[eintrag]]
+begriff = "doctrine"
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 210 Art. 1 Abs. 3"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_1"
+merkmal = "stark"
+notiz = "«Il s’inspire des solutions consacrées par la doctrine et la jurisprudence.» Doctrine = Rechtslehre, also Literatur."
+
+[[eintrag]]
+begriff = "arrêt"
+formen = ["arrêts"]
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 27 Abs. 2"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_27"
+merkmal = "schwach-gericht"
+notiz = "«Les arrêts sont en principe publiés sous une forme anonyme.» Nur mit Gericht im Satz, weil «arrêt» auch Haltestelle und Unterbruch heisst («arrêt de travail»)."
+
+[[eintrag]]
+begriff = "référence"
+formen = ["références"]
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 170.512 Art. 12 Abs. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/745/fr#art_12"
+merkmal = "schwach"
+notiz = "«… les renvois, les références et les abréviations.» Entspricht «Fundstellen» der deutschen Fassung."
+
+[[eintrag]]
+begriff = "source"
+formen = ["sources"]
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 231.1 Art. 25 Abs. 2"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/fr#art_25"
+merkmal = "quelle"
+notiz = "«La citation doit être indiquée; la source et, pour autant qu’il y soit désigné, l’auteur, doivent être mentionnés.»"
+
+[[eintrag]]
+begriff = "tribunal"
+formen = ["tribunaux"]
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 101 Art. 30 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_30"
+merkmal = "gericht"
+notiz = "«… devant un tribunal établi par la loi … Les tribunaux d’exception sont interdits.»"
+
+[[eintrag]]
+begriff = "cour"
+sprache = "fr"
+regel = "fundstellen"
+quelle = "SR 173.110.131 Art. 58 Abs. 2"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/fr#art_58"
+merkmal = "gericht"
+notiz = "«La cour compétente décide de la publication.»"
+
+[[eintrag]]
+begriff = "TF"
+sprache = "fr"
+regel = "fundstellen"
+quelle = "bger.ch, Seite «Arrêts principaux (ATF) et arrêts CEDH», Navigation"
+fassung = "2026-11-06"
+url = "https://www.bger.ch/fr/index/juridiction/jurisdiction-inherit-template/jurisdiction-recht/jurisdiction-recht-leitentscheide1954.htm"
+gross = true
+merkmal = "gericht"
+notiz = "Menüpunkt «Anciens secrétaires généraux TF»: die Abkürzung des Gerichts auf seiner eigenen Website."
+
+# --- Italienisch ---
+
+[[eintrag]]
+begriff = "DTF"
+sprache = "it"
+regel = "fundstellen"
+quelle = "SR 173.110.131 Art. 57 Abs. 1 Bst. a"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/it#art_57"
+merkmal = "stark"
+notiz = "«raccolta ufficiale delle decisioni del Tribunale federale svizzero (raccolta ufficiale, DTF)»"
+
+[[eintrag]]
+begriff = "giurisprudenza"
+sprache = "it"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 27 Abs. 1"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_27"
+merkmal = "stark"
+notiz = "«Il Tribunale federale informa il pubblico sulla sua giurisprudenza.»"
+
+[[eintrag]]
+begriff = "dottrina"
+sprache = "it"
+regel = "fundstellen"
+quelle = "SR 210 Art. 1 Abs. 3"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_1"
+merkmal = "stark"
+notiz = "«Egli si attiene alla dottrina ed alla giurisprudenza più autorevoli.» Dottrina = Rechtslehre, also Literatur."
+
+[[eintrag]]
+begriff = "sentenza"
+formen = ["sentenze"]
+sprache = "it"
+regel = "fundstellen"
+quelle = "SR 173.110 Art. 27 Abs. 2"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_27"
+merkmal = "schwach"
+notiz = "«La pubblicazione delle sentenze avviene di norma in forma anonimizzata.»"
+
+[[eintrag]]
+begriff = "riferimento"
+formen = ["riferimenti"]
+sprache = "it"
+regel = "fundstellen"
+quelle = "SR 231.1 Art. 25 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/it#art_25"
+merkmal = "schwach"
+notiz = "«… nella misura in cui servano da commento, riferimento o dimostrazione …»"
+
+[[eintrag]]
+begriff = "fonte"
+formen = ["fonti"]
+sprache = "it"
+regel = "fundstellen"
+quelle = "SR 231.1 Art. 25 Abs. 2"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/1798_1798_1798/it#art_25"
+merkmal = "quelle"
+notiz = "«… la fonte, come l’autore, se vi è designato, devono essere menzionati.»"

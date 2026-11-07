@@ -1,0 +1,1998 @@
+# Gemeinden des Kantons Aargau (Regel firma, SPEC 5.2, Befund fehlersuche-1, Entscheid C5).
+#
+# «AG» ist Rechtsform und Kantonskürzel des Aargaus (BK-Schreibweisungen Rz. 347). Steht
+# «AG» direkt nach dem Namen einer Gemeinde dieser Liste, mit oder ohne Postleitzahl davor
+# («von Muri AG», «originaire de Muri AG», «5610 Wohlen AG»), ist es das Kantonskürzel und
+# keine Firma. Nicht pauschal nach «von», «aus» oder «bei»: «bei Muster AG» bleibt eine
+# Firma.
+#
+# Quelle: Bundesamt für Statistik, Historisiertes Gemeindeverzeichnis der Schweiz, Snapshot
+# vom 06.11.2026 (dieselbe Rohdatei wie lexika/register/gemeinden.tsv, rohdatei-sha256
+# e0748c06c754dbde20f04425a7f58c2a718e77982ea10fb8f969ac9d21a83b7d).
+# Gewählt sind die Gemeinden (Level 3), deren Bezirk (Level 2) zum Kanton mit ShortName «AG»
+# (Level 1) gehört: 196 Gemeinden. Der Klammerzusatz des Verzeichnisses («Muri (AG)») fällt
+# weg. Nutzungsbedingungen wie gemeinden.tsv (opendata.swiss, freie Nutzung, Quellenangabe
+# empfohlen; THIRD-PARTY-NOTICES.md, Abschnitt 7.2).
+#
+# merkmal:
+#   gemeinde-ag  Gemeinde im Kanton Aargau.
+
+
+[[eintrag]]
+begriff = "Aarau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4001 «Aarau», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Aarburg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4271 «Aarburg», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Abtwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4221 «Abtwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Ammerswil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4191 «Ammerswil», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Aristau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4222 «Aristau», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Arni"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4061 «Arni (AG)», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Arni (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Auenstein"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4091 «Auenstein», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Auw"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4223 «Auw», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Baden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4021 «Baden», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Beinwil (Freiamt)"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4224 «Beinwil (Freiamt)», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Beinwil am See"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4131 «Beinwil am See», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Bellikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4022 «Bellikon», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Bergdietikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4023 «Bergdietikon», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Berikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4062 «Berikon», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Besenbüren"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4226 «Besenbüren», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Bettwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4227 «Bettwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Biberstein"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4002 «Biberstein», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Birmenstorf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4024 «Birmenstorf (AG)», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Birmenstorf (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Birr"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4092 «Birr», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Birrhard"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4093 «Birrhard», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Birrwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4132 «Birrwil», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Boniswil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4192 «Boniswil», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Boswil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4228 «Boswil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Bottenwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4273 «Bottenwil», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Böttstein"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4303 «Böttstein», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Bözberg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4124 «Bözberg», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Böztal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4185 «Böztal», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Bremgarten"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4063 «Bremgarten (AG)», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Bremgarten (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Brittnau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4274 «Brittnau», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Brugg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4095 «Brugg», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Brunegg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4193 «Brunegg», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Buchs"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4003 «Buchs (AG)», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Buchs (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Bünzen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4229 «Bünzen», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Büttikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4064 «Büttikon», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Buttwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4230 «Buttwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Densbüren"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4004 «Densbüren», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Dietwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4231 «Dietwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Dintikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4194 «Dintikon», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Dottikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4065 «Dottikon», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Döttingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4304 «Döttingen», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Dürrenäsch"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4134 «Dürrenäsch», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Eggenwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4066 «Eggenwil», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Egliswil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4195 «Egliswil», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Ehrendingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4049 «Ehrendingen», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Eiken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4161 «Eiken», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Endingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4305 «Endingen», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Ennetbaden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4026 «Ennetbaden», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Erlinsbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4005 «Erlinsbach (AG)», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Erlinsbach (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Fahrwangen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4196 «Fahrwangen», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Fischbach-Göslikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4067 «Fischbach-Göslikon», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Fisibach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4306 «Fisibach», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Fislisbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4027 «Fislisbach», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Freienwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4028 «Freienwil», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Frick"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4163 «Frick», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Full-Reuenthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4307 «Full-Reuenthal», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Gansingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4164 «Gansingen», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Gebenstorf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4029 «Gebenstorf», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Geltwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4232 «Geltwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Gipf-Oberfrick"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4165 «Gipf-Oberfrick», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Gontenschwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4135 «Gontenschwil», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Gränichen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4006 «Gränichen», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Habsburg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4099 «Habsburg», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Hägglingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4068 «Hägglingen», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Hallwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4197 «Hallwil», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Hausen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4100 «Hausen (AG)», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Hausen (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Hellikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4251 «Hellikon», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Hendschiken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4198 «Hendschiken», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Herznach-Ueken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4186 «Herznach-Ueken», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Hirschthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4007 «Hirschthal», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Holderbank"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4199 «Holderbank (AG)», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Holderbank (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Holziken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4136 «Holziken», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Hunzenschwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4200 «Hunzenschwil», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Islisberg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4084 «Islisberg», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Jonen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4071 «Jonen», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Kaiseraugst"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4252 «Kaiseraugst», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Kaisten"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4169 «Kaisten», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Kallern"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4233 «Kallern», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Killwangen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4030 «Killwangen», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Kirchleerau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4275 «Kirchleerau», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Klingnau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4309 «Klingnau», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Koblenz"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4310 «Koblenz», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Kölliken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4276 «Kölliken», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Künten"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4031 «Künten», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Küttigen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4008 «Küttigen», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Laufenburg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4170 «Laufenburg», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Leibstadt"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4311 «Leibstadt», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Leimbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4137 «Leimbach (AG)», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Leimbach (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Lengnau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4312 «Lengnau (AG)», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Lengnau (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Lenzburg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4201 «Lenzburg», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Leuggern"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4313 «Leuggern», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Leutwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4138 «Leutwil», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Lupfig"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4104 «Lupfig», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Magden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4253 «Magden», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mägenwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4032 «Mägenwil», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mandach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4105 «Mandach», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Meisterschwanden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4202 «Meisterschwanden», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mellikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4314 «Mellikon», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mellingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4033 «Mellingen», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Menziken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4139 «Menziken», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Merenschwand"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4234 «Merenschwand», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mettauertal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4184 «Mettauertal», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Möhlin"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4254 «Möhlin», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mönthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4106 «Mönthal», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Moosleerau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4277 «Moosleerau», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Möriken-Wildegg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4203 «Möriken-Wildegg», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Muhen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4009 «Muhen», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mühlau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4235 «Mühlau», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mülligen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4107 «Mülligen», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Mumpf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4255 «Mumpf», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Münchwilen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4172 «Münchwilen (AG)», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Münchwilen (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Murgenthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4279 «Murgenthal», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Muri"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4236 «Muri (AG)», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Muri (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Neuenhof"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4034 «Neuenhof», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Niederlenz"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4204 «Niederlenz», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Niederrohrdorf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4035 «Niederrohrdorf», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Niederwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4072 «Niederwil (AG)», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Niederwil (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Oberentfelden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4010 «Oberentfelden», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oberhof"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4173 «Oberhof», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oberkulm"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4140 «Oberkulm», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oberlunkhofen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4073 «Oberlunkhofen», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Obermumpf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4256 «Obermumpf», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oberrohrdorf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4037 «Oberrohrdorf», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oberrüti"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4237 «Oberrüti», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Obersiggenthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4038 «Obersiggenthal», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oberwil-Lieli"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4074 «Oberwil-Lieli», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oeschgen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4175 «Oeschgen», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Oftringen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4280 «Oftringen», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Olsberg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4257 «Olsberg», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Othmarsingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4205 «Othmarsingen», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Reinach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4141 «Reinach (AG)», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Reinach (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Reitnau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4281 «Reitnau», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Remetschwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4039 «Remetschwil», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Remigen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4110 «Remigen», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Rheinfelden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4258 «Rheinfelden», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Riniken"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4111 «Riniken», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Rothrist"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4282 «Rothrist», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Rottenschwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4238 «Rottenschwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Rudolfstetten-Friedlisberg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4075 «Rudolfstetten-Friedlisberg», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Rüfenach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4112 «Rüfenach», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Rupperswil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4206 «Rupperswil», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Safenwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4283 «Safenwil», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Sarmenstorf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4076 «Sarmenstorf», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schafisheim"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4207 «Schafisheim», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schinznach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4125 «Schinznach», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schlossrued"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4142 «Schlossrued», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schmiedrued"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4143 «Schmiedrued», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schneisingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4318 «Schneisingen», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schöftland"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4144 «Schöftland», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schupfart"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4259 «Schupfart», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Schwaderloch"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4176 «Schwaderloch», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Seengen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4208 «Seengen», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Seon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4209 «Seon», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Siglistorf"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4319 «Siglistorf», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Sins"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4239 «Sins», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Sisseln"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4177 «Sisseln», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Spreitenbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4040 «Spreitenbach», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Staffelbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4284 «Staffelbach», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Staufen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4210 «Staufen», Bezirk Lenzburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Stein"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4260 «Stein (AG)», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Stein (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Stetten"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4041 «Stetten (AG)», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Stetten (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Strengelbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4285 «Strengelbach», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Suhr"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4012 «Suhr», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Tägerig"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4077 «Tägerig», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Tegerfelden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4320 «Tegerfelden», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Teufenthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4145 «Teufenthal (AG)», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Teufenthal (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Thalheim"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4117 «Thalheim (AG)», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Thalheim (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Uerkheim"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4286 «Uerkheim», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Uezwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4078 «Uezwil», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Unterentfelden"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4013 «Unterentfelden», Bezirk Aarau, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Unterkulm"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4146 «Unterkulm», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Unterlunkhofen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4079 «Unterlunkhofen», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Untersiggenthal"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4044 «Untersiggenthal», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Veltheim"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4120 «Veltheim (AG)», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Veltheim (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Villigen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4121 «Villigen», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Villmergen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4080 «Villmergen», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Vordemwald"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4287 «Vordemwald», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wallbach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4261 «Wallbach», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Waltenschwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4240 «Waltenschwil», Bezirk Muri, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wegenstetten"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4262 «Wegenstetten», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wettingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4045 «Wettingen», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Widen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4081 «Widen», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wiliberg"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4288 «Wiliberg», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Windisch"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4123 «Windisch», Bezirk Brugg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wittnau"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4181 «Wittnau», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wohlen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4082 «Wohlen (AG)», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+notiz = "Im Verzeichnis «Wohlen (AG)»: Der Klammerzusatz unterscheidet sie von einer gleichnamigen Gemeinde eines anderen Kantons."
+
+[[eintrag]]
+begriff = "Wohlenschwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4046 «Wohlenschwil», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Wölflinswil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4182 «Wölflinswil», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Würenlingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4047 «Würenlingen», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Würenlos"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4048 «Würenlos», Bezirk Baden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zeihen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4183 «Zeihen», Bezirk Laufenburg, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zeiningen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4263 «Zeiningen», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zetzwil"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4147 «Zetzwil», Bezirk Kulm, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zofingen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4289 «Zofingen», Bezirk Zofingen, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zufikon"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4083 «Zufikon», Bezirk Bremgarten, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zurzach"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4324 «Zurzach», Bezirk Zurzach, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"
+
+[[eintrag]]
+begriff = "Zuzgen"
+sprache = "de"
+regel = "firma"
+quelle = "BFS, Amtliches Gemeindeverzeichnis, Snapshot vom 06.11.2026: Gemeinde Nr. 4264 «Zuzgen», Bezirk Rheinfelden, Kanton Aargau"
+fassung = "2026-11-06"
+url = "https://www.agvchapp.bfs.admin.ch/api/communes/snapshot?date=06-11-2026"
+gross = true
+merkmal = "gemeinde-ag"

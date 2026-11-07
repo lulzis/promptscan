@@ -1,0 +1,375 @@
+# Abkürzungen mit Schlusspunkt, nach denen kein Satz endet (regel "satzgrenze").
+#
+# src/text.rs liest begriff und formen und verbindet zwei Abschnitte nach UAX #29 wieder,
+# wenn der erste auf eine dieser Abkürzungen endet («Art. 5 Abs. 2 DSG» bleibt ein Satz).
+# Verglichen wird mit Gross- und Kleinschreibung, darum steht jede Schreibung so, wie sie
+# in der Quelle steht. Eine klein geschriebene Abkürzung gilt zusätzlich mit grossem
+# Anfangsbuchstaben, aber nur am Anfang eines Abschnitts («Vgl. Art. 5 DSG»). Ein
+# geschütztes Leerzeichen (U+00A0, U+202F) zählt wie ein gewöhnliches («z. B.»).
+# Vor einem Kleinbuchstaben trennt UAX #29 ohnehin nicht (Regel SB8):
+# «lit. a», «let. a», «lett. a» brauchen keinen Eintrag.
+#
+# Quellen:
+# - Deutsch: Gesetzestechnische Richtlinien des Bundes (GTR), Stand 5. Juni 2026,
+#   Bundeskanzlei; Seitenzahl = Seite des PDF.
+# - Französisch und Italienisch: amtlicher Wortlaut auf Fedlex; «cfr.» aus dem Prontuario
+#   der Bundeskanzlei zu den Direttive di tecnica legislativa (1° ottobre 2024).
+# - Anreden und Titel: Unicode CLDR 49 (Tag release-49, 21.10.2026), Ausnahmen der
+#   Satzsegmentierung in common/segments/{de,fr,it}.xml. Für diese Einträge gilt:
+#
+#   Copyright © 2001–2026 Unicode, Inc.
+#
+#   UNICODE LICENSE V3
+#
+#   NOTICE TO USER: Carefully read the following legal agreement. BY
+#   DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING DATA FILES, AND/OR
+#   SOFTWARE, YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE
+#   TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT
+#   DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.
+#
+#   Permission is hereby granted, free of charge, to any person obtaining a
+#   copy of data files and any associated documentation (the "Data Files") or
+#   software and any associated documentation (the "Software") to deal in the
+#   Data Files or Software without restriction, including without limitation
+#   the rights to use, copy, modify, merge, publish, distribute, and/or sell
+#   copies of the Data Files or Software, and to permit persons to whom the
+#   Data Files or Software are furnished to do so, provided that either (a)
+#   this copyright and permission notice appear with all copies of the Data
+#   Files or Software, or (b) this copyright and permission notice appear in
+#   associated Documentation.
+#
+#   THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+#   KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF
+#   THIRD PARTY RIGHTS.
+#
+#   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE
+#   BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES,
+#   OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+#   WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+#   ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE DATA
+#   FILES OR SOFTWARE.
+#
+#   Except as contained in this notice, the name of a copyright holder shall
+#   not be used in advertising or otherwise to promote the sale, use or other
+#   dealings in these Data Files or Software without prior written
+#   authorization of the copyright holder.
+#
+#   SPDX-License-Identifier: Unicode-3.0
+#
+# Gelesen am 06.11.2026.
+
+# --- Deutsch, GTR ---
+
+[[eintrag]]
+begriff = "Art."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 98, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«(Art. 23 Abs. 4 Bst. c–e)»"
+
+[[eintrag]]
+begriff = "Abs."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 98, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«(Art. 23 Abs. 4 Bst. c–e)»; «Abs. 2 DSG» trennte UAX #29 vor dem Grossbuchstaben."
+
+[[eintrag]]
+begriff = "Bst."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 98, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«(Art. 23 Abs. 4 Bst. c–e)»"
+
+[[eintrag]]
+begriff = "Ziff."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 98, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«(für die EU vgl. Ziff. 2.7 der Interinstitutionellen Regeln …)»"
+
+[[eintrag]]
+begriff = "Rz."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 96, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«vgl. Gesetzgebungsleitfaden, Rz. 721–744»"
+
+[[eintrag]]
+begriff = "vgl."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 96, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«vgl. Gesetzgebungsleitfaden, Rz. 721–744». «Vgl.» am Satzanfang fehlt, siehe Bericht."
+
+[[eintrag]]
+begriff = "z. B."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 97, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«Statt also z. B. «die Artikel 37 ff.» sollte man schreiben: …» Braucht zusätzlich «z.»."
+
+[[eintrag]]
+begriff = "ff."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 97, S. 43"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=43"
+notiz = "«die Artikel 37 ff.»"
+
+[[eintrag]]
+begriff = "S."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 40, Beispiel, Fussnote 11, S. 24"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=24"
+notiz = "«ABl. L 309 vom 24.11.2009, S. 1.»"
+
+[[eintrag]]
+begriff = "Nr."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 40, Beispiel, S. 24"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=24"
+notiz = "«Verordnung (EG) Nr. 1107/2009»"
+
+[[eintrag]]
+begriff = "bzw."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Rz. 43, S. 26"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=26"
+notiz = "«Die Überschrift des Abschnitts bzw. Artikels lautet …»"
+
+[[eintrag]]
+begriff = "d. h."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "GTR Abkürzungsverzeichnis, S. 13"
+fassung = "2026-06-05"
+url = "https://www.bk.admin.ch/dam/de/sd-web/q96zQo4nmf7w/GTR_DE_20260605.pdf#page=13"
+notiz = "«Reihe L mit den EU-Rechtsakten, d. h. Richtlinien, Verordnungen usw.»"
+
+# --- Deutsch, CLDR ---
+
+[[eintrag]]
+begriff = "Dr."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/de.xml, Zeile 83"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/de.xml#L83"
+notiz = "Wortlaut der Quelle: <suppression>Dr.</suppression>. Titel vor dem Namen."
+
+[[eintrag]]
+begriff = "Hr."
+formen = ["Hrn."]
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Duden online, «Herr»: «Abkürzung Hr., für „Herrn“ Hrn.»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Herr"
+notiz = "Anrede vor dem Namen («Hr. Muster»); derselbe Beleg wie in name-anreden.toml. «Fr.» fehlt absichtlich, weil es auch «Franken» abkürzt."
+
+[[eintrag]]
+begriff = "St."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/de.xml, Zeile 82"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/de.xml#L82"
+notiz = "Wortlaut der Quelle: <suppression>St.</suppression>. Etwa in Ortsnamen wie St. Gallen."
+
+[[eintrag]]
+begriff = "geb."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/de.xml, Zeile 180"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/de.xml#L180"
+notiz = "Wortlaut der Quelle: <suppression>geb.</suppression>. Vor dem Geburtsnamen."
+
+[[eintrag]]
+begriff = "inkl."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/de.xml, Zeile 179"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/de.xml#L179"
+notiz = "Wortlaut der Quelle: <suppression>inkl.</suppression>."
+
+[[eintrag]]
+begriff = "z."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/de.xml, Zeile 103"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/de.xml#L103"
+notiz = "Wortlaut der Quelle: <suppression>z.</suppression>. Erster Teil von «z. B.»: UAX #29 trennt schon nach «z.», weil «B» gross ist."
+
+[[eintrag]]
+begriff = "z.B."
+sprache = "de"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/de.xml, Zeile 96"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/de.xml#L96"
+notiz = "Wortlaut der Quelle: <suppression>z.B.</suppression>. Schreibung ohne Leerzeichen."
+
+# --- Französisch ---
+
+[[eintrag]]
+begriff = "art."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "SR 128 Art. 13 Abs. 1"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_13"
+notiz = "«… aux intérêts définis à l’art. 1, al. 2, let. a à d …»"
+
+[[eintrag]]
+begriff = "al."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "SR 128 Art. 13 Abs. 1"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_13"
+notiz = "«… à l’art. 1, al. 2, let. a à d …»"
+
+[[eintrag]]
+begriff = "let."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "SR 128 Art. 13 Abs. 1"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_13"
+notiz = "«… à l’art. 1, al. 2, let. a à d …»"
+
+[[eintrag]]
+begriff = "ch."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "SR 128 Art. 1, Fussnote 5"
+fassung = "2025-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/232/fr#art_1"
+notiz = "«Nouvelle teneur selon le ch. I de la LF du 29 sept. 2023 …»"
+
+[[eintrag]]
+begriff = "cf."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "SR 311.0 Art. 201–212, Fussnote 308"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_201_212"
+notiz = "«(cf. commentaires au ch. 23 du message; FF 1985 II 1021)»"
+
+[[eintrag]]
+begriff = "M."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/fr.xml, Zeile 15"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/fr.xml#L15"
+notiz = "Wortlaut der Quelle: <suppression>M.</suppression>. Anrede vor dem Namen."
+
+[[eintrag]]
+begriff = "Prof."
+sprache = "fr"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/fr.xml, Zeile 46"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/fr.xml#L46"
+notiz = "Wortlaut der Quelle: <suppression>Prof.</suppression>."
+
+# --- Italienisch ---
+
+[[eintrag]]
+begriff = "art."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "SR 173.110.131 Art. 4 (Sachüberschrift)"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/it#art_4"
+notiz = "«Scadenze (art. 14 cpv. 2, 15 cpv. 1 lett. e, 17 cpv. 3 LTF)»"
+
+[[eintrag]]
+begriff = "cpv."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "SR 173.110.131 Art. 4 (Sachüberschrift)"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/it#art_4"
+notiz = "«(art. 14 cpv. 2, 15 cpv. 1 lett. e, 17 cpv. 3 LTF)»"
+
+[[eintrag]]
+begriff = "lett."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "SR 173.110.131 Art. 4 (Sachüberschrift)"
+fassung = "2026-02-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/834/it#art_4"
+notiz = "«(art. 14 cpv. 2, 15 cpv. 1 lett. e, 17 cpv. 3 LTF)»"
+
+[[eintrag]]
+begriff = "n."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "SR 170.512 Art. 5, Fussnote 13"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/745/it#art_5"
+notiz = "«Nuovo testo giusta il n. I della LF del 26 set. 2014 …»"
+
+[[eintrag]]
+begriff = "cfr."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "Bundeskanzlei, Direttive di tecnica legislativa (DTL), Prontuario per i traduttori e redattori di lingua italiana, S. 2"
+fassung = "2024-10-01"
+url = "https://www.bk.admin.ch/dam/it/sd-web/JUhV4BnOp3l1/Corso%20DTL%202021%20Dispensa%20per%20partecipanti.pdf#page=2"
+notiz = "«(cfr. anche pag. 3 qui appresso)»"
+
+[[eintrag]]
+begriff = "Sig."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/it.xml, Zeile 30"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/it.xml#L30"
+notiz = "Wortlaut der Quelle: <suppression>Sig.</suppression>. Anrede vor dem Namen."
+
+[[eintrag]]
+begriff = "avv."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/it.xml, Zeile 53"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/it.xml#L53"
+notiz = "Wortlaut der Quelle: <suppression>avv.</suppression>. Titel vor dem Namen."
+
+[[eintrag]]
+begriff = "dott."
+sprache = "it"
+regel = "satzgrenze"
+quelle = "Unicode CLDR 49, common/segments/it.xml, Zeile 25"
+fassung = "2026-10-21"
+url = "https://github.com/unicode-org/cldr/blob/release-49/common/segments/it.xml#L25"
+notiz = "Wortlaut der Quelle: <suppression>dott.</suppression>. Titel vor dem Namen."

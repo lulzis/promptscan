@@ -1,0 +1,16 @@
+# Zusätzliche Vermerke zu Crates, die Code aus einem anderen Projekt übernehmen, dessen
+# Lizenzdatei (mit eigenem Copyright-Vermerk) das Paket selbst nicht mitliefert.
+# examples/drittvermerke.rs gibt den Text in THIRD-PARTY-NOTICES.md, Abschnitt 8.1, beim Crate
+# aus und nennt den Eintrag in Abschnitt 2. Er bricht ab, wenn das Crate in dieser Fassung
+# nicht mehr gebunden wird; dann den Eintrag prüfen und nachführen.
+#
+# Felder: crate, version (wie in Cargo.lock), lizenz (SPDX), datei (relativ zu diesem Ordner,
+# Wortlaut unverändert), herkunft (ein Satz, ohne Personennamen; der Copyright-Vermerk steht
+# im Lizenztext).
+
+[[zusatz]]
+crate = "zmij"
+version = "1.0.23"
+lizenz = "MIT"
+datei = "zusatz/zmij-original-LICENSE"
+herkunft = "zmij ist laut README.md und src/lib.rs des Pakets eine Zeile für Zeile übertragene Fassung eines C++-Originals; dessen Lizenzdatei (Datei LICENSE am Commit b32688a1849d1b8f092c1740c61a6b05ea4679ae, auf den README.md verweist, abgerufen am 06.11.2026, SHA-256 a69b36adb8d116376bcd580772fa45f08fffecc17833cb9822532f4e4f5ec372) trägt einen eigenen Copyright-Vermerk"

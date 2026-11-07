@@ -1,0 +1,158 @@
+# Art. 5 Bst. c Ziff. 3 DSG: genetische Daten.
+#
+# Das DNA-Profil gehört hierher: «Genetische Daten sind Informationen über das Erbgut
+# einer Person, die durch eine genetische Untersuchung gewonnen werden; darin
+# eingeschlossen ist auch das DNA-Profil» (Botschaft DSG, BBl 2017 6941, 7020).
+#
+# Merkmal «ausnahme»: Der Eintrag gewinnt als längerer Treffer und meldet nichts
+# («DNA-Profil-Gesetz» ist der Name eines Erlasses, kein DNA-Profil).
+
+# --- Deutsch ---------------------------------------------------------------
+
+[[eintrag]]
+begriff = "genetische Daten"
+formen = ["genetischen Daten", "genetischer Daten"]
+sprache = "de"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. k"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/de#art_3"
+
+[[eintrag]]
+begriff = "genetische Untersuchungen"
+formen = ["genetische Untersuchung", "genetischen Untersuchung", "genetischen Untersuchungen", "genetischer Untersuchung", "genetischer Untersuchungen"]
+sprache = "de"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. a"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/de#art_3"
+
+[[eintrag]]
+begriff = "DNA-Profil"
+formen = ["DNA-Profils", "DNA-Profile", "DNA-Profilen"]
+sprache = "de"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. j"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/de#art_3"
+
+[[eintrag]]
+begriff = "DNA-Analyse"
+formen = ["DNA-Analysen"]
+sprache = "de"
+regel = "art5c-3"
+quelle = "SR 363 Art. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/811/de#art_2"
+notiz = "«Bei der DNA-Analyse darf weder nach dem Gesundheitszustand … geforscht werden»."
+
+[[eintrag]]
+begriff = "Erbgut"
+formen = ["Erbguts", "Erbgutes"]
+sprache = "de"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. k"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/de#art_3"
+notiz = "«Informationen über das Erbgut einer Person»."
+
+[[eintrag]]
+begriff = "DNA-Profil-Gesetz"
+sprache = "de"
+regel = "art5c-3"
+quelle = "SR 363 Titel"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/811/de"
+merkmal = "ausnahme"
+notiz = "Kurztitel des Erlasses. Ausnahme: verhindert, dass «DNA-Profil» im Gesetzesnamen gemeldet wird."
+
+# --- Französisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "données génétiques"
+formen = ["donnée génétique"]
+sprache = "fr"
+regel = "art5c-3"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 3"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_5"
+
+[[eintrag]]
+begriff = "analyses génétiques"
+formen = ["analyse génétique"]
+sprache = "fr"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. a"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/fr#art_3"
+
+[[eintrag]]
+begriff = "profil d'ADN"
+formen = ["profils d'ADN"]
+sprache = "fr"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. j"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/fr#art_3"
+notiz = "Im Erlass mit typografischem Apostroph («profil d’ADN»); die Suche behandelt beide gleich."
+
+[[eintrag]]
+begriff = "analyse de l'ADN"
+sprache = "fr"
+regel = "art5c-3"
+quelle = "SR 363 Art. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/811/fr#art_2"
+
+[[eintrag]]
+begriff = "patrimoine génétique"
+sprache = "fr"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. a"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/fr#art_3"
+
+# --- Italienisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "dati genetici"
+formen = ["dato genetico"]
+sprache = "it"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. k"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/it#art_3"
+
+[[eintrag]]
+begriff = "esame genetico"
+formen = ["esami genetici"]
+sprache = "it"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. j"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/it#art_3"
+
+[[eintrag]]
+begriff = "profilo del DNA"
+formen = ["profili del DNA"]
+sprache = "it"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. j"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/it#art_3"
+
+[[eintrag]]
+begriff = "analisi del DNA"
+sprache = "it"
+regel = "art5c-3"
+quelle = "SR 363 Art. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/811/it#art_2"
+
+[[eintrag]]
+begriff = "patrimonio genetico"
+sprache = "it"
+regel = "art5c-3"
+quelle = "SR 810.12 Art. 3 Bst. j"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/537/it#art_3"

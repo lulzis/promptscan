@@ -1,0 +1,93 @@
+# Rust-Standardbibliothek: Bestandteile, die in die Programmdatei gelangen (Ziel
+# x86_64-pc-windows-gnu). Von Hand nachgeführt, je Rust-Fassung; examples/drittvermerke.rs
+# bricht ab, wenn das Sysroot eine andere Fassung oder eine hier fehlende Bibliothek zeigt.
+#
+# Welche Crates die Standardbibliothek für dieses Ziel bindet: library/std/Cargo.toml am Tag
+#   der Fassung (Abschnitte [dependencies] und die Ziel-Abschnitte, die für
+#   x86_64-pc-windows-gnu gelten) und die Bibliotheken im Sysroot
+#   (lib/rustlib/x86_64-pc-windows-gnu/lib/*.rlib).
+# Fassungen und Prüfsummen: library/Cargo.lock am Tag 1.99.1,
+#   https://github.com/rust-lang/rust/blob/1.99.1/library/Cargo.lock
+# Lizenzdateien: aus den Paketen auf static.crates.io, SHA-256 gleich wie in library/Cargo.lock
+#   (geprüft am 06.11.2026); abgelegt ist nur die Datei der gewählten Lizenz.
+# Warum nicht nur COPYRIGHT-library.html aus dem Sysroot: Die Datei der Fassung 1.99.1 führt
+#   addr2line, adler2, miniz_oxide und object nicht auf und nennt memchr 2.8.0, das
+#   library/Cargo.lock nicht enthält (dort 2.8.3).
+
+rust = "1.99.1"
+quelle = "https://github.com/rust-lang/rust/blob/1.99.1/library/Cargo.lock"
+
+[[crate]]
+name = "addr2line"
+version = "0.27.1"
+license = "Apache-2.0 OR MIT"
+sha256 = "e567177890eb1617b1f774005b66b26b2377afd138a2ca37aae7d8f0c81429d4"
+
+[[crate]]
+name = "adler2"
+version = "2.0.1"
+license = "0BSD OR MIT OR Apache-2.0"
+sha256 = "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa"
+
+[[crate]]
+name = "cfg-if"
+version = "1.0.4"
+license = "MIT OR Apache-2.0"
+sha256 = "9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801"
+
+[[crate]]
+name = "gimli"
+version = "0.34.0"
+license = "MIT OR Apache-2.0"
+sha256 = "1033caf0b349c518623b5396bfb2cf0bddf44f0306d543a250e5743297aafd10"
+
+[[crate]]
+name = "hashbrown"
+version = "0.17.1"
+license = "MIT OR Apache-2.0"
+sha256 = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
+
+[[crate]]
+name = "libc"
+version = "0.2.189"
+license = "MIT OR Apache-2.0"
+sha256 = "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
+
+[[crate]]
+name = "memchr"
+version = "2.8.3"
+license = "Unlicense OR MIT"
+sha256 = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
+
+[[crate]]
+name = "miniz_oxide"
+version = "0.9.1"
+license = "MIT OR Zlib OR Apache-2.0"
+sha256 = "b63fbc4a50860e98e7b2aa7804ded1db5cbc3aff9193adaff57a6931bf7c4b4c"
+
+[[crate]]
+name = "object"
+version = "0.39.1"
+license = "Apache-2.0 OR MIT"
+sha256 = "2e5a6c098c7a3b6547378093f5cc30bc54fd361ce711e05293a5cc589562739b"
+
+[[crate]]
+name = "rustc-demangle"
+version = "0.1.28"
+license = "MIT/Apache-2.0"
+sha256 = "b74b56ffa8bb2830709a538c2cbcae9aa062db0d2a42563bfb09bdaae44020eb"
+
+# Im Rust-Baum, aber mit eigener Lizenzdatei (library/compiler-builtins/LICENSE.txt und
+# library/compiler-builtins/libm/LICENSE.txt am Tag 1.99.1). Die Lizenzangabe von
+# compiler_builtins steht in library/compiler-builtins/compiler-builtins/Cargo.toml.
+[[im_baum]]
+name = "compiler_builtins"
+pfad = "library/compiler-builtins"
+license = "MIT AND Apache-2.0 WITH LLVM-exception AND (MIT OR Apache-2.0)"
+datei = "compiler-builtins/LICENSE.txt"
+
+[[im_baum]]
+name = "libm (in compiler_builtins)"
+pfad = "library/compiler-builtins/libm"
+license = "MIT"
+datei = "libm/LICENSE.txt"

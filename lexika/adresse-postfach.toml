@@ -1,0 +1,33 @@
+# Regel «adresse»: das Postfach als Teil der Postadresse.
+#
+# Art. 23 Abs. 1 lit. b der Postverordnung (VPG, SR 783.01) zählt zu den Adressdaten
+# «Strasse, Hausnummer, Postleitzahl und Ort sowie, falls vorhanden, Standort und Nummer
+# des Postfachs». Erkannt wird das Wort mit Nummer, gefolgt von PLZ und Ort; das Wort allein
+# ist keine Adresse.
+
+[[eintrag]]
+begriff = "Postfach"
+sprache = "de"
+regel = "adresse"
+quelle = "SR 783.01 Art. 29 Abs. 4bis"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2012/586/de#art_29"
+notiz = "«direkt in den Briefkasten oder das Postfach zuzustellen»; die Grundform steht hier, Art. 23 Abs. 1 lit. b nennt «Nummer des Postfachs» als Adressdatum."
+
+[[eintrag]]
+begriff = "case postale"
+sprache = "fr"
+regel = "adresse"
+quelle = "SR 783.01 Art. 23 Abs. 1 lit. b"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2012/586/fr#art_23"
+notiz = "«l’emplacement et le numéro de la case postale»"
+
+[[eintrag]]
+begriff = "casella postale"
+sprache = "it"
+regel = "adresse"
+quelle = "SR 783.01 Art. 23 Abs. 1 lit. b"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2012/586/it#art_23"
+notiz = "«l’ubicazione e il numero della casella postale»"

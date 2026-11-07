@@ -1,0 +1,326 @@
+# Anreden, Titel und Heiligennamen vor einem Namen (Regel name, SPEC 5.2).
+#
+# merkmal:
+#   anrede-de  Deutsche Anrede. Danach zählt nur ein Name aus dem BFS-Register, weil das
+#              Deutsche alle Substantive gross schreibt («der Frau Angst machen»).
+#   anrede     Französische und italienische Anrede. Danach genügt ein grossgeschriebenes
+#              Wort, denn Substantive schreiben diese Sprachen klein.
+#   titel      Titel vor dem Namen, auch in Ketten («Prof. Dr.»). Danach genügt ein
+#              grossgeschriebenes Wort.
+#   heilig     Heiligenname: der folgende Vorname ist Teil eines Heiligen- oder Ortsnamens
+#              («St. Moritz», «San Bernardino»), kein Personenname.
+#
+# Die Wörterbücher haben keine Fassung; «fassung» ist der Tag, an dem der Eintrag gelesen
+# wurde.
+
+# --- Deutsch: Anrede (Duden) ---
+
+[[eintrag]]
+begriff = "Herr"
+formen = ["Herrn"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Herr»: «titelähnliche, auch als Anrede verwendete Bezeichnung für eine erwachsene Person männlichen Geschlechts»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Herr"
+merkmal = "anrede-de"
+notiz = "«Herrn»: Dativ und Akkusativ; Duden nennt dafür die Abkürzung Hrn."
+
+[[eintrag]]
+begriff = "Hr."
+formen = ["Hrn."]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Herr»: «Abkürzung Hr., für „Herrn“ Hrn.»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Herr"
+gross = true
+merkmal = "anrede-de"
+
+[[eintrag]]
+begriff = "Frau"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Frau»: «titelähnliche, auch als Anrede verwendete Bezeichnung für eine erwachsene Person weiblichen Geschlechts»; Beispiel «ich habe Frau Meier getroffen»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Frau"
+merkmal = "anrede-de"
+
+[[eintrag]]
+begriff = "Fr."
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Frau»: Abkürzung Fr."
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Frau"
+gross = true
+merkmal = "anrede-de"
+notiz = "«Fr.» steht auch für Franken; vor einer Zahl folgt kein Name."
+
+# --- Französisch: Anrede (Larousse) ---
+
+[[eintrag]]
+begriff = "Monsieur"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «monsieur»: «Titre qu'on donne aux hommes quand on s'adresse à eux ou quand on parle d'eux»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/monsieur/52460"
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "M."
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «monsieur»: «Monsieur s'abrège en M. (et non en Mr …) : M. Martin»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/monsieur/52460"
+gross = true
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "Madame"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «madame»: «Titre donné à toute femme mariée, ou qui l'a été, ou, dans les relations courantes, qui est en âge de l'être (avec majuscule quand il est suivi du nom propre …)»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/madame/48465"
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "Mme"
+formen = ["Mmes"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «madame»: «On écrit en abrégé : Mme, Mmes … votre charmante voisine, Mme Duval»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/madame/48465"
+gross = true
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "Mademoiselle"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «mademoiselle»: «Titre donné à une jeune fille ou à une femme non mariée. (S'écrit avec majuscule [abréviation Mlle] quand il est suivi du nom propre.)»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/mademoiselle/48473"
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "Mlle"
+formen = ["Mlles"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «mademoiselle»: «On écrit en abrégé : Mlle, Mlles … Mlle Duval a été admise»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/mademoiselle/48473"
+gross = true
+merkmal = "anrede"
+
+# --- Italienisch: Anrede (Treccani) ---
+
+[[eintrag]]
+begriff = "signore"
+formen = ["signor", "sig."]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «signore»: «appellativo rispettoso, premesso al cognome: il signor Rossi … (di solito nell'abbreviazione grafica sig.)»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/signore/"
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "signora"
+formen = ["sig.ra"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «signora»: «davanti a nome e cognome (per lo più nell'abbreviazione sig.ra): Alla sig.ra Luisa Rossi»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/signora/"
+merkmal = "anrede"
+
+[[eintrag]]
+begriff = "signorina"
+formen = ["sig.na"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «signorina»: «in indirizzi di lettere … (in tal caso per lo più nell'abbreviazione sig.na): Alla sig.na Claudia Bianchi»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/signorina/"
+merkmal = "anrede"
+
+# --- Titel ---
+
+[[eintrag]]
+begriff = "Dr."
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Dr.»: «Kurz für Doktor»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Dr_"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "Doktor"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Dr.»: «Kurz für Doktor»; Duden «Herr»: Beispiel «Herr … Doktor»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Dr_"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "Prof."
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Prof.»: «Kurz für Professor; Professorin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Prof_"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "Professor"
+formen = ["Professorin"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Prof.»: «Kurz für Professor; Professorin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Prof_"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "docteur"
+formen = ["docteure"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «docteur, docteure»: «Appellation usuelle pour un homme ou une femme exerçant ces professions»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/docteur/26250"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "professeur"
+formen = ["professeure"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «professeur, professeure»: «Titre donné dans l'enseignement supérieur aux membres de la catégorie la plus élevée en grade»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/professeur/64155"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "dottore"
+formen = ["dottor", "dott.", "dr.", "dottoressa"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «dottore» (f. -essa): «si attribuisce a ogni persona laureata (e nelle scritte si abbrevia in dott. o dr.), sia premesso al nome»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/dottore/"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "professore"
+formen = ["professor", "prof.", "professoressa"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «professore»: «premesso al nome e cognome, o al solo cognome: il professor Mario Rossi, il professor Moretti; di solito abbreviato nella scrittura (v. prof.)»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/professore/"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "dott.ssa"
+formen = ["dr.ssa"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «dott.»: «Le stesse abbreviazioni si possono usare anche con riferimento a donna, ma è preferibile specificare, abbreviando dottoressa in dott.ssa (o, meno bene, dr.ssa)»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/dott/"
+merkmal = "titel"
+notiz = "Ein Eintrag über zwei Wörter: der Punkt im Inneren trennt weder das Wort noch den Satz."
+
+[[eintrag]]
+begriff = "prof.ssa"
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «prof.»: «per il femm. professoressa si usa o prof. o, volendo evitare equivoco, prof.ssa»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/prof/"
+merkmal = "titel"
+
+[[eintrag]]
+begriff = "l'ing."
+formen = ["dell'ing.", "all'ing.", "dall'ing.", "nell'ing.", "sull'ing."]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, Enciclopedia dell'Italiano, «abbreviazioni»: «per compendio (contengono una o più iniziali della parola: per es. ing. per ingegnere …)»; Treccani, «ingegnere»: «Come titolo e appellativo … è usato di norma nella forma masch. anche se riferito a donna»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/enciclopedia/abbreviazioni_(Enciclopedia-dell'Italiano)/"
+merkmal = "titel"
+notiz = "Nur mit elidiertem Artikel («l'ing. Moretti»): «ing.» allein steht auch im Deutschen («Das ing. Verfahren», w3-namen-p8). «Ing. Mario Rossi» findet der Vorname."
+
+[[eintrag]]
+begriff = "l'arch."
+formen = ["dell'arch.", "all'arch.", "dall'arch.", "nell'arch.", "sull'arch."]
+sprache = "it"
+regel = "name"
+quelle = "Larousse italien-français, «Arch.»: «(abbreviazione di Architetto) … in collaborazione con l'Arch. Costantini»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/italien-francais/Arch_/4892"
+merkmal = "titel"
+notiz = "Treccani führt «arch.» nicht als Stichwort; Larousse italien-français belegt den Titel mit elidiertem Artikel vor dem Nachnamen. Nur so: «Arch.» allein ist im Deutschen das Archiv («Siehe Arch. Nr. 12», w3-namen-p8)."
+
+[[eintrag]]
+begriff = "Dr"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «Dr»: «Abréviation de docteur.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/Dr/26688"
+gross = true
+merkmal = "titel"
+notiz = "Französische Schreibung ohne Punkt; «Dr.» mit Punkt ist der deutsche Eintrag."
+
+[[eintrag]]
+begriff = "Pr"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse français-italien, «Pr»: «(abréviation de professeur) … Pr Jacques Dupont»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais-italien/Pr/56332"
+gross = true
+merkmal = "titel"
+notiz = "Das einsprachige Larousse führt «Pr» nur als Zeichen des Praseodyms; gross, damit «pr» nichts auslöst."
+
+# --- Heiligennamen ---
+
+[[eintrag]]
+begriff = "Sankt"
+formen = ["St."]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Sankt»: «heilig (in Heiligennamen und auf solche zurückgehenden geografischen Namen) Abkürzung St.»; Beispiel «Sankt/St. Peter, Elisabeth, Gallen, Gotthard»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Sankt"
+merkmal = "heilig"
+
+[[eintrag]]
+begriff = "saint"
+formen = ["sainte"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «saint, sainte»: «Entre dans la formation de noms propres qui désignent en particulier une fête …, une église, etc. (avec majuscule) : Aller à la messe à Saint-Roch»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/saint/70547"
+merkmal = "heilig"
+
+[[eintrag]]
+begriff = "santo"
+formen = ["santa", "san", "sant'"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «santo»: «la forma apostrofata sant’ davanti a nomi che cominciano per vocale (sant’Antonio …), la forma tronca san in tutti gli altri casi …; nel femminile si usa sempre la forma intera santa»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/santo/"
+merkmal = "heilig"

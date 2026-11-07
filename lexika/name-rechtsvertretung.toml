@@ -1,0 +1,282 @@
+# Rechtsvertretung (Regel name, SPEC 5.2, Ausnahme).
+#
+# Das Bundesgericht anonymisiert «die Namen der Rechtsvertreter der Parteien» nicht
+# (Regeln für die Anonymisierung der Urteile, Art. 4 Abs. 1 lit. g). Die Ausnahme hängt an
+# der Rolle im Verfahren, nicht am Beruf: Eine Anwältin kann selbst Patientin, Angestellte
+# oder Partei sein. Darum mehrere Arten von Wörtern:
+#
+# merkmal:
+#   rechtsvertretung  Das Wort bezeichnet schon die Vertretung einer Partei («Verteidigerin»,
+#                     «défenseur», «patrocinatore»). Ein Name unmittelbar danach («Verteidiger
+#                     Hans Muster») oder mit Komma oder Klammer davor («Hans Muster,
+#                     Rechtsbeistand») wird nicht markiert.
+#   anwalt            Französischer oder italienischer Titel («Me», «Maître», «avv.»). Er wirkt
+#                     wie ein Titel: Der Name danach wird gemeldet, ausser der Satz zeigt die
+#                     Person als Vertretung einer Partei (name-vertretung.toml: «représenté par
+#                     Me …», «Me … plaide pour …», «Me …, avocat de la partie adverse»). Danach
+#                     genügt ein grossgeschriebenes Wort.
+#   anwalt-de         Deutscher Beruf oder Titel («Rechtsanwältin», «RA»). Wie «anwalt»; weil
+#                     das Deutsche alle Substantive gross schreibt, zählt danach aber nur ein
+#                     Name aus dem BFS-Register, wie nach «Frau».
+#   anwalt-wort       Französischer oder italienischer Beruf («avocat», «avvocato»). Kein
+#                     Auslöser, denn danach steht oft ein Adjektiv oder ein Fachgebiet («un
+#                     avocat Genevois», «un avvocato Penalista»). Mit einem Vertretungsmerkmal
+#                     nimmt er den Namen daneben aus wie «anwalt» («Jean Dupont, avocat de la
+#                     partie adverse», «rappresentato dall'avvocato Mario Rossi»).
+#   beratung          «conseil»: auch Berater («conseil fiscal») und Rat («Un conseil: …»). Kein
+#                     Auslöser; Vertretung nur mit einer Partei danach («Me Jean Dupont, conseil
+#                     de Marie Dupont») oder einem Partizip der Vertretung davor («assistée de son
+#                     conseil»), nicht mit einem Possessivpronomen oder Verb allein.
+#   beauftragt        «mandataire»: auch die Vorsorgebeauftragte nach Art. 360 CC. Kein
+#                     Auslöser; Vertretung nur mit «partie» oder einer Verfahrensrolle danach
+#                     («le mandataire de la partie, Jean Dupont»).
+#
+# Die Wörterbücher haben keine Fassung; «fassung» ist der Tag, an dem der Eintrag gelesen
+# wurde.
+
+# --- Grundlage der Ausnahme ---
+
+[[eintrag]]
+begriff = "Rechtsvertreter"
+sprache = "de"
+regel = "name"
+quelle = "Bundesgericht, Regeln für die Anonymisierung der Urteile, Art. 4 Abs. 1 lit. g: «die Namen der Rechtsvertreter der Parteien»; Abs. 3: «Rechtsvertreter werden in der Regel auch dann nicht anonymisiert …»"
+fassung = "2020-02-13"
+url = "https://www.bger.ch/home/juridiction/jurisdiction-recht/anonymisierungsregeln.html"
+merkmal = "rechtsvertretung"
+notiz = "Erlassen von der Präsidentenkonferenz am 17.12.2019, genehmigt von der Verwaltungskommission am 13.02.2020; gelesen am 06.11.2026."
+
+# --- Deutsch ---
+
+[[eintrag]]
+begriff = "Rechtsanwalt"
+formen = ["Rechtsanwälte"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Rechtsanwalt»: «Jurist mit staatlicher Zulassung als Berater und Vertreter in Rechtsangelegenheiten, besonders auch Prozessen; Anwalt (Berufsbezeichnung)», Abkürzung RA"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Rechtsanwalt"
+merkmal = "anwalt-de"
+
+[[eintrag]]
+begriff = "Rechtsanwältin"
+formen = ["Rechtsanwältinnen"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Rechtsanwältin»: «Juristin mit staatlicher Zulassung als Beraterin und Vertreterin in Rechtsangelegenheiten, besonders auch Prozessen; Anwältin (Berufsbezeichnung)», Abkürzung RA"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Rechtsanwaeltin"
+merkmal = "anwalt-de"
+
+[[eintrag]]
+begriff = "RA"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «RA»: «Kurz für Rechtsanwalt, Rechtsanwältin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/RA"
+gross = true
+merkmal = "anwalt-de"
+
+[[eintrag]]
+begriff = "Fürsprecher"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Fürsprecher», Bedeutung 2: «Rechtsanwalt», Gebrauch schweizerisch"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Fuersprecher"
+merkmal = "anwalt-de"
+
+[[eintrag]]
+begriff = "Fürsprecherin"
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «Fürsprecherin», Bedeutung 2: «Rechtsanwältin», Gebrauch schweizerisch"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Fuersprecherin"
+merkmal = "anwalt-de"
+
+[[eintrag]]
+begriff = "Anwalt"
+formen = ["Anwältin", "Anwälte", "Anwältinnen", "Anwälten"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 127 Abs. 5: «Die Verteidigung der beschuldigten Person ist Anwältinnen und Anwälten vorbehalten»; ebenso ZPO Art. 68 Abs. 2 lit. a"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_127"
+merkmal = "anwalt-de"
+
+[[eintrag]]
+begriff = "Verteidiger"
+formen = ["Verteidigerin"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 131 Abs. 3: «bevor eine Verteidigerin oder ein Verteidiger bestellt worden ist»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_131"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "Rechtsbeistand"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 127 Abs. 1: «… können zur Wahrung ihrer Interessen einen Rechtsbeistand bestellen»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_127"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "Parteivertreter"
+formen = ["Parteivertreterin"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 40 «Parteivertreter und -vertreterinnen», Abs. 2"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_40"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "beruflich qualifizierte Vertreterinnen"
+formen = ["beruflich qualifizierte Vertreterin", "beruflich qualifizierte Vertreter", "beruflich qualifizierter Vertreter", "beruflich qualifizierten Vertreterin", "beruflich qualifizierten Vertreterinnen", "beruflich qualifizierten Vertreter", "beruflich qualifizierten Vertretern", "beruflich qualifizierten Vertreters"]
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 68 Abs. 2 Bst. d: «vor den Miet- und Arbeitsgerichten beruflich qualifizierte Vertreterinnen und Vertreter, soweit das kantonale Recht es vorsieht.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_68"
+merkmal = "rechtsvertretung"
+notiz = "Gegenstück zu «mandataires professionnellement qualifiés» und «rappresentanti professionalmente qualificati» (E2: «mandataire professionnel»)."
+
+# --- Französisch ---
+
+[[eintrag]]
+begriff = "avocat"
+formen = ["avocate"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «avocat, avocate»: «Auxiliaire de justice …»; CPP (SR 312.0) art. 127 al. 5: «La défense des prévenus est réservée aux avocats»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/avocat/7134"
+merkmal = "anwalt-wort"
+notiz = "Kein Auslöser: «Je cherche un avocat Spécialiste FSA», «Quel avocat Genevois …». «l'avocat Dupont» ohne Vornamen bleibt darum offen; mit Vornamen findet ihn der Vorname."
+
+[[eintrag]]
+begriff = "Maître"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «maître», 7: «(Avec une majuscule.) Titre que l'on donne aux avocats et aux officiers ministériels»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/ma%C3%AEtre/48732"
+gross = true
+merkmal = "anwalt"
+
+[[eintrag]]
+begriff = "Me"
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «maître»: «Maître est le titre donné aux avocats … Abréviation : Me»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/ma%C3%AEtre/48732"
+gross = true
+merkmal = "anwalt"
+notiz = "In der Romandie auch Höflichkeitstitel jeder Person mit Anwaltspatent, darum nur mit Vertretungsmerkmal ausgenommen."
+
+[[eintrag]]
+begriff = "mandataire"
+formen = ["mandataires"]
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 40 al. 1: «… seuls ont qualité pour agir comme mandataires devant le Tribunal fédéral les avocats …»; art. 33 al. 2: «La partie ou son mandataire qui use de mauvaise foi …»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_40"
+merkmal = "beauftragt"
+notiz = "Allgemein der Beauftragte (Art. 394 ff. CO), auch die Vorsorgebeauftragte nach Art. 360 CC («mandataire pour cause d'inaptitude»; CC art. 365 al. 1: «Le mandataire représente le mandant …»). Ausgenommen nur mit «partie» oder einer Verfahrensrolle danach («le mandataire de la partie, Jean Dupont»); «son mandataire, M. Paul Rochat» und «Le mandataire Paul Rochat représente sa mère» melden den Namen."
+
+[[eintrag]]
+begriff = "défenseur"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 131 al. 1: «… pourvoit à ce que le prévenu soit assisté aussitôt d'un défenseur»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_131"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "conseil juridique"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 127 al. 1: «… peuvent se faire assister d'un conseil juridique pour défendre leurs intérêts»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_127"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "mandataires professionnellement qualifiés"
+formen = ["mandataire professionnellement qualifié", "mandataire professionnellement qualifiée", "mandataires professionnellement qualifiées"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 68 al. 2 let. d: «devant les juridictions spéciales en matière de contrat de bail et de contrat de travail, les mandataires professionnellement qualifiés, si le droit cantonal le prévoit.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_68"
+merkmal = "rechtsvertretung"
+notiz = "E2 nennt «mandataire professionnel»; diese Wendung steht in keinem der durchsuchten Erlasse, der Wortlaut des CPC schon."
+
+[[eintrag]]
+begriff = "conseil"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 87 al. 2: «Les parties et leur conseil qui ont leur domicile, leur résidence habituelle ou leur siège à l'étranger sont tenus de désigner un domicile de notification en Suisse …»; art. 88 al. 1 let. c: «lorsqu'une partie ou son conseil n'a pas désigné un domicile de notification en Suisse …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_87"
+gross = true
+merkmal = "beratung"
+notiz = "Trifft nur klein geschrieben (gross = true): «Conseil fédéral» und «Conseil d'État» sind Behörden. «conseil» heisst auch Berater («conseil fiscal») und Rat («Un conseil: …»); Vertretung darum nur mit einer Partei danach («Me X, conseil de Y»: der Name von Y wird gemeldet) oder einem Partizip der Vertretung davor («assistée de son conseil»)."
+
+# --- Italienisch ---
+
+[[eintrag]]
+begriff = "avvocato"
+formen = ["avvocata", "avvocatessa"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «avvocato»: «Professionista forense che assiste la parte nel giudizio»; «i femminili avvocata e avvocatessa»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/avvocato/"
+merkmal = "anwalt-wort"
+notiz = "Kein Auslöser: «Cerco un avvocato Penalista a Lugano.», «un avvocato Svizzero». Als Titel wirkt «avv.»."
+
+[[eintrag]]
+begriff = "avv."
+sprache = "it"
+regel = "name"
+quelle = "Treccani, Enciclopedia dell'Italiano, «abbreviazioni»: «titoli professionali e onorifici (dott., avv., comm.)»; «avv. si legge avvocato»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/enciclopedia/abbreviazioni_(Enciclopedia-dell'Italiano)/"
+merkmal = "anwalt"
+
+[[eintrag]]
+begriff = "difensore"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 131 cpv. 1: «… provvede affinché sia designato senza indugio un difensore»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_131"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "patrocinatore"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 127 cpv. 4: «Le parti possono designare quale patrocinatore qualsiasi persona …»; LTF art. 40 cpv. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_127"
+merkmal = "rechtsvertretung"
+
+[[eintrag]]
+begriff = "rappresentanti professionalmente qualificati"
+formen = ["rappresentante professionalmente qualificato", "rappresentante professionalmente qualificata", "rappresentanti professionalmente qualificate"]
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 68 cpv. 2 lett. d: «dinanzi al giudice della locazione e al giudice del lavoro, i rappresentanti professionalmente qualificati, se il diritto cantonale lo prevede.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_68"
+merkmal = "rechtsvertretung"

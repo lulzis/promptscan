@@ -1,0 +1,555 @@
+# Rechtsformzusätze für die Regel «firma» (SPEC 5.2).
+#
+# Art. 950 Abs. 1 OR: «In der Firma muss die Rechtsform angegeben werden.» Nach Abs. 2 legt
+# der Bundesrat die zulässigen Abkürzungen fest. Art. 116a HRegV verlangt die Bezeichnung
+# oder ihre Abkürzung in einer Landessprache; Abs. 2 verweist auf Anhang 2 HRegV, Abs. 3 für
+# die kollektiven Kapitalanlagen auf das KAG (SR 951.31).
+#
+# Jede Sprache stammt aus der amtlichen Fassung derselben Sprache. Anhang 2 HRegV führt die
+# Liste in allen drei Fassungen gleich. merkmal: «bezeichnung» (ausgeschrieben) oder
+# «abkuerzung» (gross = true, Gross-/Kleinschreibung zählt) einer juristischen Person.
+# «kollektivgesellschaft» und «kommanditgesellschaft» stehen für die Personengesellschaften,
+# ausgeschrieben (gross = false) und abgekürzt (gross = true): Sie sind keine juristischen
+# Personen; ihre unbeschränkt haftenden Gesellschafter sind natürliche Personen (Art. 552
+# Abs. 1, Art. 568 Abs. 1 und Art. 594 Abs. 2 OR). Die Regel meldet sie wie eine
+# Personenangabe (src/regeln/firma.rs). Die KmGK bleibt bei den juristischen Personen: Ihr
+# Komplementär muss eine Aktiengesellschaft sein (Art. 98 Abs. 2 KAG).
+#
+# Nicht aufgenommen: die rätoromanischen Formen aus Anhang 2 (promptscan kennt nur de, fr,
+# it) und «L-QIF» (Art. 12 Abs. 2 KAG nennt es, Art. 38, 101 und 111 KAG nicht als
+# Abkürzung einer Rechtsform).
+
+# --- Anhang 2 HRegV, Deutsch ------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Aktiengesellschaft"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "AG"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+gross = true
+merkmal = "abkuerzung"
+notiz = "Zugleich Kantonskürzel des Aargaus; Abgrenzung in firma-grenzen.toml (merkmal kantonskuerzel)."
+
+[[eintrag]]
+begriff = "Genossenschaft"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "Gen"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+gross = true
+merkmal = "abkuerzung"
+notiz = "Gleich geschrieben wie das Nomen «Gen» (Erbanlage); die Regel verlangt darum zwei Namenswörter, siehe firma-grenzen.toml (merkmal homograph)."
+
+[[eintrag]]
+begriff = "Gesellschaft mit beschränkter Haftung"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "GmbH"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "Kollektivgesellschaft"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+merkmal = "kollektivgesellschaft"
+notiz = "Keine juristische Person: natürliche Personen, die unbeschränkt und persönlich haften (Art. 552 Abs. 1, Art. 568 Abs. 1 OR)."
+
+[[eintrag]]
+begriff = "KlG"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+gross = true
+merkmal = "kollektivgesellschaft"
+
+[[eintrag]]
+begriff = "Kommanditgesellschaft"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+merkmal = "kommanditgesellschaft"
+notiz = "Keine juristische Person: Unbeschränkt haftende Gesellschafter können nur natürliche Personen sein (Art. 594 Abs. 2 OR)."
+
+[[eintrag]]
+begriff = "KmG"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+gross = true
+merkmal = "kommanditgesellschaft"
+
+[[eintrag]]
+begriff = "Kommanditaktiengesellschaft"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "KmAG"
+sprache = "de"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/de#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+# --- Anhang 2 HRegV, Français -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "Société anonyme"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SA"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+gross = true
+merkmal = "abkuerzung"
+notiz = "Gleiche Abkürzung für die Società anonima (italienischer Eintrag unten)."
+
+[[eintrag]]
+begriff = "Société coopérative"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SCoo"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "Société à responsabilité limitée"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "Sàrl"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+gross = true
+merkmal = "abkuerzung"
+notiz = "Nur die amtliche Schreibung mit Gravis; «Sarl» und «S.à r.l.» stehen nicht in Anhang 2."
+
+[[eintrag]]
+begriff = "Société en nom collectif"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "kollektivgesellschaft"
+
+[[eintrag]]
+begriff = "SNC"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+gross = true
+merkmal = "kollektivgesellschaft"
+
+[[eintrag]]
+begriff = "Société en commandite"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "kommanditgesellschaft"
+
+[[eintrag]]
+begriff = "SCm"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+gross = true
+merkmal = "kommanditgesellschaft"
+
+[[eintrag]]
+begriff = "Société en commandite par actions"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SCmA"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+# --- Anhang 2 HRegV, Italiano -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "Società anonima"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SA"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+gross = true
+merkmal = "abkuerzung"
+notiz = "Gleiche Abkürzung wie für die Société anonyme; bei gleichem Treffer belegt der französische Eintrag."
+
+[[eintrag]]
+begriff = "Società cooperativa"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SCoo"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "Società a garanzia limitata"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "Sagl"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "Società in nome collettivo"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+merkmal = "kollektivgesellschaft"
+
+[[eintrag]]
+begriff = "SNC"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+gross = true
+merkmal = "kollektivgesellschaft"
+
+[[eintrag]]
+begriff = "Società in accomandita"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+merkmal = "kommanditgesellschaft"
+
+[[eintrag]]
+begriff = "SAc"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+gross = true
+merkmal = "kommanditgesellschaft"
+
+[[eintrag]]
+begriff = "Società in accomandita per azioni"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SAcA"
+sprache = "it"
+regel = "firma"
+quelle = "SR 221.411 Anhang 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/it#annex_2"
+gross = true
+merkmal = "abkuerzung"
+
+# --- KAG (Art. 116a Abs. 3 HRegV), Deutsch ----------------------------------------------
+
+[[eintrag]]
+begriff = "Investmentgesellschaft mit variablem Kapital"
+sprache = "de"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SICAV"
+sprache = "de"
+regel = "firma"
+quelle = "SR 951.31 Art. 38 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_38"
+gross = true
+merkmal = "abkuerzung"
+notiz = "In allen drei Fassungen gleich; bei gleichem Treffer belegt dieser Eintrag."
+
+[[eintrag]]
+begriff = "Kommanditgesellschaft für kollektive Kapitalanlagen"
+sprache = "de"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "KmGK"
+sprache = "de"
+regel = "firma"
+quelle = "SR 951.31 Art. 101"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_101"
+gross = true
+merkmal = "abkuerzung"
+notiz = "Ohne Stufe nach DSG wie die juristischen Personen: Komplementäre müssen Aktiengesellschaften sein (Art. 98 Abs. 2 KAG); keine natürliche Person haftet unbeschränkt. Ebenso SCmPC und SAcCol."
+
+[[eintrag]]
+begriff = "Investmentgesellschaft mit festem Kapital"
+sprache = "de"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SICAF"
+sprache = "de"
+regel = "firma"
+quelle = "SR 951.31 Art. 111 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/de#art_111"
+gross = true
+merkmal = "abkuerzung"
+notiz = "In allen drei Fassungen gleich; bei gleichem Treffer belegt dieser Eintrag."
+
+# --- KAG, Français ----------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "société d’investissement à capital variable"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/fr#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SICAV"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 951.31 Art. 38 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/fr#art_38"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "société en commandite de placements collectifs"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/fr#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SCmPC"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 951.31 Art. 101"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/fr#art_101"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "société d’investissement à capital fixe"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/fr#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SICAF"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 951.31 Art. 111 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/fr#art_111"
+gross = true
+merkmal = "abkuerzung"
+
+# --- KAG, Italiano ----------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "società di investimento a capitale variabile"
+sprache = "it"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/it#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SICAV"
+sprache = "it"
+regel = "firma"
+quelle = "SR 951.31 Art. 38 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/it#art_38"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "società in accomandita per investimenti collettivi di capitale"
+sprache = "it"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/it#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SAcCol"
+sprache = "it"
+regel = "firma"
+quelle = "SR 951.31 Art. 101"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/it#art_101"
+gross = true
+merkmal = "abkuerzung"
+
+[[eintrag]]
+begriff = "società di investimento a capitale fisso"
+sprache = "it"
+regel = "firma"
+quelle = "SR 951.31 Art. 12 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/it#art_12"
+merkmal = "bezeichnung"
+
+[[eintrag]]
+begriff = "SICAF"
+sprache = "it"
+regel = "firma"
+quelle = "SR 951.31 Art. 111 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/822/it#art_111"
+gross = true
+merkmal = "abkuerzung"

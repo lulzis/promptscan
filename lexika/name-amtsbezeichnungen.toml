@@ -1,0 +1,115 @@
+# Der französische Artikel «Le» und Amts- und Behördenbezeichnungen danach (Regel name,
+# SPEC 5.2, Befund technik-1, Entscheid C1).
+#
+# «Le» steht im BFS-Register als Vorname (161 Nennungen). Am Satzanfang («Le Grand Conseil
+# a adopté la loi.») und vor einer Amts- oder Behördenbezeichnung («Le Maire», «Le
+# Greffier») ist es der bestimmte Artikel; dort löst es keinen Namen aus. Behörden werden
+# nicht markiert (Anonymisierungsregeln des Bundesgerichts, Art. 4 Abs. 1 lit. a).
+#
+# Die Wortliste markiert keine Stelle im Text. Gelesen wird sie nur unmittelbar nach dem
+# Vornamen «Le»: Beginnt dort eine Bezeichnung dieser Liste, gilt «Le» als Artikel.
+# Ausserhalb dieser Stellung bleiben die Wörter Namen: «Pierre Maire» ist ein Name.
+#
+# merkmal:
+#   artikel  Artikel, der zugleich ein Vorname des BFS-Registers ist.
+#   amt      Amts- oder Behördenbezeichnung aus einem Bundeserlass oder einer
+#            Kantonsverfassung (SR 131.2xx), in der französischen Fassung.
+#
+# «Di» und «Al» stehen auch im Register, aber nicht hier: «Di Maio» ist ein Name.
+
+[[eintrag]]
+begriff = "le"
+sprache = "fr"
+regel = "name"
+quelle = "SR 101 Art. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_1"
+merkmal = "artikel"
+notiz = "«Le peuple suisse et les cantons de Zurich, …». Bestimmter Artikel; im BFS-Register zugleich Vorname (161 Nennungen, mehrdeutig wegen dieses Artikels und der Gemeinde Le Flon)."
+
+[[eintrag]]
+begriff = "Grand Conseil"
+sprache = "fr"
+regel = "name"
+quelle = "Constitution du Canton de Vaud (SR 131.231) art. 91: «Le Grand Conseil est l'autorité suprême du Canton, sous réserve des droits du peuple.»"
+fassung = "2023-06-18"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/1136_fga/fr#art_91"
+merkmal = "amt"
+notiz = "Parlament der französischsprachigen Kantone. «Grand» ist im BFS-Register ein eindeutiger Nachname (1408 Personen)."
+
+[[eintrag]]
+begriff = "Conseil d'État"
+sprache = "fr"
+regel = "name"
+quelle = "Constitution du Canton de Vaud (SR 131.231) art. 112: «Le Conseil d'État est l'autorité exécutive supérieure du Canton.»"
+fassung = "2023-06-18"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/1136_fga/fr#art_112"
+merkmal = "amt"
+
+[[eintrag]]
+begriff = "canton"
+sprache = "fr"
+regel = "name"
+quelle = "SR 101 Art. 37 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_37"
+merkmal = "amt"
+notiz = "«… et le droit de cité du canton». «Canton» ist im BFS-Register ein eindeutiger Nachname (70 Personen)."
+
+[[eintrag]]
+begriff = "procureur"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 14 al. 3: «Ils peuvent instituer un premier procureur ou un procureur général.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_14"
+merkmal = "amt"
+notiz = "«Procureur» ist im BFS-Register ein eindeutiger Nachname (18 Personen)."
+
+[[eintrag]]
+begriff = "maire"
+sprache = "fr"
+regel = "name"
+quelle = "Constitution de la République et Canton du Jura (SR 131.235) art. 119 al. 2: «Il est présidé par le maire.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1977/2_264_259_261_fga/fr#art_119"
+merkmal = "amt"
+notiz = "«Maire» ist im BFS-Register ein eindeutiger Nachname (795 Personen)."
+
+[[eintrag]]
+begriff = "greffier"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 35: «Le juge ou le greffier qui se trouve dans un cas de récusation est tenu d'en informer en temps utile le président de la cour»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_35"
+merkmal = "amt"
+notiz = "«Greffier» ist im BFS-Register ein eindeutiger Nachname (15 Personen)."
+
+[[eintrag]]
+begriff = "juge"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 35: «Le juge ou le greffier qui se trouve dans un cas de récusation est tenu d'en informer en temps utile le président de la cour»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_35"
+merkmal = "amt"
+notiz = "«Juge» ist im BFS-Register schon mehrdeutig (Spalte gesetz); der Eintrag hält «Le Juge» auch ohne diese Spalte frei."
+
+[[eintrag]]
+begriff = "préfet"
+sprache = "fr"
+regel = "name"
+quelle = "Constitution du Canton de Vaud (SR 131.231) art. 159 al. 1: «Un préfet est nommé par le Conseil d'État à la tête de chaque district.»"
+fassung = "2023-06-18"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/1136_fga/fr#art_159"
+merkmal = "amt"
+
+[[eintrag]]
+begriff = "syndic"
+sprache = "fr"
+regel = "name"
+quelle = "Constitution du Canton de Vaud (SR 131.231) art. 150 al. 3: «La syndique ou le syndic préside la municipalité, …»"
+fassung = "2023-06-18"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/1136_fga/fr#art_150"
+merkmal = "amt"

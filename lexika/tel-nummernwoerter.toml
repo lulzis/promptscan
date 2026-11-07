@@ -1,0 +1,331 @@
+# Nummernwörter vor einem Block aus zehn Ziffern (Regel tel, SPEC 5.1, Befund technik-4,
+# Entscheid C3).
+#
+# Eine Kunden-, Rechnungs-, Policen- oder Patientennummer kann aussehen wie eine
+# Telefonnummer ohne Trenner: 0, eine Kennzahl aus Festnetz oder Mobilnetz und sieben
+# Ziffern («Rechnung 0791234567»). Steht ein Wort dieser Liste unmittelbar vor einem Block
+# aus zehn Ziffern, meldet tel den Block nicht. Dazwischen dürfen nur Leerzeichen, ein
+# Doppelpunkt und «Nr.», «No.», «n°», «n.» oder «#» stehen (klasse_a.rs, nummernwort_davor).
+# Gruppiert geschriebene Nummern («079 123 45 67») und Nummern mit +41 oder 0041 meldet tel
+# auch nach diesen Wörtern.
+#
+# Die Wortliste markiert selbst keine Stelle. Zusammensetzungen mit «Nummer» und ihre
+# Kürzel («Kunden-Nr.») stehen als Formen beim Grundwort, wenn das Wörterbuch sie nicht als
+# eigenes Stichwort führt; das sagt dann die Notiz. Fassung bei Wörterbüchern = Abrufdatum.
+#
+# Ein blosses Wort ohne «Nummer» und ohne Kürzel danach («Rechnung», «Auftrag», «facture»,
+# «fattura») nennt nach einer Präposition nur das Thema: «Bei Fragen zur Rechnung
+# 0791234567 anrufen», «Pour toute question sur la facture: 0791234567». Dann meldet tel
+# den Block (Prüferproblem c-erkennung-p5). Als Präposition zählen nur die Einträge mit
+# merkmal «praeposition» am Ende dieser Datei («zur», «zum», «sur», «sulla»), zwischen
+# Präposition und Wort wahlweise ein bestimmter Begleiter aus firma-grenzen.toml («sur la
+# facture»). «für», «gemäss» und «auf» nicht: «für Rechnung 0791234567» ist die Nummer
+# der Rechnung.
+#
+# merkmal:
+#   (keines)      Nummernwort.
+#   praeposition  Präposition, auch mit Artikel verschmolzen, die das Thema einleitet.
+
+# --- Deutsch -----------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Kundennummer"
+formen = ["Kunden-Nr.", "Kunden-Nr", "Kundennr.", "Kunden-Nummer"]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Kundennummer»: «aus Ziffern (und Buchstaben) bestehende Zeichenfolge, die einem Kunden (1) (zur Identifizierung) zugeordnet ist»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Kundennummer"
+
+[[eintrag]]
+begriff = "Rechnung"
+sprache = "de"
+regel = "tel"
+quelle = "SR 641.20 Art. 26 Abs. 1: «… hat dem Leistungsempfänger oder der Leistungsempfängerin auf Verlangen eine Rechnung auszustellen …»"
+fassung = "2025-03-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26"
+notiz = "«Rechnung 0791234567»: die Nummer der Rechnung (Befund technik-4, Fall t19)."
+
+[[eintrag]]
+begriff = "Rechnungsnummer"
+formen = ["Rechnungs-Nr.", "Rechnungs-Nr", "Rechnungsnr.", "Rechnungs-Nummer"]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Rechnungsnummer»: «laufende Nummer, mit der eine Rechnung (3) versehen ist»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Rechnungsnummer"
+
+[[eintrag]]
+begriff = "Referenz"
+formen = ["Referenznummer", "Referenznummern", "Referenz-Nr.", "Referenz-Nr"]
+sprache = "de"
+regel = "tel"
+quelle = "SR 831.101 Art. 71 Abs. 3: «Direktzahlungen … erfolgen in Form von Auszahlungsscheinen mit Referenznummern der Schweizerischen Post.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/63/1185_1183_1185/de#art_71"
+notiz = "Wörtlich belegt ist «Referenznummern» (AHVV Art. 71 Abs. 3). «Referenz» allein ist die Kurzform davon und als Nummernwort nicht eigens belegt: Duden führt nur «Empfehlung», «Person oder Stelle, auf die verwiesen wird» und die sprachwissenschaftliche Bedeutung (Prüferproblem c-belege-p3); die Kurzform steht in der Liste, weil Entscheid C3 sie nennt. Duden nennt auch die Person, die Auskunft gibt («darf ich Sie als Referenz angeben?»): Deren Nummer als Block direkt nach «Referenz» bleibt unerkannt (explain tel, Grenzen)."
+
+[[eintrag]]
+begriff = "Police"
+formen = ["Policennummer", "Policen-Nr.", "Policen-Nr", "Police-Nr.", "Police-Nr"]
+sprache = "de"
+regel = "tel"
+quelle = "SR 221.229.1 Art. 11 Abs. 1: «Das Versicherungsunternehmen stellt dem Versicherungsnehmer eine Police aus, welche die Rechte und Pflichten der Parteien festhält.»"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/de#art_11"
+notiz = "«Policennummer» ist im Duden kein eigenes Stichwort; Zusammensetzung mit «Nummer»."
+
+[[eintrag]]
+begriff = "Schadennummer"
+formen = ["Schaden-Nr.", "Schaden-Nr", "Schadensnummer", "Schadens-Nr.", "Schadens-Nr"]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Schaden», Bedeutung 2a: «teilweise Zerstörung; Beschädigung; Defekt»; Beispiel «ein Beauftragter der Versicherung will den Schaden begutachten»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Schaden"
+notiz = "«Schadennummer» ist im Duden kein eigenes Stichwort; Zusammensetzung mit «Nummer» (Duden: «Zahl, die etwas kennzeichnet»). «Schaden» allein steht nicht in der Liste."
+
+[[eintrag]]
+begriff = "Auftrag"
+formen = ["Auftragsnummer", "Auftrags-Nr.", "Auftrags-Nr", "Auftragsnr."]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Auftrag», Bedeutung 2: «Bestellung (einer Ware oder Leistung)»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Auftrag"
+notiz = "«Auftragsnummer» ist im Duden kein eigenes Stichwort; Zusammensetzung mit «Nummer»."
+
+[[eintrag]]
+begriff = "Patientennummer"
+formen = ["Patienten-Nr.", "Patienten-Nr", "Patientennr."]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Patient»: «von einem Arzt, einer Ärztin oder von Angehörigen anderer Heilberufe behandelte oder betreute männliche Person»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Patient"
+notiz = "«Patientennummer» ist im Duden kein eigenes Stichwort; Zusammensetzung mit «Nummer». «Patient» allein steht nicht in der Liste: «Patientin: 0791234567» kann ihre Telefonnummer sein."
+
+[[eintrag]]
+begriff = "Fallnummer"
+formen = ["Fall-Nr.", "Fall-Nr", "Fallnr."]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Fall», Bedeutung «Gegenstand einer Untersuchung; Verhandlung», Gebrauch «Rechtssprache»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Fall_Sache"
+notiz = "«Fallnummer» ist im Duden kein eigenes Stichwort; Zusammensetzung mit «Nummer»."
+
+[[eintrag]]
+begriff = "Dossier"
+formen = ["Dossiernummer", "Dossier-Nr.", "Dossier-Nr"]
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «Dossier», Bedeutung 1: «umfänglichere Akte, in der alle zu einer Sache, einem Vorgang gehörenden Schriftstücke gesammelt sind»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Dossier"
+notiz = "«Dossiernummer» ist im Duden kein eigenes Stichwort; Zusammensetzung mit «Nummer»."
+
+# --- Französisch -------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "numéro de client"
+formen = ["numéro client", "n° de client", "n° client", "no de client", "no client"]
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «client», Bedeutung 1: «Personne qui reçoit d'une entreprise, contre paiement, des fournitures commerciales ou des services»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/client/16519"
+notiz = "Wendung mit «numéro de»; Larousse führt sie nicht als eigenes Stichwort. «client» allein steht nicht in der Liste."
+
+[[eintrag]]
+begriff = "facture"
+formen = ["numéro de facture", "n° de facture", "no de facture"]
+sprache = "fr"
+regel = "tel"
+quelle = "SR 641.20 art. 26 al. 1: «… le fournisseur lui délivre une facture …»"
+fassung = "2025-03-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2009/615/fr#art_26"
+
+[[eintrag]]
+begriff = "référence"
+formen = ["numéro de référence", "n° de référence", "réf."]
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «référence», Bedeutung 3: «Indication placée en tête d'une lettre et que l'on doit rappeler dans la réponse.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/r%C3%A9f%C3%A9rence/67438"
+
+[[eintrag]]
+begriff = "police"
+formen = ["numéro de police", "n° de police", "no de police"]
+sprache = "fr"
+regel = "tel"
+quelle = "SR 221.229.1 art. 11 al. 1: «L'entreprise d'assurance remet au preneur d'assurance une police constatant les droits et les obligations des parties.»"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/fr#art_11"
+notiz = "«police» heisst auch die Polizei. Ein Block direkt danach ist dann die Nummer einer Behörde, nicht einer Person."
+
+[[eintrag]]
+begriff = "numéro de sinistre"
+formen = ["n° de sinistre", "no de sinistre"]
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «sinistre» (nom masculin), Bedeutung 1: «Fait dommageable pour soi-même ou pour autrui de nature à mettre en jeu la garantie d'un assureur»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/sinistre/72875"
+notiz = "Wendung mit «numéro de»; Larousse führt sie nicht als eigenes Stichwort."
+
+[[eintrag]]
+begriff = "commande"
+formen = ["numéro de commande", "n° de commande", "no de commande"]
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «commande», Bedeutung 1: «Action de commander une marchandise, un travail, une œuvre, un repas ; la chose commandée»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/commande/17444"
+
+[[eintrag]]
+begriff = "numéro de patient"
+formen = ["n° de patient", "no de patient"]
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «patient, patiente» (nom), Bedeutung 1: «Personne soumise à un examen médical, suivant un traitement ou subissant une intervention chirurgicale.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/patient/58654"
+notiz = "Wendung mit «numéro de»; Larousse führt sie nicht als eigenes Stichwort."
+
+[[eintrag]]
+begriff = "dossier"
+formen = ["numéro de dossier", "n° de dossier", "no de dossier"]
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «dossier», Bedeutung 2: «Ensemble de documents se rapportant à un même sujet, à une même affaire»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/dossier/26532"
+
+# --- Italienisch -------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "numero cliente"
+formen = ["numero di cliente", "n. cliente", "codice cliente"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, Thesaurus (2018), «cliente»: «Si chiama CLIENTE chi compra un bene o un servizio»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/cliente/"
+notiz = "Wendung mit «numero»; Treccani führt sie nicht als eigenes Stichwort. «cliente» allein steht nicht in der Liste."
+
+[[eintrag]]
+begriff = "fattura"
+formen = ["numero di fattura", "numero fattura", "n. fattura"]
+sprache = "it"
+regel = "tel"
+quelle = "SR 641.20 art. 26 cpv. 1: «… il fornitore della prestazione gli rilascia una fattura che soddisfi i requisiti di cui ai capoversi 2 e 3.»"
+fassung = "2025-03-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2009/615/it#art_26"
+
+[[eintrag]]
+begriff = "riferimento"
+formen = ["numero di riferimento", "numeri di riferimento", "rif."]
+sprache = "it"
+regel = "tel"
+quelle = "SR 831.101 art. 71 cpv. 3: «I versamenti diretti … sono effettuati mediante polizze di pagamento con numeri di riferimento della Posta Svizzera.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/63/1185_1183_1185/it#art_71"
+notiz = "Wörtlich belegt ist «numeri di riferimento» (OAVS art. 71 cpv. 3); «riferimento» allein ist die Kurzform, «rif.» deren Abkürzung. Das frühere Treccani-Zitat belegte nur die Wendung «in riferimento a» (Prüferproblem c-belege-p3)."
+
+[[eintrag]]
+begriff = "polizza"
+formen = ["numero di polizza", "numero polizza", "n. polizza"]
+sprache = "it"
+regel = "tel"
+quelle = "SR 221.229.1 art. 11 cpv. 1: «L’assicuratore rilascia allo stipulante una polizza che stabilisce i diritti e gli obblighi delle parti.»"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/719_735_717/it#art_11"
+
+[[eintrag]]
+begriff = "numero di sinistro"
+formen = ["numero sinistro", "n. sinistro"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, «sinistro», Bedeutung 4: «nel linguaggio delle assicurazioni, l’evento che corrisponde al rischio assicurato»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sinistro/"
+notiz = "Wendung mit «numero»; Treccani führt sie nicht als eigenes Stichwort."
+
+[[eintrag]]
+begriff = "numero d'ordine"
+formen = ["numero di ordine", "n. ordine"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, «ordine»: «Nel linguaggio comm., il termine equivale talora a ordinativo, commissione di merce»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/ordine/"
+notiz = "Wendung mit «numero»; «ordine» allein steht nicht in der Liste."
+
+[[eintrag]]
+begriff = "numero paziente"
+formen = ["numero di paziente", "n. paziente"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, «paziente», Bedeutung 2: «Persona affetta da una malattia, e più genericam. chi è affidato alle cure di un medico o di un chirurgo»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/paziente/"
+notiz = "Wendung mit «numero»; Treccani führt sie nicht als eigenes Stichwort."
+
+[[eintrag]]
+begriff = "incarto"
+formen = ["numero d'incarto", "numero di incarto", "n. incarto"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, «incarto», Bedeutung 4: «Nel linguaggio burocr., sinon. di incartamento (nel sign. di inserto).»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/incarto/"
+
+[[eintrag]]
+begriff = "dossier"
+formen = ["numero di dossier", "n. dossier"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, «dossier», Bedeutung 1: «Incartamento, inserto (contenente una pratica d’ufficio, i conti di un cliente, ecc.)»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/dossier/"
+
+# --- Präpositionen vor dem Thema (merkmal praeposition) ----------------------------
+
+[[eintrag]]
+begriff = "zur"
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «zur»: Bedeutung «zu der», Grammatik «Präposition + Artikel»"
+fassung = "2026-11-07"
+url = "https://www.duden.de/rechtschreibung/zur"
+merkmal = "praeposition"
+
+[[eintrag]]
+begriff = "zum"
+sprache = "de"
+regel = "tel"
+quelle = "Duden online, «zum»: Bedeutung «zu dem», Grammatik «Präposition + Artikel»"
+fassung = "2026-11-07"
+url = "https://www.duden.de/rechtschreibung/zum"
+merkmal = "praeposition"
+
+[[eintrag]]
+begriff = "sur"
+sprache = "fr"
+regel = "tel"
+quelle = "Larousse, «sur», préposition, 8.: «le point considéré, la question examinée ; au sujet de : Se prononcer sur un projet.»"
+fassung = "2026-11-07"
+url = "https://www.larousse.fr/dictionnaires/francais/sur"
+merkmal = "praeposition"
+
+[[eintrag]]
+begriff = "sulla"
+formen = ["sul", "sullo", "sui", "sugli", "sulle"]
+sprache = "it"
+regel = "tel"
+quelle = "Treccani, «su», 1. prep.: «Si può fondere con l’articolo a formare le prep. composte sul, sulla, sullo, sui (tosc. o letter. su’), sugli, sulle»"
+fassung = "2026-11-07"
+url = "https://www.treccani.it/vocabolario/su/"
+merkmal = "praeposition"

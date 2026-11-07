@@ -1,0 +1,1119 @@
+# Abgrenzung der Regel «firma»: Wörter, die vor einem Rechtsformzusatz stehen, aber nicht
+# zum Firmennamen gehören, und Zusätze mit zweiter Bedeutung.
+#
+# merkmal:
+#   gattung        unbestimmter Begleiter: «eine AG», «jede GmbH» meinen keine bestimmte Firma.
+#                  Steht er unmittelbar vor dem Namen, entfällt der Treffer.
+#   bestimmt       bestimmter Begleiter («die», «la», «il»): gehört nicht zum Namen.
+#   funktionswort  Präposition, Konjunktion, Adverb: am Satzanfang gross geschrieben, gehört
+#                  nicht zum Namen («Bei AG und GmbH …»).
+#   ort            Präposition vor einem Ortsnamen («in Wohlen AG»); schliesst den Zusatz aus,
+#                  wenn er zugleich ein Kantonskürzel ist.
+#   behoerde       Behördenwort («Obergericht AG», «Kanton AG»); schliesst das Kantonskürzel aus.
+#                  Behörden werden nicht anonymisiert (BGer-Anonymisierungsregeln Art. 4 Abs. 1
+#                  lit. a), ebenso Ortsbezeichnungen (lit. e).
+#   kantonskuerzel Rechtsformzusatz, der zugleich ein Kantonskürzel ist.
+#   homograph      Rechtsformzusatz, der zugleich ein gewöhnliches Nomen ist.
+#
+# Jeder Begriff steht wörtlich in der zitierten Stelle der Fassung derselben Sprache. Die
+# Formen sind Flexionsformen (Genus, Kasus, Numerus) desselben Wortes.
+
+# --- Deutsch: unbestimmte Begleiter -----------------------------------------------------
+
+[[eintrag]]
+begriff = "ein"
+formen = ["eine", "einer", "eines", "einem", "einen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 30 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_30"
+merkmal = "gattung"
+notiz = "«Anspruch auf ein durch Gesetz geschaffenes … Gericht»."
+
+[[eintrag]]
+begriff = "kein"
+formen = ["keine", "keiner", "keines", "keinem", "keinen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 119 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_119"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "jeder"
+formen = ["jede", "jedes", "jedem", "jeden"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 160 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_160"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "welcher"
+formen = ["welche", "welches", "welchem", "welchen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 139b Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_139_b"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "alle"
+formen = ["aller", "alles", "allen", "allem"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_3"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "solcher"
+formen = ["solche", "solches", "solchem", "solchen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 88 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_88"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "mehrere"
+formen = ["mehrerer", "mehreren"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 220 Art. 50 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_50"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "zwei"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 87a Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_87_a"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "drei"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 39 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_39"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "beide"
+formen = ["beider", "beiden"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 139b Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_139_b"
+merkmal = "gattung"
+
+# --- Deutsch: bestimmte Begleiter -------------------------------------------------------
+
+[[eintrag]]
+begriff = "der"
+formen = ["die", "das", "des", "dem", "den"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_2"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "dieser"
+formen = ["diese", "dieses", "diesem", "diesen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 61 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_61"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "ihr"
+formen = ["ihre", "ihrer", "ihres", "ihrem", "ihren"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 10a Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_10_a"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "sein"
+formen = ["seine", "seiner", "seines", "seinem", "seinen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 220 Art. 239 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_239"
+merkmal = "bestimmt"
+notiz = "«Wer auf sein Recht verzichtet …»: Possessivbegleiter."
+
+[[eintrag]]
+begriff = "mein"
+formen = ["meine", "meiner", "meines", "meinem", "meinen"]
+sprache = "de"
+regel = "firma"
+quelle = "Duden online, Stichwort «mein» (Possessivpronomen), Beispiel «mein Bruder, meine Brille»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/mein_Possessivpronomen"
+merkmal = "bestimmt"
+notiz = "In Fedlex nicht als Begleiter belegt; Duden ist nach den Schreibweisungen der BK (Rz. 113) das Rechtschreibwörterbuch der Bundesverwaltung. fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "unser"
+formen = ["unsere", "unserer", "unseres", "unserem", "unseren"]
+sprache = "de"
+regel = "firma"
+quelle = "Duden online, Stichwort «unser» (Possessivpronomen), Beispiel «unser Sohn, unser Haus»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/unser_Possessivpronomen"
+merkmal = "bestimmt"
+notiz = "Wie «mein»: Duden nach BK-Schreibweisungen Rz. 113. fassung = Abrufdatum."
+
+# --- Deutsch: Funktionswörter -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "bei"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 46 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_46"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "für"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_2"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "mit"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_15"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "nach"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 5 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_5"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "von"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "auch"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 35 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_35"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "nur"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 25 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_25"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "als"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 32 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_32"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "wie"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 31 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_31"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "ob"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 31 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_31"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "und"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_1"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "oder"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "sowie"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 13 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_13"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "gemäss"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 106 Abs. 6"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_106"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "über"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 29 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_29"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "zwischen"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 44 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_44"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "durch"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_3"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "gegen"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 30 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_30"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "ohne"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 9"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_9"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "an"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 10a Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_10_a"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "auf"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "aus"
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 25 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_25"
+merkmal = "funktionswort"
+
+# --- Deutsch: Ort, Behörden, Doppelbedeutungen ------------------------------------------
+
+[[eintrag]]
+begriff = "in"
+sprache = "de"
+regel = "firma"
+quelle = "SR 173.71 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/de#art_8"
+merkmal = "ort"
+notiz = "«hat ihren Sitz in Bern»."
+
+[[eintrag]]
+begriff = "Kanton"
+formen = ["Kantons", "Kantone", "Kantonen"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 39 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_39"
+merkmal = "behoerde"
+
+[[eintrag]]
+begriff = "Gericht"
+formen = ["Gerichts", "Gerichte", "Gerichten"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 30 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_30"
+teilwort = "ende"
+merkmal = "behoerde"
+notiz = "Auch als Wortende: Obergericht, Bezirksgericht."
+
+[[eintrag]]
+begriff = "Behörde"
+formen = ["Behörden"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 25 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_25"
+teilwort = "ende"
+merkmal = "behoerde"
+
+[[eintrag]]
+begriff = "Amt"
+formen = ["Amts", "Amtes", "Ämter"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 144 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_144"
+teilwort = "ende"
+merkmal = "behoerde"
+notiz = "Auch als Wortende: Steueramt, Handelsregisteramt."
+
+[[eintrag]]
+begriff = "Gemeinde"
+formen = ["Gemeinden"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 101 Art. 37 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_37"
+teilwort = "ende"
+merkmal = "behoerde"
+
+[[eintrag]]
+begriff = "Staatsanwaltschaft"
+formen = ["Staatsanwaltschaften"]
+sprache = "de"
+regel = "firma"
+quelle = "SR 312.0 Art. 12"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_12"
+teilwort = "ende"
+merkmal = "behoerde"
+
+[[eintrag]]
+begriff = "Polizei"
+sprache = "de"
+regel = "firma"
+quelle = "SR 312.0 Art. 12"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_12"
+teilwort = "ende"
+merkmal = "behoerde"
+notiz = "Auch als Wortende: Kantonspolizei."
+
+[[eintrag]]
+begriff = "AG"
+sprache = "de"
+regel = "firma"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 347 (Kürzel des Kantons Aargau), Rz. 348 und 355"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+gross = true
+merkmal = "kantonskuerzel"
+notiz = "Rz. 355: «Ortsnamen mit Kantonsangabe», z. B. «Biel (BL)». fassung = Datum der PDF-Fassung auf bk.admin.ch."
+
+[[eintrag]]
+begriff = "Gen"
+sprache = "de"
+regel = "firma"
+quelle = "Duden online, Stichwort «Gen, das» (Substantiv): Abschnitt der DNA als lokalisierter Träger einer Erbanlage"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Gen"
+gross = true
+merkmal = "homograph"
+notiz = "Gleich geschrieben wie die Abkürzung der Genossenschaft (Anhang 2 HRegV); verlangt zwei Namenswörter («das BRCA1 Gen» ist keine Firma). fassung = Abrufdatum."
+
+# --- Français: déterminants indéfinis ---------------------------------------------------
+
+[[eintrag]]
+begriff = "un"
+formen = ["une", "des"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_2"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "aucun"
+formen = ["aucune"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 165 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_165"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "chaque"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 75b Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_75_b"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "quel"
+formen = ["quelle", "quels", "quelles"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 220 Art. 266f"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_266_f"
+merkmal = "gattung"
+notiz = "«à n’importe quel moment»."
+
+[[eintrag]]
+begriff = "tout"
+formen = ["toute", "tous", "toutes"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 10 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_10"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "plusieurs"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 76 Abs. 5"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_76"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "deux"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 87a Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_87_a"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "trois"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 39 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_39"
+merkmal = "gattung"
+
+# --- Français: déterminants définis et possessifs ---------------------------------------
+
+[[eintrag]]
+begriff = "le"
+formen = ["la", "les"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_2"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "ce"
+formen = ["cet", "cette", "ces"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 29 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_29"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "son"
+formen = ["sa", "ses"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "leur"
+formen = ["leurs"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_3"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "votre"
+formen = ["vos"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 211.112.2 Art. 71 Abs. 3"
+fassung = "2025-06-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2004/362/fr#art_71"
+merkmal = "bestimmt"
+notiz = "«En vertu de votre consentement mutuel»."
+
+# --- Français: mots-outils --------------------------------------------------------------
+
+[[eintrag]]
+begriff = "pour"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "avec"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 52 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_52"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "selon"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 6"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_6"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "dans"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "par"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_3"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "sur"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 5a"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_5_a"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "sans"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 9"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_9"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "et"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_1"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "ou"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "aussi"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_2"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "comme"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 117a Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_117_a"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "entre"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 35 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_35"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "contre"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 9"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_9"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "en"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_2"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "après"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 86 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_86"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "avant"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 56 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_56"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "chez"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 118b Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_118_b"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "à"
+sprache = "fr"
+regel = "firma"
+quelle = "SR 173.71 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/fr#art_8"
+merkmal = "ort"
+notiz = "«a son siège à Berne»."
+
+[[eintrag]]
+begriff = "canton"
+formen = ["cantons"]
+sprache = "fr"
+regel = "firma"
+quelle = "SR 101 Art. 37 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_37"
+merkmal = "behoerde"
+
+# --- Italiano: determinanti indefiniti --------------------------------------------------
+
+[[eintrag]]
+begriff = "un"
+formen = ["uno", "una"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_2"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "nessuno"
+formen = ["nessun", "nessuna"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 10a Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_10_a"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "ogni"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 10 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_10"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "quale"
+formen = ["quali"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 139b"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_139_b"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "qualsiasi"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 24 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_24"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "ciascun"
+formen = ["ciascuno", "ciascuna"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 160 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_160"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "tutto"
+formen = ["tutta", "tutti", "tutte"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 83 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_83"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "due"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 87a Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_87_a"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "tre"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 39 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_39"
+merkmal = "gattung"
+
+[[eintrag]]
+begriff = "entrambi"
+formen = ["entrambe"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 139b"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_139_b"
+merkmal = "gattung"
+
+# --- Italiano: determinanti definiti e possessivi ---------------------------------------
+
+[[eintrag]]
+begriff = "il"
+formen = ["lo", "la", "i", "gli", "le"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_4"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "questo"
+formen = ["questa", "questi", "queste"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 40 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_40"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "quello"
+formen = ["quella", "quelli", "quelle"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 49 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_49"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "suo"
+formen = ["sua", "suoi", "sue"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 10a Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_10_a"
+merkmal = "bestimmt"
+
+[[eintrag]]
+begriff = "loro"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_3"
+merkmal = "bestimmt"
+
+# --- Italiano: parole funzionali --------------------------------------------------------
+
+[[eintrag]]
+begriff = "per"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_2"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "con"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 28 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_28"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "secondo"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 5 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_5"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "presso"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 16 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_16"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "tra"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 35 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_35"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "fra"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 72 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_72"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "su"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 49 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_49"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "senza"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 9"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_9"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "e"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_1"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "o"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_8"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "anche"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 35 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_35"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "come"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 32 Abs. 3"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_32"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "in"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 2 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_2"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "dopo"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 39 Abs. 4"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_39"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "contro"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 41 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_41"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "da"
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 9"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_9"
+merkmal = "funktionswort"
+
+[[eintrag]]
+begriff = "a"
+sprache = "it"
+regel = "firma"
+quelle = "SR 173.71 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/it#art_8"
+merkmal = "ort"
+notiz = "«ha sede a Berna»."
+
+[[eintrag]]
+begriff = "Cantone"
+formen = ["Cantoni"]
+sprache = "it"
+regel = "firma"
+quelle = "SR 101 Art. 37 Abs. 1"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_37"
+merkmal = "behoerde"

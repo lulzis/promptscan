@@ -1,0 +1,728 @@
+# Personenbezeichnungen für den Bezug auf eine bestimmte Person in der ersten Person
+# («mein Arbeitnehmer», «mon employé», «il mio dipendente»). Ein Eintrag zählt nur mit
+# einem Possessivbegleiter der ersten Person unmittelbar davor (src/regeln/kontext.rs).
+#
+# regel = "personenbezug": Personenbezug ohne Identifikator (SPEC 4.4); wird nie angezeigt.
+# regel = "kontext": Klientschaft und Patientinnen und Patienten einer Person mit
+#   Berufsgeheimnis. «meine Klientin» zeigt den Geheimnis-Kontext der Rolle in merkmal
+#   (SPEC 4.3) und zählt zugleich als Personenbezug. merkmal = "offen": Das Wort sagt
+#   nicht, welcher Beruf es braucht (Art. 18a Abs. 3 GwG: Anwältin und Notar; Art. 27
+#   lit. c PsyG: Psychotherapie; Art. 4bis Abs. 1 BankG FR/IT: Bank; Art. 398 Abs. 2 OR
+#   FR/IT: jeder Auftrag). ROT bleibt die vorsichtige Stufe; die Ausgabe nennt die
+#   möglichen Normen und bietet die Rollen zur Auswahl an. Art. 13 BGFA nennt sie erst
+#   --role lawyer.
+#
+# formen: Genus, Numerus und Kasus desselben Worts, keine Synonyme. begriff ist die
+# Grundform; die Fundstelle nennt das Wort teils nur in einer Form aus formen
+# (Art. 319 Abs. 1 OR: «des Arbeitgebers»; Art. 13 Abs. 1 BGFA FR: «ses clients»).
+# Gelesen am 06.11.2026 auf Fedlex (fedlex.data.admin.ch), geltende Fassung; jeder Eintrag
+# am Wortlaut des zitierten Artikels nachgeprüft (Grundform oder eine Form aus formen).
+
+# === regel = "kontext" ==================================================================
+
+[[eintrag]]
+begriff = "Klient"
+formen = ["Klientin", "Klienten", "Klientinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "offen"
+quelle = "SR 955.0 Art. 18a Abs. 3"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1998/892_892_892/de#art_18_a"
+notiz = "Berufsgeheimnis der Anwältinnen und Anwälte sowie Notarinnen und Notare, aufgehoben «von der Klientin oder vom Klienten». Auch Art. 27 lit. c PsyG (Psychotherapie): «die Rechte ihrer Klientinnen und Klienten». Darum Beruf offen: Art. 321 Ziff. 1 StGB, Art. 320 Ziff. 1 StGB (Behörde) oder Art. 47 BankG, festzulegen mit --role."
+
+[[eintrag]]
+begriff = "Klientschaft"
+sprache = "de"
+regel = "kontext"
+merkmal = "offen"
+quelle = "SR 935.61 Art. 13 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/de#art_13"
+notiz = "«alles, was ihnen infolge ihres Berufes von ihrer Klientschaft anvertraut worden ist». Sammelwort zu «Klient»; Beruf offen wie dort."
+
+[[eintrag]]
+begriff = "Mandant"
+formen = ["Mandantin", "Mandanten", "Mandantinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "offen"
+quelle = "Duden online, «Mandant», Bedeutung: «Klient (besonders einer Rechtsanwältin oder eines Rechtsanwalts), Kunde, Auftraggeber»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Mandant"
+notiz = "Kein Bundeserlass braucht das Wort (das OR sagt «Auftraggeber», das BGFA «Klientschaft»); darum das Wörterbuch, abgerufen am 06.11.2026. Auch Treuhand und andere Aufträge: Beruf offen wie «Klient»."
+
+[[eintrag]]
+begriff = "Patient"
+formen = ["Patientin", "Patienten", "Patientinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 811.11 Art. 40 lit. c"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/537/de#art_40"
+notiz = "Berufspflichten der universitären Medizinalberufe: «Sie wahren die Rechte der Patientinnen und Patienten»; lit. f: Berufsgeheimnis. Auch Art. 27 lit. c PsyG nennt Patientinnen und Patienten; Rolle doctor, Norm dieselbe (Art. 321 Ziff. 1 StGB)."
+
+[[eintrag]]
+begriff = "client"
+formen = ["cliente", "clients", "clientes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "offen"
+quelle = "SR 935.61 Art. 13 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/fr#art_13"
+notiz = "«les affaires qui lui sont confiées par ses clients» (Anwältin, Anwalt). Auch die Kundschaft der Bank: «Les prêts et avances qu’une banque accorde à un client» (Art. 4bis Abs. 1 BankG). Beruf offen, festzulegen mit --role; Präzision zu messen (SPEC 4.3)."
+
+[[eintrag]]
+begriff = "mandant"
+formen = ["mandante", "mandants", "mandantes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "offen"
+quelle = "SR 220 Art. 398 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_398"
+notiz = "«Le mandataire est responsable envers le mandant de la bonne et fidèle exécution du mandat.» Im OR die Partei jedes Auftrags (Régie, Treuhand, Anwalt): Beruf offen wie «client»."
+
+[[eintrag]]
+begriff = "patient"
+formen = ["patiente", "patients", "patientes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 811.11 Art. 40 lit. c"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/537/fr#art_40"
+notiz = "«garantir les droits du patient»; let. f: secret professionnel. Rolle doctor."
+
+[[eintrag]]
+begriff = "cliente"
+formen = ["clienti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "offen"
+quelle = "SR 935.61 Art. 13 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/it#art_13"
+notiz = "«quanto gli è stato confidato dai clienti» (avvocato). Art. 40b OR (IT) nennt so auch Konsumentinnen und Konsumenten («Il cliente può revocare la sua proposta»), Art. 4bis Abs. 1 BankG (IT) die Kundschaft der Bank («concessi da una banca a singoli clienti»): Beruf offen, festzulegen mit --role; Präzision zu messen (SPEC 4.3)."
+
+[[eintrag]]
+begriff = "mandante"
+formen = ["mandanti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "offen"
+quelle = "SR 220 Art. 398 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_398"
+notiz = "«Egli è responsabile verso il mandante della fedele e diligente esecuzione degli affari affidatigli.» Im OR die Partei jedes Auftrags: Beruf offen wie «cliente»."
+
+[[eintrag]]
+begriff = "paziente"
+formen = ["pazienti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 811.11 Art. 40 lit. c"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/537/it#art_40"
+notiz = "«tutelare i diritti dei pazienti»; lett. f: segreto professionale. Rolle doctor."
+
+# === regel = "personenbezug", Deutsch ==================================================
+
+[[eintrag]]
+begriff = "Arbeitnehmer"
+formen = ["Arbeitnehmerin", "Arbeitnehmerinnen", "Arbeitnehmers", "Arbeitnehmern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 319 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_319"
+
+[[eintrag]]
+begriff = "Arbeitgeber"
+formen = ["Arbeitgeberin", "Arbeitgeberinnen", "Arbeitgebers", "Arbeitgebern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 319 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_319"
+
+[[eintrag]]
+begriff = "Mitarbeiter"
+formen = ["Mitarbeiterin", "Mitarbeiterinnen", "Mitarbeiters", "Mitarbeitern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 312.0 Art. 73 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_73"
+
+[[eintrag]]
+begriff = "Angestellter"
+formen = ["Angestellte", "Angestellten"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 431 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_431"
+
+[[eintrag]]
+begriff = "Vorgesetzter"
+formen = ["Vorgesetzte", "Vorgesetzten"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 336d Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_336_d"
+
+[[eintrag]]
+begriff = "Mieter"
+formen = ["Mieterin", "Mieterinnen", "Mieters", "Mietern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 253"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_253"
+
+[[eintrag]]
+begriff = "Vermieter"
+formen = ["Vermieterin", "Vermieterinnen", "Vermieters", "Vermietern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 253"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_253"
+
+[[eintrag]]
+begriff = "Pächter"
+formen = ["Pächterin", "Pächterinnen", "Pächters", "Pächtern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 275"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_275"
+
+[[eintrag]]
+begriff = "Verpächter"
+formen = ["Verpächterin", "Verpächterinnen", "Verpächters", "Verpächtern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 275"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_275"
+
+[[eintrag]]
+begriff = "Käufer"
+formen = ["Käuferin", "Käuferinnen", "Käufers", "Käufern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 184 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_184"
+
+[[eintrag]]
+begriff = "Verkäufer"
+formen = ["Verkäuferin", "Verkäuferinnen", "Verkäufers", "Verkäufern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 184 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_184"
+
+[[eintrag]]
+begriff = "Kunde"
+formen = ["Kundin", "Kunden", "Kundinnen"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 40b"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_40_b"
+
+[[eintrag]]
+begriff = "Gläubiger"
+formen = ["Gläubigerin", "Gläubigerinnen", "Gläubigers", "Gläubigern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 96"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_96"
+
+[[eintrag]]
+begriff = "Schuldner"
+formen = ["Schuldnerin", "Schuldnerinnen", "Schuldners", "Schuldnern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 220 Art. 96"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_96"
+
+[[eintrag]]
+begriff = "Ehemann"
+formen = ["Ehemannes", "Ehemanns", "Ehemänner", "Ehemännern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_255"
+
+[[eintrag]]
+begriff = "Ehefrau"
+formen = ["Ehefrauen"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255a Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_255_a"
+
+[[eintrag]]
+begriff = "Ehegatte"
+formen = ["Ehegattin", "Ehegatten", "Ehegattinnen"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 30a"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_30_a"
+
+[[eintrag]]
+begriff = "Partner"
+formen = ["Partnerin", "Partnerinnen", "Partners", "Partnern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 211.231 Art. 10 Abs. 1"
+fassung = "2025-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2005/782/de#art_10"
+
+[[eintrag]]
+begriff = "Kind"
+formen = ["Kinder", "Kindes", "Kinds", "Kindern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 252 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_252"
+
+[[eintrag]]
+begriff = "Mutter"
+formen = ["Mütter", "Müttern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 252 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_252"
+
+[[eintrag]]
+begriff = "Vater"
+formen = ["Vaters", "Väter", "Vätern"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_255"
+
+[[eintrag]]
+begriff = "Nachbar"
+formen = ["Nachbarin", "Nachbarinnen", "Nachbarn"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 669"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_669"
+
+[[eintrag]]
+begriff = "Beistand"
+formen = ["Beiständin", "Beiständinnen", "Beistände"]
+sprache = "de"
+regel = "personenbezug"
+quelle = "SR 210 Art. 400 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_400"
+
+# === regel = "personenbezug", Französisch ==============================================
+
+[[eintrag]]
+begriff = "travailleur"
+formen = ["travailleuse", "travailleurs", "travailleuses"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 319 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_319"
+
+[[eintrag]]
+begriff = "employeur"
+formen = ["employeurs"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 319 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_319"
+
+[[eintrag]]
+begriff = "employé"
+formen = ["employée", "employés", "employées"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 431 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_431"
+
+[[eintrag]]
+begriff = "collaborateur"
+formen = ["collaboratrice", "collaborateurs", "collaboratrices"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 312.0 Art. 73 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_73"
+
+[[eintrag]]
+begriff = "supérieur"
+formen = ["supérieure", "supérieurs", "supérieures"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 336d Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336_d"
+
+[[eintrag]]
+begriff = "locataire"
+formen = ["locataires"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 253"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_253"
+
+[[eintrag]]
+begriff = "bailleur"
+formen = ["bailleresse", "bailleurs"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 253"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_253"
+
+[[eintrag]]
+begriff = "fermier"
+formen = ["fermière", "fermiers", "fermières"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 275"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_275"
+
+[[eintrag]]
+begriff = "acheteur"
+formen = ["acheteuse", "acheteurs", "acheteuses"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 184 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_184"
+
+[[eintrag]]
+begriff = "vendeur"
+formen = ["vendeuse", "vendeurs", "vendeuses"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 184 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_184"
+
+[[eintrag]]
+begriff = "créancier"
+formen = ["créancière", "créanciers", "créancières"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 96"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_96"
+
+[[eintrag]]
+begriff = "débiteur"
+formen = ["débitrice", "débiteurs", "débitrices"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 220 Art. 96"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_96"
+
+[[eintrag]]
+begriff = "mari"
+formen = ["maris"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_255"
+
+[[eintrag]]
+begriff = "épouse"
+formen = ["épouses"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255a Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_255_a"
+
+[[eintrag]]
+begriff = "époux"
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 30a"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_30_a"
+
+[[eintrag]]
+begriff = "conjoint"
+formen = ["conjointe", "conjoints", "conjointes"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 30a"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_30_a"
+
+[[eintrag]]
+begriff = "partenaire"
+formen = ["partenaires"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 211.231 Art. 10 Abs. 1"
+fassung = "2025-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2005/782/fr#art_10"
+
+[[eintrag]]
+begriff = "enfant"
+formen = ["enfants"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_255"
+
+[[eintrag]]
+begriff = "mère"
+formen = ["mères"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 252 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_252"
+
+[[eintrag]]
+begriff = "père"
+formen = ["pères"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_255"
+
+[[eintrag]]
+begriff = "voisin"
+formen = ["voisine", "voisins", "voisines"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 669"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_669"
+
+[[eintrag]]
+begriff = "curateur"
+formen = ["curatrice", "curateurs", "curatrices"]
+sprache = "fr"
+regel = "personenbezug"
+quelle = "SR 210 Art. 400 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_400"
+
+# === regel = "personenbezug", Italienisch ==============================================
+
+[[eintrag]]
+begriff = "lavoratore"
+formen = ["lavoratrice", "lavoratori", "lavoratrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 319 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_319"
+
+[[eintrag]]
+begriff = "datore di lavoro"
+formen = ["datori di lavoro"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 319 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_319"
+
+[[eintrag]]
+begriff = "dipendente"
+formen = ["dipendenti"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 431 Abs. 2"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_431"
+
+[[eintrag]]
+begriff = "collaboratore"
+formen = ["collaboratrice", "collaboratori", "collaboratrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 312.0 Art. 73 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_73"
+
+[[eintrag]]
+begriff = "superiore"
+formen = ["superiori"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 336d Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_336_d"
+
+[[eintrag]]
+begriff = "conduttore"
+formen = ["conduttrice", "conduttori", "conduttrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 253"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_253"
+
+[[eintrag]]
+begriff = "locatore"
+formen = ["locatrice", "locatori", "locatrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 253"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_253"
+
+[[eintrag]]
+begriff = "affittuario"
+formen = ["affittuaria", "affittuari", "affittuarie"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 275"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_275"
+
+[[eintrag]]
+begriff = "compratore"
+formen = ["compratrice", "compratori", "compratrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 184 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_184"
+
+[[eintrag]]
+begriff = "venditore"
+formen = ["venditrice", "venditori", "venditrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 184 Abs. 1"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_184"
+
+[[eintrag]]
+begriff = "creditore"
+formen = ["creditrice", "creditori", "creditrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 96"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_96"
+
+[[eintrag]]
+begriff = "debitore"
+formen = ["debitrice", "debitori", "debitrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 220 Art. 96"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_96"
+
+[[eintrag]]
+begriff = "marito"
+formen = ["mariti"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_255"
+
+[[eintrag]]
+begriff = "moglie"
+formen = ["mogli"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255a Abs. 2"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_255_a"
+
+[[eintrag]]
+begriff = "coniuge"
+formen = ["coniugi"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 30a"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_30_a"
+
+[[eintrag]]
+begriff = "partner"
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 211.231 Art. 10 Abs. 1"
+fassung = "2025-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2005/782/it#art_10"
+
+[[eintrag]]
+begriff = "figlio"
+formen = ["figlia", "figli", "figlie"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 252 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_252"
+
+[[eintrag]]
+begriff = "madre"
+formen = ["madri"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 252 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_252"
+
+[[eintrag]]
+begriff = "padre"
+formen = ["padri"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 255 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_255"
+
+[[eintrag]]
+begriff = "vicino"
+formen = ["vicina", "vicini", "vicine"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 669"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_669"
+
+[[eintrag]]
+begriff = "curatore"
+formen = ["curatrice", "curatori", "curatrici"]
+sprache = "it"
+regel = "personenbezug"
+quelle = "SR 210 Art. 400 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_400"

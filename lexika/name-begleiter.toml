@@ -1,0 +1,70 @@
+# Begleiter vor einer deutschen Anrede (Regel name, SPEC 5.2, Gegenprobe).
+#
+# «Frau» und «Herr» sind auch gewöhnliche Substantive. Steht ein Artikel oder ein
+# Possessivpronomen davor («Er hat der Frau Angst gemacht», «seine Frau»), ist «Frau»
+# meist das Substantiv. Dann zählt danach nur ein Nachname, der nicht zugleich ein
+# gewöhnliches Wort ist (Spalte «gesetz» im Register leer), oder ein Vorname.
+#
+# Die Formen sind die Flexion des jeweiligen Wortes.
+#
+# merkmal = "begleiter" für alle Einträge.
+
+[[eintrag]]
+begriff = "der"
+formen = ["die", "das", "des", "dem", "den"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «der, die, das»: bestimmter Artikel; Beispiele «auf Befehl des Königs», «auf dem Tisch liegen», «den Baum fällen»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/der__die_das_bestimmte_Artikel"
+merkmal = "begleiter"
+
+[[eintrag]]
+begriff = "ein"
+formen = ["eine", "einer", "eines", "einem", "einen"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «ein»: Grammatik «unbestimmter Artikel»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/ein_Artikel"
+merkmal = "begleiter"
+
+[[eintrag]]
+begriff = "mein"
+formen = ["meine", "meiner", "meines", "meinem", "meinen"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «mein»: Possessivpronomen"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/mein_Possessivpronomen"
+merkmal = "begleiter"
+
+[[eintrag]]
+begriff = "sein"
+formen = ["seine", "seiner", "seines", "seinem", "seinen"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «sein»: Possessivpronomen"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/sein_Pronomen"
+merkmal = "begleiter"
+
+[[eintrag]]
+begriff = "ihr"
+formen = ["ihre", "ihrer", "ihres", "ihrem", "ihren"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «ihr»: Possessivpronomen"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/ihr_sie_ihre"
+merkmal = "begleiter"
+
+[[eintrag]]
+begriff = "unser"
+formen = ["unsere", "unserer", "unseres", "unserem", "unseren"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «unser»: Possessivpronomen"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/unser_Possessivpronomen"
+merkmal = "begleiter"

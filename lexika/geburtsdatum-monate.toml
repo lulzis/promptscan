@@ -1,0 +1,663 @@
+# Monatsnamen für die Regel «geburtsdatum» (SPEC 5.2). merkmal = Monatsnummer 1 bis 12.
+#
+# Deutsch: Schreibweisungen der Bundeskanzlei, Rz. 527 und 528 (ausgeschriebene Namen und
+# Abkürzungen); dazu «Feb.» und «Apr.» aus CLDR de-CH. Französisch und Italienisch: Unicode
+# CLDR 49 (cldr-json 49.0.0, cldr-dates-full/main/<locale>/ca-gregorian.json), Kalender
+# gregorian, months/format, Breiten wide und abbreviated, Locales fr-CH und it-CH. Steht eine
+# Abkürzung gleich wie der ausgeschriebene Name (mars, mai, juin, août), ist sie nur einmal
+# aufgenommen. Dazu «fév.», wie Fedlex es in Fussnoten schreibt.
+#
+# Die Regel lässt nach einer Form ohne Schlusspunkt einen Punkt zu: CLDR schreibt it-CH «gen»,
+# Fedlex in Fussnoten «gen.», «mag.», «feb.» (z. B. SR 221.411 Anhang 2, italienische Fassung).
+#
+# Rohdateien (SHA-256): de/ca-gregorian.json f3552b08e094f33fdebfca68e2c13e8f2b257e6359081bf88b968d00c3f038e9,
+# de-CH bd210114b87074934038180bcc081f6748d6bf6bd3b49ef1f09be098fef8f17c,
+# fr-CH 9f811d26a5a1b10ef87aa13315d95c020d18cfaf0fd871a7c672a5344cfeb562,
+# it-CH 5a03e7d058867e5b49279f6219c565e04df02cf06d0ad7a209ea118cc4ea6633; abgerufen 2026-11-06.
+#
+# Lizenz der CLDR-Daten (Wortlaut, https://github.com/unicode-org/cldr-json/blob/49.0.0/LICENSE):
+#
+# UNICODE LICENSE V3
+#
+# COPYRIGHT AND PERMISSION NOTICE
+#
+# Copyright © 2015-2024 Unicode, Inc.
+#
+# NOTICE TO USER: Carefully read the following legal agreement. BY
+# DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING DATA FILES, AND/OR
+# SOFTWARE, YOU UNEQUIVOCALLY ACCEPT, AND AGREE TO BE BOUND BY, ALL OF THE
+# TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE, DO NOT
+# DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES OR SOFTWARE.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of data files and any associated documentation (the "Data Files") or
+# software and any associated documentation (the "Software") to deal in the
+# Data Files or Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, and/or sell
+# copies of the Data Files or Software, and to permit persons to whom the
+# Data Files or Software are furnished to do so, provided that either (a)
+# this copyright and permission notice appear with all copies of the Data
+# Files or Software, or (b) this copyright and permission notice appear in
+# associated Documentation.
+#
+# THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+# KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF
+# THIRD PARTY RIGHTS.
+#
+# IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE
+# BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES,
+# OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+# WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+# ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE DATA
+# FILES OR SOFTWARE.
+#
+# Except as contained in this notice, the name of a copyright holder shall
+# not be used in advertising or otherwise to promote the sale, use or other
+# dealings in these Data Files or Software without prior written
+# authorization of the copyright holder.
+#
+# SPDX-License-Identifier: Unicode-3.0
+
+# --- Deutsch ----------------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Januar"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 527 und 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "1"
+
+[[eintrag]]
+begriff = "Jan."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "1"
+
+[[eintrag]]
+begriff = "Februar"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "2"
+
+[[eintrag]]
+begriff = "Febr."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "2"
+
+[[eintrag]]
+begriff = "Feb."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, de-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/de-CH/ca-gregorian.json"
+merkmal = "2"
+notiz = "Die Schreibweisungen (Rz. 528) nennen «Feb.» falsch und verlangen «Febr.»; CLDR de-CH führt «Feb.». Erkannt wird beides."
+
+[[eintrag]]
+begriff = "März"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "3"
+
+[[eintrag]]
+begriff = "April"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "4"
+
+[[eintrag]]
+begriff = "Apr."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, de-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/de-CH/ca-gregorian.json"
+merkmal = "4"
+notiz = "Die Schreibweisungen (Rz. 528) kürzen «April» nicht ab."
+
+[[eintrag]]
+begriff = "Mai"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "5"
+
+[[eintrag]]
+begriff = "Juni"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "6"
+
+[[eintrag]]
+begriff = "Juli"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "7"
+
+[[eintrag]]
+begriff = "August"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "8"
+
+[[eintrag]]
+begriff = "Aug."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "8"
+
+[[eintrag]]
+begriff = "September"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "9"
+
+[[eintrag]]
+begriff = "Sept."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528 und 536"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "9"
+
+[[eintrag]]
+begriff = "Oktober"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "10"
+
+[[eintrag]]
+begriff = "Okt."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "10"
+
+[[eintrag]]
+begriff = "November"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "11"
+
+[[eintrag]]
+begriff = "Nov."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "11"
+
+[[eintrag]]
+begriff = "Dezember"
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "12"
+
+[[eintrag]]
+begriff = "Dez."
+sprache = "de"
+regel = "geburtsdatum"
+quelle = "Bundeskanzlei, Schreibweisungen, 2. Aufl. 2013 (korr. Ausgabe 2015), Rz. 528"
+fassung = "2022-07-20"
+url = "https://www.bk.admin.ch/dam/de/sd-web/YVHazXZRkqKn/schreibweisungen.pdf"
+merkmal = "12"
+
+# --- Français (CLDR 49, fr-CH) ----------------------------------------------------------
+
+[[eintrag]]
+begriff = "janvier"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "1"
+
+[[eintrag]]
+begriff = "janv."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "1"
+
+[[eintrag]]
+begriff = "février"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "2"
+
+[[eintrag]]
+begriff = "févr."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "2"
+
+[[eintrag]]
+begriff = "fév."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "SR 221.411 Anhang 2, Fussnote zur Überschrift: «l’O du 2 fév. 2022»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/686/fr#annex_2"
+merkmal = "2"
+notiz = "Schreibung in Fedlex-Fussnoten; CLDR fr-CH kürzt «févr.» ab."
+
+[[eintrag]]
+begriff = "mars"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "3"
+
+[[eintrag]]
+begriff = "avril"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "4"
+
+[[eintrag]]
+begriff = "avr."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "4"
+
+[[eintrag]]
+begriff = "mai"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "5"
+
+[[eintrag]]
+begriff = "juin"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "6"
+
+[[eintrag]]
+begriff = "juillet"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "7"
+
+[[eintrag]]
+begriff = "juil."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "7"
+
+[[eintrag]]
+begriff = "août"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "8"
+
+[[eintrag]]
+begriff = "septembre"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "9"
+
+[[eintrag]]
+begriff = "sept."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "9"
+
+[[eintrag]]
+begriff = "octobre"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "10"
+
+[[eintrag]]
+begriff = "oct."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "10"
+
+[[eintrag]]
+begriff = "novembre"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "11"
+
+[[eintrag]]
+begriff = "nov."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "11"
+
+[[eintrag]]
+begriff = "décembre"
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "12"
+
+[[eintrag]]
+begriff = "déc."
+sprache = "fr"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, fr-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/fr-CH/ca-gregorian.json"
+merkmal = "12"
+
+# --- Italiano (CLDR 49, it-CH) ----------------------------------------------------------
+
+[[eintrag]]
+begriff = "gennaio"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "1"
+
+[[eintrag]]
+begriff = "gen"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "1"
+
+[[eintrag]]
+begriff = "febbraio"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "2"
+
+[[eintrag]]
+begriff = "feb"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "2"
+
+[[eintrag]]
+begriff = "marzo"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "3"
+
+[[eintrag]]
+begriff = "mar"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "3"
+
+[[eintrag]]
+begriff = "aprile"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "4"
+
+[[eintrag]]
+begriff = "apr"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "4"
+
+[[eintrag]]
+begriff = "maggio"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "5"
+
+[[eintrag]]
+begriff = "mag"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "5"
+
+[[eintrag]]
+begriff = "giugno"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "6"
+
+[[eintrag]]
+begriff = "giu"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "6"
+
+[[eintrag]]
+begriff = "luglio"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "7"
+
+[[eintrag]]
+begriff = "lug"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "7"
+
+[[eintrag]]
+begriff = "agosto"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "8"
+
+[[eintrag]]
+begriff = "ago"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "8"
+
+[[eintrag]]
+begriff = "settembre"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "9"
+
+[[eintrag]]
+begriff = "set"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "9"
+
+[[eintrag]]
+begriff = "ottobre"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "10"
+
+[[eintrag]]
+begriff = "ott"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "10"
+
+[[eintrag]]
+begriff = "novembre"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "11"
+
+[[eintrag]]
+begriff = "nov"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "11"
+
+[[eintrag]]
+begriff = "dicembre"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/wide"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "12"
+
+[[eintrag]]
+begriff = "dic"
+sprache = "it"
+regel = "geburtsdatum"
+quelle = "Unicode CLDR 49, it-CH, months/format/abbreviated"
+fassung = "2026-10-22"
+url = "https://github.com/unicode-org/cldr-json/blob/49.0.0/cldr-json/cldr-dates-full/main/it-CH/ca-gregorian.json"
+merkmal = "12"

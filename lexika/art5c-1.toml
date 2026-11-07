@@ -1,0 +1,738 @@
+# Art. 5 Bst. c Ziff. 1 DSG: Daten über religiöse, weltanschauliche, politische oder
+# gewerkschaftliche Ansichten oder Tätigkeiten.
+#
+# Jeder Begriff steht wörtlich in der genannten Stelle (Gross-/Kleinschreibung
+# ausgenommen). Steht dort nur eine gebeugte Form, ist diese der Begriff; die übrigen
+# Formen sind grammatische Formen (Zahl, Fall, Geschlecht), keine Synonyme.
+# Bewusst weggelassen (siehe RegelInfo::grenzen): Parteinamen, «reformiert» allein,
+# «konfessionslos» (keine Fundstelle gefunden), FR «confession» allein, FR/IT
+# «protestant(e)», Abkürzungen wie «röm.-kath.».
+#
+# Wörterbuch statt Erlass (Duden, Treccani): «Jude», «Jüdin», «Konfession» und IT
+# «ebreo». Diese Alltagswörter stehen in keinem der durchsuchten Erlasse; Duden ist nach
+# den Schreibweisungen der BK (Rz. 113) das Rechtschreibwörterbuch der Bundesverwaltung.
+#
+# FR «syndicat» und IT «sindacato» zählen als ganzes Wort («syndication» nicht). Merkmal
+# «ausnahme»: Der Gemeindeverband («syndicat de communes») und die Genossenschaft der
+# Güterzusammenlegung («syndicat de remaniement») gewinnen als längerer Treffer und
+# melden nichts, ebenso IT die gerichtliche Überprüfung («sindacato di legittimità»,
+# «sindacato di merito», «sindacato di costituzionalità»), der Aktionärsbindungsvertrag
+# («sindacato azionario», «sindacato di blocco») und was vom Gemeindepräsidenten
+# (sindaco) ausgeht («ordinanza sindacale», «deliberazione sindacale»). Diese
+# IT-Wendungen stehen in keinem durchsuchten Erlass; Quelle ist Treccani. Für «syndicat
+# d'améliorations foncières», «syndicat intercommunal», «collegio sindacale» und «patto
+# di sindacato» fand sich keine Fundstelle; sie zählen als Treffer.
+#
+# Merkmal «name»: «Jude» ist auch Vor- und Nachname («Jude Bellingham»). Der Eintrag
+# zählt nicht, wenn er in einem Namen liegt, den die Regel «name» erkennt.
+
+# --- Deutsch ---------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Religion"
+formen = ["Religionen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_15"
+notiz = "«ihre Religion und ihre weltanschauliche Überzeugung frei zu wählen». Zusammensetzungen wie «Religionsfreiheit» zählen nicht (teilwort nein)."
+
+[[eintrag]]
+begriff = "Religionszugehörigkeit"
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+notiz = "Zeilen «Ohne Religionszugehörigkeit» und «Religionszugehörigkeit unbekannt»."
+
+[[eintrag]]
+begriff = "religiöses Bekenntnis"
+formen = ["religiösen Bekenntnis", "religiöse Bekenntnis", "religiösen Bekenntnisses", "religiösem Bekenntnis"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 210 Art. 303 Abs. 3"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_303"
+
+[[eintrag]]
+begriff = "religiöse Erziehung"
+formen = ["religiösen Erziehung", "religiöser Erziehung"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 210 Art. 303 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_303"
+
+[[eintrag]]
+begriff = "weltanschauliche Überzeugung"
+formen = ["weltanschaulichen Überzeugung", "weltanschauliche Überzeugungen", "weltanschaulichen Überzeugungen", "weltanschaulicher Überzeugung", "weltanschaulicher Überzeugungen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_15"
+
+[[eintrag]]
+begriff = "politischen Überzeugung"
+formen = ["politische Überzeugung", "politische Überzeugungen", "politischen Überzeugungen", "politischer Überzeugung", "politischer Überzeugungen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
+
+[[eintrag]]
+begriff = "politischen Anschauungen"
+formen = ["politische Anschauungen", "politische Anschauung", "politischen Anschauung", "politischer Anschauung", "politischer Anschauungen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 142.31 Art. 3 Abs. 1"
+fassung = "2026-06-12"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/358/de#art_3"
+
+[[eintrag]]
+begriff = "politische Betätigung"
+formen = ["politischen Betätigung", "politischer Betätigung"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 121 Art. 5 Abs. 5"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2017/494/de#art_5"
+
+[[eintrag]]
+begriff = "Gewerkschaft"
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 0.822.719.9 Art. 1 Ziff. 2"
+fassung = "2023-08-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/188/de#art_1"
+teilwort = "anfang"
+notiz = "«keiner Gewerkschaft beitritt … einer Gewerkschaft angehört … gewerkschaftlich betätigt» (IAO-Übereinkommen Nr. 98). Am Wortanfang, damit «Gewerkschaftsmitglied», «Gewerkschafter» und «gewerkschaftlich» mitzählen."
+
+[[eintrag]]
+begriff = "Arbeitnehmerverband"
+formen = ["Arbeitnehmerverbands", "Arbeitnehmerverbandes", "Arbeitnehmerverbände", "Arbeitnehmerverbänden"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "SR 220 Art. 336 Abs. 2 Bst. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_336"
+
+[[eintrag]]
+begriff = "katholisch"
+formen = ["katholische", "katholischen", "katholischer", "katholisches", "katholischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+notiz = "Bestandteil der Zeilen «Römisch-katholisch» und «Christkatholisch (altkatholisch)»."
+
+[[eintrag]]
+begriff = "römisch-katholisch"
+formen = ["römisch-katholische", "römisch-katholischen", "römisch-katholischer", "römisch-katholisches", "römisch-katholischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+
+[[eintrag]]
+begriff = "christkatholisch"
+formen = ["christkatholische", "christkatholischen", "christkatholischer", "christkatholisches", "christkatholischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+
+[[eintrag]]
+begriff = "altkatholisch"
+formen = ["altkatholische", "altkatholischen", "altkatholischer", "altkatholisches", "altkatholischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+notiz = "Zeile «Christkatholisch (altkatholisch)»."
+
+[[eintrag]]
+begriff = "evangelisch-reformiert"
+formen = ["evangelisch-reformierte", "evangelisch-reformierten", "evangelisch-reformierter", "evangelisch-reformiertes", "evangelisch-reformiertem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+
+[[eintrag]]
+begriff = "evangelisch"
+formen = ["evangelische", "evangelischen", "evangelischer", "evangelisches", "evangelischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+notiz = "Bestandteil der Zeile «Evangelisch-reformiert». «reformiert» allein bleibt weg (auch: umgestaltet)."
+
+[[eintrag]]
+begriff = "jüdische"
+formen = ["jüdisch", "jüdischen", "jüdischer", "jüdisches", "jüdischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+notiz = "Zeile «Jüdische Glaubensgemeinschaften»."
+
+[[eintrag]]
+begriff = "islamische"
+formen = ["islamisch", "islamischen", "islamischer", "islamisches", "islamischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Tabelle su-d-40.02.01.08.26 (Strukturerhebung 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347570/master"
+notiz = "Zeile «Islamische Glaubensgemeinschaften»."
+
+[[eintrag]]
+begriff = "Muslime"
+formen = ["Muslim", "Muslimen", "Muslims", "Muslimin", "Musliminnen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Religionen: «Während Beten für 37% der Musliminnen und Muslime in der Schweiz zum Alltag gehört…»"
+fassung = "2026-11-06"
+url = "https://statistik.admin.ch/de/themen/bevoelkerung/religionen"
+notiz = "Die Seite trägt kein Datum; Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "muslimischer"
+formen = ["muslimisch", "muslimische", "muslimischen", "muslimisches", "muslimischem"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "BFS, Religionen: «…unter den Personen mit muslimischer (38%)…»; «…in der Gruppe der muslimischen Religionsgemeinschaften…»"
+fassung = "2026-11-06"
+url = "https://statistik.admin.ch/de/themen/bevoelkerung/religionen"
+notiz = "Die Seite trägt kein Datum; Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "Jude"
+formen = ["Juden"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "Duden online, «Jude»: «Angehöriger des Judentums als einer kulturellen, ethnischen und/oder religiösen Erfahrungsgemeinschaft, die auf das antike Volk der Israeliten zurückgeht»; Beispiel «europäische, russische Juden»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Jude"
+gross = true
+merkmal = "name"
+notiz = "Alltagswort ohne Fundstelle in den durchsuchten Erlassen und auf den BFS-Seiten (dort nur «jüdisch»); Duden nach den BK-Schreibweisungen (Rz. 113). Gross geschrieben (Nomen). Gegenstück zu FR «juif» und IT «ebreo». Fassung = Abrufdatum. Merkmal «name»: «Jude» ist auch Vor- und Nachname (BFS-Namensregister); in einem erkannten Namen («Jude Bellingham») zählt es nicht."
+
+[[eintrag]]
+begriff = "Jüdin"
+formen = ["Jüdinnen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "Duden online, «Jüdin»: «Angehörige des Judentums als einer kulturellen, ethnischen und/oder religiösen Erfahrungsgemeinschaft, die auf das antike Volk der Israeliten zurückgeht»; Beispiel «eine orthodoxe Jüdin»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Juedin"
+notiz = "Wie «Jude». Gegenstück zu FR «juive» und IT «ebrea». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "Konfession"
+formen = ["Konfessionen"]
+sprache = "de"
+regel = "art5c-1"
+quelle = "Duden online, «Konfession»: «religiöse Gemeinschaft mit einer bestimmten Konfession (1)»; Beispiel «die christlichen Konfessionen»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Konfession"
+notiz = "Die durchsuchten Erlasse kennen nur «konfessionell» (SR 836.2 Art. 21g). Erkannt wird das Etikett («Konfession: röm.-kath.»), nicht die Abkürzung dahinter. Duden nennt auch «Bekenntnis, Geständnis» (gehoben). Fassung = Abrufdatum."
+
+# --- Französisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "religion"
+formen = ["religions"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_15"
+
+[[eintrag]]
+begriff = "appartenance religieuse"
+formen = ["appartenances religieuses"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+notiz = "Zeilen «Sans appartenance religieuse» und «Appartenance religieuse inconnue»."
+
+[[eintrag]]
+begriff = "éducation religieuse"
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 210 Art. 303 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_303"
+
+[[eintrag]]
+begriff = "convictions philosophiques"
+formen = ["conviction philosophique"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_15"
+
+[[eintrag]]
+begriff = "convictions religieuses"
+formen = ["conviction religieuse"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+
+[[eintrag]]
+begriff = "opinions politiques"
+formen = ["opinion politique"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 142.31 Art. 3 Abs. 1"
+fassung = "2026-06-12"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_3"
+
+[[eintrag]]
+begriff = "activités politiques"
+formen = ["activité politique"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 121 Art. 5 Abs. 5"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2017/494/fr#art_5"
+
+[[eintrag]]
+begriff = "affiliation syndicale"
+formen = ["affiliations syndicales"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 0.822.719.9 Art. 1 Ziff. 2"
+fassung = "2023-08-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/188/fr#art_1"
+
+[[eintrag]]
+begriff = "activité syndicale"
+formen = ["activités syndicales"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 220 Art. 336 Abs. 2 Bst. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336"
+
+[[eintrag]]
+begriff = "organisation de travailleurs"
+formen = ["organisations de travailleurs"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 220 Art. 336 Abs. 2 Bst. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_336"
+
+[[eintrag]]
+begriff = "catholique"
+formen = ["catholiques"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+notiz = "Bestandteil der Zeilen «Catholique romain» und «Catholique-chrétien (vieux-catholique)»."
+
+[[eintrag]]
+begriff = "catholique romain"
+formen = ["catholique romaine", "catholiques romains", "catholiques romaines"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+
+[[eintrag]]
+begriff = "catholique-chrétien"
+formen = ["catholique-chrétienne", "catholiques-chrétiens", "catholiques-chrétiennes"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+
+[[eintrag]]
+begriff = "vieux-catholique"
+formen = ["vieux-catholiques", "vieille-catholique", "vieilles-catholiques"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+
+[[eintrag]]
+begriff = "réformé évangélique"
+formen = ["réformée évangélique", "réformés évangéliques", "réformées évangéliques"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+notiz = "Zeile «Réformé évangélique (protestant)»."
+
+[[eintrag]]
+begriff = "évangélique"
+formen = ["évangéliques"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+notiz = "Bestandteil der Zeile «Réformé évangélique (protestant)»."
+
+[[eintrag]]
+begriff = "juives"
+formen = ["juif", "juive", "juifs"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+notiz = "Zeile «Communautés juives»."
+
+[[eintrag]]
+begriff = "musulmanes"
+formen = ["musulman", "musulmane", "musulmans"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "OFS, tableau su-f-40.02.01.08.26 (relevé structurel 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347562/master"
+notiz = "Zeile «Communautés musulmanes»."
+
+[[eintrag]]
+begriff = "syndicat"
+formen = ["syndicats"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 0.822.719.9 Art. 1 Ziff. 2: «…à la condition qu’il ne s’affilie pas à un syndicat ou cesse de faire partie d’un syndicat»"
+fassung = "2023-08-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/188/fr#art_1"
+notiz = "Dieselbe Stelle wie DE «Gewerkschaft» (Ziff. 2 Bst. a). Nur als ganzes Wort: «syndication» (Finanzwesen) zählt nicht."
+
+[[eintrag]]
+begriff = "syndicale"
+formen = ["syndical", "syndicales", "syndicaux"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 0.822.719.9 Art. 1 Ziff. 1: «…à porter atteinte à la liberté syndicale en matière d’emploi.»"
+fassung = "2023-08-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/188/fr#art_1"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «syndicaliste» und «syndicalisme» mitzählen."
+
+[[eintrag]]
+begriff = "syndicats de communes"
+formen = ["syndicat de communes"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 131.212 Art. 110 Abs. 2: «Les communes peuvent participer à des syndicats de communes ou à d’autres organisations…»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1994/1_401_401_361_fga/fr#art_110"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Gemeindeverband, keine Gewerkschaft."
+
+[[eintrag]]
+begriff = "syndicat de remaniement"
+formen = ["syndicats de remaniement"]
+sprache = "fr"
+regel = "art5c-1"
+quelle = "SR 211.412.11 Art. 2 Abs. 4: «…depuis la création du syndicat de remaniement…»"
+fassung = "2014-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/1410_1410_1410/fr#art_2"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Genossenschaft der Güterzusammenlegung, keine Gewerkschaft."
+
+# --- Italienisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "religione"
+formen = ["religioni"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_15"
+
+[[eintrag]]
+begriff = "appartenenza religiosa"
+formen = ["appartenenze religiose"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+notiz = "Zeilen «Nessuna appartenenza religiosa» und «Appartenenza religiosa sconosciuta»."
+
+[[eintrag]]
+begriff = "educazione religiosa"
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 210 Art. 303 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_303"
+
+[[eintrag]]
+begriff = "confessione religiosa"
+formen = ["confessioni religiose"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 210 Art. 303 Abs. 3"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_303"
+
+[[eintrag]]
+begriff = "convinzioni filosofiche"
+formen = ["convinzione filosofica"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 101 Art. 15 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_15"
+
+[[eintrag]]
+begriff = "convinzioni religiose"
+formen = ["convinzione religiosa"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_8"
+
+[[eintrag]]
+begriff = "opinioni politiche"
+formen = ["opinione politica"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 142.31 Art. 3 Abs. 1"
+fassung = "2026-06-12"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/358/it#art_3"
+
+[[eintrag]]
+begriff = "attività politica"
+formen = ["attività politiche"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 121 Art. 5 Abs. 5"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2017/494/it#art_5"
+
+[[eintrag]]
+begriff = "affiliazione sindacale"
+formen = ["affiliazioni sindacali"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 0.822.719.9 Art. 1 Ziff. 2"
+fassung = "2023-08-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/188/it#art_1"
+
+[[eintrag]]
+begriff = "attività sindacale"
+formen = ["attività sindacali"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 220 Art. 336 Abs. 2 Bst. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_336"
+
+[[eintrag]]
+begriff = "associazione di lavoratori"
+formen = ["associazioni di lavoratori"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 220 Art. 336 Abs. 2 Bst. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_336"
+
+[[eintrag]]
+begriff = "cattolico"
+formen = ["cattolica", "cattolici", "cattoliche"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+notiz = "Bestandteil der Zeilen «Cattolico romano» und «Cattolico cristiano (vecchio-cattolico)»."
+
+[[eintrag]]
+begriff = "cattolico cristiano"
+formen = ["cattolica cristiana", "cattolici cristiani", "cattoliche cristiane"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+
+[[eintrag]]
+begriff = "vecchio-cattolico"
+formen = ["vecchia-cattolica", "vecchi-cattolici", "vecchie-cattoliche"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+
+[[eintrag]]
+begriff = "evangelico riformato"
+formen = ["evangelica riformata", "evangelici riformati", "evangeliche riformate"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+notiz = "Zeile «Evangelico riformato (protestante)»."
+
+[[eintrag]]
+begriff = "evangelico"
+formen = ["evangelica", "evangelici", "evangeliche"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+notiz = "Bestandteil der Zeile «Evangelico riformato (protestante)»."
+
+[[eintrag]]
+begriff = "confessione ebraica"
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+notiz = "Zeile «Comunità di confessione ebraica». «ebraico» allein bleibt weg (auch: die Sprache)."
+
+[[eintrag]]
+begriff = "ebreo"
+formen = ["ebrea", "ebrei", "ebree"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «ebreo»: «…discendente dagli Ebrei antichi, professante o no la religione mosaica…»; Beispiel «un e. osservante, non osservante»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/ebreo/"
+notiz = "Alltagswort ohne Fundstelle in den durchsuchten Erlassen; die UST-Tabelle führt nur «confessione ebraica». Gegenstück zu DE «Jude»/«Jüdin» und FR «juif»/«juive». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "musulmane"
+formen = ["musulmano", "musulmana", "musulmani"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "UST, tabella su-i-40.02.01.08.26 (rilevazione strutturale 2024)"
+fassung = "2026-01-29"
+url = "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36347569/master"
+notiz = "Zeile «Comunità musulmane»."
+
+[[eintrag]]
+begriff = "sindacato"
+formen = ["sindacati"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 0.103.1 Art. 8 Abs. 1 Bst. a: «il diritto di ogni individuo di costituire con altri dei sindacati e di aderire al sindacato di sua scelta…»"
+fassung = "2024-11-28"
+url = "https://www.fedlex.admin.ch/eli/cc/1993/725_725_725/it#art_8"
+notiz = "UNO-Pakt I; Gegenstück zu DE «Gewerkschaft» und FR «syndicat». Nur als ganzes Wort. Gleich lauten die Überprüfung durch ein Gericht («sindacato di legittimità»), der Aktionärsbindungsvertrag («sindacato azionario») und das Partizip von «sindacare»: die Wendungen sind als Ausnahme eingetragen, das Partizip zählt (siehe RegelInfo::grenzen)."
+
+[[eintrag]]
+begriff = "sindacale"
+formen = ["sindacali"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "SR 0.822.719.9 Art. 1 Ziff. 1: «…tendenti a pregiudicare la libertà sindacale in materia d’impiego.»"
+fassung = "2023-08-31"
+url = "https://www.fedlex.admin.ch/eli/cc/2001/188/it#art_1"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «sindacalista» und «sindacalismo» mitzählen. «sindacale» heisst auch «des Gemeindepräsidenten» (sindaco): «ordinanza sindacale» und «deliberazione sindacale» sind als Ausnahme eingetragen; «collegio sindacale» (Organ einer Aktiengesellschaft nach italienischem Recht) zählt, weil sich keine Fundstelle fand."
+
+[[eintrag]]
+begriff = "sindacato di legittimità"
+formen = ["sindacati di legittimità"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacato¹»: «Nel processo, attività spiegata dal giudice superiore nella revisione dei provvedimenti del giudice inferiore: s. di legittimità; s. di merito; s. di costituzionalità…»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacato1/"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Überprüfung durch ein Gericht, keine Gewerkschaft. Die Wendung steht in keinem durchsuchten Erlass; Treccani kürzt das Stichwort mit «s.» ab. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "sindacato di merito"
+formen = ["sindacati di merito"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacato¹»: «Nel processo, attività spiegata dal giudice superiore nella revisione dei provvedimenti del giudice inferiore: s. di legittimità; s. di merito; s. di costituzionalità…»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacato1/"
+merkmal = "ausnahme"
+notiz = "Ausnahme wie «sindacato di legittimità». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "sindacato di costituzionalità"
+formen = ["sindacati di costituzionalità"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacato¹»: «Nel processo, attività spiegata dal giudice superiore nella revisione dei provvedimenti del giudice inferiore: s. di legittimità; s. di merito; s. di costituzionalità…»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacato1/"
+merkmal = "ausnahme"
+notiz = "Ausnahme wie «sindacato di legittimità». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "sindacato azionario"
+formen = ["sindacati azionari"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacato²»: «s. azionario, accordo tra gruppi di azionisti, di maggioranza o di minoranza, di una società per azioni, che si obbligano reciprocamente ad assumere un atteggiamento uniforme nelle assemblee sociali…»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacato2/"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Aktionärsbindungsvertrag, keine Gewerkschaft. Die Wendung steht in keinem durchsuchten Erlass; Treccani kürzt das Stichwort mit «s.» ab. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "sindacato di blocco"
+formen = ["sindacati di blocco"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacato²»: «s. di blocco, tipo particolare di sindacato azionario con il quale i partecipanti si obbligano a non vendere le proprie azioni…»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacato2/"
+merkmal = "ausnahme"
+notiz = "Ausnahme wie «sindacato azionario». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "ordinanza sindacale"
+formen = ["ordinanze sindacali"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacale¹»: «Del sindaco, dei sindaci: ordinanza, deliberazione sindacale.»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacale1/"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Verfügung des Gemeindepräsidenten (sindaco), keine Gewerkschaft. Das Beispiel reiht «ordinanza, deliberazione sindacale»; der Begriff löst die Reihung auf. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "deliberazione sindacale"
+formen = ["deliberazioni sindacali"]
+sprache = "it"
+regel = "art5c-1"
+quelle = "Treccani, Vocabolario, «sindacale¹»: «Del sindaco, dei sindaci: ordinanza, deliberazione sindacale.»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/sindacale1/"
+merkmal = "ausnahme"
+notiz = "Ausnahme wie «ordinanza sindacale». Fassung = Abrufdatum."

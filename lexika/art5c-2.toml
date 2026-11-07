@@ -1,0 +1,1246 @@
+# Art. 5 Bst. c Ziff. 2 DSG: Daten über die Gesundheit, die Intimsphäre oder die
+# Zugehörigkeit zu einer Rasse oder Ethnie.
+#
+# Jeder Begriff steht wörtlich in der genannten Stelle (Gross-/Kleinschreibung
+# ausgenommen). Steht dort nur eine gebeugte Form, ist diese der Begriff.
+#
+# Merkmal «icd»: Der Begriff wird gemeldet UND löst die Suche nach ICD-10-Kodes aus
+# («Diagnose: F32.1»). Merkmal «icd-nur»: Der Begriff löst nur die Suche aus und wird
+# selbst nicht gemeldet («ICD-10: F32.1»).
+#
+# Merkmal «ausnahme»: Der längere Treffer gewinnt und meldet nichts
+# («assurance-maladie» ist eine Versicherung, keine Krankheit). Eingetragen sind nur
+# Namen mit Fundstelle; für «assurance perte de gain maladie» fand sich keine, dort
+# zählt «maladie».
+#
+# Merkmal «name»: FR «cancer» ist auch Nachname. Der Eintrag zählt nicht, wenn er in
+# einem Namen liegt, den die Regel «name» erkennt («M. Paul Cancer»).
+#
+# Merkmal «dauer»: Der Treffer zählt nur, wenn eine Dauer in Monaten oder Wochen folgt
+# («enceinte de huit mois»); die Dauer gehört dann zur gemeldeten Stelle.
+#
+# Bewusst weggelassen (die Gründe nennt RegelInfo::grenzen in src/regeln/art5c.rs):
+# «Rasse»/«race»/«razza» allein (Tierrassen), FR «invalidité» und IT «invalidità»
+# (auch: Ungültigkeit), DE «invalid», «Behinderte» (auch: Partizip von «behindern»),
+# «Behinderung» allein (auch: Hindernis), «Unfall» (auch blosser Sachschaden),
+# «Mutterschaft» (Familienstand, nicht notwendig eine Gesundheitsangabe), FR «enceinte»
+# allein (auch: Umfassung, Lautsprecher), IT «parto» (auch: «ich reise ab»), DE «Krebs»
+# allein (auch Familienname und Tier), FR «arrêt de travail» (auch Arbeitsniederlegung),
+# DE «Abhängigkeit», FR «dépendance» und IT «dipendenza» allein (auch wirtschaftliche
+# Abhängigkeit, FR auch Nebengebäude), FR «appartenance ethnique» (die Botschaft
+# FF 2017 6640 schreibt nur «origine ethnique»; keine wörtliche Fundstelle gefunden).
+#
+# Wörterbuch oder Bundesamt statt Erlass: «krankgeschrieben», «Burn-out»/«burn out»,
+# FR «être enceinte»/«enceinte de» (Duden, Larousse) sowie «Suizid», «Depression» und
+# ihre Gegenstücke (BAG/OFSP/UFSP). Diese Wörter stehen in keinem der durchsuchten Erlasse.
+
+# --- Deutsch ---------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Krankheit"
+formen = ["Krankheiten"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_3"
+teilwort = "ende"
+notiz = "Am Wortende, damit «Lungenkrankheit» oder «Berufskrankheit» mitzählen."
+
+[[eintrag]]
+begriff = "Geburtsgebrechen"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 2"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_3"
+
+[[eintrag]]
+begriff = "medizinische Untersuchung"
+formen = ["medizinischen Untersuchung", "medizinische Untersuchungen", "medizinischen Untersuchungen", "medizinischer Untersuchung", "medizinischer Untersuchungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_3"
+
+[[eintrag]]
+begriff = "Arbeitsunfähigkeit"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 6"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_6"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Arbeitsunfähigkeitszeugnis» mitzählt."
+
+[[eintrag]]
+begriff = "arbeitsunfähig"
+formen = ["arbeitsunfähige", "arbeitsunfähigen", "arbeitsunfähiger", "arbeitsunfähiges"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.20 Art. 16 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/de#art_16"
+notiz = "«voll oder teilweise arbeitsunfähig»."
+
+[[eintrag]]
+begriff = "Erwerbsunfähigkeit"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 7 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_7"
+
+[[eintrag]]
+begriff = "Invalidität"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 8 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_8"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Invaliditätsgrad» mitzählt."
+
+[[eintrag]]
+begriff = "Schwangerschaft"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 5 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/de#art_5"
+teilwort = "anfang"
+notiz = "«Schwangerschaft und Niederkunft». Am Wortanfang, damit «Schwangerschaftsabbruch» (SR 311.0 Art. 66a) mitzählt."
+
+[[eintrag]]
+begriff = "Schwangere"
+formen = ["schwanger", "schwangeren", "schwangerer", "schwangeres", "schwangerem"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 822.11 Art. 35a Abs. 2"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de#art_35_a"
+notiz = "«Schwangere dürfen auf blosse Anzeige hin von der Arbeit fernbleiben»; «schwanger» ist die ungebeugte Form desselben Adjektivs."
+
+[[eintrag]]
+begriff = "psychischen Störung"
+formen = ["psychische Störung", "psychische Störungen", "psychischen Störungen", "psychischer Störung", "psychischer Störungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 210 Art. 390 Abs. 1 Ziff. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_390"
+
+[[eintrag]]
+begriff = "geistigen Behinderung"
+formen = ["geistige Behinderung", "geistiger Behinderung", "geistige Behinderungen", "geistigen Behinderungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 210 Art. 390 Abs. 1 Ziff. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_390"
+
+[[eintrag]]
+begriff = "psychischen Behinderung"
+formen = ["psychische Behinderung", "psychischer Behinderung", "psychische Behinderungen", "psychischen Behinderungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 101 Art. 8 Abs. 2"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_8"
+
+[[eintrag]]
+begriff = "Mensch mit Behinderungen"
+formen = ["Menschen mit Behinderungen", "Mensch mit Behinderung", "Menschen mit Behinderung"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 151.3 Art. 2 Abs. 1"
+fassung = "2020-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/667/de#art_2"
+
+[[eintrag]]
+begriff = "Diagnosen"
+formen = ["Diagnose"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 42 Abs. 3bis: «Die Leistungserbringer haben auf der Rechnung nach Absatz 3 die Diagnosen und Prozeduren nach den Klassifikationen in den jeweiligen vom zuständigen Departement herausgegebenen schweizerischen Fassungen codiert aufzuführen.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de#art_42"
+teilwort = "ende"
+merkmal = "icd"
+notiz = "Löst die Suche nach ICD-10-Kodes aus. Am Wortende, damit «Krebsdiagnose», «Hauptdiagnose», «Nebendiagnosen» oder «Verdachtsdiagnose» mitzählen. Das frühere Zitat in der Notiz («…in codierter Form») entsprach nicht mehr der geltenden Fassung."
+
+[[eintrag]]
+begriff = "ICD"
+sprache = "de"
+regel = "art5c-2"
+quelle = "BFS, Instrumente zur medizinischen Kodierung: ICD-10-GM"
+fassung = "2026-11-06"
+url = "https://www.bfs.admin.ch/bfs/de/home/statistiken/gesundheit/nomenklaturen/medkk/instrumente-medizinische-kodierung.html"
+gross = true
+merkmal = "icd-nur"
+notiz = "Nur Auslöser für ICD-10-Kodes, wird selbst nicht gemeldet. Fassung = Abrufdatum; die Seite trägt kein Datum."
+
+[[eintrag]]
+begriff = "Ethnie"
+formen = ["Ethnien"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 261bis: «…wegen ihrer Rasse, Ethnie, Religion oder sexuellen Orientierung…»"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_261_bis"
+gross = true
+notiz = "Gross geschrieben (Nomen), damit französisch «l'ethnie» den französischen Eintrag mit eigener Fundstelle trifft."
+
+[[eintrag]]
+begriff = "sexuellen Orientierung"
+formen = ["sexuelle Orientierung", "sexueller Orientierung"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 261bis"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_261_bis"
+notiz = "Intimsphäre: BBl 2017 6941, 7020 (Sexualleben und sexuelle Orientierung)."
+
+[[eintrag]]
+begriff = "Selbstmord"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 115"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_115"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Selbstmordversuch» mitzählt."
+
+[[eintrag]]
+begriff = "krank"
+formen = ["kranke", "kranken", "kranker", "krankes", "krankem"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 818.101 Art. 33: «Eine Person, die krank, krankheitsverdächtig, angesteckt oder ansteckungsverdächtig ist…»"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2015/297/de#art_33"
+notiz = "Nur als ganzes Wort: «Krankenkasse» zählt nicht. «Kranken-» in «Kranken- und Unfallversicherung» ist als Ausnahme eingetragen. Meldet auch übertragenen Gebrauch («das ist doch krank») und das Verb «kranken» (siehe RegelInfo::grenzen)."
+
+[[eintrag]]
+begriff = "Kranken-"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 101 Art. 117 Abs. 1: «Der Bund erlässt Vorschriften über die Kranken- und die Unfallversicherung.»"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_117"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Ergänzungsstrich einer Versicherung oder Kasse («Kranken- und Unfallversicherung», «Kranken-Taggeldversicherung»); verhindert, dass «kranken» darin gemeldet wird."
+
+[[eintrag]]
+begriff = "Erkrankung"
+formen = ["Erkrankungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 31 Abs. 1 Bst. a: «…durch eine schwere, nicht vermeidbare Erkrankung des Kausystems…»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de#art_31"
+teilwort = "ende"
+notiz = "Am Wortende, damit «Herzerkrankung» oder «Lungenerkrankung» mitzählen."
+
+[[eintrag]]
+begriff = "Krebserkrankung"
+formen = ["Krebserkrankungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 818.33 Art. 3 Abs. 1: «…die eine Krebserkrankung diagnostizieren oder behandeln…»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/289/de#art_3"
+
+[[eintrag]]
+begriff = "an Krebs erkrankt"
+formen = ["an Krebs erkrankte", "an Krebs erkrankten", "an Krebs erkranken"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 818.33 Art. 21 Abs. 1: «…Patientinnen und Patienten, die in jungen Jahren an Krebs erkrankt sind…»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/289/de#art_21"
+notiz = "«Krebs» allein fehlt: auch Familienname und Tier."
+
+[[eintrag]]
+begriff = "Brustkrebs"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 12e Bst. c: «…bei Programmen zur Früherkennung von Brustkrebs durch Mammografie.»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de#art_12_e"
+
+[[eintrag]]
+begriff = "krankgeschrieben"
+formen = ["krankschreiben", "krankschreibt", "krankgeschriebene", "krankgeschriebenen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "Duden, «krankschreiben»: «(als Arzt, Ärztin) schriftlich bestätigen, dass jemand aufgrund einer Krankheit vorübergehend arbeitsunfähig ist»; Beispiel: «sie wurde [für] eine Woche krankgeschrieben»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/krankschreiben"
+notiz = "Kein Erlass verwendet das Wort; Alltagswort nach Wörterbuch. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "Arztzeugnisse"
+formen = ["Arztzeugnis", "Arztzeugnisses", "Arztzeugnissen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 312.0 Art. 195 Abs. 1: «Die Strafbehörden holen amtliche Berichte und Arztzeugnisse über Vorgänge ein…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_195"
+
+[[eintrag]]
+begriff = "HIV"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 818.101 Art. 5 Abs. 1 Bst. c: «HIV und andere sexuell übertragbare Krankheitserreger»"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2015/297/de#art_5"
+gross = true
+notiz = "Gross geschrieben. Zählt auch in «HIV-positiv». Italienisch schreibt ebenfalls «HIV»; in einem italienischen Text trägt der Treffer den italienischen Eintrag (Wahl nach der Sprache des Textes, lexikon.rs)."
+
+[[eintrag]]
+begriff = "HIV"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 12d cpv. 1 lett. a: «Test HIV»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_12_d"
+gross = true
+notiz = "Gleich geschrieben wie der deutsche Eintrag (Reste Runde 1, w2-art5c): Ist der Text italienisch, gilt dieser Beleg."
+
+[[eintrag]]
+begriff = "Gesundheitszustand"
+formen = ["Gesundheitszustands", "Gesundheitszustandes"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 7a: «…ausgenommen sind Massnahmen, die ihrem Gesundheitszustand nicht angemessen sind.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/de#art_7_a"
+
+[[eintrag]]
+begriff = "Invalidenrente"
+formen = ["Invalidenrenten"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 35 Abs. 1: «Männer und Frauen, denen eine Invalidenrente zusteht…»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/de#art_35"
+
+[[eintrag]]
+begriff = "IV-Rente"
+formen = ["IV-Renten"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 831.201 Art. 31 Abs. 1: «…einer IV-Rente gleichzustellen.»"
+fassung = "2025-06-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_31"
+
+[[eintrag]]
+begriff = "Diabetes"
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 11c Abs. 1 Bst. a: «…bei Personen mit Diabetes mellitus…»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de#art_11_c"
+
+[[eintrag]]
+begriff = "Diabetikern"
+formen = ["Diabetiker", "Diabetikers", "Diabetikerin", "Diabetikerinnen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 7 Abs. 2 Bst. b Ziff. 10: «…sowie Fusspflege bei Diabetikern»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de#art_7"
+notiz = "Gegenstück zu FR «diabétique» und IT «diabetico», die auch als Nomen stehen."
+
+[[eintrag]]
+begriff = "diabetisches"
+formen = ["diabetisch", "diabetische", "diabetischen", "diabetischer", "diabetischem"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 11c Abs. 1 Bst. a: «…Risikofaktoren für ein diabetisches Fuss-Syndrom vorliegt»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de#art_11_c"
+
+[[eintrag]]
+begriff = "Sucht"
+formen = ["Süchte"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 741.01 Art. 16d Abs. 1 Bst. b: «sie an einer Sucht leidet, welche die Fahreignung ausschliesst»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/de#art_16_d"
+gross = true
+notiz = "Gross geschrieben, damit das Verb «sucht» nicht zählt. Nur als ganzes Wort: «Sehnsucht», «Eifersucht» zählen nicht."
+
+[[eintrag]]
+begriff = "Depressionen"
+formen = ["Depression"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "BAG, Aktionsplan Suizidprävention: «…Suizide oder Suizidversuche während – oft vorübergehenden – Belastungskrisen oder psychischen Erkrankungen zu reduzieren.»; «…psychischen Erkrankungen wie Depressionen…»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/de/aktionsplan-suizidpraevention"
+notiz = "Kein Erlass nennt das Wort. Fassung = Abrufdatum. «Depression» heisst auch Tiefdruckgebiet oder Wirtschaftskrise (siehe RegelInfo::grenzen)."
+
+[[eintrag]]
+begriff = "Suizide"
+formen = ["Suizid"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "BAG, Aktionsplan Suizidprävention: «Der Aktionsplan will einen Beitrag leisten, Suizide oder Suizidversuche während – oft vorübergehenden – Belastungskrisen oder psychischen Erkrankungen zu reduzieren.»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/de/aktionsplan-suizidpraevention"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Suizidversuch» und «Suizidgedanken» mitzählen. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "Burn-out"
+formen = ["Burn-outs", "Burnout", "Burnouts"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "Duden, «Burn-out»: «Syndrom des Ausgebranntseins, der völligen psychischen und körperlichen Erschöpfung»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Burn_out_Raumfahrt_Syndrom"
+gross = true
+notiz = "Kein Erlass nennt das Wort; Alltagswort nach Wörterbuch. Gross geschrieben (Nomen), damit französisch «burn-out» den französischen Eintrag trifft. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "körperlichen Behinderung"
+formen = ["körperliche Behinderung", "körperlichen Behinderungen", "körperliche Behinderungen", "körperlicher Behinderung", "körperlicher Behinderungen"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 19b Bst. b: «…wegen einer schweren geistigen oder körperlichen Behinderung der versicherten Person…»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de#art_19_b"
+notiz = "BV Art. 8 Abs. 2 nennt «einer körperlichen, geistigen oder psychischen Behinderung» als Reihe; zusammenhängend steht die Wendung in der KLV."
+
+[[eintrag]]
+begriff = "ethnischen Herkunft"
+formen = ["ethnische Herkunft", "ethnischer Herkunft"]
+sprache = "de"
+regel = "art5c-2"
+quelle = "BBl 2017 6941, 7020: «…auf die Daten zur ethnischen Herkunft ausgeweitet.»"
+fassung = "2017-09-15"
+url = "https://www.fedlex.admin.ch/eli/fga/2017/2057/de"
+notiz = "Botschaft vom 15. September 2017 zur Totalrevision des DSG."
+
+# --- Französisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "maladie"
+formen = ["maladies"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_3"
+
+[[eintrag]]
+begriff = "infirmité congénitale"
+formen = ["infirmités congénitales"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 2"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_3"
+
+[[eintrag]]
+begriff = "traitement médical"
+formen = ["traitements médicaux"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_3"
+notiz = "«qui exige un examen ou un traitement médical»."
+
+[[eintrag]]
+begriff = "incapacité de travail"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 6"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_6"
+
+[[eintrag]]
+begriff = "incapable de travailler"
+formen = ["incapables de travailler"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.20 Art. 16 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/fr#art_16"
+
+[[eintrag]]
+begriff = "incapacité de gain"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 7 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_7"
+
+[[eintrag]]
+begriff = "rente d'invalidité"
+formen = ["rentes d'invalidité"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 6 Abs. 1bis"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_6"
+notiz = "Das Einzelwort «invalidité» fehlt absichtlich: Es bezeichnet auch die Ungültigkeit eines Vertrags («l'invalidité du contrat»)."
+
+[[eintrag]]
+begriff = "rente AI"
+formen = ["rentes AI"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 831.201 Art. 31 Abs. 1: «La prestation transitoire au sens de l’art. 32 LAI est assimilable à une rente AI.»"
+fassung = "2025-06-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/fr#art_31"
+notiz = "Gegenstück zu DE «IV-Rente» (dieselbe Stelle)."
+
+[[eintrag]]
+begriff = "taux d'invalidité"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 28a Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_28_a"
+
+[[eintrag]]
+begriff = "grossesse"
+formen = ["grossesses"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 5 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_5"
+
+[[eintrag]]
+begriff = "accouchement"
+formen = ["accouchements"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 5 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/fr#art_5"
+
+[[eintrag]]
+begriff = "femmes enceintes"
+formen = ["femme enceinte"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 822.11 Art. 35 Abs. 1"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_35"
+notiz = "Nur mit «femme(s)»: «enceinte» allein heisst auch Umfassung oder Lautsprecher."
+
+[[eintrag]]
+begriff = "troubles psychiques"
+formen = ["trouble psychique"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 210 Art. 390 Abs. 1 Ziff. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_390"
+
+[[eintrag]]
+begriff = "déficience mentale"
+formen = ["déficiences mentales"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 210 Art. 390 Abs. 1 Ziff. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_390"
+
+[[eintrag]]
+begriff = "personne handicapée"
+formen = ["personnes handicapées"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 151.3 Art. 2 Abs. 1"
+fassung = "2020-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/667/fr#art_2"
+
+[[eintrag]]
+begriff = "diagnostics"
+formen = ["diagnostic"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 42 Abs. 3bis"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_42"
+merkmal = "icd"
+notiz = "Löst die Suche nach ICD-10-Kodes aus."
+
+[[eintrag]]
+begriff = "appartenance raciale"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 261bis"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_261_bis"
+
+[[eintrag]]
+begriff = "origine raciale"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 2"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_5"
+
+[[eintrag]]
+begriff = "orientation sexuelle"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 261bis"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_261_bis"
+
+[[eintrag]]
+begriff = "suicide"
+formen = ["suicides"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 115"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_115"
+
+[[eintrag]]
+begriff = "suicidaires"
+formen = ["suicidaire"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "OFSP, Plan d’action pour la prévention du suicide: «Celui-ci a pour objectif de réduire les actes suicidaires lors d’une réaction aiguë à un facteur de stress…»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/fr/plan-daction-pour-la-prevention-du-suicide"
+notiz = "Gegenstück zu DE «suizidal» (über «Suizid…» am Wortanfang). Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "suicidalité"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "OFSP, Plan d’action pour la prévention du suicide: «…informer sur la suicidalité et sensibiliser à ce sujet…»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/fr/plan-daction-pour-la-prevention-du-suicide"
+notiz = "Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "malades"
+formen = ["malade"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 818.101 Art. 33: «Les personnes malades, présumées malades, infectées, présumées infectées ou…»"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2015/297/fr#art_33"
+
+[[eintrag]]
+begriff = "assurance-maladie"
+formen = ["assurances-maladie", "assurance maladie", "assurances maladie"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 1a Abs. 1: «La présente loi régit l’assurance-maladie sociale.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/fr#art_1_a"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Die Versicherung ist keine Krankheit; verhindert, dass «maladie» darin gemeldet wird."
+
+[[eintrag]]
+begriff = "caisse-maladie"
+formen = ["caisses-maladie", "caisse maladie", "caisses maladie"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 822.11 Art. 17c Abs. 3: «…à moins que la caisse-maladie ou une autre assurance du travailleur ne les assument.»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/fr#art_17_c"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Die Kasse ist keine Krankheit; verhindert, dass «maladie» darin gemeldet wird."
+
+[[eintrag]]
+begriff = "assureur-maladie"
+formen = ["assureurs-maladie", "assureur maladie", "assureurs maladie"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.102 Art. 11 Abs. 2: «…qu’il doit indiquer à l’assureur-maladie le moment où cesse la couverture des accidents.»"
+fassung = "2026-10-22"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/fr#art_11"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Der Versicherer ist keine Krankheit; verhindert, dass «maladie» darin gemeldet wird. Mehrzahl in Art. 37d Abs. 3 Bst. d: «deux représentants des assureurs-maladie»."
+
+[[eintrag]]
+begriff = "maladie oncologique"
+formen = ["maladies oncologiques"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 818.33 Art. 3 Abs. 1: «…qui diagnostiquent ou traitent une maladie oncologique…»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/289/fr#art_3"
+
+[[eintrag]]
+begriff = "cancer"
+formen = ["cancers"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 818.33 Art. 21 Abs. 1: «…des patients qui ont contracté un cancer dans leur jeune âge.»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/289/fr#art_21"
+merkmal = "name"
+notiz = "Merkmal «name»: «Cancer» ist auch Nachname (BFS-Namensregister); in einem erkannten Namen («Paul Cancer») zählt es nicht."
+
+[[eintrag]]
+begriff = "certificats médicaux"
+formen = ["certificat médical"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 312.0 Art. 195 Abs. 1: «Les autorités pénales requièrent les rapports officiels et les certificats médicaux relatifs à des faits…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_195"
+
+[[eintrag]]
+begriff = "VIH"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 818.101 Art. 5 Abs. 1 Bst. c: «le VIH et autres agents pathogènes de maladies sexuellement transmissibles»"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2015/297/fr#art_5"
+gross = true
+
+[[eintrag]]
+begriff = "séropositives"
+formen = ["séropositif", "séropositive", "séropositifs"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 12d Bst. a: «Pour les nourrissons de mères séropositives.»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/fr#art_12_d"
+
+[[eintrag]]
+begriff = "état de santé"
+formen = ["états de santé"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 7a: «…à l’exception des mesures qui ne sont pas adaptées à son état de santé.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/fr#art_7_a"
+
+[[eintrag]]
+begriff = "diabète"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 11c Abs. 1 Bst. a: «…à des personnes affectées de diabète sucré…»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/fr#art_11_c"
+
+[[eintrag]]
+begriff = "diabétique"
+formen = ["diabétiques"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 11c Abs. 1 Bst. a: «…de développer un syndrome du pied diabétique»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/fr#art_11_c"
+
+[[eintrag]]
+begriff = "forme de dépendance"
+formen = ["formes de dépendance"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 741.01 Art. 16d Abs. 1 Bst. b: «qui souffre d’une forme de dépendance la rendant inapte à la conduite»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/fr#art_16_d"
+notiz = "«dépendance» allein fehlt: auch Nebengebäude und Abhängigkeit im Allgemeinen."
+
+[[eintrag]]
+begriff = "dépendance économique"
+formen = ["dépendances économiques"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 220 Art. 728 Abs. 2 Ziff. 5: «l’acceptation d’un mandat qui entraîne une dépendance économique»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_728"
+merkmal = "ausnahme"
+notiz = "Ausnahme: wirtschaftliche Abhängigkeit, keine Sucht; gewinnt in «forme de dépendance économique» als längerer Treffer."
+
+[[eintrag]]
+begriff = "addiction"
+formen = ["addictions"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 812.121 Art. 3b Abs. 1: «…prévention des troubles liés à l’addiction…»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1952/241_241_245/fr#art_3_b"
+notiz = "Abs. 2: «Elle sensibilise le public à la problématique de l’addiction.» Gegenstück zu DE «Sucht». Übertragener Gebrauch («addiction au chocolat») zählt mit (siehe RegelInfo::grenzen); englisch «addiction» trifft denselben Eintrag und trägt dann diesen Beleg."
+
+[[eintrag]]
+begriff = "dépression"
+formen = ["dépressions"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "BAG, Plan d’action pour la prévention du suicide: «…en cas de maladie psychique telle que la dépression.»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/fr/plan-daction-pour-la-prevention-du-suicide"
+notiz = "Kein Erlass nennt das Wort. Fassung = Abrufdatum. «dépression» heisst auch Tiefdruckgebiet oder Wirtschaftskrise (siehe RegelInfo::grenzen)."
+
+[[eintrag]]
+begriff = "burn out"
+formen = ["burn-out", "burnout"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "Larousse, «burn out»: «nom masculin invariable … Syndrome d’épuisement professionnel caractérisé par une fatigue physique et psychique…»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/burn_out/10910385"
+notiz = "Kein Erlass nennt das Wort; Alltagswort nach Wörterbuch. Italienisch schreibt ebenfalls «burnout»; der Treffer trägt dann diesen französischen Beleg. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "déficience corporelle"
+formen = ["déficiences corporelles"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 101 Art. 8 Abs. 2: «…ni du fait d’une déficience corporelle, mentale ou psychique.»"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/fr#art_8"
+
+[[eintrag]]
+begriff = "origine ethnique"
+formen = ["origines ethniques"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "FF 2017 6565, 6640: «…élargies aux données sur l’origine ethnique…»"
+fassung = "2017-09-15"
+url = "https://www.fedlex.admin.ch/eli/fga/2017/2057/fr"
+notiz = "Message du 15 septembre 2017 (révision totale de la LPD). «appartenance ethnique» fehlt: keine wörtliche Fundstelle gefunden."
+
+[[eintrag]]
+begriff = "ethnie"
+formen = ["ethnies"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 142.31 Art. 99a Abs. 3 Bst. a: «…la nationalité, l’ethnie, la religion, l’état civil…»"
+fassung = "2026-06-12"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/358/fr#art_99_a"
+
+[[eintrag]]
+begriff = "être enceinte"
+formen = ["est enceinte", "suis enceinte", "es enceinte", "sommes enceintes", "êtes enceinte", "êtes enceintes", "sont enceintes", "était enceinte", "étais enceinte", "étaient enceintes", "sera enceinte", "serait enceinte", "soit enceinte", "été enceinte"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "Larousse, «enceinte» (adjectif féminin): «Se dit d’une femme en état de grossesse.»; «Être enceinte de quelqu’un, attendre un enfant de lui. Être enceinte de tant de temps, être à tel stade, tel moment de sa grossesse.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/enceinte/29121"
+notiz = "Nur mit «être»: «enceinte» allein heisst auch Umfassung oder Lautsprecher. Erlasse kennen nur «femme(s) enceinte(s)» und «mise enceinte». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "enceinte de"
+formen = ["enceinte d'"]
+sprache = "fr"
+regel = "art5c-2"
+quelle = "Larousse, «enceinte» (adjectif féminin): «Être enceinte de tant de temps, être à tel stade, tel moment de sa grossesse.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/enceinte/29121"
+merkmal = "dauer"
+notiz = "Zählt nur, wenn eine Dauer folgt («enceinte de huit mois», «enceinte de 12 semaines»); «l'enceinte de la ville» zählt nicht. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "mise enceinte"
+sprache = "fr"
+regel = "art5c-2"
+quelle = "SR 321.0 Art. 109 Abs. 1: «…la détient alors qu’elle a été mise enceinte contre sa volonté…»"
+fassung = "2026-06-08"
+url = "https://www.fedlex.admin.ch/eli/cc/43/359_375_369/fr#art_109"
+
+# --- Italienisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "malattia"
+formen = ["malattie"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/it#art_3"
+
+[[eintrag]]
+begriff = "infermità congenite"
+formen = ["infermità congenita"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 2"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/it#art_3"
+
+[[eintrag]]
+begriff = "cura medica"
+formen = ["cure mediche"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 3 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/it#art_3"
+notiz = "«che richieda un esame o una cura medica»."
+
+[[eintrag]]
+begriff = "incapacità al lavoro"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 6"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/it#art_6"
+
+[[eintrag]]
+begriff = "incapace al lavoro"
+formen = ["incapaci al lavoro"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.20 Art. 16 Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/it#art_16"
+
+[[eintrag]]
+begriff = "incapacità al guadagno"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 7 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/it#art_7"
+
+[[eintrag]]
+begriff = "rendita d'invalidità"
+formen = ["rendite d'invalidità"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 6 Abs. 1bis"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/it#art_6"
+notiz = "Das Einzelwort «invalidità» fehlt absichtlich: Es bezeichnet auch die Ungültigkeit eines Vertrags («l'invalidità del contratto»)."
+
+[[eintrag]]
+begriff = "rendita AI"
+formen = ["rendite AI"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 831.201 Art. 31 Abs. 1: «La prestazione transitoria secondo l’articolo 32 LAI è parificata a una rendita AI.»"
+fassung = "2025-06-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/it#art_31"
+gross = true
+notiz = "Gegenstück zu DE «IV-Rente» und FR «rente AI» (dieselbe Stelle). Gross-/Kleinschreibung beachtet, damit «rendita ai superstiti» (Präposition «ai») nicht zählt; am Satzanfang («Rendita AI») zählt die Wendung darum nicht."
+
+[[eintrag]]
+begriff = "grado d'invalidità"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 28a Abs. 1"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/it#art_28_a"
+
+[[eintrag]]
+begriff = "gravidanza"
+formen = ["gravidanze"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 830.1 Art. 5 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/510/it#art_5"
+
+[[eintrag]]
+begriff = "incinte"
+formen = ["incinta"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 822.11 Art. 35 Abs. 1"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/it#art_35"
+notiz = "«le donne incinte»."
+
+[[eintrag]]
+begriff = "gestante"
+formen = ["gestanti"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 118"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_118"
+
+[[eintrag]]
+begriff = "turba psichica"
+formen = ["turbe psichiche"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 210 Art. 390 Abs. 1 Ziff. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_390"
+
+[[eintrag]]
+begriff = "disabilità mentale"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 210 Art. 390 Abs. 1 Ziff. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_390"
+
+[[eintrag]]
+begriff = "disabile"
+formen = ["disabili"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 151.3 Art. 2 Abs. 1"
+fassung = "2020-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2003/667/it#art_2"
+
+[[eintrag]]
+begriff = "diagnosi"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 42 Abs. 3bis"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/it#art_42"
+merkmal = "icd"
+notiz = "«le diagnosi», Einzahl und Mehrzahl gleich. Löst die Suche nach ICD-10-Kodes aus."
+
+[[eintrag]]
+begriff = "etnia"
+formen = ["etnie"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 261bis"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_261_bis"
+
+[[eintrag]]
+begriff = "orientamento sessuale"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 261bis"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_261_bis"
+
+[[eintrag]]
+begriff = "suicidio"
+formen = ["suicidi"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 311.0 Art. 115"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_115"
+
+[[eintrag]]
+begriff = "suicidalità"
+sprache = "it"
+regel = "art5c-2"
+quelle = "UFSP, Piano d’azione per la prevenzione del suicidio: «Sensibilizzare e informare sulla suicidalità»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/it/piano-dazione-prevenzione-del-suicidio"
+notiz = "Gegenstück zu DE «Suizidalität» und FR «suicidalité». Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "tendenze suicide"
+sprache = "it"
+regel = "art5c-2"
+quelle = "UFSP, Piano d’azione per la prevenzione del suicidio: «Assistere con efficacia le persone con tendenze suicide e quelle con tentativi di suicidio alle spalle…»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/it/piano-dazione-prevenzione-del-suicidio"
+notiz = "Gegenstück zu DE «suizidal» und FR «suicidaire». Gewinnt als längerer Treffer gegen FR «suicide», sodass der italienische Beleg erscheint. Fassung = Abrufdatum."
+
+[[eintrag]]
+begriff = "malate"
+formen = ["malato", "malata", "malati"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 818.101 Art. 33: «Le persone malate, sospette malate, contagiate, sospette contagiate o…»"
+fassung = "2025-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2015/297/it#art_33"
+
+[[eintrag]]
+begriff = "assicurazione sociale malattie"
+formen = ["assicurazione malattie", "assicurazioni malattie"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 1a Abs. 1: «La presente legge disciplina l’assicurazione sociale contro le malattie (assicurazione sociale malattie).»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/it#art_1_a"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Die Versicherung ist keine Krankheit. «assicurazione malattie» steht im Titel «Legge federale sull’assicurazione malattie (LAMal)»."
+
+[[eintrag]]
+begriff = "assicurazione sociale contro le malattie"
+formen = ["assicurazione contro le malattie"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.10 Art. 1a Abs. 1: «La presente legge disciplina l’assicurazione sociale contro le malattie (assicurazione sociale malattie).»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/it#art_1_a"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Die Versicherung ist keine Krankheit; verhindert, dass «malattie» darin gemeldet wird."
+
+[[eintrag]]
+begriff = "cassa malati"
+formen = ["casse malati"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 822.11 Art. 17c Abs. 3: «…nella misura in cui non rispondano la cassa malati o un altro assicuratore del lavoratore.»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/it#art_17_c"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Die Kasse ist keine Krankheit; verhindert, dass «malati» darin gemeldet wird."
+
+[[eintrag]]
+begriff = "assicurazione malattia"
+formen = ["assicurazioni malattia"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.12 Art. 7 Abs. 2 Bst. p: «se l’assicuratore prevede di esercitare l’assicurazione malattia nel Principato del Liechtenstein…»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2015/839/it#art_7"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Die Versicherung ist keine Krankheit; verhindert, dass «malattia» darin gemeldet wird."
+
+[[eintrag]]
+begriff = "assicuratore malattia"
+formen = ["assicuratori malattia"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 57 Abs. 1 Bst. l: «coordinare i provvedimenti sanitari con l’assicuratore malattia e l’assicuratore infortuni»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/it#art_57"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Der Versicherer ist keine Krankheit. Mehrzahl in SR 831.101 Art. 8 Bst. b: «agli assicuratori malattia e infortuni»."
+
+[[eintrag]]
+begriff = "assicuratore-malattie"
+formen = ["assicuratori-malattie", "assicuratore malattie", "assicuratori malattie"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.102 Art. 11 Abs. 2: «…comunicare all’assicuratore-malattie da quando cessa la copertura dell’infortunio»"
+fassung = "2026-10-22"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/it#art_11"
+merkmal = "ausnahme"
+notiz = "Ausnahme: Der Versicherer ist keine Krankheit. Mehrzahl ohne Bindestrich in Art. 37d Abs. 3 Bst. d: «due rappresentanti degli assicuratori malattie»."
+
+[[eintrag]]
+begriff = "malattia tumorale"
+formen = ["malattie tumorali"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 818.33 Art. 3 Abs. 1: «…che diagnosticano o trattano una malattia tumorale…»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/289/it#art_3"
+
+[[eintrag]]
+begriff = "tumore"
+formen = ["tumori"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 818.33 Art. 21 Abs. 1: «…i dati dei pazienti colpiti da tumore in giovane età.»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/289/it#art_21"
+
+[[eintrag]]
+begriff = "cancro"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 12e Bst. c: «…di un programma di diagnosi precoce del cancro del seno…»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_12_e"
+
+[[eintrag]]
+begriff = "certificati medici"
+formen = ["certificato medico"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 312.0 Art. 195 Abs. 1: «Le autorità penali richiedono i rapporti ufficiali e i certificati medici relativi a eventi…»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_195"
+
+[[eintrag]]
+begriff = "sieropositive"
+formen = ["sieropositivo", "sieropositiva", "sieropositivi"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 12d Bst. a: «Per i neonati di madri sieropositive.»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_12_d"
+
+[[eintrag]]
+begriff = "stato di salute"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 831.20 Art. 7a: «…fanno eccezione i provvedimenti che non sono adatti allo stato di salute dell’assicurato.»"
+fassung = "2026-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/827_857_845/it#art_7_a"
+
+[[eintrag]]
+begriff = "diabete"
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 11c Abs. 1 Bst. a: «…a persone affette da diabete mellito…»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_11_c"
+
+[[eintrag]]
+begriff = "diabetico"
+formen = ["diabetica", "diabetici", "diabetiche"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 832.112.31 Art. 11c Abs. 1 Bst. a: «…sindrome del piede diabetico…»"
+fassung = "2026-08-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/it#art_11_c"
+
+[[eintrag]]
+begriff = "forma di dipendenza"
+formen = ["forme di dipendenza"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 741.01 Art. 16d Abs. 1 Bst. b: «soffre di una forma di dipendenza che esclude l’idoneità alla guida»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1959/679_705_685/it#art_16_d"
+notiz = "«dipendenza» allein fehlt: auch Abhängigkeit im Allgemeinen («dipendenza economica»)."
+
+[[eintrag]]
+begriff = "dipendenza economica"
+formen = ["dipendenze economiche"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 220 Art. 728 Abs. 2 Ziff. 5: «l’assunzione di un mandato che comporti dipendenza economica»"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/it#art_728"
+merkmal = "ausnahme"
+notiz = "Ausnahme: wirtschaftliche Abhängigkeit, keine Sucht; gewinnt in «forma di dipendenza economica» als längerer Treffer."
+
+[[eintrag]]
+begriff = "depressioni"
+formen = ["depressione"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "BAG, Piano d’azione per la prevenzione del suicidio: «…in caso di malattie psichiche come le depressioni.»"
+fassung = "2026-11-06"
+url = "https://www.bag.admin.ch/it/piano-dazione-prevenzione-del-suicidio"
+notiz = "Kein Erlass nennt das Wort. Fassung = Abrufdatum. «depressione» heisst auch Tiefdruckgebiet oder Wirtschaftskrise (siehe RegelInfo::grenzen)."
+
+[[eintrag]]
+begriff = "menomazioni fisiche"
+formen = ["menomazione fisica"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 101 Art. 8 Abs. 2: «…e di menomazioni fisiche, mentali o psichiche.»"
+fassung = "2024-03-03"
+url = "https://www.fedlex.admin.ch/eli/cc/1999/404/it#art_8"
+
+[[eintrag]]
+begriff = "appartenenza etnica"
+sprache = "it"
+regel = "art5c-2"
+quelle = "FF 2017 5939, 6012: «…è estesa ai dati sull’appartenenza etnica.»"
+fassung = "2017-09-15"
+url = "https://www.fedlex.admin.ch/eli/fga/2017/2057/it"
+notiz = "Messaggio del 15 settembre 2017 (revisione totale della LPD)."
+
+[[eintrag]]
+begriff = "origine etnica"
+formen = ["origini etniche"]
+sprache = "it"
+regel = "art5c-2"
+quelle = "SR 0.104 Art. 4: «…di un gruppo di individui di un certo colore o di una certa origine etnica…»"
+fassung = "2022-04-21"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/1164_1164_1164/it#art_4"
+notiz = "Convenzione internazionale sull’eliminazione di ogni forma di discriminazione razziale. Gegenstück zu FR «origine ethnique» und DE «ethnische Herkunft»."

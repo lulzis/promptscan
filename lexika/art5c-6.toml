@@ -1,0 +1,285 @@
+# Art. 5 Bst. c Ziff. 6 DSG: Daten über Massnahmen der sozialen Hilfe.
+#
+# Nur Eindeutiges: Massnahmen des Kindes- und Erwachsenenschutzes (ZGB) und die
+# Sozialhilfe. Die Botschaft zum DSG nennt «Sozialversicherungsleistungen im
+# Zusammenhang mit Krankheit und Unfall sowie Vormundschafts- und Fürsorgemassnahmen»
+# (BBl 1988 II 413, 446). Leistungen der Sozialversicherungen fehlen hier bewusst
+# (Abgrenzung in RegelInfo::grenzen); Krankheit, Invalidität und IV-Rente meldet
+# art5c-2 als Gesundheitsdaten («Unfall» fehlt auch dort). Nicht erfasst sind ferner
+# Behörden und kantonale Bezeichnungen wie «Sozialamt», «KESB», «wirtschaftliche Hilfe».
+#
+# Bewusst weggelassen: «Beistand» allein («Beistand leisten»), «Nothilfe»,
+# «aide d'urgence», «soccorso d'emergenza» (auch: Erste Hilfe, Rettung),
+# «Unterstützung», «bedürftig», «bevormundet» (auch übertragen: «sich bevormundet
+# fühlen»), IT «curatore» (auch: Kurator, «curatore fallimentare»), FR «tuteur» und
+# «tutelle» sowie IT «tutore» und «tutela» allein (auch: Nachhilfelehrer,
+# Pflanzenstütze, «tutela dei dati»). Diese zählen nur in Wendungen mit dem Kind oder
+# der Behörde aus Art. 327a und 327b ZGB.
+
+# --- Deutsch ---------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Beistandschaft"
+formen = ["Beistandschaften"]
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 390 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_390"
+teilwort = "ende"
+notiz = "Am Wortende, damit «Begleitbeistandschaft» (Art. 393), «Vertretungsbeistandschaft» (Art. 394) und «Mitwirkungsbeistandschaft» (Art. 396) mitzählen."
+
+[[eintrag]]
+begriff = "Beiständin"
+formen = ["Beiständinnen"]
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 394 Abs. 3"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_394"
+notiz = "«des Beistands oder der Beiständin». «Beistand» allein fehlt, weil es auch Hilfe allgemein heisst («Beistand leisten»)."
+
+[[eintrag]]
+begriff = "fürsorgerische Unterbringung"
+formen = ["fürsorgerischen Unterbringung", "fürsorgerische Unterbringungen", "fürsorgerischen Unterbringungen", "fürsorgerischer Unterbringung", "fürsorgerischer Unterbringungen"]
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 314b Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_314_b"
+
+[[eintrag]]
+begriff = "Kindesschutzmassnahmen"
+formen = ["Kindesschutzmassnahme"]
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 311 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_311"
+
+[[eintrag]]
+begriff = "Sozialhilfe"
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 142.20 Art. 62 Abs. 1 Bst. e"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/758/de#art_62"
+teilwort = "anfang"
+notiz = "«auf Sozialhilfe angewiesen». Am Wortanfang, damit «Sozialhilfeleistungen» (SR 142.31 Art. 82) und «Sozialhilfebezug» mitzählen."
+
+[[eintrag]]
+begriff = "sozialen Hilfe"
+formen = ["soziale Hilfe", "sozialer Hilfe"]
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 6: «Daten über Massnahmen der sozialen Hilfe»"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/de#art_5"
+notiz = "Wortlaut des DSG selbst."
+
+[[eintrag]]
+begriff = "Vormund"
+formen = ["Vormunds", "Vormundes", "Vormünder", "Vormündern"]
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 327a: «Steht ein Kind nicht unter elterlicher Sorge, so ernennt ihm die Kindesschutzbehörde einen Vormund.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_327_a"
+notiz = "Die Botschaft zum DSG nennt «Vormundschafts- und Fürsorgemassnahmen» als Massnahmen der sozialen Hilfe (BBl 1988 II 413, 446)."
+
+[[eintrag]]
+begriff = "Vormundschaft"
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 327b: «Das Kind unter Vormundschaft hat die gleiche Rechtsstellung wie das Kind unter elterlicher Sorge.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_327_b"
+teilwort = "anfang"
+notiz = "Am Wortanfang, damit «Vormundschaften» und «Vormundschaftsbehörde» mitzählen."
+
+[[eintrag]]
+begriff = "Sorge entzogen"
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 311 Abs. 2: «Wird beiden Eltern die Sorge entzogen, so erhalten die Kinder einen Vormund.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_311"
+notiz = "Entziehung der elterlichen Sorge (Art. 311 ZGB); trifft auch «die elterliche Sorge entzogen». Gegenstück zu FR «retrait de l'autorité parentale» und IT «privazione dell'autorità parentale». «elterliche Sorge» allein ist keine Massnahme und fehlt."
+
+[[eintrag]]
+begriff = "entzieht die elterliche Sorge"
+sprache = "de"
+regel = "art5c-6"
+quelle = "SR 210 Art. 312: «Die Kindesschutzbehörde entzieht die elterliche Sorge: …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_312"
+notiz = "Dieselbe Massnahme im Präsens; das Hauptwort «Entziehung der elterlichen Sorge» steht nur im Randtitel, nicht im Artikeltext."
+
+# --- Französisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "curatelle"
+formen = ["curatelles"]
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 390 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_390"
+
+[[eintrag]]
+begriff = "curateur"
+formen = ["curatrice", "curateurs", "curatrices"]
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 394"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_394"
+
+[[eintrag]]
+begriff = "placement à des fins d'assistance"
+formen = ["placements à des fins d'assistance"]
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 314b Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_314_b"
+
+[[eintrag]]
+begriff = "mesures de protection de l'enfant"
+formen = ["mesure de protection de l'enfant"]
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 311 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_311"
+
+[[eintrag]]
+begriff = "aide sociale"
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 142.20 Art. 62 Abs. 1 Bst. e"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/758/fr#art_62"
+notiz = "«dépend de l'aide sociale»."
+
+[[eintrag]]
+begriff = "enfant sous tutelle"
+formen = ["enfants sous tutelle"]
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 327b: «Le statut juridique de l’enfant sous tutelle est le même que celui de l’enfant soumis à l’autorité parentale…»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_327_b"
+notiz = "Nur als Wendung: «tutelle» allein steht auch für Aufsicht allgemein («sous la tutelle de l’État»)."
+
+[[eintrag]]
+begriff = "nomme un tuteur"
+formen = ["nommer un tuteur", "nommé un tuteur"]
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 327a: «L’autorité de protection de l’enfant nomme un tuteur lorsque l’enfant n’est pas soumis à l’autorité parentale.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_327_a"
+notiz = "Nur als Wendung: «tuteur» allein heisst auch Nachhilfelehrer oder Pflanzenstütze."
+
+[[eintrag]]
+begriff = "retrait de l'autorité parentale"
+sprache = "fr"
+regel = "art5c-6"
+quelle = "SR 210 Art. 311 Abs. 1: «…l’autorité de protection de l’enfant prononce le retrait de l’autorité parentale…»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/fr#art_311"
+notiz = "Gegenstück zu DE «Sorge entzogen» und IT «privazione dell'autorità parentale» (Art. 311 ZGB)."
+
+# --- Italienisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "curatela"
+formen = ["curatele"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 390 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_390"
+
+[[eintrag]]
+begriff = "amministrazione di sostegno"
+formen = ["amministrazioni di sostegno"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 393 Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_393"
+
+[[eintrag]]
+begriff = "ricovero a scopo di assistenza"
+formen = ["ricoveri a scopo di assistenza"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 314b Abs. 1"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_314_b"
+
+[[eintrag]]
+begriff = "misure per la protezione del figlio"
+formen = ["misura per la protezione del figlio"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 311"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_311"
+
+[[eintrag]]
+begriff = "privazione dell'autorità parentale"
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 311 Abs. 3"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_311"
+
+[[eintrag]]
+begriff = "aiuto sociale"
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 142.20 Art. 62 Abs. 1 Bst. e"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/758/it#art_62"
+notiz = "«dipende dall'aiuto sociale»."
+
+[[eintrag]]
+begriff = "assistenza sociale"
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 6: «i dati concernenti le misure d’assistenza sociale»"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/it#art_5"
+notiz = "Wortlaut des DSG selbst."
+
+[[eintrag]]
+begriff = "prestazioni assistenziali"
+formen = ["prestazione assistenziale"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 851.1 Art. 3 Abs. 1: «Sono prestazioni assistenziali a tenore della presente legge le prestazioni in denaro e in natura di un ente pubblico, pagate secondo il diritto cantonale alle persone nel bisogno…»"
+fassung = "2017-04-08"
+url = "https://www.fedlex.admin.ch/eli/cc/1978/221_221_221/it#art_3"
+
+[[eintrag]]
+begriff = "minorenne sotto tutela"
+formen = ["minorenni sotto tutela"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 327b: «Il minorenne sotto tutela ha lo stesso stato giuridico…»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_327_b"
+notiz = "Nur als Wendung: «tutela» allein steht auch für Schutz allgemein («tutela dei dati»)."
+
+[[eintrag]]
+begriff = "nomina un tutore"
+formen = ["nominare un tutore", "nominato un tutore"]
+sprache = "it"
+regel = "art5c-6"
+quelle = "SR 210 Art. 327a: «L’autorità di protezione dei minori nomina un tutore al minorenne che non è sotto autorità parentale.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/it#art_327_a"
+notiz = "Nur als Wendung: «tutore» allein heisst auch Pflanzenstütze oder Lehrbegleiter."

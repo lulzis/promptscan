@@ -1,0 +1,391 @@
+# Vertretungsmerkmale (Regel name, SPEC 5.2, Ausnahme nach Art. 4 Abs. 1 lit. g der
+# Anonymisierungsregeln des Bundesgerichts: «die Namen der Rechtsvertreter der Parteien»).
+#
+# Ein Anwaltswort aus name-rechtsvertretung.toml mit merkmal «anwalt», «anwalt-de» oder
+# «anwalt-wort» («Me», «avv.», «Rechtsanwältin», «avocat») nimmt einen Namen nur aus, wenn
+# der Satz die Person als Vertretung einer Partei zeigt. Diese Liste nennt die Wörter, an
+# denen promptscan das erkennt. Sie markiert selbst nichts und wird nur neben einem
+# Anwaltswort gelesen; «Mon patient, Me Laurent Dupont, souffre …» meldet den Namen.
+# «conseil» (merkmal beratung) zeigt die Vertretung nur mit «vertreten» oder einer Partei,
+# «mandataire» (merkmal beauftragt) nur mit «partie» oder einer Verfahrensrolle danach.
+#
+# merkmal:
+#   vertreten  Partizip mit Präposition unmittelbar vor dem Anwaltswort, auch vor einer
+#              Anrede, einem Artikel oder einem Possessivpronomen davor: «vertreten durch RA
+#              …», «représentée par Me …», «rappresentato dall'avv. …», «vertreten durch Frau
+#              Rechtsanwältin …», «assistée de son conseil». Ebenso vor einem Namen, dem das
+#              Anwaltswort mit Komma folgt: «vertreten durch Hans Muster, Rechtsanwalt».
+#   vertritt   Verb unmittelbar nach dem Namen, den ein Anwaltswort einleitet, oder nach dem
+#              Anwaltswort selbst, und nach dem Verb eine Partei: «Rechtsanwältin … vertritt
+#              die Klägerin», «Me … plaide pour la recourante», «Hans Muster, Rechtsanwalt,
+#              vertritt Erika Beispiel». Im übertragenen Gebrauch folgt keine Partei
+#              («vertritt die Auffassung», «représente un danger»): Der Name wird gemeldet.
+#   besitz     Possessivpronomen unmittelbar vor dem Anwaltswort: «Ihr Anwalt», «mon avocat»,
+#              «il suo avvocato». Es zeigt die Vertretung nur, wenn der Satz keine Angabe
+#              nach Art. 5 lit. c DSG enthält; sonst ist die Person selbst betroffen, und der
+#              Name wird gemeldet: «Mon avocat, Me Jean Dupont, est en incapacité de
+#              travail.», «Jean Dupont, son avocat, est en incapacité de travail.». Nach dem
+#              Anwaltswort verbindet es ihn mit der Partei («Anwalt meiner Mandantin»).
+#   bezug      Präposition oder Artikel, klein geschrieben, nach dem Anwaltswort, höchstens
+#              zwei, vor einer Partei: «Anwalt von Hans Muster», «avocat de la partie
+#              adverse», «avvocato della controparte»; die Artikel auch vor einem
+#              Possessivpronomen: «Mario Rossi, il suo avvocato».
+#   partei     Partei nach «bezug». Ebenso zählen eine Verfahrensrolle (verfahrensrollen.toml),
+#              eine Anrede, ein Vorname aus dem BFS-Register mit Nachnamen oder nach einem
+#              Possessivpronomen jedes Wort («Anwalt meiner Mandantin»).
+#
+# Folgt der Bezeichnung der Vertretung ein Name nach Komma oder Doppelpunkt, gilt auch er als
+# Vertretung: «votre avocate, Me …», «Avocate de la partie adverse: Me …».
+#
+# Formen: Flexion (Geschlecht, Zahl) und die mit dem Artikel verschmolzenen Präpositionen
+# (it. «dal», «dall'», «dalla» …). Wörterbücher haben keine Fassung; «fassung» ist dort der
+# Tag, an dem der Eintrag gelesen wurde.
+
+# --- vertreten: Partizip mit Präposition vor dem Anwaltswort ---
+
+[[eintrag]]
+begriff = "vertreten durch"
+sprache = "de"
+regel = "name"
+quelle = "ZV (SR 631.01) Art. 209 Bst. a: «Angabe, dass die Schweizerische Eidgenossenschaft, vertreten durch das BAZG, die Gläubigerin ist;»"
+fassung = "2024-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/250/de#art_209"
+merkmal = "vertreten"
+notiz = "Partizip als Apposition zur Partei, wie im Rubrum: «vertreten durch Rechtsanwältin …». Im Verfahrensrecht steht es nachgestellt, StPO (SR 312.0) Art. 106 Abs. 2: «Eine handlungsunfähige Person wird durch ihre gesetzliche Vertretung vertreten.»; in StPO, ZPO, BGG, VwVG, ZGB, OR, BGFA und SchKG steht die Wendung nicht wörtlich, darum die Zollverordnung."
+
+[[eintrag]]
+begriff = "représenté par"
+formen = ["représentée par", "représentés par", "représentées par"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 106 al. 2: «Une personne qui n'a pas l'exercice des droits civils est représentée par son représentant légal.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_106"
+merkmal = "vertreten"
+
+[[eintrag]]
+begriff = "assistée d'"
+formen = ["assisté d'", "assistés d'", "assistées d'", "assisté de", "assistée de", "assistés de", "assistées de"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 118 al. 1 let. c: «… lorsque la partie adverse est assistée d'un avocat …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_118"
+merkmal = "vertreten"
+
+[[eintrag]]
+begriff = "rappresentato dal"
+formen = ["rappresentato da", "rappresentato dall'", "rappresentato dallo", "rappresentato dalla", "rappresentata da", "rappresentata dal", "rappresentata dall'", "rappresentata dallo", "rappresentata dalla", "rappresentati da", "rappresentati dal", "rappresentati dall'", "rappresentati dallo", "rappresentati dalla", "rappresentate da", "rappresentate dal", "rappresentate dall'", "rappresentate dallo", "rappresentate dalla"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 106 cpv. 2: «Chi non ha l'esercizio dei diritti civili è rappresentato dal suo rappresentante legale.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_106"
+merkmal = "vertreten"
+
+[[eintrag]]
+begriff = "patrocinata da"
+formen = ["patrocinata dal", "patrocinata dall'", "patrocinata dallo", "patrocinata dalla", "patrocinato da", "patrocinato dal", "patrocinato dall'", "patrocinato dallo", "patrocinato dalla", "patrocinati da", "patrocinati dal", "patrocinati dall'", "patrocinati dallo", "patrocinati dalla", "patrocinate da", "patrocinate dal", "patrocinate dall'", "patrocinate dallo", "patrocinate dalla"]
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 118 cpv. 1 lett. c: «… segnatamente se la controparte è patrocinata da un avvocato …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_118"
+merkmal = "vertreten"
+
+# --- vertritt: Verb nach dem Namen ---
+
+[[eintrag]]
+begriff = "vertritt"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 112 Abs. 2: «… so bestimmt die Verfahrensleitung, wer von den zur zivilrechtlichen Vertretung befugten Personen das Unternehmen im Strafverfahren vertritt.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_112"
+merkmal = "vertritt"
+
+[[eintrag]]
+begriff = "représente"
+formen = ["représentent"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 112 al. 3: «… à l'encontre de la personne qui représente l'entreprise dans la procédure pénale …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_112"
+merkmal = "vertritt"
+
+[[eintrag]]
+begriff = "plaide pour"
+formen = ["plaident pour"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «plaider», v.i. 2: «Présenter des arguments pour appuyer ou attaquer quelqu'un, quelque chose : Plaider pour le respect des droits de l'homme.»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/plaider/61313"
+merkmal = "vertritt"
+notiz = "Nur mit «pour»: «plaide coupable» (v.t. 2: «Plaider coupable.») spricht über die eigene Sache. In den durchsuchten Erlassen (561 Fassungen im Zwischenspeicher) nicht gefunden."
+
+[[eintrag]]
+begriff = "rappresenta"
+formen = ["rappresentano"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 112 cpv. 2: «… chi dirige il procedimento decide quale delle persone autorizzate a rappresentarla in materia civile la rappresenta nel procedimento penale.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_112"
+merkmal = "vertritt"
+
+# --- besitz: Possessivpronomen vor dem Anwaltswort ---
+
+[[eintrag]]
+begriff = "mein"
+formen = ["meine", "meinem", "meinen", "meiner", "meines"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «mein»: «Possessivpronomen; bezeichnet die Zugehörigkeit zur, zum Sprechenden»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/mein_Possessivpronomen"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "unser"
+formen = ["unsere", "unserem", "unseren", "unserer", "unseres"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «unser»: «Possessivpronomen; bezeichnet … die Zugehörigkeit zu Personen, von denen in der 1. Person Plural gesprochen …»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/unser_Possessivpronomen"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "ihr"
+formen = ["ihre", "ihrem", "ihren", "ihrer", "ihres"]
+sprache = "de"
+regel = "name"
+quelle = "Duden online, «ihr»: Grammatik «Possessivpronomen»; «bezeichnet die Zugehörigkeit zu einer Person oder Sache, die mit einem Femininum bezeichnet wird»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/ihr_sie_ihre"
+merkmal = "besitz"
+notiz = "Auch die Höflichkeitsform «Ihr Anwalt»."
+
+[[eintrag]]
+begriff = "sein"
+formen = ["seine", "seinem", "seinen", "seiner", "seines"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 152 Abs. 2: «Das Opfer kann sich bei allen Verfahrenshandlungen ausser von seinem Rechtsbeistand von einer Vertrauensperson begleiten lassen.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_152"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "mon"
+formen = ["ma", "mes"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «mon, ma, mes»: «adjectif possessif de la 1re personne du singulier»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/mon/52143"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "notre"
+formen = ["nos"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «notre, nos»: «adjectif possessif … Correspond à \" de nous \"»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/notre/55075"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "votre"
+formen = ["vos"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «votre, vos»: «adjectif possessif … Correspond à « de vous »»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/votre/82552"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "son"
+formen = ["sa", "ses"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 88 al. 1 let. c: «lorsqu'une partie ou son conseil n'a pas désigné un domicile de notification en Suisse …»; art. 56 let. c: «… avec une partie, avec son conseil juridique …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_88"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "leur"
+formen = ["leurs"]
+sprache = "fr"
+regel = "name"
+quelle = "Larousse, «leur, leurs»: «adjectif possessif de la 3e personne du pluriel D'eux, d'elles ; qui appartient à eux, à elles»"
+fassung = "2026-11-06"
+url = "https://www.larousse.fr/dictionnaires/francais/leur/46854"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "mio"
+formen = ["mia", "miei", "mie"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «mio»: «agg. poss.»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/mio/"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "nostro"
+formen = ["nostra", "nostri", "nostre"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «nostro»: «agg. poss.»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/nostro/"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "vostro"
+formen = ["vostra", "vostri", "vostre"]
+sprache = "it"
+regel = "name"
+quelle = "Treccani, «vostro»: «agg. poss.»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/vostro/"
+merkmal = "besitz"
+
+[[eintrag]]
+begriff = "suo"
+formen = ["sua", "suoi", "sue"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 56 lett. c: «… con una parte, con il suo patrocinatore …»; Treccani, «suo»: «agg. poss.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_56"
+merkmal = "besitz"
+
+# --- bezug: Präposition oder Artikel vor der Partei ---
+
+[[eintrag]]
+begriff = "von"
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 40 Abs. 1: «In Zivil- und Strafsachen können Parteien vor Bundesgericht nur von Anwälten und Anwältinnen vertreten werden …»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_40"
+merkmal = "bezug"
+notiz = "Die Artikel «der», «des» usw. stehen in name-begleiter.toml und zählen ebenso."
+
+[[eintrag]]
+begriff = "de"
+formen = ["du", "des", "d'"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 108 al. 2: «Le conseil juridique d'une partie ne peut faire l'objet de restrictions que du fait de son comportement.»; art. 127 al. 5: «La défense des prévenus est réservée aux avocats …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_108"
+merkmal = "bezug"
+
+[[eintrag]]
+begriff = "la"
+formen = ["le", "les", "l'", "une", "un"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 118 al. 1 let. c: «… lorsque la partie adverse est assistée d'un avocat …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_118"
+merkmal = "bezug"
+
+[[eintrag]]
+begriff = "di"
+formen = ["del", "dello", "della", "dell'", "dei", "degli", "delle"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 56 lett. b: «… patrocinatore di una parte …»; art. 127 cpv. 5: «La difesa dell'imputato è riservata agli avvocati …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_56"
+merkmal = "bezug"
+
+[[eintrag]]
+begriff = "una"
+formen = ["un", "uno", "la", "l'"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 56 lett. b: «… patrocinatore di una parte …»; CPC (SR 272) art. 118 cpv. 1 lett. c: «… se la controparte è patrocinata da un avvocato …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_56"
+merkmal = "bezug"
+
+[[eintrag]]
+begriff = "il"
+formen = ["i", "gli", "le"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 cpv. 1: «Sono parti: a. l'imputato; b. l'accusatore privato; c. il pubblico ministero …»; art. 104 cpv. 2: «La Confederazione e i Cantoni …»; art. 127 cpv. 1: «… l'imputato, l'accusatore privato e gli altri partecipanti al procedimento …»; art. 127 cpv. 2: «… le parti possono far capo a due o più patrocinatori.»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_104"
+merkmal = "bezug"
+notiz = "Artikel vor einem Possessivpronomen: «Mario Rossi, il suo avvocato»."
+
+# --- partei: die vertretene Partei ---
+
+[[eintrag]]
+begriff = "Partei"
+formen = ["Parteien"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 104 Abs. 1: «Parteien sind: a. die beschuldigte Person; b. die Privatklägerschaft; …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_104"
+merkmal = "partei"
+
+[[eintrag]]
+begriff = "Verteidigung"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 127 Abs. 5: «Die Verteidigung der beschuldigten Person ist Anwältinnen und Anwälten vorbehalten …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_127"
+merkmal = "partei"
+
+[[eintrag]]
+begriff = "partie"
+formen = ["parties"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 al. 1: «Ont la qualité de partie: a. le prévenu; b. la partie plaignante; …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_104"
+merkmal = "partei"
+
+[[eintrag]]
+begriff = "défense"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 127 al. 5: «La défense des prévenus est réservée aux avocats …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_127"
+merkmal = "partei"
+
+[[eintrag]]
+begriff = "parte"
+formen = ["parti"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 cpv. 1: «Sono parti: a. l'imputato; b. l'accusatore privato; …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_104"
+merkmal = "partei"
+
+[[eintrag]]
+begriff = "difesa"
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 127 cpv. 5: «La difesa dell'imputato è riservata agli avvocati …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_127"
+merkmal = "partei"

@@ -1,0 +1,98 @@
+# Art. 5 Bst. c Ziff. 4 DSG: biometrische Daten, die eine natürliche Person eindeutig
+# identifizieren.
+#
+# Ein Text-Prompt enthält solche Daten kaum je selbst; er nennt sie. Gemeldet wird die
+# Nennung. Gewöhnliche Fotografien sind nicht erfasst (BBl 2017 6941, 7020), darum
+# fehlen «Foto», «photographie», «fotografia». Gesichtsbilder nennt die Botschaft
+# dagegen in allen drei Sprachen als Beispiel biometrischer Daten: «Gesichtsbilder»
+# (BBl 2017 7020), «des images faciales» (FF 2017 6641), «un’immagine del viso»
+# (FF 2017 6012).
+
+# --- Deutsch ---------------------------------------------------------------
+
+[[eintrag]]
+begriff = "biometrische Daten"
+formen = ["biometrischen Daten", "biometrischer Daten"]
+sprache = "de"
+regel = "art5c-4"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 4"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/de#art_5"
+
+[[eintrag]]
+begriff = "Fingerabdrücke"
+formen = ["Fingerabdruck", "Fingerabdrucks", "Fingerabdruckes", "Fingerabdrücken"]
+sprache = "de"
+regel = "art5c-4"
+quelle = "SR 143.1 Art. 2 Abs. 2bis"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/441/de#art_2"
+notiz = "«Der Datenchip kann ein Gesichtsbild und die Fingerabdrücke der Inhaberin oder des Inhabers enthalten»."
+
+[[eintrag]]
+begriff = "Gesichtsbild"
+formen = ["Gesichtsbilds", "Gesichtsbildes", "Gesichtsbilder", "Gesichtsbildern"]
+sprache = "de"
+regel = "art5c-4"
+quelle = "SR 143.1 Art. 2 Abs. 2bis"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/441/de#art_2"
+
+# --- Französisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "données biométriques"
+formen = ["donnée biométrique"]
+sprache = "fr"
+regel = "art5c-4"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 4"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/fr#art_5"
+
+[[eintrag]]
+begriff = "empreintes digitales"
+formen = ["empreinte digitale"]
+sprache = "fr"
+regel = "art5c-4"
+quelle = "SR 143.1 Art. 2 Abs. 2bis"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/441/fr#art_2"
+
+[[eintrag]]
+begriff = "images faciales"
+formen = ["image faciale"]
+sprache = "fr"
+regel = "art5c-4"
+quelle = "FF 2017 6565, 6641: «Il s’agit par exemple des empreintes digitales, des images faciales, de l’iris, ou encore de la voix.»"
+fassung = "2017-09-15"
+url = "https://www.fedlex.admin.ch/eli/fga/2017/2057/fr"
+notiz = "Message du 15 septembre 2017 (révision totale de la LPD). FR-Gegenstück zu «Gesichtsbild» und «immagine del viso»; SR 143.1 Art. 2 Abs. 2bis schreibt auf Französisch «la photographie», die der Message als gewöhnliche Fotografie ausnimmt."
+
+# --- Italienisch -----------------------------------------------------------
+
+[[eintrag]]
+begriff = "dati biometrici"
+formen = ["dato biometrico"]
+sprache = "it"
+regel = "art5c-4"
+quelle = "SR 235.1 Art. 5 Bst. c Ziff. 4"
+fassung = "2025-07-07"
+url = "https://www.fedlex.admin.ch/eli/cc/2022/491/it#art_5"
+
+[[eintrag]]
+begriff = "impronte digitali"
+formen = ["impronta digitale"]
+sprache = "it"
+regel = "art5c-4"
+quelle = "SR 143.1 Art. 2 Abs. 2bis"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/441/it#art_2"
+
+[[eintrag]]
+begriff = "immagine del viso"
+formen = ["immagini del viso"]
+sprache = "it"
+regel = "art5c-4"
+quelle = "SR 143.1 Art. 2 Abs. 2bis"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/441/it#art_2"

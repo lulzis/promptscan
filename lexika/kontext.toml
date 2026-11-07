@@ -1,0 +1,1134 @@
+# Berufsbezeichnungen von Geheimnisträgerinnen und Geheimnisträgern (Regel «kontext»).
+#
+# Ein Eintrag zählt nur in einer Selbstbezeichnung der ersten Person: «ich bin Ärztin»,
+# «Als Anwältin habe ich», «en tant qu'avocat, je», «sono avvocato» (Rahmen in
+# src/regeln/kontext.rs). Mit Possessivbegleiter («mein Anwalt») ist die schreibende Person
+# Klientin oder Patientin; das ergibt nur einen Personenbezug (Regel «personenbezug»).
+#
+# merkmal: Rolle wie bei --role. merkmal = "none" sperrt eine Zusammensetzung, die keine
+# Geheimnisträgerin bezeichnet («Tierarzt» gegen die Endung «-arzt»): Bei Überlappung gewinnt
+# der längere Eintrag. formen: Genus und Numerus im Nominativ. Genitiv und Dativ Mehrzahl
+# fehlen absichtlich («Ich bin Ärzten dankbar» ist keine Selbstbezeichnung).
+# teilwort = "ende": Der Eintrag zählt auch als Ende eines zusammengesetzten Worts
+# («Hausärztin», «Oberarzt»); die Selbstbezeichnung umfasst dann das ganze Wort.
+# FR «contrôleur» (Revisoren) steht in Art. 321 Ziff. 1 CP, bezeichnet allein aber auch
+# Kontrolleure aller Art («contrôleur de gestion»); Präzision zu messen (SPEC 4.3). Ebenso
+# bezeichnen «Revisor», «réviseur» und «revisore» auch, wer Texte oder Druckbogen prüft
+# (Notizen der Einträge).
+# Private Stellung statt Pflicht (Code in src/regeln/kontext.rs, fn privat): Ein
+# Finanzinstitut vor «meiner», «de ma», «di mia» usw. zählt nicht (Art. 2 Abs. 2 lit. a
+# FINIG), «procuratore generale di …» nur vor dem Amt (Art. 458 Abs. 1, Art. 535 Abs. 3 OR).
+#
+# begriff ist die Grundform. Die Fundstelle nennt das Wort oft nur in einer Form aus
+# formen, meist der Mehrzahl (Art. 321 Ziff. 1 StGB: «Rechtsanwälte», «avocats», «avvocati»).
+# Gelesen am 06.11.2026 auf Fedlex (fedlex.data.admin.ch), geltende Fassung; jeder Eintrag
+# am Wortlaut des zitierten Artikels nachgeprüft (Grundform oder eine Form aus formen).
+# Wörter, die kein Bundeserlass braucht, belegen Duden online und Treccani (abgerufen am
+# 06.11.2026), wie «Mandant» in personenbezug.toml.
+
+# --- Art. 321 Ziff. 1 StGB, Deutsch ---------------------------------------------------
+
+[[eintrag]]
+begriff = "Rechtsanwalt"
+formen = ["Rechtsanwältin", "Rechtsanwälte", "Rechtsanwältinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+
+[[eintrag]]
+begriff = "Verteidiger"
+formen = ["Verteidigerin", "Verteidigerinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Verteidigung im Strafverfahren; steht in der Berufsliste neben den Rechtsanwälten. Rolle lawyer."
+
+[[eintrag]]
+begriff = "Notar"
+formen = ["Notarin", "Notare", "Notarinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "notary"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+
+[[eintrag]]
+begriff = "Geistlicher"
+formen = ["Geistliche"]
+sprache = "de"
+regel = "kontext"
+merkmal = "clergy"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Erstes Wort der Berufsliste. «Geistliche» ist weibliche Einzahl und Mehrzahl."
+
+[[eintrag]]
+begriff = "Patentanwalt"
+formen = ["Patentanwältin", "Patentanwälte", "Patentanwältinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "patent-attorney"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Nicht Art. 13 BGFA: Das Anwaltsgesetz gilt für Patentanwälte nicht."
+
+[[eintrag]]
+begriff = "Revisor"
+formen = ["Revisorin", "Revisoren", "Revisorinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "auditor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Erfasst sind nur «nach Obligationenrecht zur Verschwiegenheit verpflichtete Revisoren»; ob das zutrifft, entscheidet promptscan nicht. Das Wort bezeichnet auch den Korrektor im Druckwesen (Duden online, «Revisor», abgerufen am 6.11.2026, Bedeutung 2: «Korrektor, dem die Überprüfung der letzten Korrekturen im druckfertigen Bogen obliegt»): «Ich bin Revisorin in einer Druckerei» ist ein Fehltreffer (explain kontext)."
+
+[[eintrag]]
+begriff = "Arzt"
+formen = ["Ärztin", "Ärzte", "Ärztinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+teilwort = "ende"
+notiz = "Auch als Wortende: «Hausärztin», «Oberarzt», «Kinderärztin» sind Ärztinnen und Ärzte. «Tierarzt» sperrt der eigene Eintrag (merkmal none)."
+
+[[eintrag]]
+begriff = "Tierarzt"
+formen = ["Tierärztin", "Tierärzte", "Tierärztinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "none"
+quelle = "SR 811.11 Art. 2 Abs. 1 lit. e"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2007/537/de#art_2"
+teilwort = "ende"
+notiz = "«Tierärztinnen und Tierärzte»: universitärer Medizinalberuf, aber nicht in der Berufsliste von Art. 321 Ziff. 1 StGB. Keine Rolle; sperrt die Endung «-arzt» von «Arzt», auch in «Kleintierärztin»: Der längere Treffer gewinnt."
+
+[[eintrag]]
+begriff = "Zahnarzt"
+formen = ["Zahnärztin", "Zahnärzte", "Zahnärztinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor wie SPEC 4.3 (doctor, psychologist: «abschliessende Berufsliste im Wortlaut»). Norm dieselbe: Art. 321 Ziff. 1 StGB."
+
+[[eintrag]]
+begriff = "Chiropraktor"
+formen = ["Chiropraktorin", "Chiropraktoren", "Chiropraktorinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Apotheker"
+formen = ["Apothekerin", "Apothekerinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Hebamme"
+formen = ["Hebammen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Psychologe"
+formen = ["Psychologin", "Psychologen", "Psychologinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "psychologist"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+
+[[eintrag]]
+begriff = "Pflegefachperson"
+formen = ["Pflegefachpersonen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; SPEC 4.3 nennt die Pflegefachpersonen ausdrücklich bei doctor, psychologist."
+
+[[eintrag]]
+begriff = "Pflegefachmann"
+formen = ["Pflegefachfrau", "Pflegefachmänner", "Pflegefachfrauen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 811.21 Art. 2 Abs. 1 lit. a"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2020/16/de#art_2"
+notiz = "«Pflegefachfrau und Pflegefachmann» (GesBG); ebenso Art. 49 KVV («Pflegefachmänner und Pflegefachfrauen»). Die Berufsbezeichnung zu den «Pflegefachpersonen» von Art. 321 Ziff. 1 StGB; Rolle doctor, Norm dieselbe."
+
+[[eintrag]]
+begriff = "Krankenschwester"
+formen = ["Krankenschwestern"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "Duden online, «Krankenschwester», Bedeutung: «weibliche Fachkraft für Krankenpflege (Berufsbezeichnung)»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Krankenschwester"
+notiz = "Kein Bundeserlass braucht das Wort (GesBG und KVV sagen «Pflegefachfrau»); darum das Wörterbuch, abgerufen am 06.11.2026. Pflegefachpersonen und ihre Hilfspersonen stehen in Art. 321 Ziff. 1 StGB; Rolle doctor."
+
+[[eintrag]]
+begriff = "Psychotherapeut"
+formen = ["Psychotherapeutin", "Psychotherapeuten", "Psychotherapeutinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "psychologist"
+quelle = "SR 832.102 Art. 50c"
+fassung = "2026-10-22"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/de#art_50_c"
+notiz = "«Psychologische Psychotherapeuten und psychologische Psychotherapeutinnen werden zugelassen, wenn …» (KVV). Psychologen stehen in Art. 321 Ziff. 1 StGB; ärztliche Psychotherapie fällt unter doctor, die Norm ist dieselbe."
+
+[[eintrag]]
+begriff = "Psychiater"
+formen = ["Psychiaterin", "Psychiaterinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "Duden online, «Psychiater», Bedeutung: «Facharzt für Psychiatrie»"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Psychiater"
+notiz = "In StGB, ZGB, StPO, JStG, MedBG, KVV, KLV, IVG, IVV, ATSV und BetmG nicht belegt (Suche am 06.11.2026); darum das Wörterbuch. Fachärztin oder Facharzt: Ärzte stehen in Art. 321 Ziff. 1 StGB; Rolle doctor."
+
+[[eintrag]]
+begriff = "Physiotherapeut"
+formen = ["Physiotherapeutin", "Physiotherapeuten", "Physiotherapeutinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Ergotherapeut"
+formen = ["Ergotherapeutin", "Ergotherapeuten", "Ergotherapeutinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Ernährungsberater"
+formen = ["Ernährungsberaterin", "Ernährungsberaterinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Optometrist"
+formen = ["Optometristin", "Optometristen", "Optometristinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "Osteopath"
+formen = ["Osteopathin", "Osteopathen", "Osteopathinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+# --- Art. 13 Abs. 1 BGFA, Deutsch ------------------------------------------------------
+
+[[eintrag]]
+begriff = "Anwalt"
+formen = ["Anwältin", "Anwälte", "Anwältinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 935.61 Art. 13 Abs. 1"
+fassung = "2025-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2002/153/de#art_13"
+notiz = "«Anwältinnen und Anwälte unterstehen … dem Berufsgeheimnis»."
+
+[[eintrag]]
+begriff = "Fürsprecher"
+formen = ["Fürsprecherin", "Fürsprecherinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "Duden online, «Fürsprecher», Bedeutung 2: «Rechtsanwalt», Gebrauch schweizerisch"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Fuersprecher"
+notiz = "Kein Bundeserlass braucht das Wort (BGFA, ZPO, BGG, StGB, ZGB und OR nicht, Suche am 06.11.2026); darum das Wörterbuch. Bedeutung 1 («durch ihre Fürsprache jemandes Interessen … vertritt») ergibt in «Ich bin ein Fürsprecher der …» einen Fehltreffer. Rolle lawyer wie «Rechtsanwalt»."
+
+[[eintrag]]
+begriff = "Advokat"
+formen = ["Advokatin", "Advokaten", "Advokatinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "Duden online, «Advokat», Bedeutung: «[Rechts]anwalt», Gebrauch bildungssprachlich"
+fassung = "2026-11-06"
+url = "https://www.duden.de/rechtschreibung/Advokat"
+notiz = "Kein Bundeserlass braucht das Wort (BGFA, ZPO, BGG, StGB, ZGB und OR nicht, Suche am 06.11.2026); darum das Wörterbuch. Rolle lawyer wie «Rechtsanwalt»."
+
+# --- Art. 2 Abs. 1 FINIG, Deutsch ------------------------------------------------------
+# Finanzinstitute: Berufsgeheimnis nach Art. 69 FINIG (Rolle financial-institution).
+
+[[eintrag]]
+begriff = "Vermögensverwalter"
+formen = ["Vermögensverwalterin", "Vermögensverwalterinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/de#art_2"
+notiz = "«Finanzinstitute im Sinne dieses Gesetzes sind, unabhängig von der Rechtsform: a. Vermögensverwalter (Art. 17 Abs. 1)». Nicht unterstellt sind nach Abs. 2 unter anderem «a. Personen, die ausschliesslich Vermögenswerte von mit ihnen wirtschaftlich oder familiär verbundenen Personen verwalten», «d. Personen, die im Rahmen eines gesetzlich geregelten Mandats Vermögen verwalten» und «j. Banken im Sinne des Bankengesetzes vom 8. November 1934 (BankG)». Erkannt wird nur lit. a am Genitiv der ersten Person («Vermögensverwalter meiner Mutter» zählt nicht); für Angestellte einer Bank gilt Art. 47 BankG (--role bank)."
+
+[[eintrag]]
+begriff = "Trustee"
+formen = ["Trustees"]
+sprache = "de"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. b"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/de#art_2"
+notiz = "«b. Trustees (Art. 17 Abs. 2)». Die Ausnahmen nach Art. 2 Abs. 2 FINIG wie bei «Vermögensverwalter» («Trustee meiner Familie» zählt nicht)."
+
+[[eintrag]]
+begriff = "Verwalter von Kollektivvermögen"
+formen = ["Verwalterin von Kollektivvermögen", "Verwalterinnen von Kollektivvermögen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. c"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/de#art_2"
+
+[[eintrag]]
+begriff = "Fondsleitung"
+formen = ["Fondsleitungen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. d"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/de#art_2"
+
+[[eintrag]]
+begriff = "Wertpapierhaus"
+formen = ["Wertpapierhäuser"]
+sprache = "de"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. e"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/de#art_2"
+
+# --- Art. 320 Ziff. 1 StGB, Deutsch ----------------------------------------------------
+
+[[eintrag]]
+begriff = "Beamter"
+formen = ["Beamte", "Beamtin", "Beamtinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "authority"
+quelle = "SR 311.0 Art. 320 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_320"
+
+[[eintrag]]
+begriff = "Mitglied einer Behörde"
+sprache = "de"
+regel = "kontext"
+merkmal = "authority"
+quelle = "SR 311.0 Art. 320 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_320"
+
+# --- StPO, Deutsch ---------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "Staatsanwalt"
+formen = ["Staatsanwältin", "Staatsanwälte", "Staatsanwältinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "criminal-authority"
+quelle = "SR 312.0 Art. 311 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_311"
+notiz = "Die Staatsanwaltschaft ist Strafverfolgungsbehörde (Art. 12 lit. b StPO): Amtsgeheimnis (Art. 320 Ziff. 1 StGB) und Schweigepflicht der Strafbehörden (Art. 73 Abs. 1 StPO)."
+
+[[eintrag]]
+begriff = "Bundesanwalt"
+formen = ["Bundesanwältin"]
+sprache = "de"
+regel = "kontext"
+merkmal = "criminal-authority"
+quelle = "SR 173.71 Art. 9 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/de#art_9"
+notiz = "«Der Bundesanwalt oder die Bundesanwältin führt die Bundesanwaltschaft.» (StBOG); Gegenstück zu IT «procuratore generale». Strafverfolgungsbehörde wie «Staatsanwalt»."
+
+[[eintrag]]
+begriff = "Richter"
+formen = ["Richterin", "Richterinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 312.0 Art. 335 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_335"
+
+[[eintrag]]
+begriff = "Gerichtsschreiber"
+formen = ["Gerichtsschreiberin", "Gerichtsschreiberinnen"]
+sprache = "de"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 312.0 Art. 335 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_335"
+
+# --- Art. 321 ch. 1 CP, Französisch ----------------------------------------------------
+
+[[eintrag]]
+begriff = "avocat"
+formen = ["avocate", "avocats", "avocates"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+
+[[eintrag]]
+begriff = "défenseur"
+formen = ["défenseurs"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Im Wortlaut «défenseurs en justice»; entspricht «Verteidiger». Rolle lawyer."
+
+[[eintrag]]
+begriff = "notaire"
+formen = ["notaires"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "notary"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+
+[[eintrag]]
+begriff = "ecclésiastique"
+formen = ["ecclésiastiques"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "clergy"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+
+[[eintrag]]
+begriff = "conseil en brevet"
+formen = ["conseils en brevet"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "patent-attorney"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Art. 321 Ziff. 1 StGB schreibt «conseils en brevet»; nur diese Schreibung ist hier belegt."
+
+[[eintrag]]
+begriff = "contrôleur"
+formen = ["contrôleuse", "contrôleurs", "contrôleuses"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "auditor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "«contrôleurs astreints au secret professionnel en vertu du code des obligations» (DE «Revisoren»). Das Wort allein bezeichnet auch andere Kontrolleure («contrôleur de gestion», «contrôleur aérien»): Präzision zu messen (SPEC 4.3)."
+
+[[eintrag]]
+begriff = "réviseur"
+formen = ["réviseuse", "réviseurs", "réviseuses"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "auditor"
+quelle = "SR 220 Art. 635a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_635_a"
+notiz = "«Un réviseur agréé vérifie le rapport de fondation et atteste par écrit qu’il est complet et exact.» Das übliche Wort für die Revisoren (DE «Revisor», IT «revisore»); Art. 321 Ziff. 1 CP sagt «contrôleurs». Allein bezeichnet das Wort auch Text- und Druckrevisoren (Larousse, «réviseur, réviseuse», abgerufen am 6.11.2026: «1. Personne qui révise, qui vérifie. 2. Professionnel chargé de réviser les épreuves typographiques.»): «Je suis réviseuse dans une agence de traduction» ist ein Fehltreffer (explain kontext); Präzision zu messen (SPEC 4.3)."
+
+[[eintrag]]
+begriff = "médecin"
+formen = ["médecins"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+
+[[eintrag]]
+begriff = "dentiste"
+formen = ["dentistes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "chiropraticien"
+formen = ["chiropraticienne", "chiropraticiens", "chiropraticiennes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "pharmacien"
+formen = ["pharmacienne", "pharmaciens", "pharmaciennes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "sage-femme"
+formen = ["sages-femmes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "psychologue"
+formen = ["psychologues"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "psychologist"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+
+[[eintrag]]
+begriff = "psychothérapeute"
+formen = ["psychothérapeutes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "psychologist"
+quelle = "SR 832.102 Art. 50c"
+fassung = "2026-10-22"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/fr#art_50_c"
+notiz = "«disposer d’une autorisation cantonale d’exercer la profession de psychothérapeute» (OAMal, let. a). Wie DE «Psychotherapeut»: Rolle psychologist, Norm Art. 321 Ziff. 1 CP."
+
+[[eintrag]]
+begriff = "psychiatre"
+formen = ["psychiatres"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 832.102 Art. 50"
+fassung = "2026-10-22"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/fr#art_50"
+notiz = "«sous la direction d’un médecin spécialisé (oto-rhino-laryngologue, psychiatre, pédopsychiatre, phoniatre ou neurologue)» (OAMal, let. c): ein Arzt; Rolle doctor."
+
+[[eintrag]]
+begriff = "infirmier"
+formen = ["infirmière", "infirmiers", "infirmières"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste (DE «Pflegefachpersonen»); Rolle doctor (SPEC 4.3)."
+
+[[eintrag]]
+begriff = "physiothérapeute"
+formen = ["physiothérapeutes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "ergothérapeute"
+formen = ["ergothérapeutes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "diététicien"
+formen = ["diététicienne", "diététiciens", "diététiciennes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "optométriste"
+formen = ["optométristes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "ostéopathe"
+formen = ["ostéopathes"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+# --- Art. 320 ch. 1 CP, Französisch ----------------------------------------------------
+
+[[eintrag]]
+begriff = "fonctionnaire"
+formen = ["fonctionnaires"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "authority"
+quelle = "SR 311.0 Art. 320 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_320"
+
+[[eintrag]]
+begriff = "membre d'une autorité"
+sprache = "fr"
+regel = "kontext"
+merkmal = "authority"
+quelle = "SR 311.0 Art. 320 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_320"
+
+# --- CPP, Französisch ------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "procureur"
+formen = ["procureure", "procureurs"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "criminal-authority"
+quelle = "SR 312.0 Art. 311 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_311"
+notiz = "Wie «Staatsanwalt»: Strafverfolgungsbehörde (Art. 12 lit. b StPO), darum Art. 320 Ziff. 1 StGB und Art. 73 Abs. 1 StPO."
+
+[[eintrag]]
+begriff = "juge"
+formen = ["juges"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 312.0 Art. 335 Abs. 2"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_335"
+
+[[eintrag]]
+begriff = "greffier"
+formen = ["greffière", "greffiers", "greffières"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 312.0 Art. 335 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_335"
+
+# --- Art. 2 al. 1 LEFin, Französisch ---------------------------------------------------
+
+[[eintrag]]
+begriff = "gestionnaire de fortune"
+formen = ["gestionnaires de fortune"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/fr#art_2"
+notiz = "«on entend par établissements financiers, quelle que soit leur forme juridique: a. les gestionnaires de fortune (art. 17, al. 1)». Nach Abs. 2 nicht unterstellt sind unter anderem «a. les personnes qui gèrent exclusivement les valeurs patrimoniales de personnes avec lesquelles elles ont des liens économiques ou familiaux», «d. les personnes qui gèrent un patrimoine dans le cadre d’un mandat réglementé par la loi» und «j. les banques au sens de la loi du 8 novembre 1934 sur les banques (LB)». Erkannt wird nur lit. a an «de» mit Possessiv der ersten Person («gestionnaire de fortune de ma mère» zählt nicht); für Angestellte einer Bank gilt Art. 47 LB (--role bank)."
+
+[[eintrag]]
+begriff = "trustee"
+formen = ["trustees"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. b"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/fr#art_2"
+notiz = "«b. les trustees (art. 17, al. 2)». Die Ausnahmen nach Art. 2 Abs. 2 LEFin wie bei «gestionnaire de fortune»."
+
+[[eintrag]]
+begriff = "gestionnaire de fortune collective"
+formen = ["gestionnaires de fortune collective"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. c"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/fr#art_2"
+
+[[eintrag]]
+begriff = "direction de fonds"
+formen = ["directions de fonds"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. d"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/fr#art_2"
+
+[[eintrag]]
+begriff = "maison de titres"
+formen = ["maisons de titres"]
+sprache = "fr"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. e"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/fr#art_2"
+
+# --- Art. 321 n. 1 CP, Italienisch -----------------------------------------------------
+# Einzahl-Grundformen enden nie auf «-i»: Die Regel liest «sono» ohne «io» nur mit
+# Einzahl als erste Person («sono avvocato»), weil «sono avvocati» dritte Person ist.
+
+[[eintrag]]
+begriff = "avvocato"
+formen = ["avvocata", "avvocatessa", "avvocati"]
+sprache = "it"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+
+[[eintrag]]
+begriff = "difensore"
+formen = ["difensori"]
+sprache = "it"
+regel = "kontext"
+merkmal = "lawyer"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Entspricht «Verteidiger». Rolle lawyer."
+
+[[eintrag]]
+begriff = "notaio"
+formen = ["notai"]
+sprache = "it"
+regel = "kontext"
+merkmal = "notary"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+
+[[eintrag]]
+begriff = "ecclesiastico"
+formen = ["ecclesiastici"]
+sprache = "it"
+regel = "kontext"
+merkmal = "clergy"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+
+[[eintrag]]
+begriff = "consulente in brevetti"
+formen = ["consulenti in brevetti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "patent-attorney"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+
+[[eintrag]]
+begriff = "revisore"
+formen = ["revisori"]
+sprache = "it"
+regel = "kontext"
+merkmal = "auditor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Erfasst sind nur «revisori tenuti al segreto professionale in virtù del Codice delle obbligazioni». Das Wort bezeichnet auch Text- und Druckrevisoren (Treccani, Vocabolario, «revisore», abgerufen am 6.11.2026: «Chi per ufficio o per incarico è addetto a un’opera di revisione: r. dei conti, delle tasse; r. di bozze di stampa»): «Sono revisore di bozze» ist ein Fehltreffer (explain kontext)."
+
+[[eintrag]]
+begriff = "medico"
+formen = ["medici"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+
+[[eintrag]]
+begriff = "dentista"
+formen = ["dentisti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "chiropratico"
+formen = ["chiropratica", "chiropratici"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "farmacista"
+formen = ["farmacisti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "levatrice"
+formen = ["levatrici"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "psicologo"
+formen = ["psicologa", "psicologi"]
+sprache = "it"
+regel = "kontext"
+merkmal = "psychologist"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+
+[[eintrag]]
+begriff = "psicoterapeuta"
+formen = ["psicoterapeuti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "psychologist"
+quelle = "SR 832.102 Art. 50c"
+fassung = "2026-10-22"
+url = "https://www.fedlex.admin.ch/eli/cc/1995/3867_3867_3867/it#art_50_c"
+notiz = "«disporre di un’autorizzazione cantonale a esercitare la professione di psicoterapeuta» (OAMal, lett. a). Wie DE «Psychotherapeut»: Rolle psychologist, Norm Art. 321 n. 1 CP."
+
+[[eintrag]]
+begriff = "psichiatra"
+formen = ["psichiatri"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "Treccani, Vocabolario, «psichiatra», s. m. e f.: «Medico specialista in psichiatria; studioso di psichiatria»"
+fassung = "2026-11-06"
+url = "https://www.treccani.it/vocabolario/psichiatra/"
+notiz = "In CP, CC, CPP, LPMed und OPre (KLV) nicht belegt, die OAMal (KVV) nennt nur die «psichiatria» (Suche am 06.11.2026); darum das Wörterbuch. Ein Arzt (Art. 321 n. 1 CP); Rolle doctor wie DE «Psychiater». Die weibliche Mehrzahl «psichiatre» fehlt wie bei «dentista»: Die Regel erkennt die Mehrzahl nur an -i, und auf -e endet auch manche Einzahl («levatrice»)."
+
+[[eintrag]]
+begriff = "infermiere"
+formen = ["infermiera", "infermieri"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3). «infermiere» ist auch weibliche Mehrzahl; die Regel liest es als Einzahl."
+
+[[eintrag]]
+begriff = "fisioterapista"
+formen = ["fisioterapisti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "ergoterapista"
+formen = ["ergoterapisti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "dietista"
+formen = ["dietisti"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "optometrista"
+formen = ["optometristi"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+[[eintrag]]
+begriff = "osteopata"
+formen = ["osteopati"]
+sprache = "it"
+regel = "kontext"
+merkmal = "doctor"
+quelle = "SR 311.0 Art. 321 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_321"
+notiz = "Gesundheitsberuf der Berufsliste; Rolle doctor (SPEC 4.3), Norm dieselbe."
+
+# --- Art. 320 n. 1 CP, Italienisch -----------------------------------------------------
+
+[[eintrag]]
+begriff = "funzionario"
+formen = ["funzionaria", "funzionari"]
+sprache = "it"
+regel = "kontext"
+merkmal = "authority"
+quelle = "SR 311.0 Art. 320 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_320"
+
+[[eintrag]]
+begriff = "membro di una autorità"
+sprache = "it"
+regel = "kontext"
+merkmal = "authority"
+quelle = "SR 311.0 Art. 320 Ziff. 1"
+fassung = "2026-11-01"
+url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/it#art_320"
+
+# --- CPP, Italienisch ------------------------------------------------------------------
+
+[[eintrag]]
+begriff = "giudice"
+formen = ["giudici"]
+sprache = "it"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 312.0 Art. 8 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_8"
+
+[[eintrag]]
+begriff = "cancelliere"
+formen = ["cancelliera", "cancellieri"]
+sprache = "it"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 312.0 Art. 335 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_335"
+notiz = "«in presenza di un cancelliere» (Gerichtsschreiber); «cancelliera» ist die weibliche Form, wie DE «Gerichtsschreiberin» und FR «greffière»."
+
+[[eintrag]]
+begriff = "vicecancelliere"
+formen = ["vicecancelliera", "vicecancellieri"]
+sprache = "it"
+regel = "kontext"
+merkmal = "court"
+quelle = "SR 172.010 Art. 31 Abs. 2"
+fassung = "2025-05-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/it#art_31"
+notiz = "«I vicecancellieri sono i supplenti del cancelliere della Confederazione.» (LOGA, für die Vizekanzler der Bundeskanzlei). Rolle court wie «cancelliere»; die Norm ist für Behörde und Gericht dieselbe (Art. 320 n. 1 CP)."
+
+# --- StBOG und CPP, Italienisch: Strafverfolgung ---------------------------------------
+
+[[eintrag]]
+begriff = "procuratore pubblico"
+formen = ["procuratrice pubblica", "procuratori pubblici", "procuratrici pubbliche"]
+sprache = "it"
+regel = "kontext"
+merkmal = "criminal-authority"
+quelle = "SR 173.71 Art. 14 lit. a"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/it#art_14"
+notiz = "«se sono emanati da un procuratore pubblico» (LOAP); im Tessin der Titel der kantonalen Staatsanwältinnen und Staatsanwälte. Strafverfolgungsbehörde (Art. 12 lett. b CPP): Art. 320 n. 1 CP und Art. 73 cpv. 1 CPP."
+
+[[eintrag]]
+begriff = "procuratore generale"
+formen = ["procuratrice generale", "procuratori generali"]
+sprache = "it"
+regel = "kontext"
+merkmal = "criminal-authority"
+quelle = "SR 173.71 Art. 9 Abs. 1"
+fassung = "2024-01-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/444/it#art_9"
+notiz = "«Il procuratore generale dirige il Ministero pubblico della Confederazione.» (LOAP); DE «Bundesanwalt». Strafverfolgungsbehörde wie «procuratore pubblico». Im Privatrecht ist der «procuratore» der Prokurist (Art. 458 cpv. 1 CO, Fassung 1.10.2026: «Procuratore è colui, che dal proprietario (principale) di un negozio, di una fabbrica, o di altro stabilimento commerciale, viene espressamente o col fatto autorizzato ad esercitare per esso il commercio e a firmare «per procura».») und die «procura generale» eine Generalvollmacht (Art. 535 cpv. 3 CO: «per conferire una procura generale»). Mit «di …» danach zählt der Eintrag darum nicht, ausser vor «Confederazione», «Cantone», «Canton», «Repubblica» oder «Ministero» (Code: VOLLMACHT_IT, AMT_IT)."
+
+[[eintrag]]
+begriff = "pubblico ministero"
+formen = ["pubblici ministeri"]
+sprache = "it"
+regel = "kontext"
+merkmal = "criminal-authority"
+quelle = "SR 312.0 Art. 16 Abs. 1"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_16"
+notiz = "«Il pubblico ministero è responsabile dell’esercizio uniforme della pretesa punitiva dello Stato.» Die Behörde und, im Sprachgebrauch, die einzelne Staatsanwältin («In qualità di pubblico ministero»). Strafverfolgungsbehörde (Art. 12 lett. b CPP)."
+
+# --- Art. 2 cpv. 1 LIsFi, Italienisch --------------------------------------------------
+
+[[eintrag]]
+begriff = "gestore patrimoniale"
+formen = ["gestori patrimoniali"]
+sprache = "it"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. a"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/it#art_2"
+notiz = "«Per istituti finanziari ai sensi della presente legge si intendono, a prescindere dalla loro forma giuridica: a. i gestori patrimoniali (art. 17 cpv. 1)». Nach cpv. 2 nicht unterstellt sind unter anderem «a. le persone che gestiscono esclusivamente valori patrimoniali di persone con cui hanno legami economici o familiari», «d. le persone che gestiscono patrimoni nell’ambito di un mandato disciplinato dalla legge» und «j. le banche ai sensi della legge dell’8 novembre 1934 sulle banche (LBCR)». Erkannt wird nur lit. a an «di» mit Possessiv der ersten Person («gestore patrimoniale di mia madre» zählt nicht); für Angestellte einer Bank gilt Art. 47 LBCR (--role bank)."
+
+[[eintrag]]
+begriff = "trustee"
+sprache = "it"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. b"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/it#art_2"
+notiz = "«i trustee»: im Italienischen auch Mehrzahl. Die Ausnahmen nach Art. 2 cpv. 2 LIsFi wie bei «gestore patrimoniale»."
+
+[[eintrag]]
+begriff = "gestore di patrimoni collettivi"
+formen = ["gestori di patrimoni collettivi"]
+sprache = "it"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. c"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/it#art_2"
+
+[[eintrag]]
+begriff = "direzione del fondo"
+formen = ["direzioni dei fondi"]
+sprache = "it"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. d"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/it#art_2"
+notiz = "Art. 2 nennt die Mehrzahl «le direzioni dei fondi»; die Einzahl steht in Art. 32 («Per direzione del fondo s’intende …»)."
+
+[[eintrag]]
+begriff = "società di intermediazione mobiliare"
+sprache = "it"
+regel = "kontext"
+merkmal = "financial-institution"
+quelle = "SR 954.1 Art. 2 Abs. 1 lit. e"
+fassung = "2026-10-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2018/801/it#art_2"
+notiz = "Einzahl und Mehrzahl gleich."

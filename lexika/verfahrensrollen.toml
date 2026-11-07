@@ -1,0 +1,603 @@
+# Verfahrensrollen aus StPO, ZPO und BGG, dazu die substantivischen Rollen aus VwVG, ZGB,
+# MStP und VStrR, je Sprache aus dem amtlichen Wortlaut (Regel name, SPEC 5.2).
+#
+# Folgt auf die Rolle ein Name, wird er erkannt («Zeuge Meier», «le prévenu Dupont»). Weil
+# das Deutsche jedes Substantiv gross schreibt, zählt danach nur ein Vorname oder ein
+# Nachname aus dem BFS-Register, der nicht zugleich ein gewöhnliches Wort ist, auch nach
+# Initialen («der Beschwerdeführer A. Meier»). Folgt kein Name, meldet die Regel einen
+# Personenbezug (Regel «personenbezug», Art Personenbezug): «die beschuldigte Person»,
+# «der Beschwerdeführer», «la partie plaignante», «il ricorrente».
+#
+# Fassungen: StPO (SR 312.0) 01.04.2025, ZPO (SR 272) 01.07.2026, BGG (SR 173.110)
+# 01.04.2026, VwVG (SR 172.021) 01.07.2022, ZGB (SR 210) 01.07.2026, MStP (SR 322.1)
+# 01.07.2024, VStrR (SR 313.0) 01.09.2023, abgerufen von Fedlex am 06.11.2026. Formen:
+# Flexion (Fall, Zahl, Geschlecht); die weiblichen Formen der substantivischen Rollen stehen
+# nicht im Wortlaut dieser Erlasse, die das generische Maskulinum verwenden.
+#
+# merkmal = "rolle" für alle Einträge.
+
+# --- Deutsch: StPO ---
+
+[[eintrag]]
+begriff = "beschuldigte Person"
+formen = ["beschuldigten Person", "beschuldigte Personen", "beschuldigten Personen"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 104 Abs. 1 lit. a; Art. 111 Abs. 1: «Als beschuldigte Person gilt die Person, die … einer Straftat verdächtigt, beschuldigt oder angeklagt wird»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_111"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "mitbeschuldigte Person"
+formen = ["mitbeschuldigten Person"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 178 lit. e: «als mitbeschuldigte Person zu einer ihr nicht selber zur Last gelegten Straftat zu befragen ist»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_178"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Privatklägerschaft"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 104 Abs. 1 lit. b; Art. 118 Abs. 1: «Als Privatklägerschaft gilt die geschädigte Person, die ausdrücklich erklärt, sich am Strafverfahren als Straf- oder Zivilklägerin oder -kläger zu beteiligen»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_118"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Privatkläger"
+formen = ["Privatklägerin"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 301 Abs. 3: «Der anzeigenden Person, die weder geschädigt noch Privatklägerin oder Privatkläger ist …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_301"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Strafkläger"
+formen = ["Strafklägerin"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 118 Abs. 1: «als Straf- oder Zivilklägerin oder -kläger»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_118"
+merkmal = "rolle"
+notiz = "Ergänzungsstriche aufgelöst: Strafklägerin, Strafkläger."
+
+[[eintrag]]
+begriff = "Zivilkläger"
+formen = ["Zivilklägerin"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 118 Abs. 1: «als Straf- oder Zivilklägerin oder -kläger»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_118"
+merkmal = "rolle"
+notiz = "Ergänzungsstrich aufgelöst: Zivilklägerin, Zivilkläger."
+
+[[eintrag]]
+begriff = "geschädigte Person"
+formen = ["geschädigten Person"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 105 Abs. 1 lit. a; Art. 115 Abs. 1: «Als geschädigte Person gilt die Person, die durch die Straftat in ihren Rechten unmittelbar verletzt worden ist»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_115"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Geschädigte"
+formen = ["Geschädigten", "Geschädigter"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 240 Abs. 4: «zur Deckung der Ansprüche der Geschädigten»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_240"
+gross = true
+merkmal = "rolle"
+notiz = "Substantiv, darum gross: «die geschädigte Firma» ist keine Rolle."
+
+[[eintrag]]
+begriff = "Opfer"
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 116 Abs. 1: «Als Opfer gilt die geschädigte Person, die durch die Straftat in ihrer körperlichen, sexuellen oder psychischen Integrität unmittelbar beeinträchtigt worden ist»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_116"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Zeuge"
+formen = ["Zeugin", "Zeugen", "Zeuginnen"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 105 Abs. 1 lit. c; Art. 162: «Zeugin oder Zeuge ist eine an der Begehung einer Straftat nicht beteiligte Person …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_162"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Auskunftsperson"
+formen = ["Auskunftspersonen"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 105 Abs. 1 lit. d; Art. 178: «Als Auskunftsperson wird einvernommen, wer: …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_178"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "anzeigende Person"
+formen = ["anzeigenden Person"]
+sprache = "de"
+regel = "name"
+quelle = "StPO (SR 312.0) Art. 301 Abs. 1bis: «Die anzeigende Person kann von der Strafverfolgungsbehörde eine Bestätigung … verlangen»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_301"
+merkmal = "rolle"
+
+# --- Deutsch: ZPO ---
+
+[[eintrag]]
+begriff = "klagende Partei"
+formen = ["klagenden Partei"]
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 8 Abs. 1: «… kann die klagende Partei mit Zustimmung der beklagten Partei direkt an das obere Gericht gelangen»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_8"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "beklagte Partei"
+formen = ["beklagten Partei"]
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 11 Abs. 1: «Hat die beklagte Partei keinen Wohnsitz, so ist das Gericht an ihrem gewöhnlichen Aufenthaltsort zuständig»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_11"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "gesuchstellende Partei"
+formen = ["gesuchstellenden Partei"]
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 59 Abs. 2 lit. a: «die klagende oder gesuchstellende Partei hat ein schutzwürdiges Interesse»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_59"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "streitberufene Person"
+formen = ["streitberufenen Person"]
+sprache = "de"
+regel = "name"
+quelle = "ZPO (SR 272) Art. 79 Abs. 1: «Die streitberufene Person kann: …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/de#art_79"
+merkmal = "rolle"
+
+# --- Deutsch: BGG ---
+
+[[eintrag]]
+begriff = "beschwerdeführende Partei"
+formen = ["beschwerdeführenden Partei", "beschwerdeführenden Parteien"]
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 43: «Das Bundesgericht räumt den beschwerdeführenden Parteien auf Antrag eine angemessene Frist … ein»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_43"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Gegenpartei"
+sprache = "de"
+regel = "name"
+quelle = "BGG (SR 173.110) Art. 37 Abs. 2: «Über die Ausstandsfrage kann ohne Anhörung der Gegenpartei entschieden werden»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_37"
+merkmal = "rolle"
+
+# --- Deutsch: substantivische Rollen aus VwVG, ZGB, MStP und VStrR ---
+
+[[eintrag]]
+begriff = "Beschwerdeführer"
+formen = ["Beschwerdeführerin", "Beschwerdeführers", "Beschwerdeführern", "Beschwerdeführerinnen"]
+sprache = "de"
+regel = "name"
+quelle = "VwVG (SR 172.021) Art. 49: «Der Beschwerdeführer kann mit der Beschwerde rügen: …»; Art. 52 Abs. 1: «… die Unterschrift des Beschwerdeführers oder seines Vertreters …»"
+fassung = "2022-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de#art_49"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Beschwerdegegner"
+formen = ["Beschwerdegegnerin", "Beschwerdegegners", "Beschwerdegegnern", "Beschwerdegegnerinnen"]
+sprache = "de"
+regel = "name"
+quelle = "MStP (SR 322.1) Art. 168 Abs. 2: «Die Beschwerdebehörde holt unverzüglich die Stellungnahme des Beschwerdegegners ein …»"
+fassung = "2024-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1979/1059_1059_1059/de#art_168"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Kläger"
+formen = ["Klägerin", "Klägers", "Klägern", "Klägerinnen"]
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 28a Abs. 1: «Der Kläger kann dem Gericht beantragen: …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_28_a"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Beklagte"
+formen = ["Beklagter", "Beklagten"]
+sprache = "de"
+regel = "name"
+quelle = "ZGB (SR 210) Art. 262 Abs. 1: «Hat der Beklagte in der Zeit vom 300. bis zum 180. Tag vor der Geburt des Kindes der Mutter beigewohnt, so wird seine Vaterschaft vermutet.»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_262"
+gross = true
+merkmal = "rolle"
+notiz = "Substantiv, darum gross: das Verb in «sie beklagte den Lärm» ist keine Rolle."
+
+[[eintrag]]
+begriff = "Gesuchsteller"
+formen = ["Gesuchstellerin", "Gesuchstellers", "Gesuchstellern", "Gesuchstellerinnen"]
+sprache = "de"
+regel = "name"
+quelle = "VwVG (SR 172.021) Art. 24 Abs. 1: «Ist der Gesuchsteller oder sein Vertreter unverschuldeterweise abgehalten worden, binnen Frist zu handeln, …»"
+fassung = "2022-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de#art_24"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "Beschuldigte"
+formen = ["Beschuldigter", "Beschuldigten"]
+sprache = "de"
+regel = "name"
+quelle = "VStrR (SR 313.0) Art. 32 Abs. 1: «Der Beschuldigte kann in jeder Lage des Verfahrens einen Verteidiger bestellen.»; Art. 74 Abs. 1: «Parteien im gerichtlichen Verfahren sind der Beschuldigte, …»"
+fassung = "2023-09-01"
+url = "https://www.fedlex.admin.ch/eli/cc/1974/1857_1857_1857/de#art_32"
+gross = true
+merkmal = "rolle"
+notiz = "Substantiv, darum gross: das Partizip in «die zu Unrecht beschuldigte Frau» ist keine Rolle; die StPO sagt «beschuldigte Person» (eigener Eintrag)."
+
+# --- Französisch: CPP (StPO) ---
+
+[[eintrag]]
+begriff = "prévenu"
+formen = ["prévenue", "prévenus", "prévenues"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 al. 1 let. a; art. 111 al. 1: «On entend par prévenu toute personne qui … est soupçonnée, prévenue ou accusée d'une infraction»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_111"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "co-prévenu"
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 178 let. e: «doit être interrogé comme co-prévenu sur un fait punissable qui ne lui est pas imputé»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_178"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "partie plaignante"
+formen = ["parties plaignantes"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 al. 1 let. b; art. 118 al. 1: «On entend par partie plaignante le lésé qui déclare expressément vouloir participer à la procédure pénale»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_118"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "plaignant"
+formen = ["plaignante", "plaignants"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 316 al. 1: «le ministère public peut citer le plaignant et le prévenu à une audience»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_316"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "lésé"
+formen = ["lésée", "lésés", "lésées"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 al. 1 let. a; art. 115 al. 1: «On entend par lésé toute personne dont les droits ont été touchés directement par une infraction»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_115"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "victime"
+formen = ["victimes"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 116 al. 1: «On entend par victime le lésé qui, du fait d'une infraction, a subi une atteinte directe à son intégrité physique, psychique ou sexuelle»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_116"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "témoin"
+formen = ["témoins"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 al. 1 let. c; art. 162: «On entend par témoin toute personne qui n'a pas participé à l'infraction …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_162"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "personne appelée à donner des renseignements"
+formen = ["personnes appelées à donner des renseignements"]
+sprache = "fr"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 al. 1 let. d; art. 178: «Est entendu en qualité de personne appelée à donner des renseignements, quiconque: …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/fr#art_178"
+merkmal = "rolle"
+
+# --- Französisch: CPC (ZPO) ---
+
+[[eintrag]]
+begriff = "demandeur"
+formen = ["demandeurs"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 8 al. 1: «le demandeur peut, avec l'accord du défendeur, porter l'action directement devant le tribunal supérieur»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_8"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "défendeur"
+formen = ["défendeurs"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 11 al. 1: «Lorsque le défendeur n'a pas de domicile, le for est celui de sa résidence habituelle»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_11"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "requérant"
+formen = ["requérante", "requérants"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 59 al. 2 let. a: «le demandeur ou le requérant a un intérêt digne de protection»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_59"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "consort"
+formen = ["consorts"]
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 70 al. 2: «Les actes de procédure accomplis en temps utile par l'un des consorts valent pour ceux qui n'ont pas agi»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_70"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "intervenant"
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 76 al. 1: «L'intervenant peut accomplir tous les actes de procédure compatibles avec l'état du procès …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_76"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "dénoncé"
+sprache = "fr"
+regel = "name"
+quelle = "CPC (SR 272) art. 79 al. 1: «Le dénoncé peut: …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/fr#art_79"
+merkmal = "rolle"
+
+# --- Französisch: LTF (BGG) ---
+
+[[eintrag]]
+begriff = "recourant"
+formen = ["recourante", "recourants"]
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 43: «Le Tribunal fédéral accorde au recourant, à sa demande, un délai approprié …»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_43"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "partie adverse"
+sprache = "fr"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 37 al. 2: «La décision peut être prise sans que la partie adverse ait été entendue»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/fr#art_37"
+merkmal = "rolle"
+
+# --- Italienisch: CPP (StPO) ---
+
+[[eintrag]]
+begriff = "imputato"
+formen = ["imputata", "imputati", "imputate"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 cpv. 1 lett. a; art. 111 cpv. 1: «È considerato imputato chiunque è indiziato, incolpato o accusato di un reato …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_111"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "coimputato"
+formen = ["coimputata", "coimputati"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 178 lett. e: «chi, in qualità di coimputato, deve essere interrogato in merito a un reato che non gli è contestato»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_178"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "accusatore privato"
+formen = ["accusatori privati"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 104 cpv. 1 lett. b; art. 118 cpv. 1: «È accusatore privato il danneggiato che dichiara espressamente di partecipare al procedimento penale …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_118"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "danneggiato"
+formen = ["danneggiata", "danneggiati", "danneggiate"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 cpv. 1 lett. a; art. 115 cpv. 1: «Il danneggiato è la persona i cui diritti sono stati direttamente lesi dal reato»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_115"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "vittima"
+formen = ["vittime"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 116 cpv. 1: «La vittima è il danneggiato che a causa del reato è stato direttamente leso nella sua integrità fisica, sessuale o psichica»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_116"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "testimone"
+formen = ["testimoni"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 cpv. 1 lett. c; art. 162: «È testimone chi pur non avendo partecipato alla commissione del reato … è in grado di fare dichiarazioni utili»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_162"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "persona informata sui fatti"
+formen = ["persone informate sui fatti"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 cpv. 1 lett. d; art. 178: «È interrogato in qualità di persona informata sui fatti: …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_178"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "denunciante"
+formen = ["denuncianti"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 105 cpv. 1 lett. b; art. 301 cpv. 1bis: «Il denunciante può chiedere all'autorità di perseguimento penale una conferma della denuncia …»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_301"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "querelante"
+formen = ["querelanti"]
+sprache = "it"
+regel = "name"
+quelle = "CPP (SR 312.0) art. 316 cpv. 1: «il pubblico ministero può convocare il querelante e l'imputato a un'udienza di conciliazione»"
+fassung = "2025-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/267/it#art_316"
+merkmal = "rolle"
+
+# --- Italienisch: CPC (ZPO) ---
+
+[[eintrag]]
+begriff = "attore"
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 8 cpv. 1: «l'attore, con l'accordo del convenuto, può deferire la causa direttamente all'autorità giudiziaria superiore»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_8"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "convenuto"
+formen = ["convenuta", "convenuti"]
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 11 cpv. 1: «Se il convenuto non ha un domicilio, è competente il giudice nel luogo della sua dimora abituale»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_11"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "instante"
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 59 cpv. 2 lett. a: «l'interesse degno di protezione dell'attore o instante»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_59"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "litisconsorte"
+formen = ["litisconsorti"]
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 70 cpv. 2: «Gli atti processuali tempestivi di un litisconsorte vincolano anche i litisconsorti rimasti silenti»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_70"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "interveniente"
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 76 cpv. 1: «L'interveniente può, a sostegno della parte principale, intraprendere tutti gli atti processuali …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_76"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "denunciato"
+sprache = "it"
+regel = "name"
+quelle = "CPC (SR 272) art. 79 cpv. 1: «Il denunciato può: …»"
+fassung = "2026-07-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2010/262/it#art_79"
+merkmal = "rolle"
+
+# --- Italienisch: LTF (BGG) ---
+
+[[eintrag]]
+begriff = "ricorrente"
+formen = ["ricorrenti"]
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 95: «Il ricorrente può far valere la violazione: …»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_95"
+merkmal = "rolle"
+
+[[eintrag]]
+begriff = "controparte"
+sprache = "it"
+regel = "name"
+quelle = "LTF (SR 173.110) art. 37 cpv. 2: «La decisione può essere presa senza che sia sentita la controparte»"
+fassung = "2026-04-01"
+url = "https://www.fedlex.admin.ch/eli/cc/2006/218/it#art_37"
+merkmal = "rolle"
