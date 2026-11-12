@@ -72,7 +72,7 @@ pub struct Quelle {
 /// Gemessene Güte (SPEC 2, Grundsatz 3).
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Guete {
-    /// Noch keine Messung am Korpus.
+    /// Präzision und Trefferquote nicht gemessen (SPEC 8).
     NichtGemessen,
     /// Eigenschaft mathematisch nachgewiesen (Eigenschaftstest), z. B. bei Prüfziffern.
     Nachgewiesen(Txt),

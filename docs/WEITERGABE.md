@@ -141,7 +141,7 @@ Release-Bau enthielt 115-mal einen Pfad der Form `C:\Users\<Konto>\.cargo\regist
 den Kontonamen des Entwicklers (gemessen am 06.11.2026). `strip = true` entfernt Symbole, nicht
 diese Pfade.
 
-**`trim-paths` geht noch nicht.** Cargo 1.99.1 lehnt `profile.release.trim-paths` ab: «feature
+**`trim-paths` ist nicht stabil.** Cargo 1.99.1 lehnt `profile.release.trim-paths` ab: «feature
 `trim-paths` is required … The package requires the Cargo feature called `trim-paths`, but that
 feature is not stabilized in this version of Cargo» (Tracking-Issue rust-lang/cargo#12137).
 
