@@ -24,7 +24,7 @@ Von oben nach unten, damit in fünf Sekunden Ergebnis, Handlung und Grund zu seh
    `nicht angegeben`. Passt die Zeile nicht in 70 Spalten, beginnt `Ziel: …` eine
    zweite Zeile; läuft auch die erste über, wird das auslösende Wort nach 20 Zeichen
    mit `…` gekürzt. Ziel ist `Cloud` oder `lokales Modell`. Ob das Ziel aus `--target`
-   oder aus der Konfigurationsdatei stammt, nennt die Kopfzeile noch nicht: Der
+   oder aus der Konfigurationsdatei stammt, nennt die Kopfzeile nicht: Der
    Bericht trägt die Herkunft des Ziels nicht; `explain hinweis` warnt, dass
    `target = "local"` in der Datei für jeden Prompt gilt.
 2. eine Leerzeile, dann die **Zeilenansicht** des Prompts mit den markierten Stellen;
@@ -311,8 +311,8 @@ Mit `Darstellung::ascii` gibt promptscan nur ASCII aus: `│` wird `|`,
 ae, ö oe, ü ue, é e, à a, ç c usw.), auch im zitierten Prompt; geschützte und schmale
 Leerzeichen werden Leerzeichen. Was keinen lateinischen Grundbuchstaben hat, wird `?`,
 so oft, wie das Zeichen Spalten belegt. `tests/ausgabe.rs` prüft für jeden Prüffall, für
-`rules` und jedes `explain`, dass dann jedes Byte ASCII ist. Die Option dafür setzt
-`main.rs` (noch nicht verdrahtet).
+`rules` und jedes `explain`, dass dann jedes Byte ASCII ist. `main.rs` setzt die Option
+mit `--ascii` und nach der Locale (Abschnitt 8, «Ausgabe und Umleitung»).
 
 ## 2. `promptscan rules`
 
@@ -987,9 +987,9 @@ Prompt und Funde; mit `--format json` das Dokument `bericht-kurz`. Der Exit-Code
 
 **Breite:** `main.rs` bestimmt sie und übergibt sie der Ausgabe (`Darstellung::breite`):
 unter Windows die Breite des Konsolenfensters, sonst `COLUMNS`, sonst 80; mindestens 60;
-bei Umleitung und mit `--output` immer 80. Der Bericht bricht in diesem Stand nicht
-danach um; die Zeilen der Zeilenansicht werden nie umgebrochen (Abschnitt 1). Hilfe und
-Meldungen haben immer höchstens 80 Spalten.
+bei Umleitung und mit `--output` immer 80. Der Bericht bricht auf diese Breite um, auch
+die Zeilen der Zeilenansicht (Abschnitt 1). Hilfe und Meldungen haben immer höchstens 80
+Spalten.
 
 **ASCII:** Mit `--ascii` ist jedes Zeichen der Ausgabe ASCII: in Bericht, Hilfe,
 Meldungen, `rules`, `explain` und `config`; mit `--output` steht davor wie immer das BOM.

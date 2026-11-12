@@ -450,8 +450,8 @@ pub fn rechts_frei(s: &str, ende: usize) -> bool {
 ///
 /// und kein harter Zeilenumbruch dazwischen liegt. Ein Zeilenumbruch ist hart, ausser er
 /// ist weich nach [`weiche_umbrueche_bestimmen`]; ein weicher Umbruch zählt wie ein
-/// Leerzeichen. Ob das Satzfenster überhaupt das richtige Fenster ist, wird gemessen
-/// (SPEC 7.3).
+/// Leerzeichen. Ob das Satzfenster das bessere Fenster ist als der ganze Prompt, ist nicht
+/// gemessen (SPEC 8).
 ///
 /// Die Laufzeit ist linear in der Textlänge: Am Ende jedes Abschnitts wird nur sein Ende
 /// geprüft, nicht der ganze, schon verbundene Abschnitt.

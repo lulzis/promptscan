@@ -1,4 +1,4 @@
-//! Alle Belege von promptscan als JSON, für die Belegprüfung gegen Fedlex (SPEC 7.7).
+//! Alle Belege von promptscan als JSON, für die Belegprüfung gegen Fedlex (SPEC 10).
 //!
 //! `cargo run --example belege > belege.json` gibt aus: jeden Wortlisteneintrag, den Kopf
 //! jedes Registers, jede zitierte Norm (aus `normen.rs`, den Rollen und den Regeln) und jede

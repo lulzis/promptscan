@@ -19,8 +19,8 @@
 //! **Auswahl.** Je Name wird die Anzahl summiert: Vornamen über alle Jahrgänge und beide
 //! Dateien, Nachnamen über alle Sprachregionen. Aufgenommen werden die häufigsten Namen,
 //! bis sie zusammen mindestens 95 % (Vornamen) bzw. 90 % (Nachnamen) aller Nennungen
-//! abdecken; Namen mit derselben Anzahl wie der letzte aufgenommene kommen mit. Die Regel
-//! soll eine Trefferquote von mindestens 0,90 erreichen (SPEC 7.5). Der Vorname ist ihr
+//! abdecken; Namen mit derselben Anzahl wie der letzte aufgenommene kommen mit. Zielwert der
+//! Regel ist eine Trefferquote von mindestens 0,90 (SPEC 8). Der Vorname ist ihr
 //! Hauptauslöser und erhält darum Spielraum nach oben; der Nachname bestätigt nur.
 //!
 //! **Mehrdeutigkeit.** Ein Name, der auch ein gewöhnliches Wort oder ein Ort ist, darf

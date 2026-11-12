@@ -1,6 +1,6 @@
-# promptscan — Spezifikation v0.1 (Entwurf)
+# promptscan — Spezifikation v0.1
 
-Stand 05.11.2026 · nur lokal · zur Durchsicht
+Stand 12.11.2026
 
 ## 1. Zweck
 
@@ -184,7 +184,7 @@ Nicht abgedeckt ist das Berufsgeheimnis der Finanzmarktinfrastrukturen (Art. 147
 
 - **Ohne direkten Identifikator** im Prompt (Name, Adresse, AHV-Nummer, IBAN, Telefon, E-Mail) erhalten Inhalte wie eine Diagnose keine DSG-Stufe. Hat der Satz einen Personenbezug, etwa «mein Mandant», erscheint ein HINWEIS. Ob der Kontext eine Person bestimmbar macht, beurteilt promptscan nicht (Grundsatz 7).
 - **Ein Identifikator irgendwo im Prompt genügt**; promptscan prüft nicht, ob er dieselbe Person betrifft. Auch die eigene Unterschrift oder Kontaktzeile zählt: «Was gilt bei Arbeitsunfähigkeit?» wird ORANGE, wenn «Erika Beispiel, Seestrasse 12, 8002 Zürich» darunter steht, und mit einer Geheimhaltungspflicht wird auch die Kontaktzeile selbst ROT. `explain gelb`, `orange` und `rot` nennen diese Grenze.
-- **`--target local`**: gilt für ein Modell, das auf diesem Rechner läuft, ohne Synchronisierung in eine Cloud. Läuft es so, wird nichts übermittelt oder zugänglich gemacht: keine Bekanntgabe (Art. 5 lit. e DSG) und kein Offenbaren nach den Normen der Rolle. Jeder Fund der Stufe GELB, ORANGE oder ROT wird zum HINWEIS und nennt die Stufe, die er sonst hätte. Bearbeitet werden die Daten trotzdem (Art. 5 lit. d DSG): Die Grundsätze von Art. 6 DSG gelten weiter, etwa die Verhältnismässigkeit (Art. 6 Abs. 2 DSG). Ob das Modell wirklich lokal läuft, prüft promptscan nicht. Steht `target = "local"` in der Konfigurationsdatei, gilt das für jeden Prompt, auch für einen, der doch in eine Cloud geht. Woher das Ziel stammt, nennt die Kopfzeile noch nicht; der Bericht trägt die Herkunft des Ziels nicht. Der Bericht stellt die Folge unter die Bedingung («Läuft das Modell lokal: keine Bekanntgabe …») und fragt unter `Klären`: «Läuft das Modell wirklich hier, ohne Synchronisierung in eine Cloud?» (`explain hinweis`).
+- **`--target local`**: gilt für ein Modell, das auf diesem Rechner läuft, ohne Synchronisierung in eine Cloud. Läuft es so, wird nichts übermittelt oder zugänglich gemacht: keine Bekanntgabe (Art. 5 lit. e DSG) und kein Offenbaren nach den Normen der Rolle. Jeder Fund der Stufe GELB, ORANGE oder ROT wird zum HINWEIS und nennt die Stufe, die er sonst hätte. Bearbeitet werden die Daten trotzdem (Art. 5 lit. d DSG): Die Grundsätze von Art. 6 DSG gelten weiter, etwa die Verhältnismässigkeit (Art. 6 Abs. 2 DSG). Ob das Modell wirklich lokal läuft, prüft promptscan nicht. Steht `target = "local"` in der Konfigurationsdatei, gilt das für jeden Prompt, auch für einen, der doch in eine Cloud geht. Woher das Ziel stammt, nennt die Kopfzeile nicht; der Bericht trägt die Herkunft des Ziels nicht. Der Bericht stellt die Folge unter die Bedingung («Läuft das Modell lokal: keine Bekanntgabe …») und fragt unter `Klären`: «Läuft das Modell wirklich hier, ohne Synchronisierung in eine Cloud?» (`explain hinweis`).
 
 ### 4.5 Was promptscan nicht entscheidet
 
@@ -212,19 +212,19 @@ Nicht abgedeckt ist das Berufsgeheimnis der Finanzmarktinfrastrukturen (Art. 147
 
 Unsichtbare Formatzeichen wie U+00AD oder U+200B werden in allen vier Regeln übergangen.
 
-Die Eigenschaften der Prüfziffern werden per Eigenschaftstest nachgewiesen (7.1). EAN-13 mit den Gewichten 1 und 3 erkennt jeden Einzelziffernfehler. Vertauschte Nachbarziffern erkennt es nur, wenn sie sich nicht um 5 unterscheiden. MOD 97-10 erkennt jeden Einzelzeichenfehler und jede Vertauschung benachbarter Zeichen. Fehlalarme entstehen nur aus Zeichenfolgen, deren Prüfziffer zufällig stimmt. Das trifft etwa jede zehnte zufällige 756-Nummer und etwa jede 97. zufällige CH-Zeichenfolge. Den Rest müssen Format und Präfix tragen. Wie gut das gelingt, wird gemessen.
+Die Eigenschaften der Prüfziffern halten Eigenschaftstests fest (Abschnitt 7). EAN-13 mit den Gewichten 1 und 3 erkennt jeden Einzelziffernfehler. Vertauschte Nachbarziffern erkennt es nur, wenn sie sich nicht um 5 unterscheiden. MOD 97-10 erkennt jede ersetzte Ziffer und jede Vertauschung zweier benachbarter Ziffern. Bei Buchstaben in der Kontonummer gibt es Ausnahmen: Grossbuchstabe statt Kleinbuchstabe, manche Ziffer statt eines Buchstabens und die Vertauschung der Paare 1B, 2M und 3X, die ausgeschrieben gleich bleiben. Fehlalarme entstehen nur aus Zeichenfolgen, deren Prüfziffer zufällig stimmt. Das trifft etwa jede zehnte zufällige 756-Nummer und etwa jede 97. zufällige CH-Zeichenfolge. Den Rest müssen Format und Präfix tragen. Wie gut das auf echten Prompts gelingt, ist nicht gemessen (Abschnitt 8).
 
 **Zusatz zu `ahv`:** Stehen mehrere AHV-Nummern mit Namen oder in Tabellenform im Prompt, erscheint zusätzlich ein HINWEIS auf Art. 153b f. AHVG (Regel `ahv-sammlung`). Die Verbindung der Nummer mit Personendaten in strukturierter Sammlung gilt dort als systematische Verwendung, und die ist nur den Berechtigten nach Art. 153c AHVG erlaubt. Gezählt werden Zeilen mit gültiger AHV-Nummer, die einen Namen enthalten oder Zeilen einer Tabelle sind; ab zwei solchen Zeilen erscheint der Hinweis. Eine Tabellenzeile trennt Zellen mit «,» «;» Tab oder «|», und die Nummer steht allein in ihrer Zelle, höchstens mit einer Bezeichnung davor («AHV: 756…»). Keine Zelle der Zeile ist ein Satz, sie endet also nicht auf «?» oder «!» und nicht auf «.» nach mindestens drei Wörtern: «756…, das ist meine Nummer.» und «756…, gültig?» sind keine Tabellenzeilen. Sie zählt, wenn eine zweite solche Zeile dieselbe Folge von Trennern hat oder über ihr eine Kopfzeile mit «AHV» oder «AVS» und einem Trenner steht. So trägt auch eine Liste den Hinweis, deren Namen die Regel `name` nicht erkennt. Der Zusatz nennt Namen nur, wenn sie erkannt sind: «2 Zeilen mit AHV-Nummer und Name», «2 Zeilen mit AHV-Nummer in Tabellenform», «2 Zeilen mit AHV-Nummer, 1 davon mit Name».
 
 ### 5.2 Klasse B — Wortliste mit Quelle und Satzfenster
 
-Das Fenster ist der Satz nach Unicode UAX #29, mit den Anpassungen aus Abschnitt 6. Ein einzelner Zeilenumbruch mitten in einem Absatz, wie ihn hart umbrochene E-Mails und aus einem PDF kopierter Text enthalten, ist keine Satzgrenze. Eine Grenze bleibt er, wenn die Zeile danach leer ist, wenn die Zeile davor auf `.`, `!`, `?` oder `:` endet (ausser auf eine Abkürzung oder Ordinalzahl, die verbindet) oder wenn eine der beiden Zeilen wie ein Listenpunkt beginnt (`-`, `•`, `1.`, `a)` und ähnliche); das trifft auch ein Datum am Zeilenanfang («geboren am⏎12. März 1985» bleibt getrennt). Über einen solchen weichen Umbruch hinweg gelten auch Begriffe aus mehreren Wörtern («psychischen⏎Störung»), und ein Trennstrich zwischen zwei Kleinbuchstaben wird für den Vergleich zusammengezogen («arbeits-⏎unfähig»); nach einem anderen Bindestrich fällt nur der Umbruch weg («AHV-⏎Nummer»). Grenze: Überschriften, Adressblöcke und Unterschriften ohne Satzzeichen am Zeilenende werden mit der nächsten Zeile zu einem Satz, ebenso eine Anrede («Guten Tag», «Sehr geehrte Damen und Herren,»), ein Betreff oder ein Name. Ob ein Wort am Satzanfang steht, ist darum im Satzstück zwischen zwei weichen Umbrüchen zu prüfen (`Text::satzanfang_bei`, `Text::satzstueck_bei`); dort gilt der Anfang einer Zeile wie vor dieser Regel als möglicher Satzanfang. So prüfen die Selbstbezeichnungen der Regel `kontext`, die einen Satzanfang verlangen («Als Anwältin …», «En tant qu'avocate, je», «Sono avvocata»), und ihre Prüfung auf eine Frage, das gross geschriebene Partizip der Regel `geburtsdatum` («Geboren am», «Née le», «Nata il») und die Aufforderungen der Regel `fundstellen` am Satzanfang («Cite les arrêts», «Liste die BGE …»): «Guten Tag⏎Als Anwältin vertrete ich …» ergibt den Geheimnis-Kontext wie einzeilig, und in «Seit 2010 bin ich Ärztin⏎Darf ich …?» zählt das Fragezeichen der nächsten Zeile nicht für «bin ich Ärztin». Grenze wie vor dieser Regel: «Sie arbeitet⏎als Anwältin, habe ich gehört» gilt als Selbstbezeichnung, und in «Ab wann bin ich Ärztin, wenn⏎ich … bestanden habe?» zählt das Fragezeichen nicht; einzeilig ergeben beide keinen Kontext. Die Alternative ist der ganze Prompt. Welche gilt, wird auf dem Entwicklungsteil des Korpus nach F2 entschieden und danach festgeschrieben (7.3).
+Das Fenster ist der Satz nach Unicode UAX #29, mit den Anpassungen aus Abschnitt 6. Ein einzelner Zeilenumbruch mitten in einem Absatz, wie ihn hart umbrochene E-Mails und aus einem PDF kopierter Text enthalten, ist keine Satzgrenze. Eine Grenze bleibt er, wenn die Zeile danach leer ist, wenn die Zeile davor auf `.`, `!`, `?` oder `:` endet (ausser auf eine Abkürzung oder Ordinalzahl, die verbindet) oder wenn eine der beiden Zeilen wie ein Listenpunkt beginnt (`-`, `•`, `1.`, `a)` und ähnliche); das trifft auch ein Datum am Zeilenanfang («geboren am⏎12. März 1985» bleibt getrennt). Über einen solchen weichen Umbruch hinweg gelten auch Begriffe aus mehreren Wörtern («psychischen⏎Störung»), und ein Trennstrich zwischen zwei Kleinbuchstaben wird für den Vergleich zusammengezogen («arbeits-⏎unfähig»); nach einem anderen Bindestrich fällt nur der Umbruch weg («AHV-⏎Nummer»). Grenze: Überschriften, Adressblöcke und Unterschriften ohne Satzzeichen am Zeilenende werden mit der nächsten Zeile zu einem Satz, ebenso eine Anrede («Guten Tag», «Sehr geehrte Damen und Herren,»), ein Betreff oder ein Name. Ob ein Wort am Satzanfang steht, ist darum im Satzstück zwischen zwei weichen Umbrüchen zu prüfen (`Text::satzanfang_bei`, `Text::satzstueck_bei`); dort gilt der Anfang einer Zeile wie vor dieser Regel als möglicher Satzanfang. So prüfen die Selbstbezeichnungen der Regel `kontext`, die einen Satzanfang verlangen («Als Anwältin …», «En tant qu'avocate, je», «Sono avvocata»), und ihre Prüfung auf eine Frage, das gross geschriebene Partizip der Regel `geburtsdatum` («Geboren am», «Née le», «Nata il») und die Aufforderungen der Regel `fundstellen` am Satzanfang («Cite les arrêts», «Liste die BGE …»): «Guten Tag⏎Als Anwältin vertrete ich …» ergibt den Geheimnis-Kontext wie einzeilig, und in «Seit 2010 bin ich Ärztin⏎Darf ich …?» zählt das Fragezeichen der nächsten Zeile nicht für «bin ich Ärztin». Grenze wie vor dieser Regel: «Sie arbeitet⏎als Anwältin, habe ich gehört» gilt als Selbstbezeichnung, und in «Ab wann bin ich Ärztin, wenn⏎ich … bestanden habe?» zählt das Fragezeichen nicht; einzeilig ergeben beide keinen Kontext. Ob der Satz das bessere Fenster ist als der ganze Prompt, ist nicht gemessen (Abschnitt 8).
 
 | Regel | erkennt | Methode | Quellen |
 |---|---|---|---|
 | name | Name einer natürlichen Person | Anrede oder Titel, Verfahrensrolle oder Vorname aus amtlicher Statistik, gefolgt von Wörtern mit Grossbuchstaben; nach einer Anrede oder Rolle auch Initialen vor einem Nachnamen aus dem Register, der kein Satzwort in der Sprache des Auslösers ist («der Beschwerdeführer A. Meier», nicht «der Beschwerdeführerin A. Daher ist …»); in Listen (Zeilenanfang, Aufzählungszeichen, Trenner «,» «;» Tab «|», Doppelpunkt) ein Paar aus Nachname und Vorname des Registers in beiden Reihenfolgen («Müller Andreas, Lager», «Muster;Hans»), ein Nachname in Versalien vor einem Vornamen überall («KELLER Sabine»); in einer Zelle nur mit eindeutigem Nachnamen, wobei Grussformeln, Wochentage und Alltagswörter des Registers als mehrdeutig gelten («Liebe Anna, Lieber Peter,»), und am Zeilenanfang nur, wenn die nächste Zelle kein Satz ist («Bonjour Pierre, Merci pour ton message.»); auch über einen weichen Umbruch und Formatzeichen hinweg, zwischen Vor- und Nachnamen aber nur nach Anrede, Titel, Verfahrensrolle oder Possessivrahmen («Meine Patientin Erika⏎Beispiel»; nicht «Liebe Erika⏎Danke …»); der Artikel «Le», im Register zugleich Vorname, löst am Satzanfang (ein weicher Umbruch beginnt keinen Satz) und vor einer Amtsbezeichnung («Le Grand Conseil», «Le Maire») keinen Namen aus, nach der Amtsbezeichnung zählt ein Vorname mit Nachnamen wie nach einer Anrede («Le Greffier Marie Exemple») | Vor- und Nachnamen: BFS (opendata.swiss); Verfahrensrollen: amtliche Texte von StPO, ZPO und BGG in DE, FR, IT, dazu VwVG, ZGB, MStP und VStrR in DE, je Eintrag mit Artikel; Amtsbezeichnungen nach «Le»: BV, StPO und BGG in FR, Verfassungen der Kantone Waadt und Jura |
 | firma | juristische Person | Rechtsformzusatz; «AG» ist Kantonskürzel, keine Rechtsform, wenn der ganze Name davor (ohne Postleitzahl) eine Aargauer Gemeinde oder eine Ortschaft «… AG» ist («von Muri AG», «5610 Wohlen AG»); «Garage Wohlen AG» bleibt eine Firma | Art. 950 Abs. 1 Satz 2 OR (die Firma muss die Rechtsform angeben); zulässige Abkürzungen legt der Bundesrat fest (Art. 950 Abs. 2 OR, Verordnungsstelle zu bestimmen); Aargauer Gemeinden: BFS, Amtliches Gemeindeverzeichnis, Stand 06.11.2026 |
-| adresse | Postadresse | Strasse, Nummer, PLZ, Ort; PLZ und Ort gegen das amtliche Verzeichnis; Endungen der Strassentypen aus dem amtlichen Strassenverzeichnis abgeleitet, Abdeckung gemessen. PLZ und Ort allein meldet sie nicht (Art. 4 Abs. 1 lit. e der Anonymisierungsregeln); eine Adresse direkt nach einer erkannten juristischen Person gilt als Adresse der Firma (`explain adresse`) | swisstopo: Amtliches Ortschaftenverzeichnis, Amtliches Strassenverzeichnis (Lizenz zu prüfen) |
+| adresse | Postadresse | Strasse, Nummer, PLZ, Ort; PLZ und Ort gegen das amtliche Verzeichnis; Endungen der Strassentypen aus dem amtlichen Strassenverzeichnis abgeleitet, Abdeckung gemessen. PLZ und Ort allein meldet sie nicht (Art. 4 Abs. 1 lit. e der Anonymisierungsregeln); eine Adresse direkt nach einer erkannten juristischen Person gilt als Adresse der Firma (`explain adresse`) | swisstopo: Amtliches Ortschaftenverzeichnis, Amtliches Strassenverzeichnis (Nutzungsbedingungen: THIRD-PARTY-NOTICES.md, 7.2) |
 | wohnort | Wohnort einer Person | «wohnhaft in», «domicilié à», «domiciliato a» und eine Gemeinde, auch nach einem weichen Umbruch («wohnhaft in⏎Winterthur»); ohne Auslösewort nichts (5.5) | BFS: Amtliches Gemeindeverzeichnis |
 | geburtsdatum | Geburtsdatum | Datum mit Auslöser: geb., geboren am, Geburtsdatum, né le, née le, date de naissance, nato il, nata il, data di nascita, dazu Feldnamen aus Formularen («Geb.-Datum», «date naiss.», «data nascita») und nach «/» der Zusatz «Alter», «âge» oder «età»; zwischen Auslöser und Datum zählt ein weicher Umbruch als Leerzeichen | Datumsformen: CLDR 49, Schreibweisungen der Bundeskanzlei, RFC 3339; Auslöser: ZGB, ZStV, Ausweisverordnung, Duden; die Kurzformen der Feldnamen sind ohne eigene Fundstelle (die Einträge sagen es); Zusatz: BV Art. 8 Abs. 2 (DE, FR, IT) |
 
@@ -232,7 +232,7 @@ Das Fenster ist der Satz nach Unicode UAX #29, mit den Anpassungen aus Abschnitt
 
 Lit. g hängt an der Rolle im Verfahren, nicht am Beruf: Eine Anwältin kann selbst Patientin, Angestellte oder Partei sein. Ein Name bleibt darum nur unmarkiert, wenn der Satz die Person als Vertretung einer Partei zeigt: durch ein Wort, das die Vertretung schon bezeichnet («Verteidigerin», «Rechtsbeistand», «défenseur», «conseil juridique», «patrocinatore», «mandataires professionnellement qualifiés»), oder durch einen Anwaltstitel oder -beruf («RA», «Rechtsanwältin», «Me», «avocat», «avv.») mit einem Vertretungsmerkmal (`name-vertretung.toml`): ein Partizip davor («vertreten durch», «représenté par», «rappresentato dall'»), ein Possessivpronomen davor («mon avocat», «Ihr Anwalt», «il suo avvocato»), eine Partei danach («avocat de la partie adverse», «Anwalt der Gegenpartei»), ein Verb der Vertretung mit einer Partei danach («plaide pour la recourante», «vertritt die Klägerin») oder eine Apposition zu einer solchen Bezeichnung («votre avocate, Me …»). Ohne Vertretungsmerkmal wirkt der Anwaltstitel wie ein Titel, und der Name wird gemeldet («Mon patient, Me Laurent Dupont, souffre …»). Sicher gemeldet wird er, wenn der Satz die Person zur Betroffenen macht: Ein Possessivpronomen zeigt die Vertretung nur, wenn der Satz keine Angabe nach Art. 5 lit. c DSG enthält («Mon avocat, Me Jean Dupont, a écrit.» bleibt unmarkiert, «Mon avocat, Me Jean Dupont, est en incapacité de travail.» und «Jean Dupont, son avocat, est en incapacité de travail.» melden den Namen), und ein Verb im übertragenen Gebrauch ohne Partei danach zählt nicht («vertritt die Auffassung», «plaide coupable», «représente un danger»). «conseil» heisst auch Berater oder Rat und zeigt die Vertretung nur mit einer Partei danach oder einem Partizip davor («Me X, conseil de Y», «assistée de son conseil»); «mandataire» umfasst auch die Vorsorgebeauftragte nach Art. 360 ZGB und zeigt sie nur mit «partie» oder einer Verfahrensrolle danach («le mandataire de la partie»). «avocat» und «avvocato» lösen allein nichts aus, denn danach folgt oft ein Adjektiv oder Fachgebiet («un avocat Genevois»).
 
-**Deutsch schreibt alle Substantive gross.** Ein grossgeschriebenes Wort nach einer Rolle genügt darum nicht als Namenshinweis. Deshalb braucht es die amtlichen Namenslisten und gezielt schwierige Gegenbeispiele im Korpus (7.2).
+**Deutsch schreibt alle Substantive gross.** Ein grossgeschriebenes Wort nach einer Rolle genügt darum nicht als Namenshinweis. Deshalb braucht es die amtlichen Namenslisten. Nach einem Vornamen gilt dagegen jedes grossgeschriebene Wort als Nachname; `explain name` nennt diese Grenze («Peter Geld geben»).
 
 ### 5.3 Besonders schützenswerte Personendaten — je eine Regel pro Ziffer von Art. 5 lit. c DSG
 
@@ -240,7 +240,7 @@ Lit. g hängt an der Rolle im Verfahren, nicht am Beruf: Eine Anwältin kann sel
 |---|---|---|---|
 | art5c-1 | religiöse, weltanschauliche, politische oder gewerkschaftliche Ansichten oder Tätigkeiten | BV Art. 8 und 15, ZGB Art. 303, AsylG Art. 3, NDG Art. 5, OR Art. 336, IAO-Übereinkommen Nr. 98 Art. 1 («Gewerkschaft», FR «syndical», IT «sindacali» auch am Wortanfang), UNO-Pakt I Art. 8 Abs. 1 Bst. a (IT «sindacato»); Konfessionen nach der Religionstabelle und der Seite «Religionen» des BFS («Muslim», «muslimisch»); «Jude», «Jüdin», «Konfession» und IT «ebreo» nach Duden und Treccani; «Jude» zählt nicht in einem Namen, den die Regel `name` erkennt (Merkmal «name»); Ausnahmen «syndicat de communes», «syndicat de remaniement» und nach Treccani «sindacato di legittimità», «sindacato di merito», «sindacato di costituzionalità», «sindacato azionario», «sindacato di blocco», «ordinanza sindacale», «deliberazione sindacale». Parteinamen fehlen; «collegio sindacale» und «patto di sindacato» zählen (keine Fundstelle für eine Ausnahme) | Wortlaute und Zitate geprüft 2026-11-06 |
 | art5c-2 | Gesundheit, Intimsphäre, Rasse oder Ethnie | ATSG Art. 3 bis 8, UVG Art. 16, KVG Art. 1a, 31 und 42, KLV (u. a. Art. 7 und 11c: «Diabetiker», «diabetisch»), EpG Art. 5 und 33 («krank», «malades», «malate»), Krebsregistrierungsgesetz, BetmG Art. 3b (FR «addiction»), IVG, IVV Art. 31 («IV-Rente», «rente AI», «rendita AI»), ZGB Art. 390, BV Art. 8, BehiG, ArG, StGB Art. 115, 118 und 261bis, MStG Art. 109 («mise enceinte»), StPO Art. 195, SVG Art. 16d, AsylG Art. 99a («ethnie»), Übereinkommen gegen Rassendiskriminierung (SR 0.104) Art. 4 («origine etnica»); Ethnie nach den Botschaften zum DSG (BBl 2017 7020, FF 2017 6640, FF 2017 6012); «Suizid», «Depression» und ihre Gegenstücke nach BAG; «krankgeschrieben», «Burn-out» und FR «enceinte» nach Duden und Larousse. «Krankheit», «Erkrankung» und «Diagnose» zählen auch am Wortende, «Suizid» und «Selbstmord» am Wortanfang. Ausnahmen sind nur diese Namen von Versicherungen, Versicherern und Kassen: «Kranken-» (BV Art. 117), «assurance-maladie», «caisse-maladie», «assureur-maladie» (KVV Art. 11), «assicurazione malattie», «assicurazione malattia» (KVAG Art. 7), «assicuratore malattia» (IVG Art. 57), «assicuratore-malattie» (KVV Art. 11) und «cassa malati»; andere Namen wie «assurance perte de gain maladie» zählen. Ausnahmen sind auch «dépendance économique» und «dipendenza economica» (OR Art. 728). FR «cancer» zählt nicht in einem Namen, den die Regel `name` erkennt; FR «enceinte de» zählt nur mit Dauer. ICD-10-Kodestruktur (Buchstabe, zwei Ziffern, optional Punkt und Ziffer), nur mit Auslöser «Diagnose», «diagnostic», «diagnosi» oder «ICD» im selben Satz, auch über einen weichen Umbruch («Diagnose⏎F32.1») | Wortlaute und Zitate geprüft 2026-11-06 |
-| art5c-3 | genetische Daten | Begriffe aus dem GUMG | zu erheben |
+| art5c-3 | genetische Daten | GUMG Art. 3, DNA-Profil-Gesetz Art. 2, DSG-Wortlaut; DNA-Profil nach der Botschaft (BBl 2017 7020); Ausnahme ist der Erlasstitel «DNA-Profil-Gesetz» | Wortlaute geprüft 2026-11-06 |
 | art5c-4 | biometrische Daten | DSG Art. 5 Bst. c Ziff. 4; Ausweisgesetz Art. 2 Abs. 2bis («Fingerabdrücke», «Gesichtsbild», «immagine del viso»); FR «images faciales» aus der Botschaft (FF 2017 6641), weil das Ausweisgesetz auf Französisch «photographie» schreibt; gewöhnliche Fotos fehlen (BBl 2017 7020) | Wortlaute geprüft (Belegprüfung 2026-11-06) |
 | art5c-5 | verwaltungs- und strafrechtliche Verfolgungen oder Sanktionen | StPO (u. a. Art. 111, 112 («Strafuntersuchung», «enquête pénale», «inchiesta penale»), 115, 118, 195, 220 und 352), StGB Art. 30, 34, 40 und 66a, OBG, StReG, BGFA Art. 16, SVG Art. 16, 16a und 16c, BPG Art. 34c, URG Art. 77i, DSG; «vorbestraft» nach Duden. Mehrdeutige FR- und IT-Wörter nur in Wendungen («plainte pénale», «porter plainte», «déposer plainte», «dénonciation pénale», «sporto denuncia», «retrait du permis de conduire»); Ausnahmen sind die Erlasstitel «Code de procédure pénale», «Procédure pénale applicable aux mineurs» (SR 312.1) und «Procédure pénale militaire» (SR 322.1, nur gross geschrieben) sowie die Beschwerde an die Aufsichtsbehörde («plainte à l'autorité de surveillance», SchKG Art. 17; «plainte auprès de l'autorité de surveillance», ZGB Art. 84) | Wortlaute und Zitate geprüft 2026-11-06 |
 | art5c-6 | Massnahmen der sozialen Hilfe | ZGB Art. 311, 312, 314b, 327a, 327b, 390, 393 und 394 (Beistandschaft, fürsorgerische Unterbringung, Entziehung der elterlichen Sorge, Vormund, Vormundschaft; FR «tuteur» und IT «tutore» nur in Wendungen); AIG Art. 62 (Sozialhilfe); ZUG Art. 3; DSG-Wortlaut («sozialen Hilfe», «assistenza sociale») | Abgrenzung: Leistungen der Sozialversicherungen meldet diese Regel nicht (BBl 1988 II 446; SR 851.1 Art. 3 Abs. 2 Bst. a); Invalidität und IV-Rente meldet art5c-2 |
@@ -265,7 +265,7 @@ Zu `fundstellen`: Bei überprüfbaren Fragen zu Urteilen der US-Bundesgerichte m
 
 - Anonymisieren oder Schwärzen, Re-Identifikationsrisiko aus dem Kontext, Gerichtsentscheide, Geschäftsnummern (Grundsatz 7).
 - Kantonale Besonderheiten.
-- Ein Wohnort ohne Auslösewort («Die Patientin aus Ossingen»): Die Regel `wohnort` kann Ort und Person dann nicht sicher verbinden. Den Wohnort einer Partei anonymisiert das Bundesgericht in der Regel, auch als Gemeindename (Art. 7 Abs. 1 der Anonymisierungsregeln). Ob «aus» vor einem Gemeindenamen Auslöser wird, entscheidet erst eine Messung.
+- Ein Wohnort ohne Auslösewort («Die Patientin aus Ossingen»): Die Regel `wohnort` kann Ort und Person dann nicht sicher verbinden. Den Wohnort einer Partei anonymisiert das Bundesgericht in der Regel, auch als Gemeindename (Art. 7 Abs. 1 der Anonymisierungsregeln). «aus» vor einem Gemeindenamen ist darum kein Auslöser.
 - Rätoromanisch.
 - KI-gestützte Erkennung. Alles ist regelbasiert und deterministisch: Dieselbe Eingabe ergibt immer dieselbe Ausgabe.
 
@@ -277,7 +277,7 @@ Zu `fundstellen`: Bei überprüfbaren Fragen zu Urteilen der US-Bundesgerichte m
   - in Cargo.lock: keine Netzwerkbibliothek; in Cargo.toml: keine Netzwerk-Features von windows-sys oder windows (`Win32_Networking…`, `Win32_NetworkManagement…`), auch nicht unter `[target.…]` oder `[features]`;
   - in der Importtabelle der Programmdatei (PE, normale und verzögerte Importe): nur kernel32, ntdll, msvcrt, bcryptprimitives und api-ms-win-core-synch-l1-2-0; keine Netzwerk-DLL (ws2_32, wininet, winhttp, urlmon u. a.), keine Funktion zum Programmstart (auch keine der 36 Startfunktionen von msvcrt), zum Herunterladen oder Nachladen. Streng gilt das für jeden optimierten Bau und für die Datei in `PROMPTSCAN_EXE`; so prüft `tools/freigabe.ps1` die Release-Datei. Der Testbau ohne LTO enthält ungenutzten Netzwerk- und Prozesscode der Standardbibliothek; dort sind genau diese Funktionen namentlich zugelassen: 25 aus WS2_32.dll, GetUserProfileDirectoryW aus USERENV.dll und CreateProcessW. Jede andere Funktion schlägt auch im Testbau an. Begründung je DLL im Kopf von `tests/offline.rs`.
 
-  Jede Prüfung hat eine Gegenprobe, die zeigt, dass sie anschlägt. cargo-deny folgt mit dem Repo (Abschnitt 8). «promptscan sendet nichts und schreibt nur auf Befehl» ist damit prüfbar, nicht bloss versprochen.
+  Jede Prüfung hat eine Gegenprobe, die zeigt, dass sie anschlägt. Bekannte Lücken in den Abhängigkeiten prüft cargo-audit in der CI. «promptscan sendet nichts und schreibt nur auf Befehl» ist damit prüfbar, nicht bloss versprochen.
 - **Lineare Laufzeit.** Die `regex`-Bibliothek garantiert lineare Laufzeit. Beliebig eingefügter Text kann kein katastrophales Backtracking auslösen. Die eigenen Schleifen bleiben auch bei Wiederholungen linear oder fast linear: Die Satzgrenzen prüfen am Ende jedes Abschnitts nur dieses Ende, nicht den ganzen schon verbundenen Satz, und eine Wortliste wählt unter k Treffern die überlappungsfreien in O(k log k). Drei Tests verlangen für die achtfache Eingabe höchstens die zwanzigfache Zeit und 20 ms; quadratischer Aufwand bräuchte 64-mal so lange (`text::tests::satzgrenzen_in_linearer_zeit`, `lexikon::tests::viele_treffer_in_fast_linearer_zeit`, `lexikon::tests::finden_in_fast_linearer_zeit`). Die beiden Wortlisten-Tests schlagen mit der früheren Auswahl fehl; die frühere Satzgrenzen-Schleife brauchte für «Art. » 8000-mal wiederholt rund 30-mal so lange wie 1000-mal. Gemessen mit dem ganzen Programm (`--format json`, Debug-Bau auf einer geteilten Maschine, kleinster Wert aus zwei bis vier Läufen, 6.11.2026):
 
   | Eingabe | 1 MB | 2 MB | 4 MB | 8 MB |
@@ -287,9 +287,8 @@ Zu `fundstellen`: Bei überprüfbaren Fragen zu Urteilen der US-Bundesgerichte m
   | «Art. » wiederholt, eine Zeile | 5,7 s | 10,9 s | 20,7 s | 42,1 s |
 
   Vorher brauchte «Art. » schon für 64 KB 26 s, «die » für 256 KB 9,9 s und der gewöhnliche Text für 1 MB 10,8 s. Jetzt wachsen «die » und «Art. » je Verdoppelung um das 1,9- bis 2,1-Fache. Derselbe gewöhnliche Text als Absätze, nach 72 Zeichen umbrochen, sodass fast jedes Zeilenende ein weicher Umbruch ist (5.2), brauchte in abwechselnden Läufen 2 bis 4 % länger (8 MB: 78,4 s gegen 75,3 s). Die Regel `hinweise` findet die Treffer eines Satzes und einer Zeile über ihre Reihenfolge im Text (binäre Suche statt eines Durchlaufs über alle Treffer). Mit einer Fundstellen-Bitte in jedem Satz wuchs der Lauf von 256 auf 512 KB um das 1,8-Fache (vorher 2,9), mit einem Vermerk auf jeder Zeile um das 1,9-Fache (vorher 3,7). Der gewöhnliche Text bis 8 MB ist danach nicht neu gemessen. Ein Release-Bau ist nicht gemessen.
-- **Unicode nach Standard.** Normalisierung nach UAX #15 (NFC) und Satzgrenzen nach UAX #29 statt eigener Regeln. Angepasst wird nur, wo UAX #29 selbst Anpassungen vorsieht («Tailoring»), und jede Anpassung ist dokumentiert und getestet (`text::saetze_bestimmen`): Abkürzungen aus `lexika/abkuerzungen.toml` und Ordinalzahlen wie «5.» in «am 5. März» beenden keinen Satz, und ein einzelner Zeilenumbruch mitten in einem Absatz auch nicht (5.2, `text::weiche_umbrueche_bestimmen`). Zeichen mit der Unicode-Eigenschaft Default_Ignorable_Code_Point, etwa das weiche Trennzeichen U+00AD oder U+200B, bleiben im Text, damit Zeile und Spalte stimmen. Wortlisten und die Erkenner der Klasse A lesen über sie hinweg, und die Ausgabe meldet sie (AUSGABE.md, «Meldungen zur Eingabe»). Grenze: Die Wortlisten der übrigen Regeln, die Wortfolgen in `kontext` und das Datum in `geburtsdatum` lesen ebenfalls über diese Zeichen hinweg («wohn[U+00AD]haft in Bern», «Meine [U+200B]Mandantin», «geb.[U+200B] 12.03.1985»), die Muster der Regeln `name` und `adresse` und der Zwischenraum vor dem Gemeindenamen in `wohnort` aber noch nicht. «Erika Bei[U+00AD]spiel» ergibt den Namen «Erika Bei», «See[U+00AD]strasse 12, 8002 Zürich» keine Adresse und «wohnhaft in [U+200B]Bern» keinen Wohnort. Für reguläre Ausdrücke steht dafür `text::OhneUnsichtbare` bereit, die Sicht der Klasse A mit dem Weg zurück zu den Versätzen. Bindestriche U+2010 und U+2011 gelten in Wortlisten und Telefonnummern wie `-`.
+- **Unicode nach Standard.** Normalisierung nach UAX #15 (NFC) und Satzgrenzen nach UAX #29 statt eigener Regeln. Angepasst wird nur, wo UAX #29 selbst Anpassungen vorsieht («Tailoring»), und jede Anpassung ist dokumentiert und getestet (`text::saetze_bestimmen`): Abkürzungen aus `lexika/abkuerzungen.toml` und Ordinalzahlen wie «5.» in «am 5. März» beenden keinen Satz, und ein einzelner Zeilenumbruch mitten in einem Absatz auch nicht (5.2, `text::weiche_umbrueche_bestimmen`). Zeichen mit der Unicode-Eigenschaft Default_Ignorable_Code_Point, etwa das weiche Trennzeichen U+00AD oder U+200B, bleiben im Text, damit Zeile und Spalte stimmen. Wortlisten und die Erkenner der Klasse A lesen über sie hinweg, und die Ausgabe meldet sie (AUSGABE.md, «Meldungen zur Eingabe»). Grenze: Die Wortlisten der übrigen Regeln, die Wortfolgen in `kontext` und das Datum in `geburtsdatum` lesen ebenfalls über diese Zeichen hinweg («wohn[U+00AD]haft in Bern», «Meine [U+200B]Mandantin», «geb.[U+200B] 12.03.1985»), die Muster der Regeln `name` und `adresse` und der Zwischenraum vor dem Gemeindenamen in `wohnort` aber nicht. «Erika Bei[U+00AD]spiel» ergibt den Namen «Erika Bei», «See[U+00AD]strasse 12, 8002 Zürich» keine Adresse und «wohnhaft in [U+200B]Bern» keinen Wohnort. Für reguläre Ausdrücke steht dafür `text::OhneUnsichtbare` bereit, die Sicht der Klasse A mit dem Weg zurück zu den Versätzen. Bindestriche U+2010 und U+2011 gelten in Wortlisten und Telefonnummern wie `-`.
 - **Kodierung.** Gelesen wird UTF-8 mit oder ohne BOM und UTF-16 mit BOM. Abgewiesen mit Exit-Code 2 werden UTF-32 und jede Eingabe mit dem Zeichen NUL, meist UTF-16 ohne BOM, denn darin griffe keine Regel. Deutet die Eingabe auf eine beschädigte Kodierung, etwa «Anw?ltin» aus einer Pipe von Windows PowerShell 5.1 oder Ersatzzeichen U+FFFD, meldet promptscan das auf stderr und im Bericht; der Exit-Code bleibt der der Funde (AUSGABE.md, «Kodierung der Eingabe»).
-- **Nicht Python.** Das Projekt zeigt eine zweite, systemnahe Sprache.
 
 | Crate | Zweck |
 |---|---|
@@ -317,86 +316,56 @@ url = "https://fedlex.data.admin.ch/eli/cc/2002/510"
 
 ```
 promptscan/
-├─ Cargo.toml
+├─ Cargo.toml, Cargo.lock
+├─ build.rs     bettet lexika/ in das Programm ein
 ├─ LICENSE.md, THIRD-PARTY-NOTICES.md   Lizenzstand, Vermerke (`promptscan licenses`)
-├─ docs/        SPEC.md, ANNOTATION.md (Richtlinie), GATES.md (Schwellen, 7.5),
-│               WEITERGABE.md, TESTVEREINBARUNG.md (Entwurf)
+├─ docs/        SPEC.md, AUSGABE.md (Ausgabe und Aufruf), WEITERGABE.md (Bau und Weitergabe)
 ├─ tools/       freigabe.ps1 (Release-Bau), drittvermerke/ (Vorlage und Lizenzdateien)
-├─ lexika/      je Regel eine TOML-Datei, Quelle je Eintrag
+├─ lexika/      je Regel eine TOML-Datei, Quelle je Eintrag; register/ (BFS, swisstopo)
 ├─ src/
 │  ├─ main.rs        CLI
+│  ├─ lib.rs         Ablauf der Prüfung
 │  ├─ text.rs        NFC, Satzgrenzen, Zeile und Spalte
 │  ├─ klasse_a.rs    ahv, iban, tel, mail
 │  ├─ lexikon.rs     Laden, Aho-Corasick
-│  ├─ regeln.rs      Regeln der Klasse B, art5c-*, Hinweise
+│  ├─ regeln/        Regeln der Klasse B, art5c-*, Kontext, Hinweise
+│  ├─ fund.rs        Treffer und Funde
 │  ├─ stufen.rs      rechtliches Modell (Abschnitt 4)
+│  ├─ normen.rs      Normen mit amtlichem Wortlaut
+│  ├─ katalog.rs     `promptscan rules` und `explain`
+│  ├─ lizenzen.rs    `promptscan licenses`
 │  └─ ausgabe.rs     farbiger Text, JSON
-├─ tests/       Eigenschaftstests, Snapshots, CLI
-└─ eval/        Korpus (privat bis zur Freigabe), Auswertung; baseline/ (Python, nur Vergleich)
+├─ examples/    belege (Belegprüfung), drittvermerke, register_namen, register_orte
+└─ tests/       Eigenschaftstests, CLI, Regeln, Offline-Prüfung
 ```
 
-## 7. Wissenschaftliche Absicherung
+## 7. Eigenschaftstests für Klasse A
 
-### 7.1 Eigenschaftstests für Klasse A
+`tests/klasse_a.rs` prüft AHV-Nummer und IBAN mit proptest. Die Läufe haben feste Startwerte und prüfen bei jedem Lauf dieselben Fälle:
 
-Mit proptest wird gezeigt: Jede erzeugte gültige Nummer wird erkannt. Jede Einzelfehler-Variante wird abgewiesen. Vertauschungen werden abgewiesen, ausser den dokumentierten EAN-13-Paaren mit Differenz 5. Das ist ein mathematischer Nachweis, keine Stichprobe.
+- Jede erzeugte gültige Nummer wird in beliebigem Umgebungstext an ihrer Stelle erkannt, in jeder Schreibweise aus 5.1. Ausgenommen ist eine AHV-Nummer mit Leerzeichen, die über ein weiteres Leerzeichen an einer Ziffer hängt; sie gilt als Teil einer Zahlenkolonne.
+- Jede Ersetzung einer einzelnen Ziffer durch eine andere wird abgewiesen.
+- Jede Vertauschung zweier verschiedener Nachbarziffern wird abgewiesen, ausser bei der AHV-Nummer zwei Ziffern nach 756, die sich um 5 unterscheiden.
+- In der Kontonummer der IBAN lässt MOD 97-10 genau die Ausnahmen aus 5.1 durch, und nur diese.
+- Auf beliebigem Text stürzt keiner der vier Erkenner ab.
 
-### 7.2 Annotierter Prompt-Korpus
+Dass die Aussagen zu Ersetzung und Vertauschung für jede Nummer gelten, nicht nur für die erzeugten, rechnen die Tests `beweis_…` über alle Fälle der Prüfsumme modulo 10 bzw. 97 nach.
 
-- **Fiktiv:** keine realen Personen, keine Gerichtsentscheide, keine Daten aus anderen Projekten. Juristinnen und Juristen verfassen die Prompts nach der Richtlinie `docs/ANNOTATION.md`, die sich direkt aus Abschnitt 4 und 5 ableitet.
-- **Umfang (Ziel):** 600 Prompts, davon 300 deutsch, 150 französisch, 150 italienisch. Fehlen Annotatoren für eine Sprache, steht dort «nicht gemessen».
-- **Zusammensetzung:** 40 % mit schutzwürdigem Inhalt, 30 % saubere Rechtsfragen, 30 % schwierige Gegenbeispiele. Dazu gehören Fachsprache mit grossgeschriebenen Substantiven, Behörden- und Gemeindenamen, BGE-Zitate, Namen von Rechtsvertretern, Firmen ohne Rolle, Daten ohne Person (Inkrafttreten) sowie Nummern im AHV- und IBAN-Format mit falscher Prüfziffer.
-- **Aufteilung:** ein Drittel Entwicklung, zwei Drittel Test. Der Testteil bleibt bis zur Freigabeprüfung versiegelt (7.5).
-- **Doppelannotation** von mindestens 20 %, mit Cohens κ je Kategorie (Cohen 1960). Die Schwelle ist κ ≥ 0,80, nach Landis/Koch (1977) der Bereich «almost perfect». Liegt κ darunter, ist die Richtlinie unklar: Dann wird sie verbessert, nicht das Werkzeug angepasst.
+## 8. Erkennungsgüte
 
-### 7.3 Kennzahlen
+Präzision und Trefferquote auf Prompts sind nicht gemessen; ein annotierter Korpus fehlt. Die Tests halten Beispiele und Gegenbeispiele je Regel fest, sind aber keine Stichprobe und ergeben keine Güteangabe. README und `promptscan --help` sagen das.
 
-- Präzision, Trefferquote und F2 auf Ebene der markierten Stellen, je Regel und Sprache, jeweils mit 95-%-Intervall nach Wilson (1927).
-- Übereinstimmung der Stufen zwischen Werkzeug und Goldstandard als gewichtetes κ, weil die Stufen geordnet sind.
-- Fehlalarme auf den schwierigen Gegenbeispielen.
-- **Warum F2 statt F1:** Die Kosten sind ungleich. Ein übersehenes Geheimnis lässt sich nach dem Senden nicht zurückholen; ein Fehlalarm kostet einen zweiten Blick. F2 gewichtet die Trefferquote doppelt (van Rijsbergen 1979).
+Zielwerte für eine Messung, je Regel und Sprache, mit 95-%-Intervall:
 
-### 7.4 Vergleich
+- `ahv`, `iban`: Präzision und Trefferquote je mindestens 0,99.
+- `name`, `adresse`: Trefferquote mindestens 0,90, Präzision mindestens 0,80.
+- `art5c-*`: Trefferquote mindestens 0,85.
 
-Microsoft Presidio (Open Source) läuft mit seinen Standard-Erkennern auf demselben Testteil. Der Vergleich zeigt, was die schweizerische und juristische Ausrichtung bringt. Er läuft nur in `eval/baseline`, nicht im ausgelieferten Programm.
+Die Trefferquote wiegt schwerer als die Präzision: Ein übersehenes Geheimnis lässt sich nach dem Senden nicht zurückholen, ein Fehlalarm kostet einen zweiten Blick.
 
-### 7.5 Vorregistrierung und Schwellen
+## 9. Weitergabe
 
-Vor der ersten Messung auf dem Testteil wird `docs/GATES.md` committet, zusammen mit dem SHA-256 der Testdatei. Spätere Änderungen an den Schwellen bleiben so in der Git-Geschichte sichtbar.
-
-Vorschlag für die Schwellen, festzulegen vor der ersten Messung:
-
-- `ahv`, `iban`: Präzision ≥ 0,99 und Trefferquote ≥ 0,99.
-- `name`, `adresse`: Trefferquote ≥ 0,90 und Präzision ≥ 0,80.
-- `art5c-*`: Trefferquote ≥ 0,85, sofern mindestens 30 Goldstellen vorliegen. Sonst gilt die Regel als «unzureichend belegt» und wird als experimentell oder gar nicht ausgeliefert.
-- Schwierige Gegenbeispiele: höchstens eine falsche ROT- oder ORANGE-Markierung je 50 Prompts.
-
-### 7.6 Nutzertest
-
-Fünf bis acht Juristinnen und Juristen prüfen eigene fiktive Prompts und sprechen dabei laut mit. Erfasst wird, welche Fehlalarme sie stören und welche Erklärungen sie verstehen.
-
-### 7.7 Reproduzierbarkeit
-
-Alle Zahlen erzeugt `cargo run --bin eval`, mit festen Startwerten. Die Zahlen in der README stammen nur aus dieser Ausgabe, keine wird von Hand geschrieben.
-
-## 8. Freigabe
-
-1. **Lokal**, Git ohne Remote, bis die Eigenschaftstests grün sind und die Entwicklungsmessung vorliegt.
-2. **Privates GitHub-Repo** nach der Testmessung über den Schwellen (7.5) und dem Nutzertest (7.6).
-3. **Öffentlich** erst, wenn eine zweite juristische Person den Rechtsteil gegengelesen hat und alle Quellen in Abschnitt 10 auf «geprüft» stehen.
-
-Wie die Programmdatei gebaut, geprüft und weitergegeben wird (Mindestanforderungen, SmartScreen und Smart App Control, Signatur, Prüfsumme, Entwicklerpfade, Drittvermerke), steht in `docs/WEITERGABE.md`. Für den Nutzertest (7.6) liegt der Entwurf einer Testvereinbarung vor: `docs/TESTVEREINBARUNG.md`.
-
-## 9. Etappen
-
-| | Inhalt |
-|---|---|
-| M0 | Rust einrichten, Cargo-Gerüst, CLI, farbige Ausgabe, JSON; CI samt Netzwerksperre |
-| M1 | Klasse A (ahv, iban, tel, mail) mit Eigenschaftstests |
-| M2 | Wortlistenformat mit Quellen; name, firma, adresse, wohnort, geburtsdatum; Ausnahmen; `--role` und Geheimnis-Kontext |
-| M3 | art5c-1 bis art5c-6, vermerk, fundstellen; `--target local` |
-| M4 | Annotationsrichtlinie, Korpus, κ, Auswertung, Vergleich mit Presidio; GATES.md mit versiegeltem Test |
-| M5 | Testmessung, README aus der Auswertung, Nutzertest → privates Repo |
+Wie die Programmdatei gebaut, geprüft und weitergegeben wird (Mindestanforderungen, SmartScreen und Smart App Control, Signatur, Prüfsumme, Entwicklerpfade, Drittvermerke), steht in `docs/WEITERGABE.md`.
 
 ## 10. Quellen und Prüfstand
 
@@ -604,7 +573,7 @@ Dazu: Bundesgericht, Regeln für die Anonymisierung der Urteile (Präsidentenkon
 | ZAS, Berechnung der Kontrollziffer der AHVN13 | ahv | zu lesen: Die bekannte Adresse liefert am 06.11.2026 die BSV-Mitteilung Nr. 222; das Verfahren ist durch Anhang 7 der WL VA/IK (BSV) belegt, geprüft |
 | ISO 13616, ISO 7064, GS1, RFC 5322 | Klasse A | Fundstellen in `explain` je Regel: ISO 13616-1:2020 Ziffern 4 bis 6 (öffentliche Vorschau) und GS1 General Specifications Release 26.0, Ziffer 7.9.1, geprüft; Anhänge A und B von ISO 13616-1 und ISO/IEC 7064 selbst nicht gelesen |
 | BAKOM, Nummernplan | tel | TAV E.164 (SR 784.101.113/2.2), Ausgabe 8 vom 08.11.2023, in Kraft seit 01.03.2024, Ziffern 2.2, 2.3, 3 und 5; geprüft 06.11.2026 |
-| BFS: Vornamen, Nachnamen, Gemeindeverzeichnis; swisstopo: Ortschafts- und Strassenverzeichnis | Klasse B | Datensätze und Lizenzen je Datensatz zu prüfen |
+| BFS: Vornamen, Nachnamen, Gemeindeverzeichnis; swisstopo: Ortschafts- und Strassenverzeichnis | Klasse B | Quelle, Abrufdatum, Prüfsumme und Nutzungsbedingungen je Datensatz in den Dateiköpfen von `lexika/register/` und in THIRD-PARTY-NOTICES.md, 7.2; `cargo test` prüft, dass beide übereinstimmen |
 | Duden online | 53 Einträge in 14 Wortlisten, u. a. Anreden, Begleiter, Funktionen, Vertretung, `kontext`, `personenbezug`, Nummernwörter, `geburtsdatum`, art5c-1, art5c-2, art5c-5 | Wortlaut je Eintrag im Feld `quelle`, abgerufen 06.11.2026 und 07.11.2026 |
 | Larousse | 32 Einträge in 7 Wortlisten: Anreden, Funktionen, Rechtsvertretung, Vertretung, Nummernwörter, `geburtsdatum`, art5c-2 | wie Duden |
 | Treccani (Vocabolario, Thesaurus, Enciclopedia dell'Italiano) | 24 Einträge in 7 Wortlisten: Anreden, Rechtsvertretung, Vertretung, `kontext`, Nummernwörter, `geburtsdatum`, art5c-1 | wie Duden; kein Eintrag für «burnout» |
@@ -615,22 +584,8 @@ Dazu: Bundesgericht, Regeln für die Anonymisierung der Urteile (Präsidentenkon
 | BAG, Aktionsplan Suizidprävention (DE, FR, IT) | 8 Einträge in art5c-2 | abgerufen 06.11.2026 |
 | BFS, Instrumente zur medizinischen Kodierung (ICD-10-GM); WHO, ICD-10 Band 2 (2019), Abschnitt 2.4 | art5c-2: Auslöser «ICD», Aufbau der ICD-10-Kodes | geprüft 06.11.2026 |
 | Bundesgericht: Anonymisierungsregeln; Seiten auf bger.ch | 5 Einträge: `fundstellen`, Funktionen, Rechtsvertretung | Wortlaut je Eintrag |
-| Cohen 1960; Landis/Koch 1977; Wilson 1927; van Rijsbergen 1979 | Auswertung | Standardliteratur, Zitate vor Freigabe prüfen |
 | EDÖB, Mitteilung vom 09.11.2023 | 4.1 | nur über Sekundärquellen; Mitteilung selbst zu lesen |
 | Bundesrat, Entscheid vom 12.02.2025 zur KI-Regulierung | 4.1 | nur über Sekundärquellen; Stand der Vernehmlassung zu prüfen |
 
 Die Zeilen von «Duden online» bis «Bundesgericht» sind aus den Belegen der Wortlisten gezählt (`cargo run --example belege`, Stand 07.11.2026). Gesetzestexte, die Wortlisten belegen, gehören zu 10.1. Die Belegprüfung prüft nur Fedlex-Belege gegen den amtlichen Text; die übrigen listet sie auf.
 
-## 11. Offene Entscheide
-
-1. **Name «promptscan»:** Auf crates.io ist er frei. Auf PyPI heisst aber schon ein anderes Werkzeug zum Prompt-Scannen so, und auf GitHub tragen 16 Repos den Namen. Das schafft Verwechslungsgefahr im selben Feld. Behalten?
-2. **Rust einrichten:** rustup und die Visual Studio Build Tools mit C++, zusammen einige GB. Installieren?
-3. **Annotation:** Wer annotiert Französisch und Italienisch, und wer annotiert für κ doppelt?
-4. **AHV-Nummern im Korpus:** Gibt es einen Testbereich der ZAS? Wenn nicht, bleiben Prompts mit gültigen AHV-Nummern privat.
-5. **Lizenzen** der BFS- und swisstopo-Datensätze. Stand 06.11.2026: Nutzungsbedingungen und Quellenangabe je Datensatz stehen in den Dateiköpfen von `lexika/register/` und in THIRD-PARTY-NOTICES.md, Abschnitt 7.2; `cargo test` prüft, dass beide wortgleich übereinstimmen.
-6. **Lizenz, Rechteinhaber und Schutz des Codes.** promptscan hat noch keine Lizenz; LICENSE.md hält fest: Testfassung, jede Weitergabe nur mit Zustimmung von [Rechteinhaber]. Offen ist:
-   - **die Lizenz** für Programmdatei und Quelltext. Die Vermerke zu fremden Bestandteilen (THIRD-PARTY-NOTICES.md) gelten unabhängig davon.
-   - **wer Rechteinhaber ist.** Art. 6 URG: «Urheber oder Urheberin ist die natürliche Person, die das Werk geschaffen hat.» Für Programme aus einem Arbeitsverhältnis Art. 17 URG: «Wird in einem Arbeitsverhältnis bei Ausübung dienstlicher Tätigkeiten sowie in Erfüllung vertraglicher Pflichten ein Computerprogramm geschaffen, so ist der Arbeitgeber oder die Arbeitgeberin allein zur Ausübung der ausschliesslichen Verwendungsbefugnisse berechtigt.»
-   - **wie weit der Code geschützt ist.** Art. 2 Abs. 1 URG: «Werke sind, unabhängig von ihrem Wert oder Zweck, geistige Schöpfungen der Literatur und Kunst, die individuellen Charakter haben.» Abs. 3: «Als Werke gelten auch Computerprogramme.»
-
-   Gesetzestexte: SR 231.1, Fassung vom 01.07.2025, von Fedlex. Die Zitate sind keine Rechtsauskunft; die Einordnung für promptscan steht aus.

@@ -1,4 +1,4 @@
-//! Eigenschaftstests für Klasse A (SPEC 7.1): AHV-Nummer und IBAN, dazu ein Lauf aller vier
+//! Eigenschaftstests für Klasse A (SPEC 7): AHV-Nummer und IBAN, dazu ein Lauf aller vier
 //! Regeln über beliebigen Text.
 //!
 //! Die Referenzrechnungen hier sind unabhängig vom Erkenner geschrieben: die

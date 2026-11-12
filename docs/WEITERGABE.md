@@ -1,7 +1,6 @@
 # Weitergabe der Programmdatei
 
 Stand 06.11.2026. Gilt für die Windows-Programmdatei (Rust-Ziel `x86_64-pc-windows-gnu`).
-Wann weitergegeben wird, regelt SPEC 8 (lokal, privates Repo, öffentlich).
 
 ## 1. Was weitergegeben wird
 
@@ -26,15 +25,15 @@ Wann weitergegeben wird, regelt SPEC 8 (lokal, privates Repo, öffentlich).
 | Windows 10 on Arm | nein | Microsoft: «Windows 10 on Arm also supports emulation, but only for x86 apps.» |
 | ältere Windows, 32-Bit-Windows | nein | Ziel verlangt Windows 10+ und 64 Bit |
 
-Geprüft ist bisher nur Windows 11 Pro x64 (Build 26200).
+Geprüft ist nur Windows 11 x64 (Build 26200).
 
 Quellen: <https://doc.rust-lang.org/rustc/platform-support.html>;
 <https://learn.microsoft.com/en-us/windows/arm/apps-on-arm-x86-emulation> (Stand 06.11.2025).
 
 ## 3. Was Windows mit einer unsignierten Programmdatei tut
 
-Die Programmdatei ist heute nicht signiert und hat keine Ressourcen (keine Versionsangaben,
-kein Manifest).
+Die Programmdatei ist nicht signiert und hat keine Ressourcen (keine Versionsangaben, kein
+Manifest).
 
 **Mark of the Web.** Eine heruntergeladene Datei trägt eine Herkunftsmarke. Microsoft zu
 `Unblock-File` (Windows PowerShell 5.1): «Internally, the Unblock-File cmdlet removes the
@@ -64,8 +63,9 @@ kann, sagt Microsoft nicht voraus: «However, in some cases, the service is unab
 confident prediction either way.» Der Rat an Entwickler: «The simple answer is, sign your app
 with a valid certificate.»
 
-Folge für den Nutzertest (SPEC 7.6): vorher klären, ob Smart App Control auf den Geräten der
-Testpersonen eingeschaltet ist. Für die öffentliche Stufe ist die Signatur nötig (Abschnitt 4).
+Folge: Vor der Weitergabe klären, ob Smart App Control auf dem Gerät des Empfängers
+eingeschaltet ist. Verlässlich startet die Programmdatei dort erst mit gültiger Signatur
+(Abschnitt 4.1).
 
 Quellen: <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-5.1>
 (Stand 12.12.2022);
@@ -74,7 +74,7 @@ Quellen: <https://learn.microsoft.com/en-us/powershell/module/microsoft.powershe
 <https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions>
 (Stand 17.08.2026).
 
-## 4. Plan vor der Weitergabe an Fremde
+## 4. Signatur, Versionsangaben, Prüfsumme
 
 ### 4.1 Authenticode-Signatur mit Zeitstempel
 
@@ -238,9 +238,3 @@ Mit `-- --pruefen` vergleicht das Beispiel nur. Die Tests in `src/lizenzen.rs` s
 wenn ein Paket aus Cargo.lock, ein Register aus `lexika/register/` (Name und Angaben aus dem
 Dateikopf), der Lizenzkopf einer Wortliste aus `lexika/` oder ein Zusatzvermerk in der Datei
 fehlt oder nicht mehr wortgleich ist.
-
-## 7. Offen vor der öffentlichen Stufe
-
-- Lizenz und Rechteinhaber (SPEC 11, Punkt 6); bis dahin gilt LICENSE.md (Testfassung).
-- Zertifikat und Signatur (4.1), Ressourcen-Compiler für VERSIONINFO und Manifest (4.2).
-- cargo-deny mit dem Repo (SPEC 6).

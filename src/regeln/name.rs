@@ -2156,8 +2156,8 @@ pub fn info() -> Vec<RegelInfo> {
                 "A line break after a punctuation mark, before or after a blank line and at a list item separates the parts of a name («- Erika⏎- Beispiel» gives no name). Without a form of address, title, procedural role or possessive frame before it, a name ends at the end of the line: «Liebe Erika⏎Danke …» gives no name, «Monsieur⏎Le Roux Pierre⏎Rue du Lac 12» only «Le Roux Pierre», but «Hallo Erika⏎Meier hat angerufen» gives none either. A second last name is never added across a break.",
             ),
             Txt::neu(
-                "Trefferquote und Präzision sind nicht gemessen; das Ziel nach SPEC 7.5 ist eine Trefferquote von mindestens 0,90 und eine Präzision von mindestens 0,80.",
-                "Recall and precision have not been measured; the target under SPEC 7.5 is a recall of at least 0.90 and a precision of at least 0.80.",
+                "Trefferquote und Präzision sind nicht gemessen; das Ziel nach SPEC 8 ist eine Trefferquote von mindestens 0,90 und eine Präzision von mindestens 0,80.",
+                "Recall and precision have not been measured; the target under SPEC 8 is a recall of at least 0.90 and a precision of at least 0.80.",
             ),
         ],
     }]
@@ -2249,7 +2249,7 @@ mod tests {
         ("Maria d'Angelo abita a Lugano.", &["Maria d'Angelo"]),
     ];
 
-    /// SPEC 5.2 und 7.2: Gegenbeispiele, die kein Name sind.
+    /// SPEC 5.2 und 8: Gegenbeispiele, die kein Name sind.
     const NEGATIV: &[&str] = &[
         "Art. 5 DSG",
         "Wer im Mai Zahlungen leisten muss, prüft Art. 5 DSG.",

@@ -12,7 +12,7 @@
 # teilwort = "ende": Der Eintrag zählt auch als Ende eines zusammengesetzten Worts
 # («Hausärztin», «Oberarzt»); die Selbstbezeichnung umfasst dann das ganze Wort.
 # FR «contrôleur» (Revisoren) steht in Art. 321 Ziff. 1 CP, bezeichnet allein aber auch
-# Kontrolleure aller Art («contrôleur de gestion»); Präzision zu messen (SPEC 4.3). Ebenso
+# Kontrolleure aller Art («contrôleur de gestion»); Präzision nicht gemessen (SPEC 8). Ebenso
 # bezeichnen «Revisor», «réviseur» und «revisore» auch, wer Texte oder Druckbogen prüft
 # (Notizen der Einträge).
 # Private Stellung statt Pflicht (Code in src/regeln/kontext.rs, fn privat): Ein
@@ -498,7 +498,7 @@ merkmal = "auditor"
 quelle = "SR 311.0 Art. 321 Ziff. 1"
 fassung = "2026-11-01"
 url = "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/fr#art_321"
-notiz = "«contrôleurs astreints au secret professionnel en vertu du code des obligations» (DE «Revisoren»). Das Wort allein bezeichnet auch andere Kontrolleure («contrôleur de gestion», «contrôleur aérien»): Präzision zu messen (SPEC 4.3)."
+notiz = "«contrôleurs astreints au secret professionnel en vertu du code des obligations» (DE «Revisoren»). Das Wort allein bezeichnet auch andere Kontrolleure («contrôleur de gestion», «contrôleur aérien»): Präzision nicht gemessen (SPEC 8)."
 
 [[eintrag]]
 begriff = "réviseur"
@@ -509,7 +509,7 @@ merkmal = "auditor"
 quelle = "SR 220 Art. 635a"
 fassung = "2026-10-01"
 url = "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#art_635_a"
-notiz = "«Un réviseur agréé vérifie le rapport de fondation et atteste par écrit qu’il est complet et exact.» Das übliche Wort für die Revisoren (DE «Revisor», IT «revisore»); Art. 321 Ziff. 1 CP sagt «contrôleurs». Allein bezeichnet das Wort auch Text- und Druckrevisoren (Larousse, «réviseur, réviseuse», abgerufen am 6.11.2026: «1. Personne qui révise, qui vérifie. 2. Professionnel chargé de réviser les épreuves typographiques.»): «Je suis réviseuse dans une agence de traduction» ist ein Fehltreffer (explain kontext); Präzision zu messen (SPEC 4.3)."
+notiz = "«Un réviseur agréé vérifie le rapport de fondation et atteste par écrit qu’il est complet et exact.» Das übliche Wort für die Revisoren (DE «Revisor», IT «revisore»); Art. 321 Ziff. 1 CP sagt «contrôleurs». Allein bezeichnet das Wort auch Text- und Druckrevisoren (Larousse, «réviseur, réviseuse», abgerufen am 6.11.2026: «1. Personne qui révise, qui vérifie. 2. Professionnel chargé de réviser les épreuves typographiques.»): «Je suis réviseuse dans une agence de traduction» ist ein Fehltreffer (explain kontext); Präzision nicht gemessen (SPEC 8)."
 
 [[eintrag]]
 begriff = "médecin"

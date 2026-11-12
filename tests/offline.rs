@@ -9,8 +9,7 @@
 //!    windows-link).
 //! 2. Quelltext des Programms (`src/`): Dateien anlegen, schreiben, kopieren, umbenennen oder
 //!    löschen nur an den Stellen in `ERLAUBTE_SCHREIBSTELLEN`, die ein ausdrücklicher Befehl
-//!    auslöst (`promptscan config --role …` bzw. `--lang …`, `--output`). Das belegt die
-//!    Zusage in docs/TESTVEREINBARUNG.md, Ziffer 2.
+//!    auslöst (`promptscan config --role …` bzw. `--lang …`, `--output`).
 //! 3. Cargo.lock: keine Netzwerkbibliothek; Cargo.toml: keine Netzwerkfunktionen von
 //!    windows-sys bzw. windows (Features `Win32_Networking*`, `Win32_NetworkManagement*`).
 //! 4. Programmdatei: Die Importtabelle (PE) nennt nur freigegebene Systembibliotheken und keine
@@ -518,7 +517,7 @@ fn das_programm_schreibt_nur_auf_befehl() {
     erwartet.sort();
     assert_eq!(
         gefunden, erwartet,
-        "Schreibstellen (Datei, Funktion, Muster) weichen von ERLAUBTE_SCHREIBSTELLEN ab; die Zusage in docs/TESTVEREINBARUNG.md, Ziffer 2, hängt daran"
+        "Schreibstellen (Datei, Funktion, Muster) weichen von ERLAUBTE_SCHREIBSTELLEN ab; die Zusage «schreibt nur auf Befehl» hängt daran"
     );
 }
 
@@ -1106,36 +1105,52 @@ fn gegenprobe_parser_liest_normale_und_verzoegerte_importe() {
 }
 
 /// Die Zusagen reichen nicht weiter, als die Prüfungen dieser Datei belegen: promptscan sendet
-/// nichts und schreibt nur auf Befehl (docs/TESTVEREINBARUNG.md, Ziffer 2; SPEC 6). Dass der Prompt «den
-/// Rechner nicht verlässt», belegen sie nicht: Was in der Befehlszeile steht, liegt im Verlauf
-/// der Shell. Darum darf das auch SPEC und WEITERGABE nicht versprechen.
+/// nichts und schreibt nur auf Befehl (SPEC 6). Dass der Prompt «den Rechner nicht verlässt»,
+/// belegen sie nicht: Was in der Befehlszeile steht, liegt im Verlauf der Shell. Darum sagt die
+/// README das, und keine Unterlage verspricht mehr.
 #[test]
-fn testvereinbarung_sagt_nur_zu_was_geprueft_ist() {
+fn unterlagen_sagen_nur_zu_was_geprueft_ist() {
     let lesen = |datei: &str| {
         let text =
             std::fs::read_to_string(Path::new(env!("CARGO_MANIFEST_DIR")).join(datei)).unwrap();
         text.split_whitespace().collect::<Vec<_>>().join(" ")
     };
-    let text = lesen("docs/TESTVEREINBARUNG.md");
-    for zusage in [
-        "promptscan prüft lokal und sendet nichts. Dateien schreibt es nur auf Befehl:",
-        "steht er aber im Verlauf der Shell",
-    ] {
-        assert!(text.contains(zusage), "«{zusage}» fehlt");
-    }
     assert!(
         lesen("docs/SPEC.md")
             .contains("«promptscan sendet nichts und schreibt nur auf Befehl» ist damit prüfbar"),
         "SPEC 6: Zusage fehlt"
     );
+    for (datei, hinweis) in [
+        (
+            "README.de.md",
+            "Text in der Befehlszeile gelangt in den Verlauf der Shell",
+        ),
+        (
+            "README.md",
+            "text on the command line ends up in the shell history",
+        ),
+    ] {
+        assert!(
+            lesen(datei).contains(hinweis),
+            "{datei}: Hinweis auf den Verlauf der Shell fehlt"
+        );
+    }
     for datei in [
-        "docs/TESTVEREINBARUNG.md",
+        "README.md",
+        "README.de.md",
         "docs/SPEC.md",
         "docs/WEITERGABE.md",
     ] {
-        assert!(
-            !lesen(datei).contains("verlässt den Rechner"),
-            "{datei}: Zusage, die kein Test belegt"
-        );
+        let text = lesen(datei);
+        for zusage in [
+            "verlässt den Rechner",
+            "leaves your computer",
+            "never leaves",
+        ] {
+            assert!(
+                !text.contains(zusage),
+                "{datei}: «{zusage}» belegt kein Test"
+            );
+        }
     }
 }

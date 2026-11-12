@@ -72,7 +72,7 @@ merkmal = "offen"
 quelle = "SR 935.61 Art. 13 Abs. 1"
 fassung = "2025-07-01"
 url = "https://www.fedlex.admin.ch/eli/cc/2002/153/fr#art_13"
-notiz = "«les affaires qui lui sont confiées par ses clients» (Anwältin, Anwalt). Auch die Kundschaft der Bank: «Les prêts et avances qu’une banque accorde à un client» (Art. 4bis Abs. 1 BankG). Beruf offen, festzulegen mit --role; Präzision zu messen (SPEC 4.3)."
+notiz = "«les affaires qui lui sont confiées par ses clients» (Anwältin, Anwalt). Auch die Kundschaft der Bank: «Les prêts et avances qu’une banque accorde à un client» (Art. 4bis Abs. 1 BankG). Beruf offen, festzulegen mit --role; Präzision nicht gemessen (SPEC 8)."
 
 [[eintrag]]
 begriff = "mandant"
@@ -105,7 +105,7 @@ merkmal = "offen"
 quelle = "SR 935.61 Art. 13 Abs. 1"
 fassung = "2025-07-01"
 url = "https://www.fedlex.admin.ch/eli/cc/2002/153/it#art_13"
-notiz = "«quanto gli è stato confidato dai clienti» (avvocato). Art. 40b OR (IT) nennt so auch Konsumentinnen und Konsumenten («Il cliente può revocare la sua proposta»), Art. 4bis Abs. 1 BankG (IT) die Kundschaft der Bank («concessi da una banca a singoli clienti»): Beruf offen, festzulegen mit --role; Präzision zu messen (SPEC 4.3)."
+notiz = "«quanto gli è stato confidato dai clienti» (avvocato). Art. 40b OR (IT) nennt so auch Konsumentinnen und Konsumenten («Il cliente può revocare la sua proposta»), Art. 4bis Abs. 1 BankG (IT) die Kundschaft der Bank («concessi da una banca a singoli clienti»): Beruf offen, festzulegen mit --role; Präzision nicht gemessen (SPEC 8)."
 
 [[eintrag]]
 begriff = "mandante"
