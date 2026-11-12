@@ -13,6 +13,8 @@ permissions:
 jobs:
   analyze:
     name: Analyse (Rust)
+    # Code-Scanning braucht in privaten Repositories GitHub Advanced Security.
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     permissions:
       contents: read

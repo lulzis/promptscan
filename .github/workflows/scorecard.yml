@@ -12,6 +12,8 @@ permissions: read-all
 jobs:
   analysis:
     name: Scorecard
+    # Scorecard bewertet und veröffentlicht nur öffentliche Repositories.
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     permissions:
       security-events: write
