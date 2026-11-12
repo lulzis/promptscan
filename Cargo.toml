@@ -32,7 +32,6 @@ windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_Syst
 
 [dev-dependencies]
 assert_cmd = "2.2.2"
-insta = "1.49.0"
 predicates = "3.1.4"
 proptest = "1.12.0"
 

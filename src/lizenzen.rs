@@ -253,7 +253,7 @@ mod tests {
     #[test]
     fn jedes_paket_aus_cargo_lock_steht_in_den_vermerken() {
         let alle = alle_pakete();
-        // Stand 06.11.2026: 90 fremde Pakete, 44 davon aus den normalen Abhängigkeiten, die
+        // Stand 12.11.2026: 86 fremde Pakete, 44 davon aus den normalen Abhängigkeiten, die
         // übrigen nur für Tests (Abschnitt 4.2).
         assert!(
             alle.len() > huelle().len(),

@@ -17,7 +17,7 @@ Stand: promptscan 0.1.0, Rust 1.99.1 (58cf8f9c3 2026-10-13), Ziel x86_64-pc-wind
 | Crates von crates.io | 34 Crates | 2 |
 | Crates nur für den Bau (Makros) | nein (7 Crates) | 3 |
 | In Cargo.lock verzeichnet, nicht gebaut | nein (3 Crates) | 4.1 |
-| Crates nur für Tests (dev-dependencies) | nein (46 Crates) | 4.2 |
+| Crates nur für Tests (dev-dependencies) | nein (42 Crates) | 4.2 |
 | Rust-Standardbibliothek | ja | 5 |
 | MinGW-w64-Laufzeit und libgcc | ja, statisch gelinkt | 6 |
 | Daten: Unicode, BFS, swisstopo, Wörterbuchzitate, Gesetzestexte | ja, eingebettet | 7 |
@@ -127,22 +127,19 @@ verlangt, und die Bedingung aus dessen Cargo.toml, wenn es nur für bestimmte Zi
 | `cfg-if` | 1.0.5 | MIT OR Apache-2.0 | chacha20; getrandom |
 | `cfg_aliases` | 0.2.2 | MIT | borsh |
 | `chacha20` | 0.10.2 | MIT OR Apache-2.0 | proptest |
-| `console` | 0.16.6 | MIT | insta |
 | `core_detect` | 1.0.0 | MIT/Apache-2.0 | proptest |
 | `cpufeatures` | 0.3.1 | MIT OR Apache-2.0 | chacha20 (nur `cfg(any(target_arch = "x86_64", target_arch = "x86"))`) |
 | `difflib` | 0.4.0 | MIT | predicates |
-| `encode_unicode` | 1.0.0 | Apache-2.0 OR MIT | console (nur `cfg(windows)`) |
 | `errno` | 0.3.14 | nicht entpackt | rustix |
 | `fastrand` | 2.5.0 | Apache-2.0 OR MIT | tempfile |
 | `float-cmp` | 0.10.0 | MIT | predicates |
 | `fnv` | 1.0.7 | Apache-2.0 / MIT | rusty-fork |
 | `getrandom` | 0.4.3 | MIT OR Apache-2.0 | rand; tempfile (nur `cfg(any(unix, windows, target_os = "wasi"))`) |
-| `insta` | 1.49.0 | Apache-2.0 | Cargo.toml [dev-dependencies] |
-| `libc` | 0.2.191 | MIT OR Apache-2.0 | assert_cmd (nur `cfg(any())`); console; cpufeatures (nur unter 4 Ziel-Bedingungen); errno; getrandom (nur unter 8 Ziel-Bedingungen); rustix; wait-timeout (nur `cfg(unix)`) |
+| `libc` | 0.2.191 | MIT OR Apache-2.0 | assert_cmd (nur `cfg(any())`); cpufeatures (nur unter 4 Ziel-Bedingungen); errno; getrandom (nur unter 8 Ziel-Bedingungen); rustix; wait-timeout (nur `cfg(unix)`) |
 | `linux-raw-sys` | 0.12.1 | nicht entpackt | rustix |
 | `normalize-line-endings` | 0.3.0 | Apache-2.0 | predicates |
 | `num-traits` | 0.2.19 | MIT OR Apache-2.0 | float-cmp; proptest |
-| `once_cell` | 1.21.4 | MIT OR Apache-2.0 | borsh-derive; insta; tempfile |
+| `once_cell` | 1.21.4 | MIT OR Apache-2.0 | borsh-derive; tempfile |
 | `predicates` | 3.1.4 | MIT OR Apache-2.0 | assert_cmd; Cargo.toml [dev-dependencies] |
 | `predicates-core` | 1.0.10 | MIT OR Apache-2.0 | assert_cmd; predicates; predicates-tree |
 | `predicates-tree` | 1.0.13 | MIT OR Apache-2.0 | assert_cmd |
@@ -155,8 +152,7 @@ verlangt, und die Bedingung aus dessen Cargo.toml, wenn es nur für bestimmte Zi
 | `rand_xorshift` | 0.5.0 | MIT OR Apache-2.0 | proptest |
 | `rustix` | 1.1.6 | nicht entpackt | tempfile (nur `cfg(any(unix, target_os = "wasi"))`) |
 | `rusty-fork` | 0.3.1 | MIT/Apache-2.0 | proptest |
-| `similar` | 2.7.0 | Apache-2.0 | insta |
-| `tempfile` | 3.27.0 | MIT OR Apache-2.0 | insta; proptest; rusty-fork |
+| `tempfile` | 3.27.0 | MIT OR Apache-2.0 | proptest; rusty-fork |
 | `termtree` | 0.5.1 | MIT | predicates-tree |
 | `toml_edit` | 0.25.18+spec-1.1.0 | MIT OR Apache-2.0 | proc-macro-crate |
 | `unarray` | 0.1.4 | MIT OR Apache-2.0 | proptest |

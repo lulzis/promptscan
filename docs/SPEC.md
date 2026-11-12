@@ -299,7 +299,8 @@ Zu `fundstellen`: Bei überprüfbaren Fragen zu Urteilen der US-Bundesgerichte m
 | unicode-normalization, unicode-segmentation | NFC, Satzgrenzen |
 | serde, serde_json, toml | Wortlisten, Konfiguration, JSON-Ausgabe |
 | anstream, anstyle | Farbe: Rot, Orange (256 Farben, sonst Gelb mit dem Wort ORANGE), Gelb, Blau |
-| proptest, insta, assert_cmd | Eigenschaftstests, Snapshots, CLI-Tests (nur Entwicklung) |
+| windows-sys | Konsole unter Windows: Fensterbreite, Start per Doppelklick erkennen |
+| proptest, assert_cmd, predicates | Eigenschaftstests, CLI-Tests (nur Entwicklung) |
 
 Wortlisten liegen als TOML im Repo und werden beim Bauen eingebettet. Jeder Eintrag trägt seine Quelle:
 
