@@ -6,7 +6,7 @@
 [![Rust 1.88+](https://img.shields.io/badge/rust-1.88%2B-orange?logo=rust)](Cargo.toml)
 [![Windows 10/11 x64](https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0078D4)](docs/WEITERGABE.md#2-mindestanforderungen)
 [![Network: none](https://img.shields.io/badge/network-none-2ea44f)](tests/offline.rs)
-[![Licence: test version](https://img.shields.io/badge/licence-test%20version-lightgrey)](LICENSE.md)
+[![Licence: all rights reserved](https://img.shields.io/badge/licence-all%20rights%20reserved-lightgrey)](LICENSE.md)
 
 [Deutsch](README.de.md) · **English**
 
@@ -17,7 +17,7 @@ finding the provision it follows from. It recognises German, French and Italian 
 promptscan runs locally in the terminal. It contains no network code, starts no other
 programs and writes files only when explicitly told to.
 
-> **Test version 0.1.** Detection quality has not been measured yet. promptscan reports
+> **Version 0.1.** Detection quality has not been measured. promptscan reports
 > categories of data, not legal violations, and is no substitute for legal advice.
 
 ## Example
@@ -181,7 +181,6 @@ The documentation is in German.
 
 ## Licence
 
-No licence has been chosen for promptscan yet. Until then, any distribution of the executable
-or the source code requires the prior consent of the rights holder
-([LICENSE.md](LICENSE.md)). Third-party components are subject to their own licences
+All rights reserved. Any distribution of the executable or the source code requires the
+prior consent of the rights holder ([LICENSE.md](LICENSE.md)). Third-party components are subject to their own licences
 ([THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)).

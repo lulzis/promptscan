@@ -180,14 +180,20 @@ mod tests {
     }
 
     #[test]
-    fn lizenzstand_ist_offen_und_ohne_namen() {
-        assert!(LIZENZ.contains("noch nicht gewählt"));
-        assert!(LIZENZ.contains("Testfassung"));
-        assert!(LIZENZ.contains("Zustimmung von [Rechteinhaber]"));
-        assert!(LIZENZ.contains("consent of [Rechteinhaber]"));
+    fn lizenzstand_ohne_platzhalter_und_ohne_namen() {
+        assert!(
+            LIZENZ.contains("Alle Rechte vorbehalten. Für promptscan ist keine Lizenz erteilt.")
+        );
+        assert!(LIZENZ.contains("All rights reserved. No licence is granted for promptscan."));
+        assert!(LIZENZ.contains("Zustimmung des Rechteinhabers"));
+        assert!(LIZENZ.contains("consent of the rights holder"));
+        assert!(
+            !LIZENZ.contains('['),
+            "kein Platzhalter in eckigen Klammern"
+        );
         assert!(
             !LIZENZ.contains("Copyright"),
-            "kein Inhaber, solange er offen ist"
+            "kein Name in der Lizenzdatei"
         );
     }
 

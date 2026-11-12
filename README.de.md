@@ -6,7 +6,7 @@
 [![Rust 1.88+](https://img.shields.io/badge/rust-1.88%2B-orange?logo=rust)](Cargo.toml)
 [![Windows 10/11 x64](https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0078D4)](docs/WEITERGABE.md#2-mindestanforderungen)
 [![Offline](https://img.shields.io/badge/Netzwerk-keines-2ea44f)](tests/offline.rs)
-[![Lizenz: Testfassung](https://img.shields.io/badge/Lizenz-Testfassung-lightgrey)](LICENSE.md)
+[![Lizenz: alle Rechte vorbehalten](https://img.shields.io/badge/Lizenz-alle%20Rechte%20vorbehalten-lightgrey)](LICENSE.md)
 
 **Deutsch** · [English](README.md)
 
@@ -17,7 +17,7 @@ Norm, aus der sie folgt. Erkannt werden Deutsch, Französisch und Italienisch.
 promptscan läuft lokal im Terminal. Es enthält keinen Netzwerkcode, startet keine anderen
 Programme und schreibt Dateien nur auf ausdrücklichen Befehl.
 
-> **Testfassung 0.1.** Die Erkennungsgüte ist noch nicht gemessen. promptscan meldet
+> **Version 0.1.** Die Erkennungsgüte ist nicht gemessen. promptscan meldet
 > Datenkategorien, keine Rechtsverletzungen, und ersetzt keine Rechtsauskunft.
 
 ## Beispiel
@@ -177,7 +177,6 @@ Entwicklerpfade, prüft die Importtabelle und schreibt die SHA-256-Prüfsumme
 
 ## Lizenz
 
-Für promptscan ist noch keine Lizenz gewählt. Bis dahin braucht jede Weitergabe der
-Programmdatei oder des Quelltexts die vorherige Zustimmung des Rechteinhabers
-([LICENSE.md](LICENSE.md)). Fremde Bestandteile stehen unter ihren eigenen Lizenzen
+Alle Rechte vorbehalten. Jede Weitergabe der Programmdatei oder des Quelltexts braucht die
+vorherige Zustimmung des Rechteinhabers ([LICENSE.md](LICENSE.md)). Fremde Bestandteile stehen unter ihren eigenen Lizenzen
 ([THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)).

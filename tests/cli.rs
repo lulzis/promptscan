@@ -2217,8 +2217,8 @@ fn licenses_gibt_lizenzstand_und_vermerke_aus() {
     let de = String::from_utf8(de).expect("UTF-8");
     assert!(de.starts_with("promptscan: Lizenzstand und Vermerke zu fremden Bestandteilen."));
     // LICENSE.md
-    assert!(de.contains("Eine Lizenz für promptscan ist noch nicht gewählt."));
-    assert!(de.contains("[Rechteinhaber]"));
+    assert!(de.contains("Alle Rechte vorbehalten. Für promptscan ist keine Lizenz erteilt."));
+    assert!(de.contains("Zustimmung des Rechteinhabers."));
     // THIRD-PARTY-NOTICES.md: Crates, Standardbibliothek, MinGW-w64, Daten
     assert!(de.contains("# Vermerke zu fremden Bestandteilen"));
     assert!(de.contains("| `regex` |"));
@@ -2231,7 +2231,7 @@ fn licenses_gibt_lizenzstand_und_vermerke_aus() {
 
     let en = ausgabe(promptscan().args(["licenses", "--lang", "en"]));
     assert!(en.starts_with("promptscan: licence status and third-party notices."));
-    assert!(en.contains("No licence has been chosen for promptscan yet."));
+    assert!(en.contains("All rights reserved. No licence is granted for promptscan."));
     // Nur der Kopf ist übersetzt; die Dateien folgen im Wortlaut.
     let ohne_kopf = |t: &str| t.split_once("\n\n").expect("Kopf").1.to_string();
     assert_eq!(ohne_kopf(&de), ohne_kopf(&en));

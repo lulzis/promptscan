@@ -4,7 +4,7 @@
 
 | Fassung | Unterstützt |
 | --- | --- |
-| 0.1.x (Testfassung) | ja |
+| 0.1.x | ja |
 
 ## Lücke melden
 
