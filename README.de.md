@@ -51,6 +51,11 @@ HINWEIS   Rechtsfolge nicht beurteilt
 
 Ergebnis  ROT   Strafbewehrte Geheimhaltungspflicht (Beruf offen)
           6 Funde: 5 rot, 1 Hinweis
+Klären    Braucht die KI diese Angaben? Welche Pflicht gilt? Festlegen mit
+          --role lawyer | psychologist | authority | bank | professional | none
+          Gehen die Daten ins Ausland? Dann gelten Art. 16 f. DSG, Anhang 1 DSV.
+Mehr      promptscan explain rot · promptscan explain art5c-2 ·
+          promptscan explain kontext
 ```
 
 ## Stufen
@@ -84,7 +89,8 @@ promptscan licenses           Lizenzstand und Vermerke zu fremden Bestandteilen
 --output DATEI                Ausgabe in DATEI schreiben, UTF-8 mit BOM, ohne Farbe
 --quiet                       nur das Ergebnis, ohne Prompt und Funde
 --fail-on STUFE               Exit-Code 1 ab red (Vorgabe), orange oder yellow; never: immer 0
---no-color, --ascii           ohne Farbe; nur ASCII-Zeichen
+--no-color                    ohne Farbe; auch mit NO_COLOR
+--ascii                       nur ASCII-Zeichen
 ```
 
 Vertrauliches nicht mit `-t` übergeben, sondern einfügen oder als Datei prüfen: Text in der

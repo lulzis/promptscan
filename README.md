@@ -52,6 +52,11 @@ NOTE      Legal consequence not assessed
 
 Result    RED   Duty of confidentiality backed by criminal law (profession open)
           6 findings: 5 red, 1 note
+Clarify   Does the AI need these details? Which duty applies? Set it with
+          --role lawyer | psychologist | authority | bank | professional | none
+          Does the data go abroad? Then Art. 16 f. DSG and Anhang 1 DSV apply.
+More      promptscan explain red · promptscan explain art5c-2 ·
+          promptscan explain kontext
 ```
 
 ## Levels
@@ -85,7 +90,8 @@ promptscan licenses           licence status and notices for third-party compone
 --output FILE                 write the output to FILE, UTF-8 with BOM, without colour
 --quiet                       only the result, without prompt and findings
 --fail-on LEVEL               exit code 1 from red (default), orange or yellow; never: always 0
---no-color, --ascii           no colour; ASCII characters only
+--no-color                    no colour; also with NO_COLOR
+--ascii                       ASCII characters only
 ```
 
 Do not pass confidential text with `-t`; paste it or check it as a file instead, because
