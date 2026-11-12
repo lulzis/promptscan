@@ -52,11 +52,11 @@ Weitergabe von Quelltext. Ihre Texte stehen trotzdem in Abschnitt 8.
 | `serde` | 1.0.229 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
 | `serde_core` | 1.0.229 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
 | `serde_json` | 1.0.154 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
-| `serde_spanned` | 1.1.2 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
+| `serde_spanned` | 1.1.3 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
 | `strsim` | 0.11.1 | MIT | MIT | Copyright- und Lizenzvermerk |
 | `tinyvec` | 1.13.3 | Zlib OR Apache-2.0 OR MIT | Zlib | keiner (Lizenzvermerk nur bei Weitergabe von Quelltext) |
-| `toml` | 1.2.0+spec-1.1.0 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
-| `toml_datetime` | 1.1.2+spec-1.1.0 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
+| `toml` | 1.2.1+spec-1.1.0 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
+| `toml_datetime` | 1.1.3+spec-1.1.0 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
 | `toml_parser` | 1.1.5+spec-1.1.0 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
 | `toml_writer` | 1.2.0+spec-1.1.0 | MIT OR Apache-2.0 | MIT | Copyright- und Lizenzvermerk |
 | `unicode-normalization` | 0.1.26 | (MIT OR Apache-2.0) AND Unicode-3.0 | MIT AND Unicode-3.0 | MIT: Copyright- und Lizenzvermerk; Unicode-3.0: Copyright- und Lizenzvermerk bei jeder Kopie oder in der Begleitdokumentation |
@@ -130,13 +130,13 @@ verlangt, und die Bedingung aus dessen Cargo.toml, wenn es nur für bestimmte Zi
 | `core_detect` | 1.0.0 | MIT/Apache-2.0 | proptest |
 | `cpufeatures` | 0.3.1 | MIT OR Apache-2.0 | chacha20 (nur `cfg(any(target_arch = "x86_64", target_arch = "x86"))`) |
 | `difflib` | 0.4.0 | MIT | predicates |
-| `errno` | 0.3.14 | nicht entpackt | rustix |
+| `errno` | 0.3.14 | MIT OR Apache-2.0 | rustix (nur unter 3 Ziel-Bedingungen) |
 | `fastrand` | 2.5.0 | Apache-2.0 OR MIT | tempfile |
 | `float-cmp` | 0.10.0 | MIT | predicates |
 | `fnv` | 1.0.7 | Apache-2.0 / MIT | rusty-fork |
 | `getrandom` | 0.4.3 | MIT OR Apache-2.0 | rand; tempfile (nur `cfg(any(unix, windows, target_os = "wasi"))`) |
-| `libc` | 0.2.191 | MIT OR Apache-2.0 | assert_cmd (nur `cfg(any())`); cpufeatures (nur unter 4 Ziel-Bedingungen); errno; getrandom (nur unter 8 Ziel-Bedingungen); rustix; wait-timeout (nur `cfg(unix)`) |
-| `linux-raw-sys` | 0.12.1 | nicht entpackt | rustix |
+| `libc` | 0.2.191 | MIT OR Apache-2.0 | assert_cmd (nur `cfg(any())`); cpufeatures (nur unter 4 Ziel-Bedingungen); errno (nur unter 3 Ziel-Bedingungen); getrandom (nur unter 8 Ziel-Bedingungen); rustix (nur unter 2 Ziel-Bedingungen); wait-timeout (nur `cfg(unix)`) |
+| `linux-raw-sys` | 0.12.1 | nicht entpackt | rustix (nur unter 2 Ziel-Bedingungen) |
 | `normalize-line-endings` | 0.3.0 | Apache-2.0 | predicates |
 | `num-traits` | 0.2.19 | MIT OR Apache-2.0 | float-cmp; proptest |
 | `once_cell` | 1.21.4 | MIT OR Apache-2.0 | borsh-derive; tempfile |
@@ -150,7 +150,7 @@ verlangt, und die Bedingung aus dessen Cargo.toml, wenn es nur für bestimmte Zi
 | `rand` | 0.10.3 | MIT OR Apache-2.0 | proptest |
 | `rand_core` | 0.10.1 | MIT OR Apache-2.0 | chacha20; getrandom; rand; rand_xorshift |
 | `rand_xorshift` | 0.5.0 | MIT OR Apache-2.0 | proptest |
-| `rustix` | 1.1.6 | nicht entpackt | tempfile (nur `cfg(any(unix, target_os = "wasi"))`) |
+| `rustix` | 1.1.6 | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT | tempfile (nur `cfg(any(unix, target_os = "wasi"))`) |
 | `rusty-fork` | 0.3.1 | MIT/Apache-2.0 | proptest |
 | `tempfile` | 3.27.0 | MIT OR Apache-2.0 | proptest; rusty-fork |
 | `termtree` | 0.5.1 | MIT | predicates-tree |
@@ -292,18 +292,18 @@ zeigt sie bei jeder Regel. Nach Quellen:
 
 | Quelle | Einträge | Grundlage der Übernahme |
 |---|---|---|
-| Duden online | 30 | Zitat nach Art. 25 URG, mit Quelle und Adresse je Eintrag |
-| Erlasse des Bundes (SR) | 650 | Art. 5 Abs. 1 Bst. a URG: nicht geschützt |
-| Larousse | 12 | Zitat nach Art. 25 URG, mit Quelle und Adresse je Eintrag |
-| Treccani | 8 | Zitat nach Art. 25 URG, mit Quelle und Adresse je Eintrag |
+| Duden online | 59 | Zitat nach Art. 25 URG, mit Quelle und Adresse je Eintrag |
+| Erlasse des Bundes (SR) | 911 | Art. 5 Abs. 1 Bst. a URG: nicht geschützt |
+| Larousse | 33 | Zitat nach Art. 25 URG, mit Quelle und Adresse je Eintrag |
+| Treccani | 34 | Zitat nach Art. 25 URG, mit Quelle und Adresse je Eintrag |
 | Unicode CLDR | 57 | Unicode License V3 (Abschnitt 8.4) |
-| weitere: Bundeskanzlei, BFS, Bundesgericht | 66 | einzelne Wörter und Abkürzungen, je Eintrag mit Fundstelle belegt |
+| weitere: Bundeskanzlei, BFS, Bundesgericht | 279 | einzelne Wörter und Abkürzungen, je Eintrag mit Fundstelle belegt |
 
-Zitierte Stichwörter, Duden online: https://www.duden.de/rechtschreibung/Dr_, https://www.duden.de/rechtschreibung/Frau, https://www.duden.de/rechtschreibung/Fuersprecher, https://www.duden.de/rechtschreibung/Fuersprecherin, https://www.duden.de/rechtschreibung/Gen, https://www.duden.de/rechtschreibung/Herr, https://www.duden.de/rechtschreibung/Mandant, https://www.duden.de/rechtschreibung/Prof_, https://www.duden.de/rechtschreibung/RA, https://www.duden.de/rechtschreibung/Rechtsanwaeltin, https://www.duden.de/rechtschreibung/Rechtsanwalt, https://www.duden.de/rechtschreibung/Sankt, https://www.duden.de/rechtschreibung/der__die_das_bestimmte_Artikel, https://www.duden.de/rechtschreibung/ein_Artikel, https://www.duden.de/rechtschreibung/geb__geboren, https://www.duden.de/rechtschreibung/ihr_sie_ihre, https://www.duden.de/rechtschreibung/mein_Possessivpronomen, https://www.duden.de/rechtschreibung/sein_Pronomen, https://www.duden.de/rechtschreibung/unser_Possessivpronomen
+Zitierte Stichwörter, Duden online: https://www.duden.de/rechtschreibung/Advokat, https://www.duden.de/rechtschreibung/Auftrag, https://www.duden.de/rechtschreibung/Burn_out_Raumfahrt_Syndrom, https://www.duden.de/rechtschreibung/Dossier, https://www.duden.de/rechtschreibung/Dr_, https://www.duden.de/rechtschreibung/Fall_Sache, https://www.duden.de/rechtschreibung/Frau, https://www.duden.de/rechtschreibung/Fuersprecher, https://www.duden.de/rechtschreibung/Fuersprecherin, https://www.duden.de/rechtschreibung/Gen, https://www.duden.de/rechtschreibung/Glueck, https://www.duden.de/rechtschreibung/Herr, https://www.duden.de/rechtschreibung/Jude, https://www.duden.de/rechtschreibung/Juedin, https://www.duden.de/rechtschreibung/Konfession, https://www.duden.de/rechtschreibung/Krankenschwester, https://www.duden.de/rechtschreibung/Kundennummer, https://www.duden.de/rechtschreibung/Mandant, https://www.duden.de/rechtschreibung/Patient, https://www.duden.de/rechtschreibung/Pech, https://www.duden.de/rechtschreibung/Prof_, https://www.duden.de/rechtschreibung/Psychiater, https://www.duden.de/rechtschreibung/RA, https://www.duden.de/rechtschreibung/Rechnungsnummer, https://www.duden.de/rechtschreibung/Rechtsanwaeltin, https://www.duden.de/rechtschreibung/Rechtsanwalt, https://www.duden.de/rechtschreibung/Sankt, https://www.duden.de/rechtschreibung/Schaden, https://www.duden.de/rechtschreibung/der__die_das_bestimmte_Artikel, https://www.duden.de/rechtschreibung/du, https://www.duden.de/rechtschreibung/ein_Artikel, https://www.duden.de/rechtschreibung/geb__geboren, https://www.duden.de/rechtschreibung/hernach, https://www.duden.de/rechtschreibung/ihr_sie_ihre, https://www.duden.de/rechtschreibung/krankschreiben, https://www.duden.de/rechtschreibung/lieb, https://www.duden.de/rechtschreibung/man_jemand, https://www.duden.de/rechtschreibung/mein_Possessivpronomen, https://www.duden.de/rechtschreibung/nein, https://www.duden.de/rechtschreibung/sein_Pronomen, https://www.duden.de/rechtschreibung/unser_Possessivpronomen, https://www.duden.de/rechtschreibung/vorbestraft, https://www.duden.de/rechtschreibung/zum, https://www.duden.de/rechtschreibung/zur
 
-Zitierte Stichwörter, Larousse: https://www.larousse.fr/dictionnaires/francais/docteur/26250, https://www.larousse.fr/dictionnaires/francais/ma%C3%AEtre/48732, https://www.larousse.fr/dictionnaires/francais/madame/48465, https://www.larousse.fr/dictionnaires/francais/mademoiselle/48473, https://www.larousse.fr/dictionnaires/francais/monsieur/52460, https://www.larousse.fr/dictionnaires/francais/professeur/64155, https://www.larousse.fr/dictionnaires/francais/saint/70547
+Zitierte Stichwörter, Larousse: https://www.larousse.fr/dictionnaires/francais-italien/Pr/56332, https://www.larousse.fr/dictionnaires/francais/Dr/26688, https://www.larousse.fr/dictionnaires/francais/bonjour, https://www.larousse.fr/dictionnaires/francais/burn_out/10910385, https://www.larousse.fr/dictionnaires/francais/client/16519, https://www.larousse.fr/dictionnaires/francais/commande/17444, https://www.larousse.fr/dictionnaires/francais/docteur/26250, https://www.larousse.fr/dictionnaires/francais/dossier/26532, https://www.larousse.fr/dictionnaires/francais/enceinte/29121, https://www.larousse.fr/dictionnaires/francais/leur/46854, https://www.larousse.fr/dictionnaires/francais/ma%C3%AEtre/48732, https://www.larousse.fr/dictionnaires/francais/madame/48465, https://www.larousse.fr/dictionnaires/francais/mademoiselle/48473, https://www.larousse.fr/dictionnaires/francais/mon/52143, https://www.larousse.fr/dictionnaires/francais/monsieur/52460, https://www.larousse.fr/dictionnaires/francais/notre/55075, https://www.larousse.fr/dictionnaires/francais/patient/58654, https://www.larousse.fr/dictionnaires/francais/plaider/61313, https://www.larousse.fr/dictionnaires/francais/professeur/64155, https://www.larousse.fr/dictionnaires/francais/r%C3%A9f%C3%A9rence/67438, https://www.larousse.fr/dictionnaires/francais/saint/70547, https://www.larousse.fr/dictionnaires/francais/sinistre/72875, https://www.larousse.fr/dictionnaires/francais/sur, https://www.larousse.fr/dictionnaires/francais/te, https://www.larousse.fr/dictionnaires/francais/tu, https://www.larousse.fr/dictionnaires/francais/votre/82552, https://www.larousse.fr/dictionnaires/italien-francais/Arch_/4892
 
-Zitierte Stichwörter, Treccani: https://www.treccani.it/enciclopedia/abbreviazioni_(Enciclopedia-dell'Italiano)/, https://www.treccani.it/vocabolario/avvocato/, https://www.treccani.it/vocabolario/dottore/, https://www.treccani.it/vocabolario/professore/, https://www.treccani.it/vocabolario/santo/, https://www.treccani.it/vocabolario/signora/, https://www.treccani.it/vocabolario/signore/, https://www.treccani.it/vocabolario/signorina/
+Zitierte Stichwörter, Treccani: https://www.treccani.it/enciclopedia/abbreviazioni_(Enciclopedia-dell'Italiano)/, https://www.treccani.it/vocabolario/avvocato/, https://www.treccani.it/vocabolario/cliente/, https://www.treccani.it/vocabolario/dossier/, https://www.treccani.it/vocabolario/dott/, https://www.treccani.it/vocabolario/dottore/, https://www.treccani.it/vocabolario/ebreo/, https://www.treccani.it/vocabolario/gentile/, https://www.treccani.it/vocabolario/giorno/, https://www.treccani.it/vocabolario/incarto/, https://www.treccani.it/vocabolario/mio/, https://www.treccani.it/vocabolario/noi/, https://www.treccani.it/vocabolario/nostro/, https://www.treccani.it/vocabolario/ordine/, https://www.treccani.it/vocabolario/paziente/, https://www.treccani.it/vocabolario/prof/, https://www.treccani.it/vocabolario/professore/, https://www.treccani.it/vocabolario/psichiatra/, https://www.treccani.it/vocabolario/santo/, https://www.treccani.it/vocabolario/signora/, https://www.treccani.it/vocabolario/signore/, https://www.treccani.it/vocabolario/signorina/, https://www.treccani.it/vocabolario/sindacale1/, https://www.treccani.it/vocabolario/sindacato1/, https://www.treccani.it/vocabolario/sindacato2/, https://www.treccani.it/vocabolario/sinistro/, https://www.treccani.it/vocabolario/su/, https://www.treccani.it/vocabolario/tu/, https://www.treccani.it/vocabolario/vostro/
 
 Gesetzestexte sind nicht geschützt. Art. 5 Abs. 1 URG (SR 231.1, Fassung vom 1. Juli 2025):
 «Durch das Urheberrecht nicht geschützt sind: a. Gesetze, Verordnungen, völkerrechtliche
@@ -360,7 +360,7 @@ This project is dual-licensed under the Unlicense and MIT licenses.
 You may use this code under the terms of either license.
 ```
 
-#### MIT (LICENSE-MIT): anstream 1.0.0, anstyle 1.0.14, anstyle-parse 1.0.0, anstyle-query 1.1.5, anstyle-wincon 3.0.11, clap 4.6.7, clap_builder 4.6.7, clap_lex 1.1.1, colorchoice 1.0.5, is_terminal_polyfill 1.70.2, once_cell_polyfill 1.70.2, serde_spanned 1.1.2, toml 1.2.0+spec-1.1.0, toml_datetime 1.1.2+spec-1.1.0, toml_parser 1.1.5+spec-1.1.0, toml_writer 1.2.0+spec-1.1.0
+#### MIT (LICENSE-MIT): anstream 1.0.0, anstyle 1.0.14, anstyle-parse 1.0.0, anstyle-query 1.1.5, anstyle-wincon 3.0.11, clap 4.6.7, clap_builder 4.6.7, clap_lex 1.1.1, colorchoice 1.0.5, is_terminal_polyfill 1.70.2, once_cell_polyfill 1.70.2, serde_spanned 1.1.3, toml 1.2.1+spec-1.1.0, toml_datetime 1.1.3+spec-1.1.0, toml_parser 1.1.5+spec-1.1.0, toml_writer 1.2.0+spec-1.1.0
 
 ```text
 Copyright (c) Individual contributors
